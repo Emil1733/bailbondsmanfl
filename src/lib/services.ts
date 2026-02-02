@@ -68,7 +68,6 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
                     { title: "Immediate Posting", desc: "We are present at the courthouse/jail to post the bond the second the amount is set." }
                 ],
                     commonCharges: ["Domestic Battery", "Aggravated Battery", "Stalking / Cyberstalking", "Violation of Restraining Order"],
-            ],
         faq: [
             { question: "Why is there no bond amount yet?", answer: "Domestic violence charges require a 'First Appearance' hearing. The bond is set by a judge, not a schedule, to ensure victim safety." },
             { question: "What does a 'No Contact' order mean?", answer: "It is strict. The defendant cannot return home, call, text, or email the victim. We explain these rules clearly to prevent re-arrest." },
