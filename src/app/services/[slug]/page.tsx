@@ -94,14 +94,14 @@ export default async function ServicePage({ params }: Props) {
                     }
                 }
             ]
-            ]
-},
+        },
         ...(service.speakableSummary && {
-    "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": ["#voice-summary"]
-    }
-})
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["#voice-summary"]
+            }
+        })
+    };
     };
 
 return (

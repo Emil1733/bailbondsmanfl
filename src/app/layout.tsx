@@ -35,8 +35,6 @@ export const metadata: Metadata = {
         alt: "Bond Florida - Statewide Bail Bonds & Inmate Release",
       },
     ],
-      },
-    ],
   },
   robots: {
     index: true,

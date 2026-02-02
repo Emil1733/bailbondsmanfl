@@ -39,8 +39,7 @@ export const services: Service[] = [
                 { title: "Discharge", desc: "The defendant is released. We provide a ride home if needed, as their license may be seized." }
             ],
             commonCharges: ["DUI First Offense", "DUI with Property Damage", "Felony DUI (3rd within 10 years)", "BUI (Boating Under Influence)"],
-            ],
-    faq: [
+            faq: [
         { question: "Can I bail someone out immediately after a DUI arrest?", answer: "You can sign the paperwork immediately, but the jail cannot physically release them until the mandatory 8-hour sobriety hold is complete (or their BAC is 0.00)." },
         { question: "How much is bail for a first DUI?", answer: "In Florida, standard bonds for a first-time misdemeanor DUI range from $500 to $1,000. Our fee is 10% ($50 to $100)." },
         { question: "What happens to their driver's license?", answer: "The license is often seized upon arrest. Their DUI citation serves as a temporary driving permit for 10 days. We can refer you to traffic attorneys to fight the suspension." }
