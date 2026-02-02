@@ -1,0 +1,771 @@
+
+
+export interface City {
+  name: string;
+  slug: string;
+  policeDepartment: {
+    name: string;
+    address: string;
+    phone: string;
+  };
+  travelTimeToJail: string;
+  description: string;
+}
+
+export interface County {
+  slug: string;
+  name: string;
+  population: number;
+  jail: {
+    name: string;
+    address: string;
+    phone: string;
+    visitingHours: string;
+    inmateSearchUrl: string;
+  };
+  geo: {
+    lat: number;
+    lng: number;
+  };
+  cities?: City[];
+  richContent?: {
+    courtInfo?: {
+      name: string;
+      address: string;
+      bondHearingTimes: string[];
+    };
+    releaseProcess?: {
+      step1: string;
+      step2: string;
+      step3: string;
+    };
+    specificFaqs?: {
+      question: string;
+      answer: string;
+    }[];
+  };
+  relatedEntities?: string[]; // Knowledge Graph Entities (e.g. Sheriff, Clerk, Courthouse)
+}
+
+export const counties: County[] = [
+  {
+    slug: 'miami-dade',
+    name: 'Miami-Dade County',
+    population: 2966883,
+    jail: {
+      name: 'Turner Guilford Knight (TGK) Center',
+      address: '7000 NW 41st Street, Miami, FL 33166',
+      phone: '(786) 263-5600',
+      visitingHours: 'Daily 9:00 AM - 9:00 PM (Video Only)',
+      inmateSearchUrl: 'https://www.miamidade.gov/Apps/mdcr/InmateSearch/#/',
+    },
+    geo: {
+      lat: 25.8100,
+      lng: -80.3117,
+    },
+    cities: [
+      {
+        name: 'Miami',
+        slug: 'miami',
+        policeDepartment: {
+          name: 'Miami Police Department',
+          address: '400 NW 2nd Ave, Miami, FL 33128',
+          phone: '(305) 603-6640'
+        },
+        travelTimeToJail: '25-35 minutes',
+        description: 'The largest municipality in the county. Arrests here are processed at the MPD substation before transport to TGK.'
+      },
+      {
+        name: 'Hialeah',
+        slug: 'hialeah',
+        policeDepartment: {
+          name: 'Hialeah Police Department',
+          address: '501 E 4th Ave, Hialeah, FL 33010',
+          phone: '(305) 687-2525'
+        },
+        travelTimeToJail: '30-45 minutes',
+        description: 'Arrests in Hialeah are processed locally. If not bonded out quickly, inmates are transported to TGK in a daily van run.'
+      },
+      {
+        name: 'Miami Beach',
+        slug: 'miami-beach',
+        policeDepartment: {
+          name: 'Miami Beach Police Department',
+          address: '1100 Washington Ave, Miami Beach, FL 33139',
+          phone: '(305) 673-7900'
+        },
+        travelTimeToJail: '30-50 minutes',
+        description: 'A high-volume arrest zone for tourists and nightlife. Inmates are held at the Washington Ave station briefly before transport to TGK via the causeway.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Richard E. Gerstein Justice Building',
+        address: '1351 NW 12th St, Miami, FL 33125',
+        bondHearingTimes: ['Mon-Fri: 9:00 AM & 1:30 PM', 'Weekends: 9:00 AM Only']
+      },
+      releaseProcess: {
+        step1: 'Inmate is booked at TGK (avg 4-6 hours).',
+        step2: 'Bond amount is set by the magistrate or standard schedule.',
+        step3: 'We post the bond. Release usually occurs 2-4 hours after posting.'
+      },
+      specificFaqs: [
+        {
+          question: 'How much does a bail bond cost in Miami-Dade?',
+          answer: 'State law sets the premium at 10% of the total bond amount for state charges. For example, a $5,000 bond requires a $500 premium. We offer payment plans for qualified signers.'
+        },
+        {
+          question: 'How long does it take to get released from TGK?',
+          answer: 'After we post the bond, Miami-Dade Corrections (MDCR) typically takes 6-8 hours to process the release. We monitor this closely and will pick you up immediately upon release.'
+        },
+        {
+          question: 'Where are bond hearings held in Miami-Dade?',
+          answer: 'All felony and misdemeanor bond hearings are held at the Richard E. Gerstein Justice Building (1351 NW 12th St), usually in Courtroom 1-5 or 5-3.'
+        },
+        {
+          question: 'Can I visit an inmate at TGK physically?',
+          answer: 'No. Miami-Dade Corrections has moved primarily to Video Visitation. You must schedule this online through the MDCR portal.'
+        }
+      ]
+    },
+    relatedEntities: ["Katherine Fernandez Rundle", "Richard E. Gerstein Justice Building", "Miami-Dade Police Department", "Daniella Levine Cava"]
+  },
+  {
+    slug: 'broward',
+    name: 'Broward County',
+    population: 2106844,
+    jail: {
+      name: 'Broward County Main Jail',
+      address: '555 SE 1st Avenue, Fort Lauderdale, FL 33301',
+      phone: '(954) 831-5900',
+      visitingHours: 'Daily 7:45 AM - 9:45 PM',
+      inmateSearchUrl: 'https://www.sheriff.org/LE/Pages/ArrestSearch.aspx',
+    },
+    geo: {
+      lat: 26.1162,
+      lng: -80.1446,
+    },
+    cities: [
+      {
+        name: 'Fort Lauderdale',
+        slug: 'fort-lauderdale',
+        policeDepartment: {
+          name: 'Fort Lauderdale Police Department',
+          address: '1300 W Broward Blvd, Fort Lauderdale, FL 33312',
+          phone: '(954) 828-5700'
+        },
+        travelTimeToJail: '10-15 minutes',
+        description: 'The county seat and largest city. FLPD transports arrestees to the BSO Main Jail Intake rapidly due to close proximity.'
+      },
+      {
+        name: 'Hollywood',
+        slug: 'hollywood',
+        policeDepartment: {
+          name: 'Hollywood Police Department',
+          address: '3250 Hollywood Blvd, Hollywood, FL 33021',
+          phone: '(954) 967-4357'
+        },
+        travelTimeToJail: '20-30 minutes',
+        description: 'A major coastal city. Arrests here are processed at HPD headquarters before transfer to the BSO Main Jail in Fort Lauderdale.'
+      },
+      {
+        name: 'Pompano Beach',
+        slug: 'pompano-beach',
+        policeDepartment: {
+          name: 'BSO District 11 (Pompano Beach)',
+          address: '100 SW 3rd St, Pompano Beach, FL 33060',
+          phone: '(954) 786-4201'
+        },
+        travelTimeToJail: '15-25 minutes',
+        description: 'Patrolled by BSO. Arrestees are held briefly at the District 11 substation before being transported south to the Main Jail Intake.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Broward County Judicial Complex',
+        address: '201 SE 6th St, Fort Lauderdale, FL 33301',
+        bondHearingTimes: ['Daily: 8:30 AM (Magistrate Court)', 'Weekends/Holidays: 8:30 AM']
+      },
+      releaseProcess: {
+        step1: 'Booking at BSO Main Jail Intake. Processing can take 4-8 hours.',
+        step2: 'First Appearance Court (usually following morning) for bond setting if not pre-set.',
+        step3: 'Post bail. Release from Main Jail typically takes 6-12 hours due to high volume.'
+      },
+      specificFaqs: [
+        {
+          question: 'How much does a bail bond cost in Broward County?',
+          answer: 'The standard premium is 10% of the full bond amount (e.g., $100 for a $1,000 bond). This is regulated by Florida state law. We accept credit cards and offer payment plans.'
+        },
+        {
+          question: 'Where do I pay a cash bond in Broward?',
+          answer: 'Cash bonds are paid at the "Cash Bond Window" in the lobby of the Main Jail (555 SE 1st Ave). Note: They do not accept personal checks, only cash or cashier\'s checks.'
+        },
+        {
+          question: 'How long does release take at Broward Main Jail?',
+          answer: 'The Broward Main Jail is a high-volume facility. Once we post the bond, release processing typically takes 6-12 hours. We track the status and will be there when they walk out.'
+        },
+        {
+          question: 'What is First Appearance Court?',
+          answer: 'If you are not bonded out immediately, you will see a magistrate judge within 24 hours (usually via video from the jail) to have your bond conditions reviewed.'
+        }
+      ]
+    },
+    relatedEntities: ["Harold F. Pryor", "Broward County Judicial Complex", "Gregory Tony", "Fort Lauderdale Police Department"]
+  },
+  {
+    slug: 'palm-beach',
+    name: 'Palm Beach County',
+    population: 1631203,
+    jail: {
+      name: 'Main Detention Center',
+      address: '3228 Gun Club Road, West Palm Beach, FL 33406',
+      phone: '(561) 688-4400',
+      visitingHours: 'Daily 9:00 AM - 10:30 PM',
+      inmateSearchUrl: 'https://www.pbso.org/arrestss/',
+    },
+    geo: {
+      lat: 26.6850,
+      lng: -80.0900,
+    },
+    richContent: {
+      courtInfo: {
+        name: 'Criminal Justice Complex',
+        address: '3228 Gun Club Road, West Palm Beach, FL 33406',
+        bondHearingTimes: ['Daily: 9:00 AM (First Appearance Court)', 'Weekends/Holidays: 9:00 AM']
+      },
+      releaseProcess: {
+        step1: 'Booking at the Main Detention Center on Gun Club Road.',
+        step2: 'First Appearance Court is held within the same complex the next morning.',
+        step3: 'Once bond is posted, release is processed at the Main Detention Center release lobby.'
+      },
+      specificFaqs: [
+        {
+          question: 'What is the bail bond rate in Palm Beach County?',
+          answer: 'As with the rest of Florida, the fee is 10% of the total bail amount. We are located minutes from the Gun Club Road facility to expedite the paperwork immediately.'
+        },
+        {
+          question: 'Is the courthouse at the same location as the jail?',
+          answer: 'Yes. Uniquely, the Main Detention Center and the Criminal Justice Complex (First Appearance Court) are co-located at 3228 Gun Club Road, making the process more centralized.'
+        },
+        {
+          question: 'Where do I park for the Main Detention Center?',
+          answer: 'There is a large public parking lot directly in front of the Main Detention Center complex on Gun Club Road. Parking is generally free and accessible.'
+        },
+        {
+          question: 'How long does release take in West Palm Beach?',
+          answer: 'Release times at the Gun Club Road facility generally range from 4 to 8 hours after the bond is posted. We will update you as soon as the release order is processed.'
+        }
+      ]
+    },
+    relatedEntities: ["Dave Aronberg", "Criminal Justice Complex", "Ric Bradshaw", "Palm Beach County Sheriff's Office"]
+  },
+  {
+    slug: 'hillsborough',
+    name: 'Hillsborough County',
+    population: 1629652,
+    jail: {
+      name: 'Orient Road Jail',
+      address: '1201 Orient Road, Tampa, FL 33619',
+      phone: '(813) 247-8300',
+      visitingHours: 'Daily 11:00 AM - 9:00 PM',
+      inmateSearchUrl: 'https://www.teamhcso.com',
+    },
+    geo: {
+      lat: 27.9734,
+      lng: -82.3550,
+    },
+    cities: [
+      {
+        name: 'Tampa',
+        slug: 'tampa',
+        policeDepartment: {
+          name: 'Tampa Police Department',
+          address: '411 N Franklin St, Tampa, FL 33602',
+          phone: '(813) 276-3200'
+        },
+        travelTimeToJail: '15-20 minutes',
+        description: 'The major urban center of the Gulf Coast. TPD processes arrests at the District Offices before transport to Orient Road Jail.'
+      },
+      {
+        name: 'Brandon',
+        slug: 'brandon',
+        policeDepartment: {
+          name: 'HCSO District II Office',
+          address: '2310 N Falkenburg Rd, Tampa, FL 33619',
+          phone: '(813) 247-8200'
+        },
+        travelTimeToJail: '10-15 minutes',
+        description: 'A massive unincorporated community. Deputies from District II process arrests locally before the short transport to the Orient Road booking center.'
+      },
+      {
+        name: 'Plant City',
+        slug: 'plant-city',
+        policeDepartment: {
+          name: 'Plant City Police Department',
+          address: '1 Police Center Dr, Plant City, FL 33563',
+          phone: '(813) 757-9200'
+        },
+        travelTimeToJail: '20-30 minutes',
+        description: 'A distinct municipality East of Tampa. PCPD handles initial processing before transfer to the Orient Road Jail hub.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'George E. Edgecomb Courthouse',
+        address: '800 E Twiggs St, Tampa, FL 33602',
+        bondHearingTimes: ['Daily: 9:00 AM (PP Court - Preliminary Presentation)', 'Weekends/Holidays: 9:00 AM']
+      },
+      releaseProcess: {
+        step1: 'All booking occurs at Orient Road Jail (ORJ), regardless of arrest location.',
+        step2: 'PP Court (First Appearance) is held via video link within 24 hours.',
+        step3: 'Release takes place at Orient Road Jail. Release time is typically 4-8 hours after bond posting.'
+      },
+      specificFaqs: [
+        {
+          question: 'What is the cost of a bail bond in Tampa?',
+          answer: 'The premium is fixed at 10% of the bond amount ($500 for a $5,000 bond). For larger bonds, we can often arrange flexible payment plans with a down payment.'
+        },
+        {
+          question: 'What is "PP Court"?',
+          answer: 'PP Court stands for "Preliminary Presentation." It is the First Appearance court held within 24 hours of arrest where a judge reviews the probable cause and sets the bond amount.'
+        },
+        {
+          question: 'Are inmates released from Falkenburg Road Jail?',
+          answer: 'No. While inmates are housed at Falkenburg (FRJ), Orient Road Jail (ORJ) is the central booking and release facility. You must pick them up at ORJ (1201 Orient Road).'
+        },
+        {
+          question: 'How long does release take at Orient Road Jail?',
+          answer: 'Hillsborough County processing times average 6-10 hours after the bond is posted. We recommend waiting by the phone rather than at the jail, as we will call you the minute they are cleared.'
+        }
+      ]
+    },
+    relatedEntities: ["Suzy Lopez", "George E. Edgecomb Courthouse", "Chad Chronister", "Tampa Police Department"]
+  },
+  {
+    slug: 'orange',
+    name: 'Orange County',
+    population: 1598408,
+    jail: {
+      name: 'Orange County Booking and Release Center (BRC)',
+      address: '3855 South John Young Parkway, Orlando, FL 32839',
+      phone: '(407) 836-3400',
+      visitingHours: 'Daily 8:00 AM - 10:00 PM',
+      inmateSearchUrl: 'https://netapps.ocfl.net/BestJail/',
+    },
+    geo: {
+      lat: 28.5085,
+      lng: -81.4190,
+    },
+    cities: [
+      {
+        name: 'Orlando',
+        slug: 'orlando',
+        policeDepartment: {
+          name: 'Orlando Police Department',
+          address: '1250 W South St, Orlando, FL 32805',
+          phone: '(407) 246-2414'
+        },
+        travelTimeToJail: '10-20 minutes',
+        description: 'The tourism capital. OPD processes arrests at their HQ or District Stations before transport to the BRC on John Young Pkwy.'
+      },
+      {
+        name: 'Winter Park',
+        slug: 'winter-park',
+        policeDepartment: {
+          name: 'Winter Park Police Department',
+          address: '500 N Virginia Ave, Winter Park, FL 32789',
+          phone: '(407) 644-1313'
+        },
+        travelTimeToJail: '25-35 minutes',
+        description: 'An affluent community north of Orlando. WPPD processes arrests locally before the transport down I-4 to the County BRC.'
+      },
+      {
+        name: 'Apopka',
+        slug: 'apopka',
+        policeDepartment: {
+          name: 'Apopka Police Department',
+          address: '112 E 6th St, Apopka, FL 32703',
+          phone: '(407) 703-1700'
+        },
+        travelTimeToJail: '30-40 minutes',
+        description: 'A major city in northwest Orange County. Arrests here involve a significant transport time down US-441 to the county booking center.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Orange County Courthouse',
+        address: '425 N Orange Ave, Orlando, FL 32801',
+        bondHearingTimes: ['Daily: 8:30 AM (Initial Appearance Court)', 'Weekends/Holidays: 8:30 AM']
+      },
+      releaseProcess: {
+        step1: 'All arrestees are processed at the BRC on John Young Parkway.',
+        step2: 'Initial Appearance (Bond Hearing) occurs daily at the BRC courtroom or via video.',
+        step3: 'Release occurs at the BRC Release Lobby (rear of building). Expect 6-10 hours.'
+      },
+      specificFaqs: [
+        {
+          question: 'How much are bail bond fees in Orange County?',
+          answer: 'We charge the standard 10% premium required by Florida law. For qualified families in Orlando, we can often work out a payment plan to get your loved one out fast.'
+        },
+        {
+          question: 'Is the jail on 33rd Street?',
+          answer: 'The main intake and release facility is the BRC on John Young Parkway. "33rd Street" generally refers to the older complex, but all releases now happen at the BRC.'
+        },
+        {
+          question: 'Where is the Release Lobby at the BRC?',
+          answer: 'The Release Lobby is located at the absolute rear of the Booking and Release Center (BRC). You must drive around the back; follow signs for "Inmate Release" off John Young Pkwy.'
+        },
+        {
+          question: 'Can I visit an inmate at the BRC?',
+          answer: 'Video visitation is available and must be scheduled online. Physical contact visits are generally not permitted for pre-trial detainees in Orange County.'
+        }
+      ]
+    },
+    relatedEntities: ["Andrew Bain", "Orange County Courthouse", "John Mina", "Orlando Police Department"]
+  },
+  {
+    slug: 'duval',
+    name: 'Duval County',
+    population: 1055159,
+    jail: {
+      name: 'John E. Goode Pre-Trial Detention Facility',
+      address: '500 East Adams Street, Jacksonville, FL 32202',
+      phone: '(904) 630-5760',
+      visitingHours: 'Daily 8:00 AM - 5:00 PM',
+      inmateSearchUrl: 'https://inmatesearch.jaxsheriff.org/',
+    },
+    geo: {
+      lat: 30.3299,
+      lng: -81.6543,
+    },
+    cities: [
+      {
+        name: 'Jacksonville Beach',
+        slug: 'jacksonville-beach',
+        policeDepartment: {
+          name: 'Jacksonville Beach Police Department',
+          address: '101 Penman Rd S, Jacksonville Beach, FL 32250',
+          phone: '(904) 270-1661'
+        },
+        travelTimeToJail: '25-40 minutes',
+        description: 'A separate jurisdiction from JSO. JBPD arrests are transported inland to the John E. Goode Pre-Trial Detention Facility downtown.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Duval County Courthouse',
+        address: '501 W Adams St, Jacksonville, FL 32202',
+        bondHearingTimes: ['Daily: 9:00 AM (Courtroom 208)', 'Weekends/Holidays: 9:00 AM']
+      },
+      releaseProcess: {
+        step1: 'Intake at John E. Goode Pre-Trial Detention Facility (The J-1) on Adams St.',
+        step2: 'First Appearance Court is held at the Courthouse directly across the street.',
+        step3: 'Release is processed at the J-1 facility. JSO release times can vary from 4-12 hours.'
+      },
+      specificFaqs: [
+        {
+          question: 'What is the "J-1"?',
+          answer: 'The "J-1" refers to the John E. Goode Pre-Trial Detention Facility on Adams Street. It is the primary intake jail for Jacksonville. If someone is arrested in Duval, they are likely here.'
+        },
+        {
+          question: 'Can I post bond at the courthouse?',
+          answer: 'No. While First Appearance court is across the street, bond must be posted at the J-1 facility (500 East Adams Street). The bond window is open 24/7.'
+        },
+        {
+          question: 'How much does a bail bond cost in Jacksonville?',
+          answer: 'The standard premium is 10% of the bond amount. For high bonds, we can offer flexible payment plans to Duval County residents with approved credit.'
+        },
+        {
+          question: 'How long does JSO take to release inmates?',
+          answer: 'Jacksonville Sheriff\'s Office (JSO) release times can be unpredictable, ranging from 4 to 12 hours. We post the bond immediately to get them in the queue as fast as possible.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'pinellas',
+    name: 'Pinellas County',
+    population: 965870,
+    jail: {
+      name: 'Pinellas County Jail',
+      address: '14400 49th Street North, Clearwater, FL 33762',
+      phone: '(727) 464-6415',
+      visitingHours: 'Daily 9:40 AM - 9:00 PM',
+      inmateSearchUrl: 'https://www.pcsoweb.com/whos-in-jail',
+    },
+    geo: {
+      lat: 27.9100,
+      lng: -82.7400,
+    },
+    cities: [
+      {
+        name: 'St. Petersburg',
+        slug: 'st-petersburg',
+        policeDepartment: {
+          name: 'St. Petersburg Police Department',
+          address: '1301 1st Ave N, St. Petersburg, FL 33705',
+          phone: '(727) 893-7780'
+        },
+        travelTimeToJail: '20-25 minutes',
+        description: 'The largest city in Pinellas. SPPD processes arrests at their downtown HQ before the transport north to the County Jail on 49th Street.'
+      },
+      {
+        name: 'Clearwater',
+        slug: 'clearwater',
+        policeDepartment: {
+          name: 'Clearwater Police Department',
+          address: '645 Pierce St, Clearwater, FL 33756',
+          phone: '(727) 562-4242'
+        },
+        travelTimeToJail: '10-15 minutes',
+        description: 'The county seat. Clearwater PD is located just minutes from the Main Jail complex, resulting in rapid booking times.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Pinellas County Justice Center (CJC)',
+        address: '14250 49th St N, Clearwater, FL 33762',
+        bondHearingTimes: ['Daily: 8:30 AM (Advisory Court)', 'Weekends/Holidays: 8:30 AM']
+      },
+      releaseProcess: {
+        step1: 'All booking occurs at the 49th Street complex in Clearwater.',
+        step2: 'Advisory Court (Bond Hearing) is held in the Justice Center on the same campus.',
+        step3: 'Release process is streamlined but expect 6-10 hours due to volume.'
+      },
+      specificFaqs: [
+        {
+          question: 'Where is the Video Visitation Center?',
+          answer: 'Pinellas County has a dedicated Video Visitation Center at 14500 49th Street North (separate from the main jail). You must register and schedule 24 hours in advance.'
+        },
+        {
+          question: 'Can I pay a cash bond at the jail?',
+          answer: 'Yes, the Bond Desk is located in the Booking Lobby at 14400 49th St N. They accept cash, cashier\'s checks, and major credit cards.'
+        },
+        {
+          question: 'What is Advisory Court?',
+          answer: 'Advisory Court is the daily bond hearing held at the Justice Center (CJC) on the same complex. If you bond out before Advisory Court, you don\'t need to attend this specific hearing.'
+        },
+        {
+          question: 'How fast is release in Pinellas County?',
+          answer: 'The Pinellas County Sheriff\'s Office is relatively efficient. Releases typically occur 4-8 hours after we turn in the bond paperwork at the 49th Street complex.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'lee',
+    name: 'Lee County',
+    population: 860959,
+    jail: {
+      name: 'Lee County Jail (Core Facility)',
+      address: '2501 Ortiz Avenue, Fort Myers, FL 33905',
+      phone: '(239) 477-1705',
+      visitingHours: 'Video Visitation Daily',
+      inmateSearchUrl: 'https://www.sheriffleefl.org',
+    },
+    geo: {
+      lat: 26.6500,
+      lng: -81.8000,
+    },
+    richContent: {
+      courtInfo: {
+        name: 'Lee County Justice Center',
+        address: '1700 Monroe St, Fort Myers, FL 33901',
+        bondHearingTimes: ['Daily: 9:00 AM (First Appearance Court)', 'Weekends/Holidays: 9:00 AM']
+      },
+      releaseProcess: {
+        step1: 'Intake occurs at the Core Facility on Ortiz Ave.',
+        step2: 'First Appearance Court is generally held via video link from the jail.',
+        step3: 'Release takes place at the Core Facility. Expect 4-8 hours after posting bond.'
+      },
+      specificFaqs: [
+        {
+          question: 'Is the jail downtown Fort Myers?',
+          answer: 'No. The main "Core Facility" is located at 2501 Ortiz Avenue, which is about 15 minutes east of the downtown Justice Center. Do not go downtown for inmate release.'
+        },
+        {
+          question: 'How do I visit an inmate in Lee County?',
+          answer: 'Visitation is now primarily video-only. You can use the kiosks in the Video Visitation building at the Ortiz site for free, or pay to visit remotely via the GTL/ViaPath app.'
+        },
+        {
+          question: 'What is the bail bond premium in Lee County?',
+          answer: 'We charge the state-mandated 10% premium. We are local to Fort Myers and can meet you at the jail or handle everything electronically.'
+        },
+        {
+          question: 'How long until they are released from Core Facility?',
+          answer: 'Once the bond is posted, Lee County Sheriff\'s Office typically processes the release in 4-8 hours. We will notify you when the discharge process begins.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'polk',
+    name: 'Polk County',
+    population: 852878,
+    jail: {
+      name: 'Polk County Central Jail (South County)',
+      address: '2390 Bob Phillips Road, Bartow, FL 33830',
+      phone: '(863) 534-6331',
+      visitingHours: 'Video Visitation Only (7 days/week)',
+      inmateSearchUrl: 'https://www.polksheriff.org',
+    },
+    geo: {
+      lat: 27.8910,
+      lng: -81.8474,
+    },
+    cities: [
+      {
+        name: 'Lakeland',
+        slug: 'lakeland',
+        policeDepartment: {
+          name: 'Lakeland Police Department',
+          address: '219 N Massachusetts Ave, Lakeland, FL 33801',
+          phone: '(863) 834-6900'
+        },
+        travelTimeToJail: '25-30 minutes',
+        description: 'The largest city in Polk County. LPD processes arrests at their HQ before transfer to the South County Jail in Bartow.'
+      },
+      {
+        name: 'Winter Haven',
+        slug: 'winter-haven',
+        policeDepartment: {
+          name: 'Winter Haven Police Department',
+          address: '125 N Lake Silver Dr NW, Winter Haven, FL 33881',
+          phone: '(863) 291-5858'
+        },
+        travelTimeToJail: '20-25 minutes',
+        description: 'Known for the Chain of Lakes. WHPD transports regular arrests to the main county facility in Bartow.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Polk County Courthouse',
+        address: '255 N Broadway Ave, Bartow, FL 33830',
+        bondHearingTimes: ['Daily: 8:30 AM (South County Jail Courtroom)', 'Weekends: 8:30 AM']
+      },
+      releaseProcess: {
+        step1: 'Processing at Central Booking (South County Jail) in Bartow/Frostproof.',
+        step2: 'First Appearance Court held at the jail courtroom or via video link.',
+        step3: 'Release takes place at the "Release Lobby" on Bob Phillips Road. Process is strict.'
+      },
+      specificFaqs: [
+        {
+          question: 'Where is First Appearance Court in Polk County?',
+          answer: 'Unlike many counties, First Appearance is often held directly at the South County Jail courtroom (2390 Bob Phillips Rd) rather than the Bartow Courthouse. Check the schedule.'
+        },
+        {
+          question: 'Does the Polk Sheriff accept credit cards?',
+          answer: 'The Polk County Sheriff\'s Office (PCSO) is very strict. For self-bail, they prefer Cash or Cashier\'s Check. Using a bondsman is often the easiest way to avoid payment hurdles.'
+        },
+        {
+          question: 'Where is the Release Lobby?',
+          answer: 'Releases occur at the specific Release Lobby building on Bob Phillips Road in Frostproof/Bartow. It is a separate entrance from the main visitation area.'
+        },
+        {
+          question: 'How long does release take in Polk County?',
+          answer: 'Polk County processing is thorough. Expect a 6-10 hour wait after bond posting. We stay in contact with the jail to give you the most accurate timeline.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'pasco',
+    name: 'Pasco County',
+    population: 659114,
+    jail: {
+      name: 'Land O\' Lakes Detention Center',
+      address: '20101 Central Blvd, Land O\' Lakes, FL 34637',
+      phone: '(813) 996-6982',
+      visitingHours: 'Daily 8:30 AM - 10:30 PM (Video)',
+      inmateSearchUrl: 'https://www.pascosheriff.com',
+    },
+    geo: {
+      lat: 28.1917,
+      lng: -82.4657,
+    },
+    cities: [
+      {
+        name: 'New Port Richey',
+        slug: 'new-port-richey',
+        policeDepartment: {
+          name: 'New Port Richey Police Department',
+          address: '6739 Adams St, New Port Richey, FL 34652',
+          phone: '(727) 841-4550'
+        },
+        travelTimeToJail: '25-35 minutes',
+        description: 'The historic downtown area of West Pasco. Arrests here are transported east to the central jail in Land O\' Lakes.'
+      },
+      {
+        name: 'Wesley Chapel',
+        slug: 'wesley-chapel',
+        policeDepartment: {
+          name: 'Pasco Sheriff District 2 Office',
+          address: '29245 SR 54, Wesley Chapel, FL 33543',
+          phone: '(813) 996-6982'
+        },
+        travelTimeToJail: '15-20 minutes',
+        description: 'A rapidly growing community. Patrolled by PCSO, with quick access to the Land O\' Lakes facility.'
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'West Pasco Judicial Center',
+        address: '7530 Little Rd, New Port Richey, FL 34654',
+        bondHearingTimes: ['Daily: 1:30 PM (Advisory Court)', 'Weekends: 8:30 AM']
+      },
+      releaseProcess: {
+        step1: 'All arrests in Pasco are transported to the Land O\' Lakes Detention Center.',
+        step2: 'Advisory Court is held at the detention center courtroom or via video link.',
+        step3: 'Release takes place at the Central Detention Center lobby. Times vary by shift.'
+      },
+      specificFaqs: [
+        {
+          question: 'Is there a jail in New Port Richey?',
+          answer: 'No. While there is a courthouse in New Port Richey, the actual jail (Land O\' Lakes Detention Center) is centrally located in Land O\' Lakes. All releases happen there.'
+        },
+        {
+          question: 'Can I post bond online for Pasco County?',
+          answer: 'Yes, Pasco utilizes "TouchPay" for remote funding, but the fastest way to navigate the release paperwork and avoid full cash payment is to use our surety bond service.'
+        },
+        {
+          question: 'What is the 10% bail bond fee?',
+          answer: 'If bail is set at $5,000, you pay us $500 (10%). This is a non-refundable fee for our service of guaranteeing the full bond amount to the court.'
+        },
+        {
+          question: 'How long is the release process at Land O\' Lakes?',
+          answer: 'Release times vary by shift, but typically run 4-8 hours. We handle the paperwork electronically so the jail can start processing the discharge before you even arrive.'
+        }
+      ]
+    }
+  },
+];
+
+export async function getCounty(slug: string): Promise<County | undefined> {
+  return counties.find((c) => c.slug === slug);
+}
+
+export async function getAllCounties(): Promise<County[]> {
+  return counties;
+}
+
+export async function getCityBySlug(citySlug: string): Promise<{ city: City; county: County } | undefined> {
+  for (const county of counties) {
+    const city = county.cities?.find(c => c.slug === citySlug);
+    if (city) {
+      return { city, county };
+    }
+  }
+  return undefined;
+}
+
+export async function getAllCities(): Promise<{ city: City; county: County }[]> {
+  const allCities: { city: City; county: County }[] = [];
+  for (const county of counties) {
+    if (county.cities) {
+      for (const city of county.cities) {
+        allCities.push({ city, county });
+      }
+    }
+  }
+  return allCities;
+}

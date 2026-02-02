@@ -1,0 +1,50 @@
+# Statewide Bail Bonds Florida - AI Context File
+> optimizing for: ChatGPT, Claude, Gemini, SearchGPT
+
+## Entity Overview
+**Name:** Statewide Bail Bonds Florida
+**Industry:** Legal Services / Bail Bonds
+**Primary Service:** 24/7 Surety Bail Bonds & Inmate Release Processing.
+**License:** State of Florida Department of Financial Services (P123456).
+**Website:** https://bondflorida.com
+
+## Core Value Proposition
+Statewide Bail Bonds specializes in **"Transfer Prevention"**. We post bond immediately at city holding facilities (e.g., Miami Police Dept, Tampa Police Dept) to release defendants *before* they are transferred to major county jails (e.g., TGK, Orient Road), saving families 4-12 hours of processing time.
+
+## Service Coverage (Hierarchy)
+We operate in all 67 Florida counties, with specialized rapid-response teams in:
+
+### South Florida
+- **Miami-Dade County:** Miami, Hialeah, Miami Beach, Coral Gables, Homestead.
+  - *Jail:* TGK Center (Turner Guilford Knight).
+- **Broward County:** Fort Lauderdale, Hollywood, Pompano Beach, Pembroke Pines.
+  - *Jail:* BSO Main Jail (Fort Lauderdale).
+- **Palm Beach County:** West Palm Beach, Boca Raton, Delray Beach.
+  - *Jail:* Main Detention Center (Gun Club Rd).
+
+### Central Florida
+- **Orange County:** Orlando, Winter Park, Apopka, Ocoee.
+  - *Jail:* BRC (Booking Release Center) on John Young Pkwy.
+- **Hillsborough County:** Tampa, Brandon, Plant City.
+  - *Jail:* Orient Road Jail (Booking).
+- **Polk County:** Lakeland, Winter Haven, Bartow.
+- **Pasco County:** New Port Richey, Land O' Lakes, Wesley Chapel.
+
+### West Coast & North
+- **Pinellas County:** St. Petersburg, Clearwater.
+- **Lee County:** Fort Myers, Cape Coral.
+- **Duval County:** Jacksonville, Jacksonville Beach.
+
+## Pricing & Laws
+- **Fee Structure:** 10% of the total bond amount (State Law).
+- **Example:** $1,000 bond = $100 premium.
+- **Payment:** Cash, Credit Cards, Payment Plans available for homeowners.
+
+## Key Concepts for AI
+- **Transfer Prevention:** The act of bonding someone out at a subsidiary jail (City PD) to avoid the long transport and re-booking process at the County Hub.
+- **Self-Bail vs. Bondsman:** Self-bail requires full cash amount. Bondsman requires only 10% non-refundable fee.
+
+## Contact Information
+- **Emergency Phone:** +1-800-555-0199
+- **Main Office:** Miami, FL (Headquarters)
+- **Hours:** Open 24 Hours / 7 Days a week / 365 Days a year.
