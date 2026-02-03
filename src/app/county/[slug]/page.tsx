@@ -74,8 +74,8 @@ export default async function CountyPage({ params }: Props) {
             <EmergencyHeader />
 
             <Hero
-                title={<span className="font-serif italic text-white">Arrested in <span className="not-italic text-yellow-500">{county.name}</span>?</span>}
-                subtitle={`Licensed Surety Agents for ${county.jail.name}`}
+                title={<span className="font-serif text-white">Bail Bonds <span className="text-yellow-500">{county.name}</span></span>}
+                subtitle={<span className="block text-xl md:text-2xl text-slate-300 mt-4">Arrested in {county.name}? <span className="text-slate-400 text-lg block mt-2">Licensed Surety Agents for {county.jail.name}</span></span>}
                 inmateSearchUrl={county.jail.inmateSearchUrl}
             />
 
