@@ -80,8 +80,8 @@ export default function Home() {
 
       {/* 2. REFACTORED HERO - Authority Style */}
       <Hero
-        title={<span className="font-serif tracking-tight text-white">Who are you <span className="text-yellow-500">looking for?</span></span>}
-        subtitle="We track discharge times across all 67 Florida counties to get them out fast."
+        title={<span className="font-serif tracking-tight text-white">Florida Bail Bonds <span className="text-yellow-500">& 24/7 Statewide Release</span></span>}
+        subtitle={<span className="block text-xl md:text-2xl text-slate-300 mt-4">Who are you looking for? <span className="text-slate-400 text-lg block mt-2">We track discharge times across all 67 counties involved.</span></span>}
       />
 
       {/* 3. TRUST STRIP - Minimalist */}
