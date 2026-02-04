@@ -347,7 +347,7 @@ export const counties: County[] = [
     population: 1598408,
     jail: {
       name: 'Orange County Booking and Release Center (BRC)',
-      address: '3855 South John Young Parkway, Orlando, FL 32839',
+      address: '3723 Vision Boulevard, Orlando, FL 32802',
       phone: '(407) 836-3400',
       visitingHours: 'Daily 8:00 AM - 10:00 PM',
       inmateSearchUrl: 'https://netapps.ocfl.net/BestJail/',
