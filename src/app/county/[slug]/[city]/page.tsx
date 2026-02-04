@@ -56,7 +56,7 @@ export default async function CityPage({ params }: Props) {
         "image": "https://bondflorida.com/og-image.jpg", // Replace with actual
         "description": `24/7 Bail Bond services in ${city.name}, FL. Immediate release from ${city.policeDepartment.name} and ${county.jail.name} transfer prevention.`,
         "url": `https://bondflorida.com/county/${county.slug}/${city.slug}`,
-        "telephone": "+1-800-555-0199", // Replace with dynamic phone if available
+        "telephone": "+1-305-831-0358", // Replace with dynamic phone if available
         "address": {
             "@type": "PostalAddress",
             "addressLocality": city.name,

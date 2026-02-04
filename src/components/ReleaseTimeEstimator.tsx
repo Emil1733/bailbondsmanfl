@@ -129,7 +129,7 @@ export default function ReleaseTimeEstimator() {
                             <div className="flex gap-2">
                                 <input
                                     type="tel"
-                                    placeholder="(505) 555-0123"
+                                    placeholder="(305) 831-0358"
                                     className="flex-1 bg-navy-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-urgent-red"
                                 />
                                 <button className="bg-urgent-red hover:bg-urgent-red-dark text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">

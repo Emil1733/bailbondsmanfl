@@ -22,10 +22,11 @@ export default function NotFound() {
                         Return Home
                     </Link>
                     <a
-                        href="tel:1-800-555-0199"
-                        className="px-8 py-3 border border-slate-700 text-white font-bold rounded hover:bg-slate-800 transition-colors"
+                        href="tel:305-831-0358"
+                        className="flex items-center gap-2 bg-urgent-red text-white py-3 px-6 rounded-full font-bold hover:bg-red-700 transition"
                     >
-                        Call 24/7 Support
+                        <Phone className="w-5 h-5" />
+                        Call Now: (305) 831-0358
                     </a>
                 </div>
             </div>

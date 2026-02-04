@@ -34,7 +34,7 @@ export default function Home() {
         image: 'https://statewidebailfl.com/logo.jpg',
         description: '24/7 Florida Bail Bonds. Immediate release assistance for Miami-Dade, Broward, Palm Beach, and all 67 counties.',
         areaServed: { '@type': 'State', name: 'Florida' },
-        telephone: '555-0123',
+        telephone: '(305) 831-0358',
         priceRange: '$$',
         openingHoursSpecification: [
           {

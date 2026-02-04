@@ -12,11 +12,11 @@ export default function EmergencyHeader() {
                 </Link>
 
                 <a
-                    href="tel:555-0123"
+                    href="tel:305-831-0358"
                     className="flex items-center gap-2 bg-urgent-red hover:bg-urgent-red-dark text-white font-bold py-2 px-4 rounded-full transition-all shadow-red-900/50 shadow-lg animate-pulse hover:animate-none"
                 >
                     <Phone className="w-5 h-5 fill-current" />
-                    <span>CALL NOW</span>
+                    <span>(305) 831-0358</span>
                 </a>
             </div>
         </header>

@@ -213,11 +213,11 @@ return (
                                 Our specialists are standing by to handle {service.title} cases immediately.
                             </p>
                             <a
-                                href="tel:555-0123"
-                                className="block w-full bg-white text-yellow-800 font-bold py-4 rounded-lg hover:bg-yellow-50 transition-colors shadow-lg flex items-center justify-center gap-2"
+                                href="tel:305-831-0358"
+                                className="flex items-center gap-2 bg-urgent-red hover:bg-urgent-red-dark text-white font-bold py-2 px-4 rounded-full transition-all shadow-lg animate-pulse hover:animate-none"
                             >
                                 <Phone className="w-5 h-5 fill-current" />
-                                Call 24/7 Agent
+                                <span>(305) 831-0358</span>
                             </a>
                         </div>
 

@@ -11,7 +11,7 @@ export default function Schema({ county, faqs }: SchemaProps) {
         '@type': 'BailBondBusiness',
         name: `Statewide Bail Bonds - ${county.name}`,
         image: 'https://bondflorida.com/og-image.jpg',
-        telephone: '555-0123', // Central dispatch
+        telephone: '(305) 831-0358', // Central dispatch
         url: `https://bondflorida.com/county/${county.slug}`,
         address: {
             '@type': 'PostalAddress',

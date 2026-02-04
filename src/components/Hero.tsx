@@ -39,12 +39,10 @@ export default function Hero({ title, subtitle, inmateSearchUrl }: HeroProps) {
                     </Link>
 
                     <Link
-                        href="tel:555-0123"
-                        className="group flex flex-col items-center justify-center p-10 bg-yellow-600/10 border border-yellow-600/50 hover:bg-yellow-600 hover:border-yellow-600 transition-all rounded-sm"
+                        href="tel:305-831-0358"
+                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-urgent-red to-red-700 hover:from-red-600 hover:to-red-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-urgent-red/20 transform transition-all hover:scale-[1.02]"
                     >
-                        <Gavel className="w-8 h-8 text-yellow-500 group-hover:text-white mb-4 transition-colors" />
-                        <span className="text-xl font-serif font-bold text-yellow-500 group-hover:text-white transition-colors">Emergency Release</span>
-                        <span className="text-sm text-yellow-500/60 group-hover:text-white/80 mt-2 transition-colors">Speak to an agent immediately</span>
+                        <span className="text-lg">Call Now: (305) 831-0358</span>
                     </Link>
                 </div>
             </div>
