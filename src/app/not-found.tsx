@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Phone } from 'lucide-react';
 import EmergencyHeader from '@/components/EmergencyHeader';
 
 export default function NotFound() {
