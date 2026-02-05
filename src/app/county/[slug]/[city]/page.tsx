@@ -51,7 +51,7 @@ export default async function CityPage({ params }: Props) {
     // JSON-LD Schema for Local Business (Service Area)
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "LegalService",
+        "@type": "BailBondBusiness",
         "name": `Bail Bonds ${city.name} - Bond Florida`,
         "image": "https://bondflorida.com/og-image.jpg", // Replace with actual
         "description": `24/7 Bail Bond services in ${city.name}, FL. Immediate release from ${city.policeDepartment.name} and ${county.jail.name} transfer prevention.`,

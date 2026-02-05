@@ -28,10 +28,10 @@ export default function Home() {
     '@graph': [
       {
         '@type': 'BailBondBusiness',
-        '@id': 'https://statewidebailfl.com/#business',
+        '@id': 'https://bondflorida.com/#business',
         name: 'Statewide Bail Bonds Florida',
-        url: 'https://statewidebailfl.com',
-        image: 'https://statewidebailfl.com/logo.jpg',
+        url: 'https://bondflorida.com',
+        image: 'https://bondflorida.com/logo.jpg',
         description: '24/7 Florida Bail Bonds. Immediate release assistance for Miami-Dade, Broward, Palm Beach, and all 67 counties.',
         areaServed: { '@type': 'State', name: 'Florida' },
         telephone: '(305) 831-0358',
@@ -47,7 +47,7 @@ export default function Home() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://statewidebailfl.com/#faq',
+        '@id': 'https://bondflorida.com/#faq',
         mainEntity: [
           {
             '@type': 'Question',
