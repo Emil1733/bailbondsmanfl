@@ -3,7 +3,7 @@ import { getService, getAllServices } from '@/lib/services';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
-import { CheckCircle2, AlertTriangle, ArrowRight, Shield, Phone, HelpCircle } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, ArrowRight, Shield, Phone, HelpCircle, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 // Content Container
@@ -219,6 +219,26 @@ return (
                                 <Phone className="w-5 h-5 fill-current" />
                                 <span>(305) 831-0358</span>
                             </a>
+                        </div>
+
+                        {/* Service Areas (Matrix Spokes) */}
+                        <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+                            <h3 className="font-bold text-white mb-4 flex items-center gap-2">
+                                <MapPin className="w-5 h-5 text-yellow-500" />
+                                Available Service Areas
+                            </h3>
+                            <p className="text-xs text-slate-400 mb-4">Select a city for local release times and specific jail information.</p>
+                            <div className="flex flex-wrap gap-2">
+                                {service.slug !== 'immigration-bail-bonds' && (
+                                    <>
+                                        <Link href={`/services/${service.slug}/miami`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Miami</Link>
+                                        <Link href={`/services/${service.slug}/fort-lauderdale`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Fort Lauderdale</Link>
+                                        <Link href={`/services/${service.slug}/orlando`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Orlando</Link>
+                                        <Link href={`/services/${service.slug}/tampa`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Tampa</Link>
+                                        <Link href={`/services/${service.slug}/west-palm-beach`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">West Palm Beach</Link>
+                                    </>
+                                )}
+                            </div>
                         </div>
 
                         {/* Mini FAQ */}

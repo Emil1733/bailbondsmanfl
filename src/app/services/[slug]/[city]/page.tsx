@@ -234,6 +234,25 @@ export default async function MatrixPage({ params }: Props) {
                                     </Link>
                                 </div>
                             </div>
+
+                            {/* Other Services in this City (Horizontal Matrix Linking) */}
+                            <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
+                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Other Services in {city.name}</h3>
+                                <div className="space-y-3">
+                                    {['dui-bail-bonds', 'domestic-violence-bail', 'traffic-warrant-bail', 'nebbia-hold-bail']
+                                        .filter(s => s !== service.slug)
+                                        .map(s => (
+                                            <Link 
+                                                key={s} 
+                                                href={`/services/${s}/${city.slug}`}
+                                                className="block text-sm text-slate-400 hover:text-yellow-500 transition-colors"
+                                            >
+                                                {s.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} &rarr;
+                                            </Link>
+                                        ))
+                                    }
+                                </div>
+                            </div>
                         </div>
 
                     </div>

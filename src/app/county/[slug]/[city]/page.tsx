@@ -136,6 +136,31 @@ export default async function CityPage({ params }: Props) {
                                 </div>
                             </div>
 
+                            {/* Specialized Services (Matrix Linkage) */}
+                            <div>
+                                <h2 className="text-3xl font-serif font-bold text-white mb-8 border-l-4 border-yellow-500 pl-6">
+                                    Specialized Services in {city.name}
+                                </h2>
+                                <div className="grid sm:grid-cols-2 gap-4 pl-6">
+                                    <Link href={`/services/dui-bail-bonds/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
+                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">DUI Bail Bonds</h3>
+                                        <p className="text-xs text-slate-400 mt-1">Faster release from {city.policeDepartment.name} for DUI charges.</p>
+                                    </Link>
+                                    <Link href={`/services/domestic-violence-bail/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
+                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">Domestic Violence</h3>
+                                        <p className="text-xs text-slate-400 mt-1">Navigating no-contact orders and first appearance hearings.</p>
+                                    </Link>
+                                    <Link href={`/services/traffic-warrant-bail/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
+                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">Traffic Warrants</h3>
+                                        <p className="text-xs text-slate-400 mt-1">Clear bench warrants without extended jail stays.</p>
+                                    </Link>
+                                    <Link href={`/services/nebbia-hold-bail/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
+                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">Nebbia/Bail Source</h3>
+                                        <p className="text-xs text-slate-400 mt-1">Specialized assistance for financial source hearings.</p>
+                                    </Link>
+                                </div>
+                            </div>
+
                             {/* 2. LOCAL RESOURCES (City PD) */}
                             <div>
                                 <h2 className="text-3xl font-serif font-bold text-white mb-8 border-l-4 border-yellow-500 pl-6">
