@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `${service.title} | 24/7 Specialist & Warrant Check`,
+        title: `${service.title} | 24/7 Florida`,
         description: service.metaDescription,
         keywords: [service.title, 'Florida Bail Bonds', '24/7 Bail Bonds', 'Emergency Release'],
         alternates: {

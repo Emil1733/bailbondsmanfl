@@ -20,6 +20,9 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  openGraph: {
+    url: 'https://bondflorida.com/',
+  },
 };
 
 export default function Home() {

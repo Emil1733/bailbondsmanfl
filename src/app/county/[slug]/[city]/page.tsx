@@ -21,6 +21,24 @@ type Props = {
     params: Promise<{ slug: string; city: string }>;
 };
 
+export async function generateStaticParams() {
+    const counties = (await import('@/lib/data')).counties;
+    const params = [];
+    
+    for (const county of counties) {
+        if (county.cities) {
+            for (const city of county.cities) {
+                params.push({
+                    slug: county.slug,
+                    city: city.slug,
+                });
+            }
+        }
+    }
+    
+    return params;
+}
+
 export async function generateMetadata({ params }: Props) {
     const { slug, city: citySlug } = await params;
     const county = await getCounty(slug);

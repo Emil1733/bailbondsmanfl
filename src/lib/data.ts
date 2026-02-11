@@ -125,6 +125,14 @@ export const counties: County[] = [
         {
           question: 'Can I visit an inmate at TGK physically?',
           answer: 'No. Miami-Dade Corrections has moved primarily to Video Visitation. You must schedule this online through the MDCR portal.'
+        },
+        {
+          question: 'What if the bond amount is too high?',
+          answer: 'If the bond is set too high, we can help coordinate a bond reduction hearing with a criminal defense attorney. These hearings typically occur within 3-5 business days and can significantly lower the required bond amount.'
+        },
+        {
+          question: 'Do you serve all of Miami-Dade County?',
+          answer: 'Yes. We post bonds at TGK, the Women\'s Detention Center, and the Metro West Detention Center. We also handle transfers from municipal jails in Miami, Hialeah, Miami Beach, and all other cities within the county.'
         }
       ]
     },
@@ -139,7 +147,7 @@ export const counties: County[] = [
       address: '555 SE 1st Avenue, Fort Lauderdale, FL 33301',
       phone: '(954) 831-5900',
       visitingHours: 'Daily 7:45 AM - 9:45 PM',
-      inmateSearchUrl: 'https://www.sheriff.org/LE/Pages/ArrestSearch.aspx',
+      inmateSearchUrl: 'https://www.broward.org/arrestsearch',
     },
     geo: {
       lat: 26.1162,
@@ -336,6 +344,14 @@ export const counties: County[] = [
         {
           question: 'How long does release take at Orient Road Jail?',
           answer: 'Hillsborough County processing times average 6-10 hours after the bond is posted. We recommend waiting by the phone rather than at the jail, as we will call you the minute they are cleared.'
+        },
+        {
+          question: 'What is the difference between Orient Road Jail and Falkenburg Road Jail?',
+          answer: 'Orient Road Jail (ORJ) is the central booking and release facility. Falkenburg Road Jail (FRJ) is a separate housing facility for sentenced inmates and some pre-trial detainees. All releases happen at ORJ, even if the inmate is housed at FRJ.'
+        },
+        {
+          question: 'Can I get a payment plan for a large bond in Tampa?',
+          answer: 'Yes. For bonds over $10,000, we offer flexible payment plans with as little as 10-20% down. We work with families to create affordable monthly payment schedules that fit your budget.'
         }
       ]
     },
@@ -548,6 +564,14 @@ export const counties: County[] = [
         {
           question: 'How fast is release in Pinellas County?',
           answer: 'The Pinellas County Sheriff\'s Office is relatively efficient. Releases typically occur 4-8 hours after we turn in the bond paperwork at the 49th Street complex.'
+        },
+        {
+          question: 'Do you cover St. Petersburg and Clearwater arrests?',
+          answer: 'Absolutely. We handle arrests from all Pinellas County municipalities including St. Petersburg, Clearwater, Largo, Pinellas Park, and Tarpon Springs. All arrestees are booked at the same 49th Street facility in Clearwater.'
+        },
+        {
+          question: 'What is the bail bond premium in Pinellas County?',
+          answer: 'The state-mandated premium is 10% of the total bond amount. For example, a $2,500 bond requires a $250 premium. We accept all major credit cards and offer payment plans for qualified clients.'
         }
       ]
     }

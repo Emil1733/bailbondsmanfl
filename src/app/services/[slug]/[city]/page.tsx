@@ -56,11 +56,14 @@ export async function generateMetadata({ params }: Props) {
         : "Call our 24/7 agents now.";
 
     return {
-        title: `${cleanServiceTitle} ${city.name} | ${city.travelTimeToJail} Release`,
+        title: `${cleanServiceTitle} ${city.name} | 24/7`,
         description: `Arrested for ${cleanServiceTitle} in ${city.name}? We specialize in fast release from ${city.policeDepartment.name}. ${serviceHook}`,
         keywords: [`${cleanServiceTitle} ${city.name}`, `Bail Bonds ${city.name}`, `${city.name} DUI Bail`, `${city.name} Jail Release`],
         alternates: {
             canonical: `/services/${slug}/${citySlug}`,
+        },
+        openGraph: {
+            url: `https://bondflorida.com/services/${slug}/${citySlug}`,
         },
     };
 }

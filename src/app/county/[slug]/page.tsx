@@ -39,10 +39,13 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `Bail Bonds ${county.name} | Free Inmate Search & Release`,
-        description: `IMMEDIATE RELEASE from ${county.jail.name} in ${county.name}. 24/7 Bail Bonds. We know exactly how to speed up the process at ${county.jail.address}. Call now.`,
+        title: `${county.name} Bail Bonds | 24/7 Fast Release`,
+        description: `Fast release from ${county.jail.name}. 24/7 bail bonds in ${county.name}. Licensed agents. Call now for immediate help.`,
         alternates: {
             canonical: `/county/${county.slug}`,
+        },
+        openGraph: {
+            url: `https://bondflorida.com/county/${county.slug}`,
         },
     };
 }
@@ -127,7 +130,7 @@ export default async function CountyPage({ params }: Props) {
                                             <a
                                                 href={county.jail.inmateSearchUrl}
                                                 target="_blank"
-                                                rel="noreferrer"
+                                                rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 bg-slate-800 hover:bg-yellow-600 text-white px-6 py-2 rounded-sm transition-all font-bold text-sm"
                                             >
                                                 INMATE ROSTER <ExternalLink className="w-4 h-4" />
