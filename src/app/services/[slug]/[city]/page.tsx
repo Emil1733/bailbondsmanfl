@@ -64,6 +64,11 @@ export async function generateMetadata({ params }: Props) {
         },
         openGraph: {
             url: `https://bondflorida.com/services/${slug}/${citySlug}`,
+            images: [{
+                url: 'https://bondflorida.com/og-image.jpg',
+                width: 1200,
+                height: 630,
+            }],
         },
     };
 }

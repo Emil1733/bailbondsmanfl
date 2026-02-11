@@ -22,6 +22,11 @@ export const metadata = {
   },
   openGraph: {
     url: 'https://bondflorida.com/',
+    images: [{
+      url: 'https://bondflorida.com/og-image.jpg',
+      width: 1200,
+      height: 630,
+    }],
   },
 };
 

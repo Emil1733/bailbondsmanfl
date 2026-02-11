@@ -4,10 +4,18 @@ import EmergencyHeader from '@/components/EmergencyHeader';
 import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Local Bail Bond Agents | 24/7 Florida Emergency Help',
+  title: 'Contact Florida Bail Bonds | 24/7 Emergency Help',
   description: 'Connect with a licensed Florida bail bondsman immediately. 24/7 emergency phone support for all county jails. Fast release assistance starts here.',
   alternates: {
     canonical: '/contact',
+  },
+  openGraph: {
+    url: 'https://bondflorida.com/contact',
+    images: [{
+      url: 'https://bondflorida.com/og-image.jpg',
+      width: 1200,
+      height: 630,
+    }],
   },
 };
 
