@@ -488,20 +488,24 @@ export const counties: County[] = [
       },
       specificFaqs: [
         {
-          question: 'What is the "J-1"?',
-          answer: 'The "J-1" refers to the John E. Goode Pre-Trial Detention Facility on Adams Street. It is the primary intake jail for Jacksonville. If someone is arrested in Duval, they are likely here.'
+          question: 'What is the difference between John E. Goode and the "P-Farm"?',
+          answer: 'The John E. Goode Pre-Trial Detention Facility (PTDF) is downtown and holds arrestees before trial. The "P-Farm" (Montgomery Correctional Center) is for sentenced inmates. We post bonds at the PTDF downtown.'
         },
         {
-          question: 'Can I post bond at the courthouse?',
-          answer: 'No. While First Appearance court is across the street, bond must be posted at the J-1 facility (500 East Adams Street). The bond window is open 24/7.'
+          question: 'Where do I park for the jail release?',
+          answer: 'Downtown parking is strict. We recommend the "Yates Garage" at 200 E. Adams St, which is within walking distance of the release lobby at 500 E Adams St.'
         },
         {
-          question: 'How much does a bail bond cost in Jacksonville?',
-          answer: 'The standard premium is 10% of the bond amount. For high bonds, we can offer flexible payment plans to Duval County residents with approved credit.'
+          question: 'How long does release take in Jacksonville?',
+          answer: 'JSO processing at the John E. Goode facility typically takes 4-8 hours. We monitor the "active inmate search" system to confirm exactly when they are cleared for release.'
         },
         {
-          question: 'How long does JSO take to release inmates?',
-          answer: 'Jacksonville Sheriff\'s Office (JSO) release times can be unpredictable, ranging from 4 to 12 hours. We post the bond immediately to get them in the queue as fast as possible.'
+          question: 'Can I visit an inmate at the PTDF?',
+          answer: 'Yes, but all visits are video-only. You must go to the "Video Visitation Center" which shares an entrance with the First Appearance Court at 500 Broad St (around the corner from the main entrance).'
+        },
+        {
+          question: 'Do you cover the beaches (Jax Beach/Neptune Beach)?',
+          answer: 'Yes. All arrests at the beaches are transported downtown to the John E. Goode facility. We can post the bond immediately so you don\'t have to drive downtown until pickup.'
         }
       ]
     }
