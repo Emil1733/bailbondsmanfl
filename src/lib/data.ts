@@ -248,16 +248,20 @@ export const counties: County[] = [
       },
       specificFaqs: [
         {
-          question: 'What is the bail bond rate in Palm Beach County?',
-          answer: 'As with the rest of Florida, the fee is 10% of the total bail amount. We are located minutes from the Gun Club Road facility to expedite the paperwork immediately.'
+          question: 'Where is the inmate release parking at Gun Club Road?',
+          answer: 'When approaching 3228 Gun Club Road, pass the first two entrances. Take the third entrance on the left to reach the designated "Inmate Release" parking lot. It is closest to the release lobby.'
         },
         {
           question: 'Is the courthouse at the same location as the jail?',
-          answer: 'Yes. Uniquely, the Main Detention Center and the Criminal Justice Complex (First Appearance Court) are co-located at 3228 Gun Club Road, making the process more centralized.'
+          answer: 'Yes. The Main Detention Center and the Criminal Justice Complex (First Appearance Court) are co-located at 3228 Gun Club Road. You do not need to drive to downtown West Palm Beach for bond hearings.'
         },
         {
-          question: 'Where do I park for the Main Detention Center?',
-          answer: 'There is a large public parking lot directly in front of the Main Detention Center complex on Gun Club Road. Parking is generally free and accessible.'
+          question: 'What app do I use for visitation?',
+          answer: 'Physical visitation is limited. You must use the "ConnectNetwork" platform (by GTL) to schedule video visits or deposit funds into an inmate’s account. Kiosks are also available in the jail lobby.'
+        },
+        {
+          question: 'What is the bail bond rate in Palm Beach County?',
+          answer: 'As with the rest of Florida, the fee is 10% of the total bail amount. We are located minutes from the Gun Club Road facility to expedite the paperwork immediately.'
         },
         {
           question: 'How long does release take in West Palm Beach?',
