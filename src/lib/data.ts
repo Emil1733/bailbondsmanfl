@@ -197,20 +197,24 @@ export const counties: County[] = [
       },
       specificFaqs: [
         {
+          question: 'Where is the "Cash Bond Window" located?',
+          answer: 'The window is in the Main Jail lobby at 555 SE 1st Avenue. It is open 24/7. IMPORTANT: They strictly do not accept personal checks or credit cards at the window. You must bring cash or a cashier’s check made out to the "Sheriff of Broward County".'
+        },
+        {
+          question: 'What is the "Paul Rein" facility?',
+          answer: 'The Paul Rein Detention Facility is in Pompano Beach (North Broward). It primarily houses female inmates and those with medical needs. If your loved one is at Paul Rein, we still post the bond at the Main Jail, but release will happen in Pompano.'
+        },
+        {
+          question: 'Where can I watch the First Appearance Court?',
+          answer: 'Broward County streams First Appearance hearings live. The bond hearings are held at 201 S.E. Sixth Street, Courtroom 04155 (West Wing). You can watch the "Magistrate Court" live stream on the 17th Judicial Circuit website.'
+        },
+        {
           question: 'How much does a bail bond cost in Broward County?',
           answer: 'The standard premium is 10% of the full bond amount (e.g., $100 for a $1,000 bond). This is regulated by Florida state law. We accept credit cards and offer payment plans.'
         },
         {
-          question: 'Where do I pay a cash bond in Broward?',
-          answer: 'Cash bonds are paid at the "Cash Bond Window" in the lobby of the Main Jail (555 SE 1st Ave). Note: They do not accept personal checks, only cash or cashier\'s checks.'
-        },
-        {
           question: 'How long does release take at Broward Main Jail?',
           answer: 'The Broward Main Jail is a high-volume facility. Once we post the bond, release processing typically takes 6-12 hours. We track the status and will be there when they walk out.'
-        },
-        {
-          question: 'What is First Appearance Court?',
-          answer: 'If you are not bonded out immediately, you will see a magistrate judge within 24 hours (usually via video from the jail) to have your bond conditions reviewed.'
         }
       ]
     },
