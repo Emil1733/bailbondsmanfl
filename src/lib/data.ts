@@ -686,20 +686,24 @@ export const counties: County[] = [
       },
       specificFaqs: [
         {
-          question: 'Where is First Appearance Court in Polk County?',
-          answer: 'Unlike many counties, First Appearance is often held directly at the South County Jail courtroom (2390 Bob Phillips Rd) rather than the Bartow Courthouse. Check the schedule.'
+          question: 'Where do I go to post bond?',
+          answer: 'All arrests are processed at the "Sheriff\'s Processing Center" (Book-In) at 7101 De Castro Road in Winter Haven. Do not go to the jails in Bartow or Frostproof for posting bond.'
         },
         {
-          question: 'Does the Polk Sheriff accept credit cards?',
-          answer: 'The Polk County Sheriff\'s Office (PCSO) is very strict. For self-bail, they prefer Cash or Cashier\'s Check. Using a bondsman is often the easiest way to avoid payment hurdles.'
+          question: 'What is the difference between Central and South County Jails?',
+          answer: 'Central County Jail is in Bartow, and South County Jail is in Frostproof. These are housing facilities. All releases happen at the Processing Center in Winter Haven.'
         },
         {
-          question: 'Where is the Release Lobby?',
-          answer: 'Releases occur at the specific Release Lobby building on Bob Phillips Road in Frostproof/Bartow. It is a separate entrance from the main visitation area.'
+          question: 'How strict is the release process in Polk County?',
+          answer: 'Sheriff Grady Judd runs a very strict facility. There are no "early releases" or shortcuts. Processing takes 6-12 hours, and all paperwork must be perfect.'
         },
         {
-          question: 'How long does release take in Polk County?',
-          answer: 'Polk County processing is thorough. Expect a 6-10 hour wait after bond posting. We stay in contact with the jail to give you the most accurate timeline.'
+          question: 'What app do I use for visitation?',
+          answer: 'Polk County uses "Securus Technologies" for video visitation. You must register online to schedule a remote visit. Physical visitation is limited.'
+        },
+        {
+          question: 'Do you cover Lakeland and Winter Haven?',
+          answer: 'Yes. Whether arrested by Lakeland PD or Winter Haven PD, they are all transported to the central processing center. We are located nearby to speed up the bond posting.'
         }
       ]
     }
