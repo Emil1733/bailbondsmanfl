@@ -424,20 +424,24 @@ export const counties: County[] = [
       },
       specificFaqs: [
         {
-          question: 'How much are bail bond fees in Orange County?',
-          answer: 'We charge the standard 10% premium required by Florida law. For qualified families in Orlando, we can often work out a payment plan to get your loved one out fast.'
+          question: 'Is the jail on 33rd Street or Vision Blvd?',
+          answer: 'The current Operating Facility is at 3723 Vision Blvd, Orlando, FL 32802. Many people mistakenly go to the old "33rd Street" location which is now just administrative offices. Go to Vision Blvd for all bookings and releases.'
         },
         {
-          question: 'Is the jail on 33rd Street?',
-          answer: 'The main intake and release facility is the BRC on John Young Parkway. "33rd Street" generally refers to the older complex, but all releases now happen at the BRC.'
+          question: 'Where is the release lobby located?',
+          answer: 'The Release Lobby is in the "Booking & Release Center" (BRC) at 3723 Vision Blvd. There is a public parking lot directly in front of the BRC entrance. Do not go to the 33rd Street complex.'
         },
         {
-          question: 'Where is the Release Lobby at the BRC?',
-          answer: 'The Release Lobby is located at the absolute rear of the Booking and Release Center (BRC). You must drive around the back; follow signs for "Inmate Release" off John Young Pkwy.'
+          question: 'Can I watch First Appearance Court online?',
+          answer: 'Online streaming is intermittent. The most reliable way to watch "Initial Appearance" is to go to the BRC Public Lobby at Vision Blvd, where they have public viewing screens for the sessions (usually 9AM and 1PM).'
         },
         {
-          question: 'Can I visit an inmate at the BRC?',
-          answer: 'Video visitation is available and must be scheduled online. Physical contact visits are generally not permitted for pre-trial detainees in Orange County.'
+          question: 'How much does a bail bond cost in Orlando?',
+          answer: 'The premium is 10% of the bond amount by Florida law. We are located just minutes from the Vision Blvd facility to speed up the release process.'
+        },
+        {
+          question: 'How long does the release process take at the BRC?',
+          answer: 'The Orange County BRC is efficient but busy. Release typically takes 6-8 hours after we post the bond. We monitor the shift changes to give you the most accurate pickup time.'
         }
       ]
     },
