@@ -111,28 +111,24 @@ export const counties: County[] = [
       },
       specificFaqs: [
         {
+          question: 'Where do I pick up an inmate released from TGK?',
+          answer: 'All releases occur at the TGK Correctional Center (7000 NW 41st Street). Even if the inmate was housed at Metro West or the Women’s Detention Center, they are transported back to TGK for final discharge. Do not wait at Metro West.'
+        },
+        {
+          question: 'Where do I park for bond hearings at the Gerstein Building?',
+          answer: 'Street parking is nearly impossible. We recommend the "Civic Center Jury Lot" at 1250 NW 12th St ($15 daily maximum). It is directly across from the courthouse entrance.'
+        },
+        {
+          question: 'Can I visit an inmate physically in Miami-Dade?',
+          answer: 'No, physical contact visits are suspended. You must schedule video visitations using the "GTL VisitMe" portal (miamidade.gtlvisitme.com) or the "ConnectNetwork" mobile app. Visits must be scheduled 24 hours in advance.'
+        },
+        {
           question: 'How much does a bail bond cost in Miami-Dade?',
-          answer: 'State law sets the premium at 10% of the total bond amount for state charges. For example, a $5,000 bond requires a $500 premium. We offer payment plans for qualified signers.'
+          answer: 'State law sets the premium at 10% of the total bond amount. For example, a $5,000 bond requires a $500 premium. We offer payment plans for qualified signers.'
         },
         {
-          question: 'How long does it take to get released from TGK?',
-          answer: 'After we post the bond, Miami-Dade Corrections (MDCR) typically takes 6-8 hours to process the release. We monitor this closely and will pick you up immediately upon release.'
-        },
-        {
-          question: 'Where are bond hearings held in Miami-Dade?',
-          answer: 'All felony and misdemeanor bond hearings are held at the Richard E. Gerstein Justice Building (1351 NW 12th St), usually in Courtroom 1-5 or 5-3.'
-        },
-        {
-          question: 'Can I visit an inmate at TGK physically?',
-          answer: 'No. Miami-Dade Corrections has moved primarily to Video Visitation. You must schedule this online through the MDCR portal.'
-        },
-        {
-          question: 'What if the bond amount is too high?',
-          answer: 'If the bond is set too high, we can help coordinate a bond reduction hearing with a criminal defense attorney. These hearings typically occur within 3-5 business days and can significantly lower the required bond amount.'
-        },
-        {
-          question: 'Do you serve all of Miami-Dade County?',
-          answer: 'Yes. We post bonds at TGK, the Women\'s Detention Center, and the Metro West Detention Center. We also handle transfers from municipal jails in Miami, Hialeah, Miami Beach, and all other cities within the county.'
+          question: 'How long does the release process take?',
+          answer: 'Once we post the bond at TGK, MDCR typically takes 6-8 hours to process the release. We monitor the "inmate release queue" and will notify you exactly when to pull up to the release lobby.'
         }
       ]
     },
