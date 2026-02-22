@@ -1,0 +1,5 @@
+File type,Total requests ratio
+HTML,0.6823
+Other file type,0.1805
+Image,0.0505
+Unknown (failed requests),0.0866

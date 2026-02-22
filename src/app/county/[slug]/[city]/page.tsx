@@ -247,9 +247,9 @@ export default async function CityPage({ params }: Props) {
                                 </div>
                             </div>
 
-                            {/* FAQ - Integrated */}
+                            {/* FAQ - City-specific first, county as fallback */}
                             <div className="border-t border-slate-800 pt-12">
-                                <FAQSection countyName={city.name} customFaqs={county.richContent?.specificFaqs} />
+                                <FAQSection countyName={city.name} customFaqs={city.specificFaqs ?? county.richContent?.specificFaqs} />
                             </div>
 
                             {/* Internal Linking: Nearby Cities */}

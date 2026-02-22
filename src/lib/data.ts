@@ -10,6 +10,10 @@ export interface City {
   };
   travelTimeToJail: string;
   description: string;
+  specificFaqs?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export interface County {
@@ -73,7 +77,17 @@ export const counties: County[] = [
           phone: '(305) 603-6640'
         },
         travelTimeToJail: '25-35 minutes',
-        description: 'The largest municipality in the county. Arrests here are processed at the MPD substation before transport to TGK.'
+        description: 'The largest municipality in the county. Arrests here are processed at the MPD substation before transport to TGK.',
+        specificFaqs: [
+          {
+            question: 'I was arrested by Miami PD, not the Sheriff — does that change anything?',
+            answer: 'No. Regardless of whether it was MPD or the Miami-Dade Sheriff, all arrestees end up at TGK (7000 NW 41st St) for booking. The arresting agency only affects the initial holding location — we post bond at TGK in all cases.'
+          },
+          {
+            question: 'Is Wynwood / Brickell a different jurisdiction from Miami?',
+            answer: 'Wynwood and Brickell are inside City of Miami limits and are policed by MPD. These are high-enforcement zones for weekend nightlife arrests. Call us immediately — the next available transport to TGK usually leaves within hours.'
+          }
+        ]
       },
       {
         name: 'Hialeah',
@@ -84,7 +98,17 @@ export const counties: County[] = [
           phone: '(305) 687-2525'
         },
         travelTimeToJail: '30-45 minutes',
-        description: 'Arrests in Hialeah are processed locally. If not bonded out quickly, inmates are transported to TGK in a daily van run.'
+        description: 'Arrests in Hialeah are processed locally. If not bonded out quickly, inmates are transported to TGK in a daily van run.',
+        specificFaqs: [
+          {
+            question: 'Is the Hialeah Police department a separate jail?',
+            answer: 'Yes. HPD has its own holding facility at 501 E 4th Ave. Inmates can be released directly from here on low-level charges before the transport van runs to TGK. Acting fast here can save your family member from a much longer night downtown.'
+          },
+          {
+            question: 'Does Hialeah have a high bail schedule?',
+            answer: 'Bond amounts are set by the county-wide schedule, not by HPD. However, Hialeah is known for strict enforcement on traffic and driving-related charges. A traffic warrant arrest here often has a preset bond that we can post immediately.'
+          }
+        ]
       },
       {
         name: 'Miami Beach',
@@ -95,7 +119,17 @@ export const counties: County[] = [
           phone: '(305) 673-7900'
         },
         travelTimeToJail: '30-50 minutes',
-        description: 'A high-volume arrest zone for tourists and nightlife. Inmates are held at the Washington Ave station briefly before transport to TGK via the causeway.'
+        description: 'A high-volume arrest zone for tourists and nightlife. Inmates are held at the Washington Ave station briefly before transport to TGK via the causeway.',
+        specificFaqs: [
+          {
+            question: 'Why does transport from Miami Beach to TGK take longer?',
+            answer: 'All vehicles heading to the Turner Guilford Knight Correctional Center must cross the MacArthur Causeway back to the mainland, then travel through Miami traffic. This adds 20-30 minutes to every transport run compared to mainland Miami arrests.'
+          },
+          {
+            question: 'Are tourist arrests in Miami Beach handled differently?',
+            answer: 'No — MBPD does not give breaks for tourists. Nightlife arrests on Ocean Drive are prosecuted the same as any local arrest. The bond amount is set at First Appearance Court, which is the morning after arrest.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -159,7 +193,17 @@ export const counties: County[] = [
           phone: '(954) 828-5700'
         },
         travelTimeToJail: '10-15 minutes',
-        description: 'The county seat and largest city. FLPD transports arrestees to the BSO Main Jail Intake rapidly due to close proximity.'
+        description: 'The county seat and largest city. FLPD transports arrestees to the BSO Main Jail Intake rapidly due to close proximity.',
+        specificFaqs: [
+          {
+            question: 'What is the BSO Intake process at the Main Jail?',
+            answer: 'BSO Main Jail Intake at 555 SE 1st Ave is where all Fort Lauderdale arrests are processed. Booking takes 4-8 hours. You cannot visit during booking, but you can call us immediately to start the bond paperwork so we can post the moment the amount is set.'
+          },
+          {
+            question: 'Is the Las Olas / Riverwalk area a high-arrest zone?',
+            answer: 'Yes. The Las Olas entertainment corridor is a priority enforcement zone for FLPD on weekends. DUI and disorderly conduct arrests are common. The jail is less than 3 miles from Las Olas Blvd, so processing begins very quickly.'
+          }
+        ]
       },
       {
         name: 'Hollywood',
@@ -170,7 +214,17 @@ export const counties: County[] = [
           phone: '(954) 967-4357'
         },
         travelTimeToJail: '20-30 minutes',
-        description: 'A major coastal city. Arrests here are processed at HPD headquarters before transfer to the BSO Main Jail in Fort Lauderdale.'
+        description: 'A major coastal city. Arrests here are processed at HPD headquarters before transfer to the BSO Main Jail in Fort Lauderdale.',
+        specificFaqs: [
+          {
+            question: 'Does Hollywood police process arrests at the Margaritaville or beach strip?',
+            answer: 'Hollywood Beach is covered by HPD. Arrests on the boardwalk or A1A are processed at HPD HQ on Hollywood Blvd before the transport north on US-1 to the BSO Main Jail. The beach-to-jail trip takes 30-40 minutes total.'
+          },
+          {
+            question: 'Can I bond someone out before they leave HPD custody?',
+            answer: 'In most cases, no — HPD transfers to Broward Main Jail before bond can be posted through a bondsman. The exception is a very low-level charge where the officer can issue a Notice to Appear (no custody). Call us immediately to confirm which applies.'
+          }
+        ]
       },
       {
         name: 'Pompano Beach',
@@ -181,7 +235,17 @@ export const counties: County[] = [
           phone: '(954) 786-4201'
         },
         travelTimeToJail: '15-25 minutes',
-        description: 'Patrolled by BSO. Arrestees are held briefly at the District 11 substation before being transported south to the Main Jail Intake.'
+        description: 'Patrolled by BSO. Arrestees are held briefly at the District 11 substation before being transported south to the Main Jail Intake.',
+        specificFaqs: [
+          {
+            question: 'There are two BSO stations in Pompano — which one processes arrests?',
+            answer: 'All bookings go to the BSO District 11 station at 100 SW 3rd St. However, the actual bond must be posted at the BSO Main Jail in Fort Lauderdale (555 SE 1st Ave), not in Pompano. We go directly to Fort Lauderdale to file the paperwork.'
+          },
+          {
+            question: 'What is the Paul Rein Facility that serves Pompano Beach?',
+            answer: 'Paul Rein Detention Facility (5601 NE 31st Ave) is a BSO housing facility in Pompano for female inmates and those with medical needs. If your family member is at Paul Rein, the bond is still posted at the Fort Lauderdale Main Jail, but they are released from Pompano.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -235,6 +299,50 @@ export const counties: County[] = [
       lat: 26.6850,
       lng: -80.0900,
     },
+    cities: [
+      {
+        name: 'West Palm Beach',
+        slug: 'west-palm-beach',
+        policeDepartment: {
+          name: 'West Palm Beach Police Department',
+          address: '600 Banyan Blvd, West Palm Beach, FL 33401',
+          phone: '(561) 822-1900'
+        },
+        travelTimeToJail: '10-20 minutes',
+        description: 'The county seat and largest city in Palm Beach County. WPBPD processes arrests at their downtown headquarters on Banyan Blvd before transport south to the Main Detention Center on Gun Club Road.',
+        specificFaqs: [
+          {
+            question: 'My family member was arrested in downtown West Palm Beach — how long before they reach the jail?',
+            answer: 'WPBPD holds at their Banyan Blvd station briefly, then transports south on Military Trail to the Main Detention Center at 3228 Gun Club Road — typically 10-20 minutes. Call us before the transport leaves so we can meet the paperwork window.'
+          },
+          {
+            question: 'Does CityPlace / Clematis Street have frequent arrests?',
+            answer: 'Yes. The Clematis Street corridor and CityPlace are priority DUI enforcement zones on weekends. WPBPD runs DUI checkpoints in those areas. A DUI arrest here usually has a mandatory 8-hour hold before bond is eligible.'
+          }
+        ]
+      },
+      {
+        name: 'Boca Raton',
+        slug: 'boca-raton',
+        policeDepartment: {
+          name: 'Boca Raton Police Department',
+          address: '100 NW Boca Raton Blvd, Boca Raton, FL 33432',
+          phone: '(561) 338-1333'
+        },
+        travelTimeToJail: '25-35 minutes',
+        description: 'A major city on the southern end of the county. BRPD processes arrests at their NW Boca Raton Blvd station. Transport to the Main Detention Center on Gun Club Road runs north on I-95.',
+        specificFaqs: [
+          {
+            question: 'Why does Boca Raton take longer to process than West Palm Beach?',
+            answer: 'Boca is at the southern end of the county, roughly 30 miles from the Main Detention Center on Gun Club Road. Every transport van heading north on I-95 adds significant time. This is why acting early is critical — we can begin paperwork before the inmate even arrives at the jail.'
+          },
+          {
+            question: 'Does FAU (Florida Atlantic University) area affect bail amounts?',
+            answer: 'Arrests near FAU Campus are handled by BRPD. Bond amounts are set by the statewide schedule, not by location. However, if a charge involves university property, there can be additional consequences beyond the criminal charge.'
+          }
+        ]
+      }
+    ],
     richContent: {
       courtInfo: {
         name: 'Criminal Justice Complex',
@@ -296,7 +404,17 @@ export const counties: County[] = [
           phone: '(813) 276-3200'
         },
         travelTimeToJail: '15-20 minutes',
-        description: 'The major urban center of the Gulf Coast. TPD processes arrests at the District Offices before transport to Orient Road Jail.'
+        description: 'The major urban center of the Gulf Coast. TPD processes arrests at the District Offices before transport to Orient Road Jail.',
+        specificFaqs: [
+          {
+            question: 'My family member was arrested in Ybor City — who is the arresting agency?',
+            answer: 'Ybor City is inside Tampa city limits and is policed by TPD. It is one of the highest-volume arrest areas in the city on weekends. TPD processes at the district office before the short transport east to Orient Road Jail on the Crosstown.'
+          },
+          {
+            question: 'Is there a holding cell at the Tampa airport (TPA)?',
+            answer: 'Arrests at TPA are handled by Hillsborough County Sheriff, not City of Tampa. Inmates are transported directly to Orient Road Jail. If an arrest involved TSA or a federal charge, the process is different — call us immediately to clarify before posting bond.'
+          }
+        ]
       },
       {
         name: 'Brandon',
@@ -307,7 +425,17 @@ export const counties: County[] = [
           phone: '(813) 247-8200'
         },
         travelTimeToJail: '10-15 minutes',
-        description: 'A massive unincorporated community. Deputies from District II process arrests locally before the short transport to the Orient Road booking center.'
+        description: 'A massive unincorporated community. Deputies from District II process arrests locally before the short transport to the Orient Road booking center.',
+        specificFaqs: [
+          {
+            question: 'Brandon is unincorporated — does that mean it is the Sheriff and not city police?',
+            answer: 'Correct. Brandon has no city police. All law enforcement is handled by HCSO District II at 2310 N Falkenburg Rd. There is no separate city ordinance court — all arrests go through the same county system to Orient Road Jail.'
+          },
+          {
+            question: 'Does the Brandon Town Center area have heavy enforcement?',
+            answer: 'The Falkenburg Road / Brandon Blvd commercial corridor has elevated enforcement for DUI, retail theft, and traffic stops. Because the HCSO District II office is right there, transport to Orient Road Jail is very fast — often under 20 minutes.'
+          }
+        ]
       },
       {
         name: 'Plant City',
@@ -318,7 +446,17 @@ export const counties: County[] = [
           phone: '(813) 757-9200'
         },
         travelTimeToJail: '20-30 minutes',
-        description: 'A distinct municipality East of Tampa. PCPD handles initial processing before transfer to the Orient Road Jail hub.'
+        description: 'A distinct municipality East of Tampa. PCPD handles initial processing before transfer to the Orient Road Jail hub.',
+        specificFaqs: [
+          {
+            question: 'Does Plant City have its own magistrate or bond court?',
+            answer: 'No. Bond amounts are set at PP Court (Preliminary Presentation) at the Hillsborough County courthouse, which covers all municipalities including Plant City. There is no local bond court in Plant City itself.'
+          },
+          {
+            question: 'How long does the drive from Plant City to Orient Road Jail take?',
+            answer: 'The transport from the Plant City Police Department at 1 Police Center Dr to Orient Road Jail runs east on I-4 — approximately 20-30 minutes. This is one of the longer intra-county transport runs in Hillsborough.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -386,7 +524,17 @@ export const counties: County[] = [
           phone: '(407) 246-2414'
         },
         travelTimeToJail: '10-20 minutes',
-        description: 'The tourism capital. OPD processes arrests at their HQ or District Stations before transport to the BRC on John Young Pkwy.'
+        description: 'The tourism capital. OPD processes arrests at their HQ or District Stations before transport to the BRC on John Young Pkwy.',
+        specificFaqs: [
+          {
+            question: 'My family was arrested near the theme parks (Disney/Universal) — is that still Orlando?',
+            answer: 'The Disney property is unincorporated Orange County, so the OCSO (Sheriff) handles those arrests, not OPD. Universal is inside Orlando city limits and is OPD jurisdiction. Either way, all arrestees are booked at the BRC on Vision Blvd.'
+          },
+          {
+            question: 'Does the International Drive (I-Drive) area have high arrest rates?',
+            answer: 'Yes. I-Drive is one of the highest-volume tourist and nightlife arrest zones in Orlando. OPD runs targeted DUI patrols on I-Drive on weekend nights. The short distance to the BRC means booking can begin within 30 minutes of arrest.'
+          }
+        ]
       },
       {
         name: 'Winter Park',
@@ -397,7 +545,17 @@ export const counties: County[] = [
           phone: '(407) 644-1313'
         },
         travelTimeToJail: '25-35 minutes',
-        description: 'An affluent community north of Orlando. WPPD processes arrests locally before the transport down I-4 to the County BRC.'
+        description: 'An affluent community north of Orlando. WPPD processes arrests locally before the transport down I-4 to the County BRC.',
+        specificFaqs: [
+          {
+            question: 'Does Park Ave (Winter Park) have elevated enforcement?',
+            answer: 'Yes. The Park Ave corridor is policed by WPPD with a strong focus on DUI and public intoxication. The transport to the Vision Blvd BRC takes 25-35 minutes down I-4 South. Post bond quickly to avoid the overnight hold.'
+          },
+          {
+            question: 'Is Winter Park the same as Maitland and Casselberry for bail bonds?',
+            answer: 'No. Maitland and Casselberry have their own city police departments and municipal court jurisdictions. Winter Park PD only covers the City of Winter Park. However, all three transport to the same Orange County BRC.'
+          }
+        ]
       },
       {
         name: 'Apopka',
@@ -408,7 +566,17 @@ export const counties: County[] = [
           phone: '(407) 703-1700'
         },
         travelTimeToJail: '30-40 minutes',
-        description: 'A major city in northwest Orange County. Arrests here involve a significant transport time down US-441 to the county booking center.'
+        description: 'A major city in northwest Orange County. Arrests here involve a significant transport time down US-441 to the county booking center.',
+        specificFaqs: [
+          {
+            question: 'Why does Apopka show such a long transport time to the jail?',
+            answer: 'Apopka sits in the far northwest corner of Orange County. The only route to the BRC on Vision Blvd runs south on US-441 through Orlando traffic — a 30-40 minute drive. Posting bond early gives the system time to start the release before the inmate even completes booking.'
+          },
+          {
+            question: 'Is Apopka a city police or county sheriff arrest?',
+            answer: 'Apopka has its own city police department (APD, 112 E 6th St). APD handles all arrests within city limits. Areas outside the city limits are Orange County Sheriff (OCSO). Both transport to the BRC.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -472,7 +640,17 @@ export const counties: County[] = [
           phone: '(904) 270-1661'
         },
         travelTimeToJail: '25-40 minutes',
-        description: 'A separate jurisdiction from JSO. JBPD arrests are transported inland to the John E. Goode Pre-Trial Detention Facility downtown.'
+        description: 'A separate jurisdiction from JSO. JBPD arrests are transported inland to the John E. Goode Pre-Trial Detention Facility downtown.',
+        specificFaqs: [
+          {
+            question: 'My family member was arrested on the Jax Beach pier/boardwalk — who handled it?',
+            answer: 'The Jacksonville Beach Police Department (JBPD) covers all of Jacksonville Beach including the boardwalk and pier area. Neptune Beach and Atlantic Beach have their own separate PDs. All three beach cities transport to the John E. Goode facility downtown.'
+          },
+          {
+            question: 'Does the beach-to-downtown transport add time to the release?',
+            answer: 'Yes. The 25-40 minute transport from Jax Beach to downtown adds real time before booking even begins. We can start the bond paperwork the moment you call — so we are ready the instant the booking window opens on their end.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -535,7 +713,17 @@ export const counties: County[] = [
           phone: '(727) 893-7780'
         },
         travelTimeToJail: '20-25 minutes',
-        description: 'The largest city in Pinellas. SPPD processes arrests at their downtown HQ before the transport north to the County Jail on 49th Street.'
+        description: 'The largest city in Pinellas. SPPD processes arrests at their downtown HQ before the transport north to the County Jail on 49th Street.',
+        specificFaqs: [
+          {
+            question: 'Does the Grand Central / Downtown St. Pete nightlife area see frequent arrests?',
+            answer: 'Yes. The Central Ave and Beach Drive entertainment corridor is one of the highest-enforcement nightlife zones in the Tampa Bay area. SPPD runs DUI enforcement on these corridors heavily. Transport north on I-275 to the 49th Street jail complex takes 20-25 minutes.'
+          },
+          {
+            question: 'Is St. Petersburg policed by the city or the Pinellas Sheriff?',
+            answer: 'Inside St. Petersburg city limits, it is SPPD. The Sheriff (PCSO) handles unincorporated areas and smaller municipalities. Either way, all arrests go to the Pinellas County Jail complex at 14400 49th St N in Clearwater.'
+          }
+        ]
       },
       {
         name: 'Clearwater',
@@ -546,7 +734,17 @@ export const counties: County[] = [
           phone: '(727) 562-4242'
         },
         travelTimeToJail: '10-15 minutes',
-        description: 'The county seat. Clearwater PD is located just minutes from the Main Jail complex, resulting in rapid booking times.'
+        description: 'The county seat. Clearwater PD is located just minutes from the Main Jail complex, resulting in rapid booking times.',
+        specificFaqs: [
+          {
+            question: 'How close is the Clearwater Police Department to the jail?',
+            answer: 'Clearwater PD headquarters at 645 Pierce St is about 5 miles from the jail complex at 14400 49th St N. This is the shortest city-to-jail distance in Pinellas County — booking can begin within 20 minutes of arrest. Speed matters here.'
+          },
+          {
+            question: 'Is Clearwater Beach the same police jurisdiction as mainland Clearwater?',
+            answer: 'Yes. Clearwater Beach is on a barrier island but is part of the City of Clearwater and policed by CPD. Arrests on the beach are transported back across Memorial Causeway to mainland Clearwater, then north to the jail on US-19.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -603,6 +801,50 @@ export const counties: County[] = [
       lat: 26.6500,
       lng: -81.8000,
     },
+    cities: [
+      {
+        name: 'Fort Myers',
+        slug: 'fort-myers',
+        policeDepartment: {
+          name: 'Fort Myers Police Department',
+          address: '2210 Widman Way, Fort Myers, FL 33901',
+          phone: '(239) 321-7700'
+        },
+        travelTimeToJail: '10-15 minutes',
+        description: 'The county seat of Lee County. FMPD processes arrests at their Widman Way headquarters. The Lee County Jail Core Facility on Ortiz Avenue is a short drive east, making for faster booking than many other counties.',
+        specificFaqs: [
+          {
+            question: 'Is the Lee County Jail downtown Fort Myers?',
+            answer: 'No. Despite the "Fort Myers" address, the Core Facility is at 2501 Ortiz Avenue — roughly 15 minutes east of downtown. The downtown Lee County Justice Center at 1700 Monroe St handles courtroom hearings, not bookings. Do not go downtown for release.'
+          },
+          {
+            question: 'Does FMPD arrest for things that happened on Fort Myers Beach?',
+            answer: 'No. Fort Myers Beach is a separate municipality on Estero Island, policed by the Lee County Sheriff (not FMPD). FMPD only covers the mainland City of Fort Myers. Both transport to the same Lee County Core Facility on Ortiz Ave.'
+          }
+        ]
+      },
+      {
+        name: 'Cape Coral',
+        slug: 'cape-coral',
+        policeDepartment: {
+          name: 'Cape Coral Police Department',
+          address: '1100 Cultural Park Blvd, Cape Coral, FL 33990',
+          phone: '(239) 574-3223'
+        },
+        travelTimeToJail: '25-35 minutes',
+        description: 'The largest city in Lee County by land area, separated from Fort Myers by the Caloosahatchee River. Arrests made by CCPD require crossing the Cape Coral Bridge before the drive east on Colonial Blvd to the Ortiz Ave jail.',
+        specificFaqs: [
+          {
+            question: 'Why does Cape Coral take longer to transport to jail than Fort Myers?',
+            answer: 'Cape Coral sits on the north bank of the Caloosahatchee River. Every transport van must cross either the Cape Coral Bridge (Cape Coral Pkwy) or Midpoint Bridge (Veterans Pkwy) before continuing east to the Core Facility on Ortiz Ave — adding 15-20 minutes to every run.'
+          },
+          {
+            question: 'Does the Pine Island Road / Chiquita corridor have heavy enforcement?',
+            answer: 'Yes. CCPD runs frequent DUI enforcement on Cape Coral Pkwy and Del Prado Blvd. The city has the highest DUI arrest rate per capita in Lee County. A DUI arrest here triggers a mandatory 8-hour hold before bond is even eligible.'
+          }
+        ]
+      }
+    ],
     richContent: {
       courtInfo: {
         name: 'Lee County Justice Center',
@@ -659,7 +901,17 @@ export const counties: County[] = [
           phone: '(863) 834-6900'
         },
         travelTimeToJail: '25-30 minutes',
-        description: 'The largest city in Polk County. LPD processes arrests at their HQ before transfer to the South County Jail in Bartow.'
+        description: 'The largest city in Polk County. LPD processes arrests at their HQ before transfer to the South County Jail in Bartow.',
+        specificFaqs: [
+          {
+            question: 'Does Lakeland have its own jail?',
+            answer: 'No. Lakeland PD holds suspects at their headquarters briefly, then transports to the Polk County processing facility. All booking and release happens at county-operated facilities, not the Lakeland PD building.'
+          },
+          {
+            question: 'Is the Lakeland to Bartow transport fast?',
+            answer: 'The transport runs south on US-98 to Bartow — roughly 25-30 minutes. Sheriff Grady Judd runs a strict no-nonsense booking process at the other end. We prepare the bond paperwork during the transport window so it is ready immediately upon arrival.'
+          }
+        ]
       },
       {
         name: 'Winter Haven',
@@ -670,7 +922,17 @@ export const counties: County[] = [
           phone: '(863) 291-5858'
         },
         travelTimeToJail: '20-25 minutes',
-        description: 'Known for the Chain of Lakes. WHPD transports regular arrests to the main county facility in Bartow.'
+        description: 'Known for the Chain of Lakes. WHPD transports regular arrests to the main county facility in Bartow.',
+        specificFaqs: [
+          {
+            question: 'Does Winter Haven have its own processing center?',
+            answer: 'Polk County actually centralizes booking at the Sheriff\'s Processing Center on De Castro Road in Winter Haven — not in Bartow. This means Winter Haven arrests have a shorter initial transport. We know the exact location to file paperwork, which saves critical time.'
+          },
+          {
+            question: 'What is the LEGOLAND area jurisdiction in Winter Haven?',
+            answer: 'LEGOLAND Florida is inside the Winter Haven city limits and policed by WHPD. Arrests on the property are relatively rare but do occur, especially at the water park. All WHPD arrests process through the county system on De Castro Road.'
+          }
+        ]
       }
     ],
     richContent: {
@@ -733,7 +995,17 @@ export const counties: County[] = [
           phone: '(727) 841-4550'
         },
         travelTimeToJail: '25-35 minutes',
-        description: 'The historic downtown area of West Pasco. Arrests here are transported east to the central jail in Land O\' Lakes.'
+        description: 'The historic downtown area of West Pasco. Arrests here are transported east to the central jail in Land O\' Lakes.',
+        specificFaqs: [
+          {
+            question: 'Why does New Port Richey take 25-35 minutes to get to the jail?',
+            answer: 'The Land O\' Lakes Detention Center is on the east side of the county (20101 Central Blvd). From New Port Richey on the coast, the transport runs along SR-54 East — a 25-35 minute drive with no highway shortcut. Post bond early to avoid a shift-change delay.'
+          },
+          {
+            question: 'Is downtown New Port Richey a high-enforcement area?',
+            answer: 'Yes. The Grand Blvd entertainment strip runs targeted DUI enforcement on weekends. New Port Richey PD (6739 Adams St) is the arresting agency for the downtown corridor. Arrests here are some of the most common nightlife-related calls in West Pasco.'
+          }
+        ]
       },
       {
         name: 'Wesley Chapel',
@@ -744,7 +1016,17 @@ export const counties: County[] = [
           phone: '(813) 996-6982'
         },
         travelTimeToJail: '15-20 minutes',
-        description: 'A rapidly growing community. Patrolled by PCSO, with quick access to the Land O\' Lakes facility.'
+        description: 'A rapidly growing community. Patrolled by PCSO, with quick access to the Land O\' Lakes facility.',
+        specificFaqs: [
+          {
+            question: 'Is Wesley Chapel a city or unincorporated area?',
+            answer: 'Wesley Chapel is an unincorporated community — it has no city police. All law enforcement is handled by the Pasco County Sheriff District 2 Office at 29245 SR-54. This means all arrests go directly through the PCSO system to the Land O\' Lakes Detention Center.'
+          },
+          {
+            question: 'Does the Wiregrass / Cypress Creek Town Center area have elevated DUI arrests?',
+            answer: 'Yes. The rapid retail and restaurant growth along SR-54 has created a high-traffic nightlife corridor that PCSO monitors closely. DUI stops on SR-54 are among the most common enforcement actions in East Pasco. The jail is only 15-20 minutes away.'
+          }
+        ]
       }
     ],
     richContent: {
