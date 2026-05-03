@@ -27,7 +27,8 @@
 # Google Service Account credentials — NEVER commit this
 gsc-credentials.json
 
-# debug
+# gsc data
+gsc/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
