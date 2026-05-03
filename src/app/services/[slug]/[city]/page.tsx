@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props) {
         description: `Arrested for ${cleanServiceTitle} in ${city.name}? We specialize in fast release from ${city.policeDepartment.name}. ${serviceHook}`,
         keywords: [`${cleanServiceTitle} ${city.name}`, `Bail Bonds ${city.name}`, `${city.name} DUI Bail`, `${city.name} Jail Release`],
         alternates: {
-            canonical: `/services/${slug}/${citySlug}`,
+            canonical: `https://bondflorida.com/services/${slug}/${citySlug}`,
         },
         openGraph: {
             url: `https://bondflorida.com/services/${slug}/${citySlug}`,

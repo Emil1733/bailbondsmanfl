@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props) {
         title: `Bail Bonds ${city.name} | ${city.travelTimeToJail} Jail Release`,
         description: `Arrested in ${city.name} by ${city.policeDepartment.name}? Call now to post bond before they are transferred to ${county.jail.name} in ${county.name}. 24/7 Service.`,
         alternates: {
-            canonical: `/county/${county.slug}/${city.slug}`,
+            canonical: `https://bondflorida.com/county/${county.slug}/${city.slug}`,
         },
     };
 }

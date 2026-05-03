@@ -12,6 +12,9 @@ export default function EmergencyHeader() {
                 </Link>
 
                 <div className="flex items-center gap-4">
+                    <Link href="/locations" className="hidden md:block text-slate-300 hover:text-white font-medium transition-colors">
+                        Service Areas
+                    </Link>
                     <Link href="/contact" className="hidden sm:block text-slate-300 hover:text-white font-medium transition-colors">
                         Contact
                     </Link>

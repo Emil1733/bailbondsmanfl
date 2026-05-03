@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props) {
         title: `${county.name} Bail Bonds | 24/7 Fast Release`,
         description: `Fast release from ${county.jail.name}. 24/7 bail bonds in ${county.name}. Licensed agents. Call now for immediate help.`,
         alternates: {
-            canonical: `/county/${county.slug}`,
+            canonical: `https://bondflorida.com/county/${county.slug}`,
         },
         openGraph: {
             url: `https://bondflorida.com/county/${county.slug}`,

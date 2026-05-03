@@ -76,6 +76,17 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Master Directory Link (Crawl Shortcut) */}
+                <div className="mb-16 p-6 bg-slate-900/50 border border-slate-800 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h4 className="text-white font-bold mb-1">Statewide Coverage</h4>
+                        <p className="text-xs text-slate-500 italic">Don't see your city listed above? We serve every municipality in the state of Florida.</p>
+                    </div>
+                    <Link href="/locations" className="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded transition-all whitespace-nowrap">
+                        View All Service Areas &rarr;
+                    </Link>
+                </div>
+
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p>&copy; {currentYear} Statewide Bail Bonds Florida. All Rights Reserved.</p>
