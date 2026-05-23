@@ -41,6 +41,17 @@ async function fetchGscData(
         endDate: endStr,
         dimensions,
         rowLimit,
+        dimensionFilterGroups: [
+          {
+            filters: [
+              {
+                dimension: "country",
+                operator: "equals",
+                expression: "usa",
+              },
+            ],
+          },
+        ],
       },
     });
     return res.data.rows || [];
@@ -73,7 +84,7 @@ async function run() {
   }
 
   const sc = await auth();
-  const outDir = "C:\\Users\\tevat\\bailbondsman\\gsc\\health_check_global";
+  const outDir = "C:\\Users\\tevat\\bailbondsman\\gsc\\05-23-2026";
   fs.mkdirSync(outDir, { recursive: true });
 
   // --- Performance data ---
