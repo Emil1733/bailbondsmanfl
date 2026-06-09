@@ -72,6 +72,30 @@ export default function Home() {
               '@type': 'Answer',
               text: 'Yes. Most Florida counties, including Miami-Dade and Broward, have online inmate search portals. You can access these direct links through our County Directory.'
             }
+          },
+          {
+            '@type': 'Question',
+            name: 'What is an online bail bond in Florida?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'An online bail bond (or E-Bonding) allows co-signers to complete all applications, indemnity contracts, and premium payments remotely via phone or computer. The bondsman then files the bond electronically with the jail.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'How long does the jail release process take in Florida?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Once the bail bond is posted, release typically takes 2 to 8 hours depending on jail volume and staffing. Booking before release usually takes 3 to 6 hours.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I clear an active arrest warrant without going to jail?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, using a Walk-Through Bond. A bondsman prepares the paperwork in advance, walks you into the booking desk at the county jail, and immediately posts the bond, letting you process and leave without being housed.'
+            }
           }
         ]
       }

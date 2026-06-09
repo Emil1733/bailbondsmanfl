@@ -16,8 +16,44 @@ export const metadata: Metadata = {
 export default function LocationsPage() {
     const totalCities = counties.reduce((acc, county) => acc + (county.cities?.length || 0), 0);
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://bondflorida.com/locations/#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Where are inmates held after an arrest in Florida?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Arrestees in Florida are initially processed at local municipal police departments or sheriff substations, then transferred to the primary County Jail. Releases are posted and executed directly at the central county detention facilities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I find a local jail address or phone number in Florida?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our statewide service directory lists jail addresses, booking desk phone numbers, and inmate rosters for major Florida counties including Miami-Dade, Broward, Palm Beach, Hillsborough, Orange, Duval, Lee, and Indian River."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I post a bail bond remotely in Florida?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we support remote E-Bonding across Florida. You can complete the credit application, sign the agreements, and pay the regulated premium electronically via your phone or computer, removing the need to visit the jail."
+                }
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-slate-950 text-slate-200 font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <EmergencyHeader />
 
             {/* HERO SECTION */}
