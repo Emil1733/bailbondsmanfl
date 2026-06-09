@@ -28,6 +28,13 @@ export async function generateStaticParams() {
     for (const county of counties) {
         if (county.cities) {
             for (const city of county.cities) {
+                // Skip pages that have custom static files to avoid build conflicts
+                if (
+                    (county.slug === 'lee' && city.slug === 'cape-coral') ||
+                    (county.slug === 'indian-river' && city.slug === 'vero-beach')
+                ) {
+                    continue;
+                }
                 params.push({
                     slug: county.slug,
                     city: city.slug,

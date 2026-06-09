@@ -1060,6 +1060,67 @@ export const counties: County[] = [
       ]
     }
   },
+  {
+    slug: 'indian-river',
+    name: 'Indian River County',
+    population: 159788,
+    jail: {
+      name: 'Indian River County Jail',
+      address: '4055 41st Ave, Vero Beach, FL 32960',
+      phone: '(772) 978-6334',
+      visitingHours: 'Daily 8:30 AM - 11:30 AM & 1:00 PM - 4:00 PM (Video Only)',
+      inmateSearchUrl: 'https://www.ircsheriff.org/inmate-search',
+    },
+    geo: {
+      lat: 27.6690,
+      lng: -80.4200,
+    },
+    cities: [
+      {
+        name: 'Vero Beach',
+        slug: 'vero-beach',
+        policeDepartment: {
+          name: 'Vero Beach Police Department',
+          address: '1055 20th St, Vero Beach, FL 32960',
+          phone: '(772) 978-4600'
+        },
+        travelTimeToJail: '5-10 minutes',
+        description: 'The county seat of Indian River County. Arrests by VBPD are held locally at the city precinct before immediate transfer to the Indian River County Jail just minutes away on 41st Ave.',
+        specificFaqs: [
+          {
+            question: 'How long does booking take at the Indian River County Jail?',
+            answer: 'Booking at Indian River County Jail generally takes 3-6 hours. You can call us while your loved one is still being processed to start the paperwork and speed up their release.'
+          },
+          {
+            question: 'What is the release time after posting bond in Vero Beach?',
+            answer: 'Once the bail bond is posted, release typically takes 2-4 hours, depending on jail staffing and volume. We monitor the process and notify you of the release time.'
+          }
+        ]
+      }
+    ],
+    richContent: {
+      courtInfo: {
+        name: 'Indian River County Courthouse',
+        address: '2000 16th Ave, Vero Beach, FL 32960',
+        bondHearingTimes: ['Daily: 8:30 AM (First Appearance Hearings)', 'Weekends/Holidays: 8:30 AM']
+      },
+      releaseProcess: {
+        step1: 'Intake and identification are completed at the Indian River County Jail on 41st Ave.',
+        step2: 'The bail bond is posted directly at the jail or electronically via our surety service.',
+        step3: 'The inmate is discharged. Pickup takes place at the main jail release lobby.'
+      },
+      specificFaqs: [
+        {
+          question: 'Where do I post bail for someone in Indian River County?',
+          answer: 'All bail bonds must be posted at the Indian River County Jail located at 4055 41st Ave in Vero Beach. We can handle this on your behalf so you do not need to visit the facility.'
+        },
+        {
+          question: 'How does the 10% premium work in Indian River County?',
+          answer: 'By Florida law, the surety bond premium is 10% of the total bail amount. We offer flexible payment options and payment plans for qualified co-signers.'
+        }
+      ]
+    }
+  }
 ];
 
 export async function getCounty(slug: string): Promise<County | undefined> {
