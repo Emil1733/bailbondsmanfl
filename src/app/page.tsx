@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import BailFeeCalculator from '@/components/BailFeeCalculator';
 import FAQSection from '@/components/FAQSection';
 import AuthorityArticle from '@/components/AuthorityArticle';
+import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { counties } from '@/lib/data';
 import { ShieldCheck, Clock, Scale, Phone, FileCheck, LockOpen, MapPin, ArrowRight, Star } from 'lucide-react';
 
@@ -272,6 +273,8 @@ export default function Home() {
           <FAQSection countyName="Florida" />
         </ContentContainer>
       </section>
+
+      <MobileFloatingCall />
     </main>
   );
 }

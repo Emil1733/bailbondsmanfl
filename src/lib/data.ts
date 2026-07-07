@@ -843,6 +843,27 @@ export const counties: County[] = [
             answer: 'Yes. CCPD runs frequent DUI enforcement on Cape Coral Pkwy and Del Prado Blvd. The city has the highest DUI arrest rate per capita in Lee County. A DUI arrest here triggers a mandatory 8-hour hold before bond is even eligible.'
           }
         ]
+      },
+      {
+        name: 'Bonita Springs',
+        slug: 'bonita-springs',
+        policeDepartment: {
+          name: 'Lee County Sheriff - District 4 (Bonita Springs)',
+          address: '27300 Old 41 Rd, Bonita Springs, FL 34135',
+          phone: '(239) 477-1840'
+        },
+        travelTimeToJail: '30-40 minutes',
+        description: 'Located at the southern boundary of Lee County. Arrests by LCSO District 4 are processed locally at the Old 41 Road station before being transported 25 miles north to the Ortiz Avenue Jail in Fort Myers.',
+        specificFaqs: [
+          {
+            question: 'Where do arrests in Bonita Springs go?',
+            answer: 'All arrests in Bonita Springs are processed at the Lee County Jail Core Facility (Ortiz Avenue, Fort Myers). The LCSO District 4 substation processes them locally before transport.'
+          },
+          {
+            question: 'How long is the transport from Bonita Springs to Fort Myers?',
+            answer: 'The travel time from Bonita Springs to the Ortiz Avenue jail is about 30-40 minutes via I-75 North. We recommend starting the bail process immediately so the bond can be posted before the transport arrives.'
+          }
+        ]
       }
     ],
     richContent: {

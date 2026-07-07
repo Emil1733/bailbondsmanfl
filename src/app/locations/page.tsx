@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { counties } from '@/lib/data';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { MapPin, ShieldCheck, Clock, ExternalLink, Siren, Phone, Gavel, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -265,6 +266,8 @@ export default function LocationsPage() {
                     </div>
                 </div>
             </section>
+
+            <MobileFloatingCall />
         </main>
     );
 }

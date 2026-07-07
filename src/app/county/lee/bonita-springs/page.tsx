@@ -16,14 +16,14 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Bail Bonds Cape Coral FL | 24/7 Emergency Jail Release",
-    description: "Need bail bonds in Cape Coral, FL? Call our 24/7 licensed bondsman immediately. Fast release from Lee County Jail Core Facility. Low rates & payment plans.",
+    title: "Bail Bonds Bonita Springs FL | 24/7 Emergency Lee County Jail Release",
+    description: "Need reliable bail bonds in Bonita Springs, FL? Contact our licensed bondsman 24/7. Fast release from the Lee County Jail Core Facility. 10% Rates & flexible payment plans.",
     alternates: {
-        canonical: "https://bondflorida.com/county/lee/cape-coral",
+        canonical: "https://bondflorida.com/county/lee/bonita-springs",
     },
 };
 
-export default function CapeCoralPage() {
+export default function BonitaSpringsPage() {
     const county = {
         name: "Lee County",
         slug: "lee",
@@ -41,14 +41,14 @@ export default function CapeCoralPage() {
     };
 
     const city = {
-        name: "Cape Coral",
-        slug: "cape-coral",
+        name: "Bonita Springs",
+        slug: "bonita-springs",
         policeDepartment: {
-            name: "Cape Coral Police Department",
-            address: "1100 Cultural Park Blvd, Cape Coral, FL 33990",
-            phone: "(239) 574-3223"
+            name: "Lee County Sheriff - District 4 (Bonita Springs)",
+            address: "27300 Old 41 Rd, Bonita Springs, FL 34135",
+            phone: "(239) 477-1840"
         },
-        travelTimeToJail: "25-35 minutes"
+        travelTimeToJail: "30-40 minutes"
     };
 
     const jsonLd = {
@@ -56,22 +56,22 @@ export default function CapeCoralPage() {
         "@graph": [
             {
                 "@type": "BailBondBusiness",
-                "name": "Bail Bonds Cape Coral - Bond Florida",
+                "name": "Bail Bonds Bonita Springs - Bond Florida",
                 "image": "https://bondflorida.com/og-image.jpg",
-                "description": "24/7 emergency bail bond services in Cape Coral, FL. Immediate release from Cape Coral Police Department and Lee County Jail.",
-                "url": "https://bondflorida.com/county/lee/cape-coral",
+                "description": "24/7 emergency bail bond services in Bonita Springs, FL. Fast release from Lee County Sheriff District 4 and Lee County Jail Core Facility.",
+                "url": "https://bondflorida.com/county/lee/bonita-springs",
                 "telephone": "+1-305-831-0358",
                 "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Cape Coral",
+                    "addressLocality": "Bonita Springs",
                     "addressRegion": "FL",
-                    "postalCode": "33990",
+                    "postalCode": "34135",
                     "addressCountry": "US"
                 },
                 "areaServed": [
                     {
                         "@type": "City",
-                        "name": "Cape Coral"
+                        "name": "Bonita Springs"
                     },
                     {
                         "@type": "AdministrativeArea",
@@ -93,50 +93,34 @@ export default function CapeCoralPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "How do I bail someone out of the Lee County Jail?",
+                        "name": "How do I bail someone out of the Lee County Jail in Bonita Springs?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "To bail someone out of the Lee County Jail Core Facility (Ortiz Avenue, Fort Myers), you must work with a licensed bondsman. The co-signer must pay a regulated 10% premium, provide a valid photo ID, and sign the indemnity agreement. The process can be completed entirely online via E-Bonding, and the bondsman will post the bond directly with the Lee County Sheriff's Office to secure release."
+                            "text": "To bail someone out of the Lee County Jail Core Facility (located in Fort Myers), you must work with a licensed bondsman. Since Bonita Springs arrests are processed by the Lee County Sheriff District 4 substation on Old 41 Road before being transported north to Fort Myers, we recommend starting the paperwork immediately. You can pay the 10% premium and sign forms online via E-Bonding, and we will post the surety bond directly at the Ortiz Avenue jail desk."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How long does booking take at the Lee County Jail?",
+                        "name": "Where is the police station in Bonita Springs?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Booking at the Lee County Jail Core Facility on Ortiz Avenue typically takes between 3 and 6 hours. During this period, the inmate is fingerprinted, photographed, and run for outstanding warrants. We recommend starting the bail bond paperwork immediately upon arrest so we can post the bond the moment the booking process is finalized."
+                            "text": "Bonita Springs is policed by the Lee County Sheriff's Office (LCSO) District 4 substation, located at 27300 Old 41 Rd, Bonita Springs, FL 34135. The phone number is (239) 477-1840. While initial processing occurs here, inmates are quickly transported to the main jail on Ortiz Avenue in Fort Myers."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Where is the release lobby in Lee County?",
+                        "name": "How long does transport take from Bonita Springs to the Fort Myers jail?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Inmate releases are processed at the Lee County Jail Core Facility located at 2501 Ortiz Avenue, Fort Myers, FL 33905. The release lobby is situated at the front of the complex with public parking available outside. Our local bail bondsman can coordinate meeting you at this location or handle all paperwork remotely."
+                            "text": "The transport from Bonita Springs to the Ortiz Avenue jail in Fort Myers is approximately 25 miles and takes about 30 to 40 minutes via I-75 North. Booking at the main facility takes an additional 3 to 6 hours before they can be released."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What is the standard bail bond premium in Cape Coral?",
+                        "name": "Can I pay for a Bonita Springs bail bond online?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The premium is fixed by Florida state law at 10% of the total bail amount for state charges, with a minimum fee of $100 per charge. Federal or immigration bonds have a standard premium of 15%. This fee is non-refundable and represents the bondsman's service fee for guaranteeing the defendant's appearance in court."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How do I secure a walk-through bond for an active warrant?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "A walk-through bond allows you to turn yourself in at the Lee County Jail on an active warrant, get processed, and be released immediately without spending the night in a cell. We prepare the bond paperwork in advance, accompany you to the Ortiz Avenue facility, and post the bond immediately during the intake process."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a Cape Coral bail bond online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. We offer fully digital electronic bonding (E-Bonding). You can complete the credit application, sign the indemnity agreements, and pay the 10% premium via credit card, debit card, or bank wire from your mobile phone, eliminating the need to travel to our office or the jail."
+                            "text": "Yes. Our E-Bonding service allows you to secure a release remotely. You can complete the credit application and pay the 10% premium via card or bank wire from your phone, allowing the release process to start before you even travel to the jail."
                         }
                     }
                 ]
@@ -146,7 +130,7 @@ export default function CapeCoralPage() {
 
     const combinedFaqs = [
         {
-            question: "How long does booking take at the Lee County Jail?",
+            question: "How long does booking take at the Lee County Jail for Bonita Springs arrests?",
             answer: "Booking at the Lee County Jail Core Facility on Ortiz Avenue typically takes between 3 and 6 hours. During this period, the inmate is fingerprinted, photographed, and run for outstanding warrants. We recommend starting the bail bond paperwork immediately upon arrest so we can post the bond the moment the booking process is finalized."
         },
         {
@@ -154,7 +138,7 @@ export default function CapeCoralPage() {
             answer: "Inmate releases are processed at the Lee County Jail Core Facility located at 2501 Ortiz Avenue, Fort Myers, FL 33905. The release lobby is situated at the front of the complex with public parking available outside. Our local bail bondsman can coordinate meeting you at this location or handle all paperwork remotely."
         },
         {
-            question: "What is the standard bail bond premium in Cape Coral?",
+            question: "What is the standard bail bond premium in Bonita Springs?",
             answer: "The premium is fixed by Florida state law at 10% of the total bail amount for state charges, with a minimum fee of $100 per charge. Federal or immigration bonds have a standard premium of 15%. This fee is non-refundable and represents the bondsman's service fee for guaranteeing the defendant's appearance in court."
         },
         {
@@ -162,7 +146,7 @@ export default function CapeCoralPage() {
             answer: "A walk-through bond allows you to turn yourself in at the Lee County Jail on an active warrant, get processed, and be released immediately without spending the night in a cell. We prepare the bond paperwork in advance, accompany you to the Ortiz Avenue facility, and post the bond immediately during the intake process."
         },
         {
-            question: "Can I pay for a Cape Coral bail bond online?",
+            question: "Can I pay for a Bonita Springs bail bond online?",
             answer: "Yes. We offer fully digital electronic bonding (E-Bonding). You can complete the credit application, sign the indemnity agreements, and pay the 10% premium via credit card, debit card, or bank wire from your mobile phone, eliminating the need to travel to our office or the jail."
         }
     ];
@@ -177,8 +161,8 @@ export default function CapeCoralPage() {
 
             {/* HERO */}
             <Hero
-                title={<span className="font-serif text-white">Bail Bonds in <span className="text-yellow-500">Cape Coral, FL</span></span>}
-                subtitle="Emergency 24/7 Service — Speed Release from Cape Coral PD & Ortiz Ave Jail"
+                title={<span className="font-serif text-white">Bail Bonds in <span className="text-yellow-500">Bonita Springs, FL</span></span>}
+                subtitle="Emergency 24/7 Service — Speed Release from LCSO District 4 & Ortiz Ave Jail"
                 inmateSearchUrl={county.jail.inmateSearchUrl}
             />
 
@@ -199,32 +183,32 @@ export default function CapeCoralPage() {
                             <div className="bg-red-950/20 border-l-4 border-red-500 p-8 rounded-r-lg">
                                 <div className="flex items-center gap-3 mb-4">
                                     <AlertTriangle className="w-6 h-6 text-red-500" />
-                                    <h2 className="text-2xl font-serif font-bold text-white">Lee County Jail Transfer Warning</h2>
+                                    <h2 className="text-2xl font-serif font-bold text-white">Bonita Springs Jail Transfer Warning</h2>
                                 </div>
                                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                                    When an arrest occurs, securing professional <strong>Bail Bonds Cape Coral</strong> services is the single most critical step in preventing a long, stressful transfer to the Lee County Jail Core Facility on Ortiz Avenue. If your loved one is currently detained by the Cape Coral Police Department at the Cultural Park Boulevard station, they are held in a temporary booking area.
+                                    Looking for the fastest **Bail Bonds Bonita Springs**? Call our licensed surety bondsman 24/7 for immediate dispatch to the Lee County Jail Core Facility. If your loved one is currently detained by the Lee County Sheriff's Office at the District 4 Old 41 Road substation, they are held in a temporary booking area.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed mb-4">
-                                    Standard law enforcement procedures dictate that inmates who are not bonded out within a few hours of arrest are loaded into transport vans and transferred to the main Lee County Jail Core Facility in Fort Myers. 
+                                    Standard law enforcement procedures dictate that inmates who are not bonded out within a few hours of arrest are loaded into transport vans and transferred to the main Lee County Jail Core Facility in Fort Myers.
                                 </p>
                                 <div className="bg-slate-900/50 p-4 rounded border border-slate-800 flex items-start gap-3">
                                     <Siren className="w-5 h-5 text-yellow-500 mt-1 shrink-0" />
                                     <p className="text-sm text-slate-400">
-                                        <strong>Why Timing Matters:</strong> The physical transfer from Cape Coral to the Ortiz Avenue facility requires crossing either the Cape Coral Bridge (Cape Coral Pkwy) or the Midpoint Bridge (Veterans Pkwy) and driving east on Colonial Boulevard. Once the transport van leaves Cape Coral limits, the booking process effectively resets at the county facility, which can add 4 to 8 hours of processing time before they can be released.
+                                        <strong>Why Timing Matters:</strong> The physical transfer from Bonita Springs to the Ortiz Avenue facility requires driving approximately 25 miles north via I-75. Once the transport van leaves the southern substation, the booking process effectively resets at the main facility in Fort Myers, which can add 4 to 8 hours of processing time before they can be released.
                                     </p>
                                 </div>
                             </div>
 
-                            {/* SECTION 1: EDITORIAL GUIDE TO CAPE CORAL ARRESTS */}
+                            {/* SECTION 1: EDITORIAL GUIDE TO BONITA SPRINGS ARRESTS */}
                             <article className="prose prose-invert max-w-none space-y-6">
                                 <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-yellow-500 pl-6">
-                                    The Arrest and Booking Timeline in Cape Coral
+                                    The Arrest and Booking Timeline in Bonita Springs
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    An arrest in Cape Coral typically begins with the Cape Coral Police Department (CCPD), located at 1100 Cultural Park Blvd. Arrestees are transported to the CCPD holding area for initial processing. This includes fingerprinting, mugshots, and checking for outstanding warrants. The facility on Cultural Park Boulevard is a short-term detention zone; CCPD does not house inmates long-term.
+                                    An arrest in Bonita Springs is handled by the Lee County Sheriff's Office (LCSO) District 4 substation, located at 27300 Old 41 Rd. Arrestees are transported to the District 4 precinct for initial processing. This includes fingerprinting, booking verification, and check for outstanding warrants. The facility on Old 41 Road is a temporary holding zone; it does not house inmates long-term.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed">
-                                    If a surety bond is not posted immediately, the arrestee will be transferred to the Lee County Jail Core Facility at 2501 Ortiz Avenue, Fort Myers, FL 33905. This main jail is operated by the Lee County Sheriff's Office (LCSO). The physical distance between the Cape Coral Police Department and the Ortiz Avenue facility is roughly 15 miles, but traffic congestion along the bridges during rush hour can cause significant delays.
+                                    If a surety bond is not posted immediately, the arrestee will be transferred to the Lee County Jail Core Facility at 2501 Ortiz Avenue, Fort Myers, FL 33905. The physical distance between the Bonita Springs precinct and the Ortiz Avenue facility is roughly 25 miles. The transport van runs regularly, but transit during peak rush hours on I-75 can add significant delays.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed">
                                     Once the inmate arrives at the Ortiz Avenue jail, the booking process begins again. Booking involves a medical screening, property inventory, fingerprint submission to national databases, and a review by a booking deputy. This process takes anywhere from 3 to 6 hours depending on jail volume, shift changes, and the cooperation of the arrestee.
@@ -234,21 +218,21 @@ export default function CapeCoralPage() {
                             {/* SECTION 2: MAP AND LANDMARKS GEOGRAPHY */}
                             <div className="space-y-6">
                                 <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-slate-700 pl-6">
-                                    Geographical Proximity & Lee County Jail Details
+                                    Geographical Proximity & LCSO District 4 Details
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    Navigating Cape Coral’s unique geography is essential for fast bail services. The city is bordered on the south and east by the Caloosahatchee River. If you are trying to visit the jail or meet a bondsman, you must plan your route carefully:
+                                    Navigating Bonita Springs’ geography is essential for fast bail services. The city is located in the southernmost corner of Lee County, directly bordering Collier County. If you are trying to visit the jail or meet a bondsman, you must plan your route carefully:
                                 </p>
                                 <div className="grid md:grid-cols-2 gap-6 pt-4">
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
                                         <h4 className="font-bold text-white mb-2 flex items-center gap-2">
                                             <MapPin className="w-5 h-5 text-yellow-500" />
-                                            Cape Coral Police Dept
+                                            LCSO District 4 Station
                                         </h4>
                                         <p className="text-sm text-slate-400">
-                                            1100 Cultural Park Blvd<br />
-                                            Cape Coral, FL 33990<br />
-                                            Phone: (239) 574-3223
+                                            27300 Old 41 Rd<br />
+                                            Bonita Springs, FL 34135<br />
+                                            Phone: (239) 477-1840
                                         </p>
                                     </div>
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
@@ -263,97 +247,39 @@ export default function CapeCoralPage() {
                                         </p>
                                     </div>
                                 </div>
-                                <p className="text-slate-300 leading-relaxed">
-                                    <strong>Bridge Logistics:</strong> If the arrest occurs in South Cape Coral (near Cape Coral Parkway or Del Prado Blvd), the fastest route is across the Cape Coral Bridge, continuing onto College Parkway, turning north on US-41, and then heading east on Colonial Blvd to Ortiz Ave. For North Cape Coral arrests (near Pine Island Road or Santa Barbara Blvd), the Midpoint Bridge on Veterans Parkway provides a direct path to Colonial Blvd.
-                                </p>
                             </div>
 
-                            {/* SECTION 3: COURT INFO & BOND SCHEDULES */}
+                            {/* SECTION 3: WALK-THROUGH BONDS */}
                             <article className="prose prose-invert max-w-none space-y-6">
                                 <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-yellow-500 pl-6">
-                                    First Appearance Court & Lee County Justice Center
+                                    Walk-Through Bonds for Active Warrants in Bonita Springs
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    If a defendant is not bonded out on a pre-set bond schedule within 24 hours, they must appear before a magistrate judge for a "First Appearance" hearing. These hearings are held daily, including weekends and holidays, at the Lee County Justice Center located at 1700 Monroe Street, Fort Myers, FL 33901.
+                                    If you have an active arrest warrant in Lee County, you do not have to spend a night in jail. We offer a specialized **Walk-Through Bond** service. This allows us to prepare the surety bond paperwork in advance. We then accompany you to the booking desk at the Lee County Jail Core Facility on Ortiz Avenue.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed">
-                                    The judge reviews the arrest reports to determine if probable cause exists, sets the formal bail amount, and imposes any pre-trial release conditions (such as GPS monitoring or a no-contact order in domestic violence cases). First Appearance hearings typically take place via video feed from the Ortiz Avenue facility to the courtroom downtown.
+                                    The booking deputy will process your arrest, fingerprint you, and execute the warrant. The bondsman will then immediately file the bond. This allows you to walk out the front lobby within 1-2 hours instead of being housed in a cell. This is the cleanest, most professional way to clear your name without disruption to your family or job.
                                 </p>
-                                <div className="bg-emerald-950/20 border border-emerald-500/30 p-6 rounded-lg my-6">
-                                    <h4 className="text-emerald-200 font-bold mb-2 flex items-center gap-2">
-                                        <Gavel className="w-5 h-5 text-emerald-400" />
-                                        Standard Bond Schedule in Lee County
-                                    </h4>
-                                    <p className="text-sm text-slate-300">
-                                        Lee County operates under a uniform bond schedule set by the Twentieth Judicial Circuit. For minor misdemeanors (such as first-offense DUI or petty theft), preset bonds typically range from $500 to $2,500. Third-degree felonies (such as grand theft or drug possession) usually have preset bonds starting at $5,000. Violent offenses, domestic violence charges, and certain drug trafficking charges require a mandatory appearance before a judge before any bond can be posted.
-                                    </p>
-                                </div>
                             </article>
 
-                            {/* SECTION 4: THE FINANCIALS AND STANDARD FEES */}
+                            {/* SECTION 4: E-BONDING REMOTE PROCESS */}
                             <article className="prose prose-invert max-w-none space-y-6">
                                 <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-slate-700 pl-6">
-                                    What is the Cost of a Bail Bond?
+                                    Complete E-Bonding: Fast Online Bail Bonds
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    Understanding the cost of a bail bond is critical. In the State of Florida, the premium charged by a licensed surety agent is regulated by the Department of Financial Services (DFS). The standard rate is set at <strong>10% of the total bail amount</strong> for state-level charges, with a minimum charge of $100 per warrant/charge.
+                                    We understand that traveling to a bail bonds office in the middle of the night is stressful. That is why we provide **E-Bonding**—a fully remote online bail process. Using your smartphone or computer, you can complete the application, upload your ID, and sign the indemnity contracts electronically.
                                 </p>
-                                <div className="overflow-x-auto">
-                                    <table className="w-full text-left text-sm text-slate-300 border-collapse border border-slate-800">
-                                        <thead>
-                                            <tr className="bg-slate-900 text-white border-b border-slate-800">
-                                                <th className="p-3 border-r border-slate-800">Bail Amount Set by Court</th>
-                                                <th className="p-3 border-r border-slate-800">Surety Premium (10% State Rate)</th>
-                                                <th className="p-3">Collateral Required</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr className="border-b border-slate-800">
-                                                <td className="p-3 border-r border-slate-800">$1,000.00</td>
-                                                <td className="p-3 border-r border-slate-800">$100.00 (Minimum fee)</td>
-                                                <td className="p-3">Usually Signature Only</td>
-                                            </tr>
-                                            <tr className="border-b border-slate-800">
-                                                <td className="p-3 border-r border-slate-800">$5,000.00</td>
-                                                <td className="p-3 border-r border-slate-800">$500.00</td>
-                                                <td className="p-3">Signature Only (Qualified Signers)</td>
-                                            </tr>
-                                            <tr className="border-b border-slate-800">
-                                                <td className="p-3 border-r border-slate-800">$10,000.00</td>
-                                                <td className="p-3 border-r border-slate-800">$1,000.00</td>
-                                                <td className="p-3">Signature / Indemnity Agreement</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="p-3 border-r border-slate-800">$25,000.00+</td>
-                                                <td className="p-3 border-r border-slate-800">$2,500.00+</td>
-                                                <td className="p-3">Real Estate or Cash Collateral (Case Dependent)</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                                 <p className="text-slate-300 leading-relaxed">
-                                    The 10% premium is non-refundable. This represents the agent's compensation for taking on the financial risk of the full bond amount. If a defendant fails to appear in court, the bail bondsman is responsible for paying the entire bond amount to the court, which is why co-signers (indemnitors) are required to sign indemnity contracts.
+                                    Once the 10% premium payment is completed (via credit card, debit card, or bank transfer), we electronically transmit the surety bond directly to the Lee County Sheriff's Office desk. The jail begins the release sequence immediately, and you can simply meet your loved one at the Ortiz Avenue release lobby.
                                 </p>
                             </article>
 
-                            {/* SECTION 5: SPECIALIZED ON-PAGE ADVICE (AEO / SEARCH ENTITY INTENT) */}
-                            <div className="space-y-6">
-                                <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-yellow-500 pl-6">
-                                    Walk-Through Bonds & Active Warrants
-                                </h2>
-                                <p className="text-slate-300 leading-relaxed">
-                                    If you discover you have an active warrant in Cape Coral or Lee County (e.g., failure to appear for a traffic violation, unpaid child support, or a probation infraction), you do not have to wait to get pulled over and booked. We offer a specialized **Walk-Through Bond** service.
-                                </p>
-                                <p className="text-slate-300 leading-relaxed">
-                                    With a walk-through bond, we draft all the surety documents in advance. We meet you at the Lee County Jail Core Facility (Ortiz Ave), present the pre-written bond to the booking desk, and accompany you through the booking intake. Because the bond is already prepared, you are processed, fingerprinted, and released immediately—often in less than 45 minutes—without being placed in general population cells.
-                                </p>
-                            </div>
-
-                            {/* SECTION 6: THE ADVANCED LOCAL INSIDER ADVICE */}
+                            {/* STEP-BY-STEP CHECKLIST */}
                             <div className="bg-slate-900 border border-slate-800 p-8 rounded-xl space-y-6">
-                                <h3 className="text-2xl font-serif font-bold text-white flex items-center gap-3">
-                                    <CheckCircle className="w-6 h-6 text-yellow-500 animate-pulse" />
-                                    Cape Coral Bail Process Checklist
+                                <h3 className="text-2xl font-serif font-bold text-white flex items-center gap-2">
+                                    <FileText className="w-6 h-6 text-yellow-500" />
+                                    How to Post Bail in Bonita Springs: Step-by-Step
                                 </h3>
                                 <ul className="space-y-4 text-slate-300">
                                     <li className="flex gap-3 items-start">
@@ -383,7 +309,7 @@ export default function CapeCoralPage() {
                                     <li className="flex gap-3 items-start">
                                         <div className="w-5 h-5 bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0 rounded-full text-xs mt-1">5</div>
                                         <div>
-                                            <strong>Inmate Release:</strong> Meet the defendant at the Ortiz Avenue release lobby. Release times vary from 3 to 6 hours.
+                                            <strong>Inmate Release:</strong> Meet the defendant at the Ortiz Avenue release lobby. Release times vary from 4 to 8 hours.
                                         </div>
                                     </li>
                                 </ul>
@@ -398,14 +324,14 @@ export default function CapeCoralPage() {
                             <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
                                 <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
                                 <p className="font-bold mb-8 opacity-90">
-                                    Speak directly to a licensed Cape Coral surety agent. Open 24 hours.
+                                    Speak directly to a licensed Bonita Springs surety agent. Open 24 hours.
                                 </p>
                                 <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
                                     <Phone className="w-6 h-6 text-yellow-500" />
                                     (305) 831-0358
                                 </a>
                                 <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
-                                    Serving Cape Coral and All Lee County Jails
+                                    Serving Bonita Springs and All Lee County Jails
                                 </p>
                             </div>
 
@@ -421,7 +347,7 @@ export default function CapeCoralPage() {
                                     <div className="text-xs text-slate-400 uppercase font-bold mb-1">Jail Intake Facility</div>
                                     <div className="text-white font-bold flex items-center gap-2">
                                         <Clock className="w-4 h-4 text-yellow-500" />
-                                        {city.travelTimeToJail} from Cape Coral
+                                        {city.travelTimeToJail} from Bonita Springs
                                     </div>
                                 </div>
                             </div>

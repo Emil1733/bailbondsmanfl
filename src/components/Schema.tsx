@@ -16,7 +16,7 @@ export default function Schema({ county, faqs }: SchemaProps) {
         address: {
             '@type': 'PostalAddress',
             addressLocality: county.name,
-            addressRegion: 'NM',
+            addressRegion: 'FL',
             addressCountry: 'US',
         },
         geo: {

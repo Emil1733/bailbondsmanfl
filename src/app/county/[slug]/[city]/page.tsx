@@ -30,7 +30,7 @@ export async function generateStaticParams() {
             for (const city of county.cities) {
                 // Skip pages that have custom static files to avoid build conflicts
                 if (
-                    (county.slug === 'lee' && city.slug === 'cape-coral') ||
+                    (county.slug === 'lee' && (city.slug === 'cape-coral' || city.slug === 'fort-myers' || city.slug === 'bonita-springs')) ||
                     (county.slug === 'indian-river' && city.slug === 'vero-beach')
                 ) {
                     continue;
@@ -73,43 +73,52 @@ export default async function CityPage({ params }: Props) {
         notFound();
     }
 
-    // JSON-LD Schema for Local Business (Service Area)
+    const faqs = city.specificFaqs ?? county.richContent?.specificFaqs;
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "BailBondBusiness",
-        "name": `Bail Bonds ${city.name} - Bond Florida`,
-        "image": "https://bondflorida.com/og-image.jpg", // Replace with actual
-        "description": `24/7 Bail Bond services in ${city.name}, FL. Immediate release from ${city.policeDepartment.name} and ${county.jail.name} transfer prevention.`,
-        "url": `https://bondflorida.com/county/${county.slug}/${city.slug}`,
-        "telephone": "+1-305-831-0358", // Replace with dynamic phone if available
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": city.name,
-            "addressRegion": "FL",
-            "addressCountry": "US"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": city.name
-        },
-        "priceRange": "$$",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
-        },
-        "sameAs": [
-            "https://www.facebook.com/statewidebail",
-            "https://twitter.com/statewidebail"
+        "@graph": [
+            {
+                "@type": "BailBondBusiness",
+                "name": `Bail Bonds ${city.name} - Bond Florida`,
+                "image": "https://bondflorida.com/og-image.jpg",
+                "description": `24/7 Bail Bond services in ${city.name}, FL. Immediate release from ${city.policeDepartment.name} and ${county.jail.name} transfer prevention.`,
+                "url": `https://bondflorida.com/county/${county.slug}/${city.slug}`,
+                "telephone": "+1-305-831-0358",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": city.name,
+                    "addressRegion": "FL",
+                    "addressCountry": "US"
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": city.name
+                },
+                "priceRange": "$$",
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                    ],
+                    "opens": "00:00",
+                    "closes": "23:59"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/statewidebail",
+                    "https://twitter.com/statewidebail"
+                ]
+            },
+            ...(faqs && faqs.length > 0 ? [{
+                "@type": "FAQPage",
+                "mainEntity": faqs.map((faq) => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
+            }] : [])
         ]
     };
 

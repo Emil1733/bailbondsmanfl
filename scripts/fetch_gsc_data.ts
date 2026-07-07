@@ -84,7 +84,7 @@ async function run() {
   }
 
   const sc = await auth();
-  const outDir = "C:\\Users\\tevat\\bailbondsman\\gsc\\06-09-2026";
+  const outDir = process.argv[2] || "C:\\Users\\tevat\\bailbondsman\\gsc\\07-07-2026";
   fs.mkdirSync(outDir, { recursive: true });
 
   // --- Performance data ---
