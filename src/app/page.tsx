@@ -6,7 +6,7 @@ import FAQSection from '@/components/FAQSection';
 import AuthorityArticle from '@/components/AuthorityArticle';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { counties } from '@/lib/data';
-import { ShieldCheck, Clock, Scale, Phone, FileCheck, LockOpen, MapPin, ArrowRight, Star } from 'lucide-react';
+import { ShieldCheck, Clock, Scale, Phone, FileCheck, LockOpen, MapPin, ArrowRight, Star, Globe, Car, ShieldAlert, Gavel, Zap } from 'lucide-react';
 
 // 1. STANDARD SPINE COMPONENT
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -227,6 +227,164 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </ContentContainer>
+      </section>
+
+      {/* SPECIALIZED SERVICES SECTION */}
+      <section className="py-24 bg-slate-900 border-y border-white/5">
+        <ContentContainer>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif font-bold text-white mb-4">Specialized Bail Bond Services</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+              We specialize in complex release scenarios. Choose a service type below to view requirements and fast-track instructions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link href="/services/online-bail-bonds" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <Globe className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Online Bail Bonds Florida</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Secure release 100% remotely. Approve bail, upload identification, and sign indemnity agreements securely from your mobile device.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                Learn About E-Bonding <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            <Link href="/services/dui-bail-bonds" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <Car className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">DUI Bail Bonds</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Immediate filing post- sobriety checks. We navigate mandatory 8-hour holds so the defendant is released the minute the clock runs out.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                View DUI Release Info <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            <Link href="/services/domestic-violence-bail" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <ShieldAlert className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Domestic Violence Bonds</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Confidential advisory court support. We prepare surety documentation in advance of first appearance hearings and protective orders.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                View DV Bond Process <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            <Link href="/services/traffic-warrant-bail" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <Gavel className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Traffic Warrant Amnesty</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Clear suspended licenses and active bench warrants without spending a night in jail via pre-arranged walk-through bonds.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                Clear Your Warrant <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            <Link href="/services/nebbia-hold-bail" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <Scale className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Nebbia Hold Proffers</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Financial source verification support. We prepare the detailed proffer files required to satisfy prosecutors and lift holds fast.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                Resolve Nebbia Holds <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            <Link href="/services/immigration-bail-bonds" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <LockOpen className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Immigration Bonds (ICE)</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Specialized federal surety services. Licensed to post delivery bonds directly with DHS field offices to reunite families.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                ICE Detainer Guidelines <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </div>
+        </ContentContainer>
+      </section>
+
+      {/* TRENDING SERVICE LOCATIONS SECTION */}
+      <section className="py-24 bg-slate-950 border-b border-white/5">
+        <ContentContainer>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-white mb-3">Trending Service Locations</h2>
+            <p className="text-slate-400 max-w-xl mx-auto text-sm leading-relaxed">
+              Access emergency bail resources for high-search-volume municipalities in Florida.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link href="/county/lee/cape-coral" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
+              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
+                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Lee County</span>
+                <span className="text-lg font-bold">Cape Coral</span>
+              </div>
+              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
+                Bail Bonds Cape Coral &rarr;
+              </span>
+            </Link>
+
+            <Link href="/county/lee/fort-myers" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
+              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
+                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Lee County (Seat)</span>
+                <span className="text-lg font-bold">Fort Myers</span>
+              </div>
+              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
+                Bail Bonds Fort Myers &rarr;
+              </span>
+            </Link>
+
+            <Link href="/county/lee/bonita-springs" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
+              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
+                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Lee County</span>
+                <span className="text-lg font-bold">Bonita Springs</span>
+              </div>
+              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
+                Bail Bonds Bonita Springs &rarr;
+              </span>
+            </Link>
+
+            <Link href="/county/indian-river/vero-beach" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
+              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
+                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Indian River</span>
+                <span className="text-lg font-bold">Vero Beach</span>
+              </div>
+              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
+                Bail Bonds Vero Beach &rarr;
+              </span>
+            </Link>
           </div>
         </ContentContainer>
       </section>

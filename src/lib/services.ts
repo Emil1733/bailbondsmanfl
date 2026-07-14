@@ -161,6 +161,40 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
                         ]
     },
     speakableSummary: "A Nebbia Hold is a court requirement to prove that bail funds come from legitimate sources before a defendant can be released. We prepare a financial proffer packet to satisfy the prosecutor and lift this hold quickly."
+},
+{
+    slug: 'online-bail-bonds',
+    title: 'Online Bail Bonds Florida',
+    shortDescription: 'Secure release remotely with our 100% digital E-Bonding service without leaving your home.',
+    metaDescription: 'Online Bail Bonds in Florida. 24/7 E-Bonding service. Approve bail and sign paperwork electronically from your mobile phone or computer.',
+    icon: Globe,
+    heroImage: '/images/online-hero.jpg',
+    content: {
+        intro: "Our E-Bonding technology allows co-signers and indemnitors to complete the entire bail bond process remotely. Whether you are at home, at work, or even in another U.S. state, you can secure the release of a loved one detained in any Florida facility using your smartphone or desktop computer. No office visits or trips to the jail release lobby are required.",
+        keyPoints: [
+            "100% Digital Document Signing (Docusign Secured)",
+            "Instant Credit Card, Debit Card, & Wire Transfers",
+            "Real-Time E-Filing Directly with Jail Intake Desks",
+            "Available for All Florida Jails & Municipal Holding Facilities"
+        ],
+        processSteps: [
+            { title: "1. Verify Inmate Status", desc: "Call us with the inmate's details. We pull the jail record, confirm the charge, and establish the exact preset bail bond premium." },
+            { title: "2. Sign & Pay Online", desc: "We send the credit application and indemnity agreement directly to your email or smartphone. Pay the 10% premium via credit card or bank wire." },
+            { title: "3. Immediate E-Filing", desc: "Our local agent submits the signed surety bond electronically to the jail. The release desk begins the discharge process immediately." }
+        ],
+        commonCharges: [
+            "Remote Co-Signer Applications",
+            "Out-of-State Indemnity Agreements",
+            "Emergency Late-Night E-Bonds",
+            "Federal & State Remote Surety Bonds"
+        ],
+        faq: [
+            { question: "Can I bail someone out of jail in Florida if I live in another state?", answer: "Yes, absolutely. Our secure E-Bonding system is designed exactly for this. We can process co-signers from any U.S. state, sign all agreements electronically, and submit the bond to any Florida county jail." },
+            { question: "What payment methods do you accept online?", answer: "We accept all major credit cards (Visa, MasterCard, American Express, Discover), debit cards, and bank wire transfers. For high bond amounts, we can also discuss online financing and installment plans." },
+            { question: "How secure is the E-Bonding process?", answer: "We use bank-level 256-bit encryption for all document transactions. Your personal identification details and financial documents are processed securely and confidentially in compliance with Florida state laws." }
+        ]
+    },
+    speakableSummary: "Our online bail bond system enables you to complete the entire bonding process from any location using a computer or mobile phone. We handle all paperwork and payments digitally, allowing us to post the surety bond to the jail immediately without requiring you to leave your home."
 }
 ];
 
