@@ -34,7 +34,24 @@ To push Cape Coral and Online Bail Bonds onto Page 1, we implemented a comprehen
 
 ---
 
-## 3. Local Server & Compilation
-*   Initialized local development server (`npm run dev`) at `http://localhost:3000`.
-*   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **204 static routes** (up from 178) without route conflicts.
-*   Pushed changes to master branch.
+## 3. Step 2: Jail Landmark Landing Pages
+To capture high-intent detention center queries (like "TGK jail search" and "Orient Road bail bonds"), we deployed four custom, content-rich landmark pages.
+
+### A. Deployed Landmark Pages
+*   **Orient Road Jail** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/jail/orient-road-jail/page.tsx)): Target keyword **"Orient Road Jail Bail Bonds"** (1,600+ words).
+*   **Falkenburg Road Jail** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/jail/falkenburg-road-jail/page.tsx)): Target keyword **"Falkenburg Road Jail Bail Bonds"** (1,500+ words).
+*   **TGK Correctional Center** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/jail/tgk-correctional-center/page.tsx)): Target keyword **"TGK Correctional Center Bail Bonds"** (1,600+ words).
+*   **Land O' Lakes Detention Center** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/jail/land-o-lakes-detention-center/page.tsx)): Target keyword **"Land O' Lakes Detention Center Bail Bonds"** (1,600+ words).
+
+### B. Directory & Sitemap Integration
+*   **Files Modified**: [page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/locations/page.tsx), [sitemap.ts](file:///c:/Users/tevat/bailbondsman/src/app/sitemap.ts)
+*   **Changes**:
+    *   Injected a **Jail Intake Directories** sidebar widget in the Locations Directory, enabling PageRank flows directly to the new jail landmark routes.
+    *   Appended all four new landmark routes to the XML sitemap generator.
+
+---
+
+## 4. Local Server & Compilation
+*   Running local development server (`npm run dev`) at `http://localhost:3000`.
+*   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **208 static routes** (up from 204) without route conflicts.
+*   *Changes committed locally (push pending user approval).*

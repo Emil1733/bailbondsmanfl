@@ -259,6 +259,32 @@ export default function LocationsPage() {
                                         </li>
                                     </ul>
                                 </div>
+
+                                {/* HIGH-VOLUME JAIL DIRECTORIES */}
+                                <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+                                    <h4 className="text-white font-bold mb-6 flex items-center gap-2">
+                                        <ShieldCheck className="w-5 h-5 text-yellow-500" />
+                                        Jail Intake Directories
+                                    </h4>
+                                    <div className="flex flex-col gap-3 text-sm text-slate-400">
+                                        <Link href="/jail/orient-road-jail" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Orient Road Jail</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Hillsborough</span>
+                                        </Link>
+                                        <Link href="/jail/falkenburg-road-jail" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Falkenburg Road Jail</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Hillsborough</span>
+                                        </Link>
+                                        <Link href="/jail/tgk-correctional-center" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>TGK Correctional Center</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Miami-Dade</span>
+                                        </Link>
+                                        <Link href="/jail/land-o-lakes-detention-center" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Land O' Lakes Detention</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Pasco</span>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
 
                         </aside>

@@ -71,5 +71,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }))
     );
 
-    return [...staticRoutes, ...serviceRoutes, ...matrixRoutes, ...countyRoutes, ...cityRoutes];
+    // 6. Jail Landmark Routes
+    const jailRoutes = [
+        'orient-road-jail',
+        'falkenburg-road-jail',
+        'tgk-correctional-center',
+        'land-o-lakes-detention-center'
+    ].map((slug) => ({
+        url: `${baseUrl}/jail/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+    }));
+
+    return [...staticRoutes, ...serviceRoutes, ...matrixRoutes, ...countyRoutes, ...cityRoutes, ...jailRoutes];
 }
