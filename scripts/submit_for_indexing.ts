@@ -27,6 +27,7 @@ import { google } from "googleapis";
 const KEY_FILE_PATH = path.join(process.cwd(), "gsc-credentials.json");
 const SITE_URL      = "https://bondflorida.com/";
 const SITEMAP_URL   = "https://bondflorida.com/sitemap.xml";
+const GSC_SITE_URL  = "sc-domain:bondflorida.com";
 
 // Delay between requests in ms to avoid hitting GSC rate limits
 // Google's quota is ~200 indexing requests per day for the URL Inspection API
@@ -121,7 +122,7 @@ async function run() {
       const res = await sc.urlInspection.index.inspect({
         requestBody: {
           inspectionUrl: url,
-          siteUrl: SITE_URL,
+          siteUrl: GSC_SITE_URL,
         },
       });
 
@@ -137,7 +138,7 @@ async function run() {
         await sc.urlInspection.index.inspect({
           requestBody: {
             inspectionUrl: url,
-            siteUrl: SITE_URL,
+            siteUrl: GSC_SITE_URL,
           },
         });
         console.log("📬 submitted");
