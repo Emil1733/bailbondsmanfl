@@ -16,7 +16,7 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata = {
-  title: 'Florida Bail Bonds | 24/7 Statewide Release Authority',
+  title: '24 Hour Florida Bail Bondsman | Statewide Jail Release',
   description: 'Licensed Florida Bail Bondsman serving all 67 counties. Immediate release from Miami-Dade, Broward, Orange, and Hillsborough jails. 10% Rates.',
   alternates: {
     canonical: '/',
@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* 2. REFACTORED HERO - Authority Style */}
       <Hero
-        title={<span className="font-serif tracking-tight text-white">Florida Bail Bonds <span className="text-yellow-500">& 24/7 Statewide Release</span></span>}
+        title={<span className="font-serif tracking-tight text-white">24 Hour Florida Bail Bondsman <span className="text-yellow-500">& Statewide Jail Release</span></span>}
         subtitle={<span className="block text-xl md:text-2xl text-slate-300 mt-4">Who are you looking for? <span className="text-slate-400 text-lg block mt-2">We track discharge times across all 67 counties involved.</span></span>}
       />
 

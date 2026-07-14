@@ -78,7 +78,20 @@ To capture high-intent question-style queries in SGE/Gemini search results, we d
 
 ---
 
-## 6. Local Server & Compilation
+## 6. Step 5: High-Intent Title & H1 Fine-Tuning
+To capture the most lucrative emergency transactional query ("24 Hour Florida Bail Bondsman"), we optimized the entry points of our main directory and root layouts.
+
+### A. Title & Header Optimizations
+*   **Homepage** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/page.tsx)):
+    *   Optimized Title Tag: From `"Florida Bail Bonds | 24/7 Statewide Release Authority"` to `"24 Hour Florida Bail Bondsman | Statewide Jail Release"`.
+    *   Optimized Visual H1: From `"Florida Bail Bonds & 24/7 Statewide Release"` to `"24 Hour Florida Bail Bondsman & Statewide Jail Release"`.
+*   **Locations Directory** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/locations/page.tsx)):
+    *   Optimized Title Tag: From `"Florida Bail Bonds Service Areas | Statewide County & City Directory"` to `"24 Hour Florida Bail Bondsman Locations | Statewide Directory"`.
+    *   Optimized Visual H1: From `"Florida Bail Bonds: Statewide Service Directory"` to `"24 Hour Florida Bail Bondsman: Statewide Service Directory"`.
+
+---
+
+## 7. Local Server & Compilation
 *   Running local development server (`npm run dev`) at `http://localhost:3000`.
 *   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **209 static routes** without route conflicts.
 *   *Changes committed locally (push pending user approval).*

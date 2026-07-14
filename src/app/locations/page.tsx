@@ -7,7 +7,7 @@ import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { MapPin, ShieldCheck, Clock, ExternalLink, Siren, Phone, Gavel, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: "Florida Bail Bonds Service Areas | Statewide County & City Directory",
+    title: "24 Hour Florida Bail Bondsman Locations | Statewide Directory",
     description: "Complete directory of bail bond service areas in Florida. We provide 24/7 assistance across all 67 counties, including Miami-Dade, Hillsborough, Orange, and Duval. Find your local jail and arresting agency here.",
     alternates: {
         canonical: "https://bondflorida.com/locations",
@@ -63,7 +63,7 @@ export default function LocationsPage() {
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <Breadcrumbs items={[{ label: 'Service Areas', href: '/locations' }]} />
                     <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 mt-8 leading-tight">
-                        Florida Bail Bonds:<br />
+                        24 Hour Florida Bail Bondsman:<br />
                         <span className="text-yellow-500">Statewide Service Directory</span>
                     </h1>
                     <p className="text-xl text-slate-400 max-w-3xl leading-relaxed">
