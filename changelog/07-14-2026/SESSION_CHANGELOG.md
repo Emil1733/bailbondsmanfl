@@ -62,7 +62,23 @@ To improve knowledge graph associations, we updated the county page schema gener
 
 ---
 
-## 5. Local Server & Compilation
+## 5. Step 4: Educational Resource Directory
+To capture high-intent question-style queries in SGE/Gemini search results, we deployed a comprehensive informational guide hub.
+
+### A. Deployed Resources Hub
+*   **Directory Page** ([page.tsx](file:///c:/Users/tevat/bailbondsman/src/app/resources/page.tsx)): Features a clean, accessible layout (1,600+ words) answering key queries:
+    1.  *Do county jails release on weekends in Florida?* (Analysis of 24/7 jail shifts, reduced weekend staffing, and first appearances).
+    2.  *What are the rights, risks, and liabilities of a co-signer (indemnitor)?* (Explanation of bond forfeiture, collateral liquidation, and inmate surrender conditions).
+    3.  *How long can you be held in jail without formal charges?* (Explanation of Florida Rule 3.133, 33-day charging deadline, and 40-day maximum R.O.R. thresholds).
+    4.  *Cash bonds vs. Surety bonds* (Side-by-side financial comparison, liquidity impacts, and refund mechanics).
+    5.  *What are Nebbia holds and how do you compile a proffer file?* (Required documents list, stipend signoffs, and source hearings).
+*   **Directory & Sitemap Integration**:
+    *   Appended `/resources` to the sitemap generator ([sitemap.ts](file:///c:/Users/tevat/bailbondsman/src/app/sitemap.ts)) with high Priority (0.9).
+    *   Constructed a structured FAQ Page schema detailing the top educational items for rich-results indexing.
+
+---
+
+## 6. Local Server & Compilation
 *   Running local development server (`npm run dev`) at `http://localhost:3000`.
-*   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **208 static routes** without route conflicts.
+*   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **209 static routes** without route conflicts.
 *   *Changes committed locally (push pending user approval).*

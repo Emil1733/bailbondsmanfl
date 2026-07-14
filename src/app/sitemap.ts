@@ -25,6 +25,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'daily' as const,
             priority: 1,
         },
+        {
+            url: `${baseUrl}/resources`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.9,
+        },
     ];
 
     // 2. Service Routes (High Value)
