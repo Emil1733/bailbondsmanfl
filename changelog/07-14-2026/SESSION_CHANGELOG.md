@@ -51,7 +51,18 @@ To capture high-intent detention center queries (like "TGK jail search" and "Ori
 
 ---
 
-## 4. Local Server & Compilation
+## 4. Step 3: Dynamic Local Schema (JSON-LD)
+To improve knowledge graph associations, we updated the county page schema generator.
+
+### A. Programmatic Schema Enhancements
+*   **Files Modified**: [Schema.tsx](file:///c:/Users/tevat/bailbondsman/src/components/Schema.tsx)
+*   **Changes**:
+    *   Refactored the separate LocalBusiness and FAQ scripts into a single, high-performance, unified **`@graph` JSON-LD schema**.
+    *   Embedded a nested **`DetentionCenter`** object mapping the county jail name, exact address parsing, phone contact, and geolocation coordinates. This connects the business location directly to target county detention assets for improved Google Local Packs ranking.
+
+---
+
+## 5. Local Server & Compilation
 *   Running local development server (`npm run dev`) at `http://localhost:3000`.
-*   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **208 static routes** (up from 204) without route conflicts.
+*   Validated code health by executing a production build. Next.js Turbopack compiled successfully, building all **208 static routes** without route conflicts.
 *   *Changes committed locally (push pending user approval).*
