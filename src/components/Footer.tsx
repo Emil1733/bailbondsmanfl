@@ -12,7 +12,7 @@ export default function Footer() {
     return (
         <footer className="py-16 bg-slate-950 text-slate-400 text-sm border-t border-white/5 font-sans">
             <ContentContainer>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
 
                     {/* Brand Column */}
                     <div className="space-y-4">
@@ -30,6 +30,7 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">Specialized Services</h4>
                         <ul className="space-y-2">
+                            <li><Link href="/services/online-bail-bonds" className="hover:text-yellow-500 transition-colors font-bold text-slate-300">Online E-Bonds</Link></li>
                             <li><Link href="/services/dui-bail-bonds" className="hover:text-yellow-500 transition-colors">DUI Bail Bonds</Link></li>
                             <li><Link href="/services/domestic-violence-bail" className="hover:text-yellow-500 transition-colors">Domestic Violence</Link></li>
                             <li><Link href="/services/immigration-bail-bonds" className="hover:text-yellow-500 transition-colors">Immigration Bonds</Link></li>
@@ -72,6 +73,17 @@ export default function Footer() {
                             <li><Link href="/county/lee/cape-coral" className="hover:text-yellow-500 transition-colors">Cape Coral Bail Bonds</Link></li>
                             <li><Link href="/county/pasco/new-port-richey" className="hover:text-yellow-500 transition-colors">New Port Richey Bail Bonds</Link></li>
                             <li><Link href="/county/duval/jacksonville-beach" className="hover:text-yellow-500 transition-colors">Jacksonville Beach Bail Bonds</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Jail Directories */}
+                    <div>
+                        <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">Jail Directories</h4>
+                        <ul className="space-y-2">
+                            <li><Link href="/jail/orient-road-jail" className="hover:text-yellow-500 transition-colors">Orient Road Jail</Link></li>
+                            <li><Link href="/jail/falkenburg-road-jail" className="hover:text-yellow-500 transition-colors">Falkenburg Road Jail</Link></li>
+                            <li><Link href="/jail/tgk-correctional-center" className="hover:text-yellow-500 transition-colors">TGK Correctional</Link></li>
+                            <li><Link href="/jail/land-o-lakes-detention-center" className="hover:text-yellow-500 transition-colors">Land O' Lakes Jail</Link></li>
                         </ul>
                     </div>
                 </div>
