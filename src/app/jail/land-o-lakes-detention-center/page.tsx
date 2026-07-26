@@ -8,7 +8,7 @@ import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import FAQSection from '@/components/FAQSection';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { Clock, MapPin, Phone, AlertTriangle, ShieldCheck, Siren, FileText, CheckCircle } from 'lucide-react';
-import ComprehensiveJailGuide from '@/components/ComprehensiveJailGuide';
+import ComprehensiveJailGuide, { GuideSection } from '@/components/ComprehensiveJailGuide';
 
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
     <div className={`max-w-6xl mx-auto px-6 ${className}`}>
@@ -318,7 +318,7 @@ export default function LandOLakesDetentionCenterPage() {
                             </div>
 
                         
-                            <ComprehensiveJailGuide jailName={jail.name} intro={guideData.intro} sections={guideData.sections} />
+                            <ComprehensiveJailGuide jailName={jail.name} intro={guideData.intro} sections={guideData.sections as GuideSection[]} />
 
                         </div>
 
