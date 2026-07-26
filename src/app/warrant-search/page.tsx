@@ -3,7 +3,6 @@ import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
-import WarrantForm from '@/components/WarrantForm';
 import { ShieldAlert, Search, FileSearch, Lock, CheckCircle2, Siren, Phone, Gavel, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -151,8 +150,26 @@ export default function WarrantSearchPage() {
                         <aside className="lg:col-span-4 space-y-8">
                             
                             <div className="sticky top-8 space-y-6">
-                                {/* PRIMARY CTA - DIGITAL LEAD CAPTURE */}
-                                <WarrantForm />
+                                {/* PRIMARY CTA */}
+                                <div className="bg-red-600 p-8 rounded-2xl text-white shadow-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-red-500 rounded-full blur-3xl opacity-50 -mr-10 -mt-10"></div>
+                                    
+                                    <h3 className="text-2xl font-serif font-black mb-4 leading-tight relative z-10">
+                                        Request a Confidential Warrant Check
+                                    </h3>
+                                    <p className="font-medium mb-8 text-red-100 relative z-10">
+                                        We have direct access to statewide jurisdictional databases. We can check your status safely, securely, and confidentially.
+                                    </p>
+                                    
+                                    <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-white text-red-900 py-4 rounded-xl font-black text-xl hover:bg-slate-100 transition-all relative z-10 shadow-lg">
+                                        <Phone className="w-6 h-6" />
+                                        Call (305) 831-0358
+                                    </a>
+                                    
+                                    <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center text-red-200 relative z-10">
+                                        24/7 Licensed Agents Available
+                                    </p>
+                                </div>
 
                                 {/* TRUST SIGNALS */}
                                 <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
