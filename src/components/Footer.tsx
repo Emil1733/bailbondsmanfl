@@ -108,6 +108,7 @@ export default function Footer() {
                 <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p>&copy; {currentYear} Statewide Bail Bonds Florida. All Rights Reserved.</p>
                     <div className="flex gap-8">
+                        <Link href="/warrant-search" className="hover:text-red-400 text-red-500 font-bold transition-colors">Warrant Search</Link>
                         <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
                         <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
                         <Link href="/contact" className="hover:text-white transition-colors font-bold">Contact Us</Link>
