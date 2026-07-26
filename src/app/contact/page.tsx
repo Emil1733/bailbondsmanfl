@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Contact Florida Bail Bonds | 24/7 Emergency Help',
   description: 'Connect with a licensed Florida bail bondsman immediately. 24/7 emergency phone support for all county jails. Fast release assistance starts here.',
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://bondflorida.com/contact',
   },
   openGraph: {
     url: 'https://bondflorida.com/contact',

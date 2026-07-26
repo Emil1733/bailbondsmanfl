@@ -17,23 +17,23 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Falkenburg Road Jail Bail Bonds Tampa | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Falkenburg Road Jail in Tampa, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Metro West Detention Center Bail Bonds Miami | 24/7 Fast Release",
+    description: "Need immediate bail bonds for Metro West Detention Center in Miami, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
     alternates: {
-        canonical: "https://bondflorida.com/jail/falkenburg-road-jail",
+        canonical: "https://bondflorida.com/jail/metro-west-detention-center",
     },
 };
 
-export default function FalkenburgRoadJailPage() {
+export default function MetroWestDetentionCenterPage() {
     const jail = {
-        name: "Falkenburg Road Jail (HCSO)",
-        address: "3621 Old Falkenburg Rd, Tampa, FL 33619",
-        phone: "(813) 247-8300",
+        name: "Metro West Detention Center",
+        address: "13850 NW 41st St, Miami, FL 33178",
+        phone: "(786) 263-5110",
         visitingHours: "Video Visitation Only",
-        inmateSearchUrl: "https://www.hcso.tampa.fl.us",
+        inmateSearchUrl: "https://www.miamidade.gov/corrections",
         geo: {
-            lat: 27.9622,
-            lng: -82.3278,
+            lat: 25.8115,
+            lng: -80.419,
         }
     };
 
@@ -42,26 +42,26 @@ export default function FalkenburgRoadJailPage() {
         "@graph": [
             {
                 "@type": "BailBondBusiness",
-                "name": "Falkenburg Road Jail Bail Bonds - Bond Florida",
+                "name": "Metro West Detention Center Bail Bonds - Bond Florida",
                 "image": "https://bondflorida.com/og-image.jpg",
-                "description": "24/7 emergency bail bond services for Falkenburg Road Jail in Tampa, FL. Immediate release from HCSO custody.",
-                "url": "https://bondflorida.com/jail/falkenburg-road-jail",
+                "description": "24/7 emergency bail bond services for Metro West Detention Center in Miami, FL. Immediate release from Miami-Dade custody.",
+                "url": "https://bondflorida.com/jail/metro-west-detention-center",
                 "telephone": "+1-305-831-0358",
                 "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Tampa",
+                    "addressLocality": "Miami",
                     "addressRegion": "FL",
-                    "postalCode": "33619",
+                    "postalCode": "33178",
                     "addressCountry": "US"
                 },
                 "areaServed": [
                     {
                         "@type": "City",
-                        "name": "Tampa"
+                        "name": "Miami"
                     },
                     {
                         "@type": "AdministrativeArea",
-                        "name": "Hillsborough County"
+                        "name": "Miami-Dade County"
                     }
                 ],
                 "priceRange": "$$",
@@ -79,26 +79,26 @@ export default function FalkenburgRoadJailPage() {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Where do I post bail for someone at Falkenburg Road Jail?",
+                        "name": "Where do I post bail for someone at Metro West Detention Center?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Bail bonds for Falkenburg Road Jail must be posted at the Hillsborough County Sheriff's Office booking desk, located at the main jail complex at 3621 Old Falkenburg Rd, Tampa, FL 33619. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
+                            "text": "Bail bonds for Metro West Detention Center must be posted at the main booking desk lobby located at 13850 NW 41st St, Miami, FL 33178. The bail window is open 24/7. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What is the difference between Orient Road Jail and Falkenburg Road Jail?",
+                        "name": "How long does booking take at the Metro West Detention Center in Miami?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Orient Road Jail is the primary booking and intake facility for all Hillsborough County arrests. Falkenburg Road Jail is primarily a housing facility where inmates are transferred after booking is completed. While booking occurs at Orient Road, bail bonds can be posted at either facility's HCSO desk to secure release."
+                            "text": "Booking at Metro West Detention Center typically takes 6 to 12 hours depending on booking volume, staffing, and shift change holds. The facility serves as the primary intake and processing hub for all Miami-Dade County arrests, which leads to high traffic. We recommend starting the bail bond paperwork immediately so the bond can be posted as soon as the inmate receives their booking number."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Can I pay for a bail bond at Falkenburg Road Jail online?",
+                        "name": "Can I pay for a bail bond at Metro West Detention Center online?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the HCSO booking desk electronically."
+                            "text": "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the Metro booking desk electronically."
                         }
                     }
                 ]
@@ -108,55 +108,55 @@ export default function FalkenburgRoadJailPage() {
 
     const combinedFaqs = [
         {
-            question: "Where do I post bail for someone at Falkenburg Road Jail?",
-            answer: "Bail bonds for Falkenburg Road Jail must be posted at the Hillsborough County Sheriff's Office booking desk, located at the main jail complex at 3621 Old Falkenburg Rd, Tampa, FL 33619. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
+            question: "Where do I post bail for someone at Metro West Detention Center?",
+            answer: "Bail bonds for Metro West Detention Center must be posted at the main booking desk lobby located at 13850 NW 41st St, Miami, FL 33178. The bail window is open 24/7. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
         },
         {
-            question: "What is the difference between Orient Road Jail and Falkenburg Road Jail?",
-            answer: "Orient Road Jail is the primary booking and intake facility for all Hillsborough County arrests. Falkenburg Road Jail is primarily a housing facility where inmates are transferred after booking is completed. While booking occurs at Orient Road, bail bonds can be posted at either facility's HCSO desk to secure release."
+            question: "How long does booking take at the Metro West Detention Center in Miami?",
+            answer: "Booking at Metro West Detention Center typically takes 6 to 12 hours depending on booking volume, staffing, and shift change holds. The facility serves as the primary intake and processing hub for all Miami-Dade County arrests, which leads to high traffic. We recommend starting the bail bond paperwork immediately so the bond can be posted as soon as the inmate receives their booking number."
         },
         {
-            question: "What is the release time after posting bond at Falkenburg Road?",
-            answer: "Once the surety bond is accepted and processed by the HCSO booking desk, release typically takes between 4 and 8 hours. The jail release lobby is open 24/7, and our local bondsman will monitor the discharge status and notify you when it is time to pick them up."
+            question: "What is the release time after posting bond at Metro?",
+            answer: "Once the surety bond is accepted and processed by the Metro booking desk, release typically takes between 6 and 12 hours. The jail release lobby is open 24/7, and our local bondsman will monitor the discharge status and notify you when it is time to pick them up."
         },
         {
-            question: "Can I pay for a bail bond at Falkenburg Road Jail online?",
-            answer: "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the HCSO booking desk electronically."
+            question: "Can I pay for a bail bond at Metro West Detention Center online?",
+            answer: "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the Metro booking desk electronically."
         },
         {
-            question: "What is the statutory bail bond fee in Hillsborough County?",
+            question: "What is the statutory bail bond fee in Miami-Dade County?",
             answer: "By Florida law, the premium for a state surety bond is 10% of the total bail amount (with a minimum fee of $100 per charge). For example, a $5,000 bond requires a non-refundable premium of $500. We offer flexible payment plans with low down payments for qualified co-signers."
         }
     ];
 
     const guideData = {
     "intro": [
-        "Falkenburg Road Jail is the massive, 3,300-bed direct supervision facility in Hillsborough County. It serves as the long-term pre-trial housing center for inmates who have completed intake at Orient Road.",
-        "Bonding an inmate out of Falkenburg requires coordinating with the HCSO records department to execute a housing release."
+        "Metro West Detention Center is the largest correctional facility in Miami-Dade County. While TGK handles primary intake, Metro West houses a massive population of pre-trial inmates awaiting trial in the 11th Judicial Circuit.",
+        "Securing a bond for an inmate already housed at Metro West requires coordinating with the central records department to facilitate a transfer release."
     ],
     "sections": [
         {
             "id": "booking",
-            "title": "Pre-Trial Housing Status",
+            "title": "Pre-Trial Housing & Transfers",
             "icon": "AlertCircle",
             "content": [
-                "If an inmate is located at Falkenburg, they have already passed through central intake. Posting a bond here means the release order must be sent from the clerk's office to the housing unit deputies, who then escort the inmate to the Falkenburg release center. This internal logistics chain can take 6 to 12 hours."
+                "Unlike TGK, Metro West is primarily a housing facility rather than a booking hub. If your loved one was transferred here, it means they have completed the initial intake and are in long-term pre-trial status. Posting a bond for an inmate at Metro West requires the paperwork to be routed through the Miami-Dade Corrections central system, which can sometimes add administrative time to the release."
             ]
         },
         {
             "id": "hearings",
-            "title": "Bond Reduction & Arthur Hearings",
+            "title": "Navigating Miami-Dade Pre-Trial",
             "icon": "Scale",
             "content": [
-                "Since these inmates have already had their first appearance, any changes to their bond require a formal motion in front of a 13th Judicial Circuit judge. If an Arthur Hearing results in a bond reduction, we immediately execute the new bond amount to secure their release from Falkenburg."
+                "Inmates housed at Metro West have already had their first appearance. If they are seeking a bond reduction (an Arthur Hearing), it must be scheduled with their assigned felony or misdemeanor judge at the Richard E. Gerstein Justice Building. Once a judge signs the order modifying the bond, we execute the new surety bond immediately."
             ]
         },
         {
             "id": "facility",
-            "title": "Falkenburg Operations",
+            "title": "Metro West Logistics",
             "icon": "Info",
             "content": [
-                "Falkenburg Road operates with advanced video visitation and uses specific vendors for inmate trust funds. The release lobby is distinct from the intake lobby, and our agents will guide you to the exact pickup point on Falkenburg Road once the discharge is finalized."
+                "Located on NW 41st Street, further west than TGK, this massive complex strictly enforces visitation rules and uses specific vendors for inmate accounts. Releases from Metro West can sometimes be routed back through TGK depending on staffing and transport schedules, so having a bondsman monitor the exact release point is critical."
             ]
         }
     ]
@@ -172,8 +172,8 @@ export default function FalkenburgRoadJailPage() {
 
             {/* HERO */}
             <Hero
-                title={<span className="font-serif text-white">Falkenburg Road Jail <span className="text-yellow-500">Bail Bonds</span></span>}
-                subtitle="24/7 Emergency Jail Release — Tampa Housing Facility Specialists"
+                title={<span className="font-serif text-white">Metro West Detention Center <span className="text-yellow-500">Bail Bonds</span></span>}
+                subtitle="24/7 Emergency Jail Release — Miami-Dade Primary Intake Specialists"
                 inmateSearchUrl={jail.inmateSearchUrl}
             />
 
@@ -182,7 +182,7 @@ export default function FalkenburgRoadJailPage() {
                     <Breadcrumbs
                         items={[
                             { label: "Jail Directories", href: "/locations" },
-                            { label: "Falkenburg Road Jail", href: "/jail/falkenburg-road-jail" }
+                            { label: "Metro West Detention Center", href: "/jail/metro-west-detention-center" }
                         ]}
                     />
                     <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -197,23 +197,23 @@ export default function FalkenburgRoadJailPage() {
                                     <h2 className="text-2xl font-serif font-bold text-white">Emergency Release Warning</h2>
                                 </div>
                                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                                    Need immediate **Falkenburg Road Jail Bail Bonds**? Speak with a licensed bondsman 24/7. Falkenburg Road Jail is the primary housing center for all Hillsborough County inmates. If your loved one has completed booking at Orient Road, they will be transferred here for housing.
+                                    Need immediate **Metro West Detention Center Bail Bonds**? Speak with a licensed bondsman 24/7. Turner Guilford Knight (Metro) is the primary intake center for all Miami-Dade County arrests. If your loved one is arrested by the local municipal agencies or the Miami-Dade Corrections, they will be transported here immediately.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed mb-4">
-                                    Because this is a large-scale housing facility, release times after posting bond can take 4 to 8 hours. Starting the bail process early is critical to secure release the minute the bond is filed.
+                                    Because this is a high-volume booking facility, booking delays can stretch to 12 hours. Starting the bail process while they are still in transport or booking is critical to secure release the minute they are eligible.
                                 </p>
                             </div>
 
                             {/* SECTION 1: BOOKING TIMELINE */}
                             <article className="prose prose-invert max-w-none space-y-6">
                                 <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-yellow-500 pl-6">
-                                    Understanding the Falkenburg Road Jail Facility
+                                    Understanding the Metro West Detention Center Booking Process
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    Falkenburg Road Jail, located at 3621 Old Falkenburg Rd, Tampa, FL 33619, is a state-of-the-art direct-supervision facility operated by the Hillsborough County Sheriff's Office. Unlike Orient Road, which handles the initial intake, Falkenburg Road is designed for long-term housing and rehabilitative programs.
+                                    Metro West Detention Center, located at 13850 NW 41st St, Miami, FL 33178, is a 1,300-bed direct supervision facility operated by the Miami-Dade Corrections. It serves as the primary processing center for adult males and females arrested in Miami-Dade County.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed">
-                                    When an individual is transferred from Orient Road to Falkenburg Road, they are assigned to a housing pod based on their charges and custody level. While they are housed here, they are eligible for visitation, phone calls, and medical care. The HCSO booking desk at Falkenburg Road is open 24/7 to accept surety bonds and process discharges.
+                                    The booking sequence includes a medical screening, inventory of personal property, fingerprinting, mugshots, and checking local and federal databases for active warrants. This administrative sequence takes between 6 and 12 hours. The bond cannot be posted until the booking process is finalized and the inmate receives an active booking number.
                                 </p>
                             </article>
 
@@ -223,7 +223,7 @@ export default function FalkenburgRoadJailPage() {
                                     Facility Coordinates & Navigation
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    The Falkenburg Road Jail is located in East Tampa, just off Falkenburg Road between SR-60 (Adamo Drive) and Broadway Avenue.
+                                    Metro is conveniently located in Doral, just north of Miami International Airport, with quick access from the Palmetto Expressway (SR-826) and the Dolphin Expressway (SR-836).
                                 </p>
                                 <div className="grid md:grid-cols-2 gap-6 pt-4">
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
@@ -232,9 +232,9 @@ export default function FalkenburgRoadJailPage() {
                                             Physical Location
                                         </h4>
                                         <p className="text-sm text-slate-400">
-                                            3621 Old Falkenburg Rd<br />
-                                            Tampa, FL 33619<br />
-                                            Phone: (813) 247-8300
+                                            7000 NW 41st St<br />
+                                            Miami, FL 33166<br />
+                                            Phone: (786) 263-5110
                                         </p>
                                     </div>
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
@@ -245,22 +245,35 @@ export default function FalkenburgRoadJailPage() {
                                         <p className="text-sm text-slate-400">
                                             Open 24 Hours a Day<br />
                                             7 Days a Week<br />
-                                            Hillsborough County Sheriff's Office
+                                            Miami-Dade Corrections Desk
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* SECTION 3: E-BONDING REMOTE PROCESS */}
+                            {/* SECTION 3: WALK-THROUGH WARRANT GUIDE */}
+                            <article className="prose prose-invert max-w-none space-y-6">
+                                <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-yellow-500 pl-6">
+                                    Clearing Warrants at Metro West Detention Center
+                                </h2>
+                                <p className="text-slate-300 leading-relaxed">
+                                    If you have an active warrant in Miami-Dade County, do not wait to get arrested. We offer a specialized **Walk-Through Warrant Bond** service. We coordinate with you, draft the bond paperwork in advance, and meet you at the Metro lobby.
+                                </p>
+                                <p className="text-slate-300 leading-relaxed">
+                                    We escort you to the booking window. The deputies will execute the warrant, process your fingerprints, and we immediately file the pre-written bond. This rapid process allows you to clear the warrant and leave the lobby in about 45 to 90 minutes, avoiding a long stay in a holding cell.
+                                </p>
+                            </article>
+
+                            {/* SECTION 4: E-BONDING REMOTE PROCESS */}
                             <article className="prose prose-invert max-w-none space-y-6">
                                 <h2 className="text-3xl font-serif font-bold text-white border-l-4 border-slate-700 pl-6">
                                     Fast Electronic Bonding (E-Bonding)
                                 </h2>
                                 <p className="text-slate-300 leading-relaxed">
-                                    We provide fully remote digital E-Bonding for Falkenburg Road Jail. Using your smartphone or computer, you can complete all application documents, verify your identity, and pay the 10% premium via credit card or wire transfer.
+                                    We provide fully remote digital E-Bonding for Metro West Detention Center. Using your smartphone or computer, you can complete all application documents, verify your identity, and pay the 10% premium via credit card or wire transfer.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed">
-                                    Once completed, we transmit the surety bond electronically directly to the HCSO booking desk. The jail begins the release sequence immediately, and you can simply meet your loved one at the release lobby, eliminating the need to travel to our office or wait in line at the jail.
+                                    Once completed, we transmit the surety bond electronically directly to the Metro booking desk. The jail begins the release sequence immediately, and you can simply meet your loved one at the release lobby, eliminating the need to travel to our office or wait in line at the jail.
                                 </p>
                             </article>
 
@@ -268,7 +281,7 @@ export default function FalkenburgRoadJailPage() {
                             <div className="bg-slate-900 border border-slate-800 p-8 rounded-xl space-y-6">
                                 <h3 className="text-2xl font-serif font-bold text-white flex items-center gap-2">
                                     <FileText className="w-6 h-6 text-yellow-500" />
-                                    Falkenburg Road Jail Release Checklist
+                                    Metro West Detention Center Release Checklist
                                 </h3>
                                 <ul className="space-y-4 text-slate-300">
                                     <li className="flex gap-3 items-start">
@@ -280,7 +293,7 @@ export default function FalkenburgRoadJailPage() {
                                     <li className="flex gap-3 items-start">
                                         <div className="w-5 h-5 bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0 rounded-full text-xs mt-1">2</div>
                                         <div>
-                                            <strong>Call Our Agent:</strong> Speak with a licensed Hillsborough bondsman at (305) 831-0358 to confirm the bond amount.
+                                            <strong>Call Our Agent:</strong> Speak with a licensed Miami bondsman at (305) 831-0358 to confirm the bond amount.
                                         </div>
                                     </li>
                                     <li className="flex gap-3 items-start">
@@ -292,13 +305,13 @@ export default function FalkenburgRoadJailPage() {
                                     <li className="flex gap-3 items-start">
                                         <div className="w-5 h-5 bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0 rounded-full text-xs mt-1">4</div>
                                         <div>
-                                            <strong>Bond Submission:</strong> We submit the surety bond directly to the Falkenburg Road Jail booking window.
+                                            <strong>Bond Submission:</strong> We submit the surety bond directly to the Metro booking window.
                                         </div>
                                     </li>
                                     <li className="flex gap-3 items-start">
                                         <div className="w-5 h-5 bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0 rounded-full text-xs mt-1">5</div>
                                         <div>
-                                            <strong>Discharge:</strong> Meet the defendant at the main Falkenburg Road release lobby. Release times vary from 4 to 8 hours.
+                                            <strong>Discharge:</strong> Meet the defendant at the main Metro release lobby. Release times vary from 6 to 12 hours.
                                         </div>
                                     </li>
                                 </ul>
@@ -321,28 +334,25 @@ export default function FalkenburgRoadJailPage() {
                             <div className="border border-slate-800 bg-slate-900 h-[300px] grayscale hover:grayscale-0 transition-all duration-700 relative group">
                                 <DynamicMap lat={jail.geo.lat} lng={jail.geo.lng} jailName={jail.name} />
                                 <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 p-4 border border-slate-700 backdrop-blur-sm">
-                                    <div className="text-xs text-slate-400 uppercase font-bold mb-1">Jail Housing Facility</div>
+                                    <div className="text-xs text-slate-400 uppercase font-bold mb-1">Jail Intake Facility</div>
                                     <div className="text-white font-bold flex items-center gap-2">
                                         <Clock className="w-4 h-4 text-yellow-500" />
-                                        Primary Housing Hub (Falkenburg Road)
+                                        Primary Booking Hub (Metro Miami)
                                     </div>
                                 </div>
                             </div>
 
                             {/* FAQ */}
                             <div className="border-t border-slate-800 pt-12">
-                                <FAQSection countyName="Falkenburg Road Jail" customFaqs={combinedFaqs} />
+                                <FAQSection countyName="Metro West Detention Center" customFaqs={combinedFaqs} />
                             </div>
 
                             {/* Local Navigation Links */}
                             <div className="border-t border-slate-800 pt-12">
-                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Other Hillsborough Facilities</h3>
+                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Other Miami Facilities</h3>
                                 <div className="flex flex-col gap-3">
-                                    <Link href="/jail/orient-road-jail" className="text-sm text-yellow-600 hover:text-white transition-colors">
-                                        Orient Road Jail Directory &rarr;
-                                    </Link>
-                                    <Link href="/county/hillsborough" className="text-sm text-slate-400 hover:text-white transition-colors">
-                                        All Hillsborough County Locations &rarr;
+                                    <Link href="/county/miami-dade" className="text-sm text-yellow-600 hover:text-white transition-colors">
+                                        Miami-Dade County Directory &rarr;
                                     </Link>
                                 </div>
                             </div>
@@ -351,14 +361,14 @@ export default function FalkenburgRoadJailPage() {
                             <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
                                 <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
                                 <p className="font-bold mb-8 opacity-90">
-                                    Speak directly to a licensed Falkenburg Road surety agent. Open 24 hours.
+                                    Speak directly to a licensed Miami surety agent. Open 24 hours.
                                 </p>
                                 <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
                                     <Phone className="w-6 h-6 text-yellow-500" />
                                     (305) 831-0358
                                 </a>
                                 <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
-                                    Serving Hillsborough County and All Florida Jails
+                                    Serving Miami-Dade County and All Florida Jails
                                 </p>
                             </div>
 

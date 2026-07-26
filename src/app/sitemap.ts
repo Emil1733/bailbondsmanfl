@@ -31,6 +31,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'weekly' as const,
             priority: 0.9,
         },
+        {
+            url: `${baseUrl}/about`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/privacy`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly' as const,
+            priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/terms`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly' as const,
+            priority: 0.5,
+        },
     ];
 
     // 2. Service Routes (High Value)
@@ -82,7 +100,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'orient-road-jail',
         'falkenburg-road-jail',
         'tgk-correctional-center',
-        'land-o-lakes-detention-center'
+        'land-o-lakes-detention-center',
+        'broward-county-main-jail',
+        'orange-county-booking-and-release-center',
+        'pinellas-county-jail',
+        'palm-beach-county-main-detention-center',
+        'lee-county-core-facility',
+        'duval-county-pre-trial-detention-facility',
+        'metro-west-detention-center'
     ].map((slug) => ({
         url: `${baseUrl}/jail/${slug}`,
         lastModified: new Date(),

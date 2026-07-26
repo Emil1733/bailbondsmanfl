@@ -8,6 +8,7 @@ import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import FAQSection from '@/components/FAQSection';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { Clock, MapPin, Phone, AlertTriangle, ShieldCheck, Siren, FileText, CheckCircle } from 'lucide-react';
+import ComprehensiveJailGuide from '@/components/ComprehensiveJailGuide';
 
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
     <div className={`max-w-6xl mx-auto px-6 ${className}`}>
@@ -127,6 +128,39 @@ export default function LandOLakesDetentionCenterPage() {
             answer: "By Florida law, the premium for a state surety bond is 10% of the total bail amount (with a minimum fee of $100 per charge). For example, a $5,000 bond requires a non-refundable premium of $500. We offer flexible payment plans with low down payments for qualified co-signers."
         }
     ];
+
+    const guideData = {
+    "intro": [
+        "The Land O' Lakes Detention Center is the sole booking and housing facility for the Pasco County Sheriff's Office. It handles all arrests for New Port Richey, Dade City, and surrounding areas.",
+        "Dealing with the 6th Judicial Circuit (Pasco division) requires localized knowledge of the county's specific bond schedules."
+    ],
+    "sections": [
+        {
+            "id": "booking",
+            "title": "Pasco County Central Intake",
+            "icon": "AlertCircle",
+            "content": [
+                "The Pasco Sheriff's Office processes all arrestees through the Land O' Lakes facility. The intake process is thorough, and because the facility is centralized for a sprawling county, booking queues can be long. We monitor the Pasco jail management system to alert you the minute the booking is complete."
+            ]
+        },
+        {
+            "id": "hearings",
+            "title": "Pasco Magistrate Court",
+            "icon": "Scale",
+            "content": [
+                "First appearances are conducted daily. Because Pasco County spans two main courthouses (New Port Richey and Dade City), having a bondsman who understands how to file paperwork electronically across the 6th Circuit ensures there are no delays in the release order reaching the jail."
+            ]
+        },
+        {
+            "id": "facility",
+            "title": "Land O' Lakes Operations",
+            "icon": "Info",
+            "content": [
+                "Located centrally in Land O' Lakes, the facility allows for 24/7 bond postings. Pasco uses strict guidelines for visitation and mail. Once the surety bond is accepted by the desk deputies, the inmate is usually discharged to the front lobby within 4 to 8 hours."
+            ]
+        }
+    ]
+};
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -283,25 +317,13 @@ export default function LandOLakesDetentionCenterPage() {
                                 </ul>
                             </div>
 
+                        
+                            <ComprehensiveJailGuide jailName={jail.name} intro={guideData.intro} sections={guideData.sections} />
+
                         </div>
 
                         {/* RIGHT COL: SIDEBAR TOOLS */}
                         <div className="lg:col-span-5 space-y-12">
-
-                            {/* Sticky Urgency CTA */}
-                            <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
-                                <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
-                                <p className="font-bold mb-8 opacity-90">
-                                    Speak directly to a licensed Land O' Lakes surety agent. Open 24 hours.
-                                </p>
-                                <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
-                                    <Phone className="w-6 h-6 text-yellow-500" />
-                                    (305) 831-0358
-                                </a>
-                                <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
-                                    Serving Pasco County and All Florida Jails
-                                </p>
-                            </div>
 
                             {/* Estimator */}
                             <div>
@@ -335,7 +357,22 @@ export default function LandOLakesDetentionCenterPage() {
                                 </div>
                             </div>
 
-                        </div>
+{/* Sticky Urgency CTA */}
+                            <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
+                                <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
+                                <p className="font-bold mb-8 opacity-90">
+                                    Speak directly to a licensed Land O' Lakes surety agent. Open 24 hours.
+                                </p>
+                                <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
+                                    <Phone className="w-6 h-6 text-yellow-500" />
+                                    (305) 831-0358
+                                </a>
+                                <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
+                                    Serving Pasco County and All Florida Jails
+                                </p>
+                            </div>
+
+                                                    </div>
 
                     </div>
                 </ContentContainer>

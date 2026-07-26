@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'About Bond Florida | Licensed Bail Bondsmen Serving Florida',
   description: 'Learn about our licensed bail bond agents, statewide coverage, and commitment to fast, professional release services across all Florida counties.',
   alternates: {
-    canonical: '/about',
+    canonical: 'https://bondflorida.com/about',
   },
 };
 

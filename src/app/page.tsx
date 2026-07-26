@@ -19,7 +19,7 @@ export const metadata = {
   title: '24 Hour Florida Bail Bondsman | Statewide Jail Release',
   description: 'Licensed Florida Bail Bondsman serving all 67 counties. Immediate release from Miami-Dade, Broward, Orange, and Hillsborough jails. 10% Rates.',
   alternates: {
-    canonical: '/',
+    canonical: 'https://bondflorida.com',
   },
   openGraph: {
     url: 'https://bondflorida.com/',

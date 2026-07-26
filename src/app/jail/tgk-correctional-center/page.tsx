@@ -8,6 +8,7 @@ import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import FAQSection from '@/components/FAQSection';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { Clock, MapPin, Phone, AlertTriangle, ShieldCheck, Siren, FileText, CheckCircle } from 'lucide-react';
+import ComprehensiveJailGuide from '@/components/ComprehensiveJailGuide';
 
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
     <div className={`max-w-6xl mx-auto px-6 ${className}`}>
@@ -127,6 +128,39 @@ export default function TgkCorrectionalCenterPage() {
             answer: "By Florida law, the premium for a state surety bond is 10% of the total bail amount (with a minimum fee of $100 per charge). For example, a $5,000 bond requires a non-refundable premium of $500. We offer flexible payment plans with low down payments for qualified co-signers."
         }
     ];
+
+    const guideData = {
+    "intro": [
+        "The Turner Guilford Knight (TGK) Correctional Center in Miami is the primary intake facility for the Miami-Dade Corrections and Rehabilitation Department. As the central booking hub for the 11th Judicial Circuit, it processes arrests from all over Miami-Dade, including Miami Beach and Doral.",
+        "Its fast-paced, high-security environment requires bondsmen to have immediate, 24/7 access to the booking windows to ensure rapid release."
+    ],
+    "sections": [
+        {
+            "id": "booking",
+            "title": "Miami-Dade Central Intake",
+            "icon": "AlertCircle",
+            "content": [
+                "TGK is notorious for its complex intake gauntlet. When a suspect is brought in by MDPD, they are held in large holding cells while waiting for their fingerprints to clear NCIC/FCIC databases. A bond cannot be executed until the Miami-Dade Clerk of Courts updates the CJIS system with an active booking number. This administrative lag usually takes 6 to 10 hours."
+            ]
+        },
+        {
+            "id": "hearings",
+            "title": "11th Circuit Bond Court",
+            "icon": "Scale",
+            "content": [
+                "Bond hearings in Miami-Dade are fast-paced and highly structured. Held daily, magistrates determine if a defendant is a flight risk. Miami judges rely heavily on the Pretrial Services (PTS) risk assessment matrix. If the judge grants a surety bond, we immediately file the paperwork at the TGK bond window on the first floor."
+            ]
+        },
+        {
+            "id": "facility",
+            "title": "TGK Operations & Logistics",
+            "icon": "Info",
+            "content": [
+                "Located on NW 41st Street, TGK operates 24/7. They utilize specialized third-party vendors for inmate communications. Because of the high volume of releases, the discharge area can be crowded. Our agents track the internal jail management system to pinpoint exactly when your loved one will walk out the door."
+            ]
+        }
+    ]
+};
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -283,25 +317,13 @@ export default function TgkCorrectionalCenterPage() {
                                 </ul>
                             </div>
 
+                        
+                            <ComprehensiveJailGuide jailName={jail.name} intro={guideData.intro} sections={guideData.sections} />
+
                         </div>
 
                         {/* RIGHT COL: SIDEBAR TOOLS */}
                         <div className="lg:col-span-5 space-y-12">
-
-                            {/* Sticky Urgency CTA */}
-                            <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
-                                <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
-                                <p className="font-bold mb-8 opacity-90">
-                                    Speak directly to a licensed Miami surety agent. Open 24 hours.
-                                </p>
-                                <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
-                                    <Phone className="w-6 h-6 text-yellow-500" />
-                                    (305) 831-0358
-                                </a>
-                                <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
-                                    Serving Miami-Dade County and All Florida Jails
-                                </p>
-                            </div>
 
                             {/* Estimator */}
                             <div>
@@ -335,7 +357,22 @@ export default function TgkCorrectionalCenterPage() {
                                 </div>
                             </div>
 
-                        </div>
+{/* Sticky Urgency CTA */}
+                            <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
+                                <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
+                                <p className="font-bold mb-8 opacity-90">
+                                    Speak directly to a licensed Miami surety agent. Open 24 hours.
+                                </p>
+                                <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
+                                    <Phone className="w-6 h-6 text-yellow-500" />
+                                    (305) 831-0358
+                                </a>
+                                <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
+                                    Serving Miami-Dade County and All Florida Jails
+                                </p>
+                            </div>
+
+                                                    </div>
 
                     </div>
                 </ContentContainer>

@@ -279,6 +279,34 @@ export default function LocationsPage() {
                                             <span>TGK Correctional Center</span>
                                             <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Miami-Dade</span>
                                         </Link>
+                                        <Link href="/jail/metro-west-detention-center" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Metro West Detention</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Miami-Dade</span>
+                                        </Link>
+                                        <Link href="/jail/broward-county-main-jail" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Broward Main Jail</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Broward</span>
+                                        </Link>
+                                        <Link href="/jail/palm-beach-county-main-detention-center" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Palm Beach Detention</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Palm Beach</span>
+                                        </Link>
+                                        <Link href="/jail/orange-county-booking-and-release-center" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Orange County BRC</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Orange</span>
+                                        </Link>
+                                        <Link href="/jail/pinellas-county-jail" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Pinellas County Jail</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Pinellas</span>
+                                        </Link>
+                                        <Link href="/jail/duval-county-pre-trial-detention-facility" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Duval Pre-Trial Facility</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Duval</span>
+                                        </Link>
+                                        <Link href="/jail/lee-county-core-facility" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
+                                            <span>Lee County Core Facility</span>
+                                            <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Lee</span>
+                                        </Link>
                                         <Link href="/jail/land-o-lakes-detention-center" className="hover:text-yellow-500 transition-colors flex items-center justify-between">
                                             <span>Land O' Lakes Detention</span>
                                             <span className="text-[10px] text-slate-600 bg-slate-950 px-1.5 py-0.5 rounded">Pasco</span>

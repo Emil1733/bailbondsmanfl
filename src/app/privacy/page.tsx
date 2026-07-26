@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+
+    alternates: {
+        canonical: "https://bondflorida.com/privacy",
+    },
 };
 
 export default function PrivacyPage() {

@@ -8,6 +8,7 @@ import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import FAQSection from '@/components/FAQSection';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { Clock, MapPin, Phone, AlertTriangle, ShieldCheck, Siren, FileText, CheckCircle } from 'lucide-react';
+import ComprehensiveJailGuide from '@/components/ComprehensiveJailGuide';
 
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
     <div className={`max-w-6xl mx-auto px-6 ${className}`}>
@@ -127,6 +128,39 @@ export default function OrientRoadJailPage() {
             answer: "By Florida law, the premium for a state surety bond is 10% of the total bail amount (with a minimum fee of $100 per charge). For example, a $5,000 bond requires a non-refundable premium of $500. We offer flexible payment plans with low down payments for qualified co-signers."
         }
     ];
+
+    const guideData = {
+    "intro": [
+        "Orient Road Jail is the primary booking and intake facility for the Hillsborough County Sheriff's Office (HCSO). Anyone arrested in Tampa or Hillsborough County comes through these doors first.",
+        "Navigating the 13th Judicial Circuit and the HCSO central booking desk requires speed and accuracy to prevent the inmate from being transferred to general housing."
+    ],
+    "sections": [
+        {
+            "id": "booking",
+            "title": "HCSO Central Intake",
+            "icon": "AlertCircle",
+            "content": [
+                "Orient Road handles the initial booking for every arrest in the county. The process includes DNA swabbing (for felonies), LiveScan fingerprinting, and warrant checks. If a bond is posted immediately after the booking number is generated, the defendant can be released directly from Orient Road without being transferred."
+            ]
+        },
+        {
+            "id": "hearings",
+            "title": "13th Circuit Video Court",
+            "icon": "Scale",
+            "content": [
+                "First Appearance hearings are conducted via video from the Orient Road Jail to the Hillsborough County courthouse. Judges review the charges and establish bail. Because we monitor the court dockets in real-time, we can file the surety bond the exact moment the judge's order hits the clerk's system."
+            ]
+        },
+        {
+            "id": "facility",
+            "title": "Tampa Facility Operations",
+            "icon": "Info",
+            "content": [
+                "The release lobby at Orient Road is open 24/7. HCSO operates a highly efficient system, and typical release times are between 4 and 8 hours after the bond is posted. We provide families with direct tracking information so you know exactly when to arrive at the facility."
+            ]
+        }
+    ]
+};
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -283,25 +317,13 @@ export default function OrientRoadJailPage() {
                                 </ul>
                             </div>
 
+                        
+                            <ComprehensiveJailGuide jailName={jail.name} intro={guideData.intro} sections={guideData.sections} />
+
                         </div>
 
                         {/* RIGHT COL: SIDEBAR TOOLS */}
                         <div className="lg:col-span-5 space-y-12">
-
-                            {/* Sticky Urgency CTA */}
-                            <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
-                                <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
-                                <p className="font-bold mb-8 opacity-90">
-                                    Speak directly to a licensed Orient Road surety agent. Open 24 hours.
-                                </p>
-                                <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
-                                    <Phone className="w-6 h-6 text-yellow-500" />
-                                    (305) 831-0358
-                                </a>
-                                <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
-                                    Serving Hillsborough County and All Florida Jails
-                                </p>
-                            </div>
 
                             {/* Estimator */}
                             <div>
@@ -338,7 +360,22 @@ export default function OrientRoadJailPage() {
                                 </div>
                             </div>
 
-                        </div>
+{/* Sticky Urgency CTA */}
+                            <div className="bg-yellow-500 p-8 rounded-2xl text-black shadow-2xl sticky top-8">
+                                <h3 className="text-2xl font-serif font-black mb-4 leading-tight">Need Immediate Bail Help?</h3>
+                                <p className="font-bold mb-8 opacity-90">
+                                    Speak directly to a licensed Orient Road surety agent. Open 24 hours.
+                                </p>
+                                <a href="tel:+13058310358" className="flex items-center justify-center gap-3 bg-black text-white py-5 rounded-xl font-black text-xl hover:bg-slate-900 transition-all">
+                                    <Phone className="w-6 h-6 text-yellow-500" />
+                                    (305) 831-0358
+                                </a>
+                                <p className="text-[10px] uppercase font-black tracking-widest mt-6 text-center opacity-70">
+                                    Serving Hillsborough County and All Florida Jails
+                                </p>
+                            </div>
+
+                                                    </div>
 
                     </div>
                 </ContentContainer>

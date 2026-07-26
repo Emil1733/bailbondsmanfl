@@ -80,10 +80,15 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">Jail Directories</h4>
                         <ul className="space-y-2">
-                            <li><Link href="/jail/orient-road-jail" className="hover:text-yellow-500 transition-colors">Orient Road Jail</Link></li>
-                            <li><Link href="/jail/falkenburg-road-jail" className="hover:text-yellow-500 transition-colors">Falkenburg Road Jail</Link></li>
                             <li><Link href="/jail/tgk-correctional-center" className="hover:text-yellow-500 transition-colors">TGK Correctional</Link></li>
-                            <li><Link href="/jail/land-o-lakes-detention-center" className="hover:text-yellow-500 transition-colors">Land O' Lakes Jail</Link></li>
+                            <li><Link href="/jail/broward-county-main-jail" className="hover:text-yellow-500 transition-colors">Broward County Main Jail</Link></li>
+                            <li><Link href="/jail/orange-county-booking-and-release-center" className="hover:text-yellow-500 transition-colors">Orange County BRC</Link></li>
+                            <li><Link href="/jail/pinellas-county-jail" className="hover:text-yellow-500 transition-colors">Pinellas County Jail</Link></li>
+                            <li><Link href="/jail/falkenburg-road-jail" className="hover:text-yellow-500 transition-colors">Falkenburg Road Jail</Link></li>
+                            <li><Link href="/jail/palm-beach-county-main-detention-center" className="hover:text-yellow-500 transition-colors">Palm Beach Detention</Link></li>
+                            <li><Link href="/jail/duval-county-pre-trial-detention-facility" className="hover:text-yellow-500 transition-colors">Duval Pre-Trial Facility</Link></li>
+                            <li><Link href="/jail/lee-county-core-facility" className="hover:text-yellow-500 transition-colors">Lee County Core</Link></li>
+                            <li><Link href="/jail/metro-west-detention-center" className="hover:text-yellow-500 transition-colors">Metro West Detention</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -104,6 +109,7 @@ export default function Footer() {
                     <p>&copy; {currentYear} Statewide Bail Bonds Florida. All Rights Reserved.</p>
                     <div className="flex gap-8">
                         <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+                        <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
                         <Link href="/contact" className="hover:text-white transition-colors font-bold">Contact Us</Link>
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

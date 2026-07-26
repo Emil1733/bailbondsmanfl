@@ -357,6 +357,17 @@ export default function BonitaSpringsPage() {
                                 <FAQSection countyName={city.name} customFaqs={combinedFaqs} />
                             </div>
 
+                            
+                            {/* Local Jail Link */}
+                            <div className="border-t border-slate-800 pt-12 mb-12">
+                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Central Intake Facility</h3>
+                                <div className="flex flex-col gap-3">
+                                    <Link href="/jail/lee-county-core-facility" className="text-sm text-yellow-600 hover:text-white transition-colors">
+                                        Lee County Core Facility (Ortiz Ave) &rarr;
+                                    </Link>
+                                </div>
+                            </div>
+                            
                             {/* Local Navigation Links */}
                             <div className="border-t border-slate-800 pt-12">
                                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Nearby Service Areas</h3>
