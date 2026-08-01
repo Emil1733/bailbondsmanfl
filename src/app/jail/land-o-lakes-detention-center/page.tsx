@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Land O' Lakes Detention Center Bail Bonds | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Land O' Lakes Detention Center in Pasco County, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Land O' Lakes Jail Booking & Inmate Search | Get Them Out Now (Pasco County Bail Bonds)",
+    description: "Waiting on Land O' Lakes Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Pasco County bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/land-o-lakes-detention-center",
     },

@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Orange County Booking and Release Center (BRC) Bail Bonds Orlando | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Orange County Booking and Release Center (BRC) in Orlando, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Orange County BRC Booking & Inmate Search | Get Them Out Now (Orlando Bail Bonds)",
+    description: "Waiting on Orange County BRC Booking? Don\'t wait for the roster to update. Call our 24/7 Orlando bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/orange-county-booking-and-release-center",
     },

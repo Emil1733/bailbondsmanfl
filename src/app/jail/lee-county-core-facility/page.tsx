@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Lee County Core Facility Bail Bonds Fort Myers | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Lee County Core Facility in Fort Myers, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Lee County Jail Booking & Inmate Search | Get Them Out Now (Fort Myers Bail Bonds)",
+    description: "Waiting on Lee County Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Fort Myers bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/lee-county-core-facility",
     },

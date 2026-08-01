@@ -1,4 +1,4 @@
-import { Shield, CloudRain, Globe, Scale, AlertTriangle, Car } from 'lucide-react';
+import { Shield, CloudRain, Globe, Scale, AlertTriangle, Car, Clock, CreditCard } from 'lucide-react';
 
 export interface Service {
     slug: string;
@@ -195,6 +195,74 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
         ]
     },
     speakableSummary: "Our online bail bond system enables you to complete the entire bonding process from any location using a computer or mobile phone. We handle all paperwork and payments digitally, allowing us to post the surety bond to the jail immediately without requiring you to leave your home."
+},
+{
+    slug: '24-hour-bail-bonds',
+    title: '24 Hour Emergency Bail Bonds Florida',
+    shortDescription: 'Arrests happen in the middle of the night. We provide immediate, round-the-clock emergency release services to get them out fast.',
+    metaDescription: '24 Hour Emergency Bail Bonds in Florida. Arrested at 2 AM? We are open and processing bonds right now. Fast, confidential release when you need it most.',
+    icon: Clock,
+    heroImage: '/images/24hour-hero.jpg',
+    content: {
+        intro: "The justice system doesn't sleep, and neither do we. Whether a loved one is arrested at 2:00 AM on a Saturday night or during a major holiday, every minute they spend in a Florida county jail exposes them to unnecessary danger and stress. Our 24-hour emergency response team is strategically positioned near major booking facilities to post bonds the exact second the intake process clears.",
+        keyPoints: [
+            "Always Open: 24/7/365 Operations",
+            "Immediate Dispatch to County Jails",
+            "Overnight Remote E-Bonding Available",
+            "Rapid First Appearance Coordination"
+        ],
+        processSteps: [
+            { title: "Immediate Case Pull", desc: "You call us at any hour. We instantly pull the live jail roster to locate your loved one." },
+            { title: "Pre-Booking Preparation", desc: "While they are being fingerprinted, we prepare the bond paperwork so there is zero delay." },
+            { title: "Midnight Posting", desc: "Our agents physically walk the bond to the 24-hour release window at the jail to secure release." }
+        ],
+        commonCharges: [
+            "Late Night DUI / BUI Arrests",
+            "Weekend Disorderly Conduct",
+            "Holiday Domestic Disturbances",
+            "Midnight Traffic Warrants"
+        ],
+        faq: [
+            { question: "Is it more expensive to bond someone out at night?", answer: "No. By Florida law, the premium is strictly capped at 10%. We never charge 'after-hours' fees or emergency surcharges." },
+            { question: "Can the jail release people in the middle of the night?", answer: "Yes. Most major county jails in Florida operate release lobbies 24 hours a day. If we post the bond at 3 AM, they will be released before sunrise." },
+            { question: "What if I can't drive to your office right now?", answer: "We offer 100% remote E-Bonding. You can sign the emergency paperwork from your phone in your pajamas." }
+        ]
+    },
+    speakableSummary: "Our 24-hour emergency bail bond service ensures immediate response to late-night or holiday arrests. We operate around the clock to post bonds the exact moment the jail finishes processing, with no hidden after-hours fees."
+},
+{
+    slug: 'no-collateral-bail-bonds',
+    title: 'No Collateral Bail Bonds Florida',
+    shortDescription: 'Secure a release based on your signature. Most standard bonds qualify for zero property collateral with a steady job.',
+    metaDescription: "No Collateral Bail Bonds in Florida. Signature bonds available with just the 10% premium. Don't put your house up for bail. Call us to qualify now.",
+    icon: CreditCard,
+    heroImage: '/images/nocollateral-hero.jpg',
+    content: {
+        intro: "A common misconception is that you must sign over the deed to your house or put up a car title to bail someone out of jail. For the vast majority of standard arrests in Florida, this is entirely false. We specialize in 'Signature Bonds'—meaning we secure the release without requiring physical property as collateral. As long as you have steady employment and residency, your signature is enough.",
+        keyPoints: [
+            "Zero Property Collateral Required",
+            "Signature-Based Indemnity",
+            "Flexible Financing on the 10% Premium",
+            "Fast Approval Over the Phone"
+        ],
+        processSteps: [
+            { title: "Risk Assessment", desc: "We evaluate the charge, bond amount, and the defendant's ties to the local Florida community." },
+            { title: "Indemnitor Approval", desc: "We qualify the co-signer based on employment history, not physical assets like houses or cars." },
+            { title: "Signature Release", desc: "You pay the standard 10% premium, sign the promissory agreement, and we post the bond." }
+        ],
+        commonCharges: [
+            "Standard Misdemeanors",
+            "First-Time Offenses",
+            "Traffic & DUI Violations",
+            "Low-Level Non-Violent Felonies"
+        ],
+        faq: [
+            { question: "What exactly does 'No Collateral' mean?", answer: "It means you do not have to put up property, jewelry, or cash equal to the full bond amount. You only pay the non-refundable 10% premium, and sign a contract guaranteeing the defendant will go to court." },
+            { question: "When IS collateral actually required?", answer: "Property collateral is typically only required for very high bond amounts (e.g., $50,000+), severe federal charges, immigration bonds, or defendants with a massive flight risk." },
+            { question: "Do I need a perfect credit score to qualify?", answer: "No. We look at stability—how long you've lived in Florida and how long you've held your current job—not just a FICO score." }
+        ]
+    },
+    speakableSummary: "Most standard bail bonds in Florida do not require property collateral. By utilizing a signature bond, a qualified co-signer with steady employment can secure a release by simply paying the 10% premium without risking their home or vehicles."
 }
 ];
 

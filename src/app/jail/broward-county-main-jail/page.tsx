@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Broward County Main Jail Bail Bonds Fort Lauderdale | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Broward County Main Jail in Fort Lauderdale, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Broward Main Jail Booking & Inmate Search | Get Them Out Now (Fort Lauderdale Bail Bonds)",
+    description: "Waiting on Broward Main Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Fort Lauderdale bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/broward-county-main-jail",
     },

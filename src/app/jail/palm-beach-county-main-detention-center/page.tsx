@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Palm Beach County Main Detention Center Bail Bonds West Palm Beach | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Palm Beach County Main Detention Center in West Palm Beach, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Gun Club Jail Booking & Inmate Search | Get Them Out Now (West Palm Beach Bail Bonds)",
+    description: "Waiting on Gun Club Jail Booking? Don\'t wait for the roster to update. Call our 24/7 West Palm Beach bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/palm-beach-county-main-detention-center",
     },

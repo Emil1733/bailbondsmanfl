@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Pinellas County Jail Bail Bonds Clearwater | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Pinellas County Jail in Clearwater, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Pinellas Jail Booking & Inmate Search | Get Them Out Now (Clearwater Bail Bonds)",
+    description: "Waiting on Pinellas Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Clearwater bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/pinellas-county-jail",
     },

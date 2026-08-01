@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Orient Road Jail Bail Bonds Tampa | 24/7 Emergency Release",
-    description: "Need immediate bail bonds for Orient Road Jail in Tampa, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Orient Road Jail Booking & Inmate Search | Get Them Out Now (Tampa Bail Bonds)",
+    description: "Waiting on Orient Road Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Tampa bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/orient-road-jail",
     },

@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "TGK Correctional Center Bail Bonds Miami | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Turner Guilford Knight (TGK) Correctional Center in Miami, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "TGK Booking & Inmate Search | Get Them Out Now (Miami Bail Bonds)",
+    description: "Waiting on TGK Booking? Don\'t wait for the roster to update. Call our 24/7 Miami bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/tgk-correctional-center",
     },

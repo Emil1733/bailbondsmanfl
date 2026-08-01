@@ -208,6 +208,81 @@ export default async function CountyPage({ params }: Props) {
                                 </div>
                             )}
 
+                            {/* 4. THE ULTIMATE PROGRAMMATIC 1500+ WORD GUIDE */}
+                            <div className="prose prose-invert prose-lg max-w-none mt-16 pt-16 border-t border-slate-800">
+                                <h2 className="text-3xl font-serif font-black text-white mb-8">
+                                    The Complete Guide to Navigating {county.name} Bail Bonds
+                                </h2>
+                                
+                                <p className="text-slate-300 leading-relaxed text-lg">
+                                    When the phone rings in the middle of the night and you find out a loved one has been arrested in <strong>{county.name}</strong>, panic sets in. The criminal justice system in Florida is famously unforgiving, and the {county.name} jurisdiction is no exception. Whether the arrest occurred during a traffic stop on a major highway, or following an incident in one of the local municipalities like {county.cities && county.cities.length > 0 ? county.cities.map(c => c.name).join(', ') : 'the surrounding areas'}, the endpoint is always the same: the <strong>{county.jail.name}</strong>.
+                                </p>
+
+                                <h3 className="text-2xl font-bold text-white mt-12 mb-6">
+                                    Understanding the Arrest and Booking Lifecycle in {county.name}
+                                </h3>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    The moment handcuffs click, the clock starts. However, understanding <em>when</em> a bail bond can actually be posted requires knowing the difference between the arresting agency and the housing agency. In {county.name}, local police departments (such as {county.cities?.[0]?.policeDepartment.name || 'local PD'}) handle the initial detention. They will process the arrestee at their local substation—a process that can take anywhere from 1 to 3 hours depending on the shift volume.
+                                </p>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    Once local processing is complete, the individual is placed in a transport vehicle bound for the {county.jail.name} at {county.jail.address}. This is the critical window. The transport itself adds time, and once they arrive at the main county facility, they enter the "Intake and Receiving" queue. Because this facility processes every single arrest within {county.population.toLocaleString()} residents, the backlog can be immense. Intake involves photographing, fingerprinting (LiveScan), background checks across NCIC/FCIC databases, and medical screening. You cannot post a bond until this entire sequence is completed and the inmate is officially entered into the county computer system.
+                                </p>
+
+                                <div className="bg-slate-900 border-l-4 border-yellow-500 p-6 my-10 rounded-r-xl shadow-lg">
+                                    <h4 className="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-2">Insider Tip: The "Pre-Booking" Strategy</h4>
+                                    <p className="text-slate-200 text-sm md:text-base m-0">
+                                        Do not wait for the booking process to finish before contacting a bondsman. If you call us while they are still in transport to the {county.jail.name}, we can prepare the surety paperwork, run the indemnitor credit checks, and be physically standing at the bond window the exact second the booking officer hits "Submit" on the computer. This strategy often shaves 3 to 5 hours off the total incarceration time.
+                                    </p>
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-white mt-12 mb-6">
+                                    The First Appearance (Advisory Court) and Bond Amounts
+                                </h3>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    Florida operates on a Uniform Bail Schedule. For many standard misdemeanor and non-violent felony charges, a predetermined bond amount is attached to the charge the moment the arrest report is filed. In these scenarios, we can post the bond immediately after booking.
+                                </p>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    However, if the charge is severe (e.g., domestic violence, trafficking, or a probation violation), the bond is marked as "None" or "Zero." This does not mean they are denied bail forever. It means they must wait to see a magistrate judge at the <strong>{county.richContent?.courtInfo?.name || 'County Courthouse'}</strong> for First Appearance, also known as Advisory Court or PP Court.
+                                </p>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    During this hearing—which typically takes place within 24 hours of arrest—the judge will review the Probable Cause (PC) affidavit submitted by the arresting officer. The judge evaluates the defendant's ties to {county.name}, their prior criminal history, and the risk to the community before setting a customized bond amount. If the arrest happens on a Saturday night, they will see the weekend duty judge on Sunday morning.
+                                </p>
+
+                                <h3 className="text-2xl font-bold text-white mt-12 mb-6">
+                                    Financial Mechanics: How the 10% Premium Works
+                                </h3>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    If the judge sets the bail at $15,000, you have two choices. You can go to the {county.jail.name} and pay $15,000 in exact cash or cashier's check to the Sheriff's Office. That money will be tied up for months—or years—until the case reaches a final disposition. 
+                                </p>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    The alternative is utilizing a licensed surety agent. Regulated by the Florida Department of Financial Services, bail bond premiums are strictly capped at <strong>10% of the total bond amount</strong> (with a $100 minimum per charge). For that same $15,000 bond, the non-refundable premium is exactly $1,500. We act as the corporate guarantor, leveraging backing from multinational insurance conglomerates to guarantee the court that the defendant will appear for all mandated hearings at the {county.richContent?.courtInfo?.name || 'courthouse'}.
+                                </p>
+                                <ul className="list-disc pl-6 space-y-3 text-slate-300 mb-8 mt-4">
+                                    <li><strong>Collateral:</strong> While large bonds (over $50,000) or high-flight-risk defendants may require property collateral, the vast majority of standard bonds in {county.name} are written on "signature" or promissory notes, requiring only the 10% fee and a qualified indemnitor with steady employment.</li>
+                                    <li><strong>Payment Plans:</strong> For unexpected high-dollar bonds, specialized financing and payment plans can often be arranged. This allows families to secure release with a fraction of the premium down, paying the remainder on a weekly or monthly schedule.</li>
+                                </ul>
+
+                                <h3 className="text-2xl font-bold text-white mt-12 mb-6">
+                                    The Geography of Justice in {county.name}
+                                </h3>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    Navigating the logistics of a release requires geographic awareness. The {county.jail.name} is situated at {county.jail.address}. Due to security protocols, civilians cannot simply walk into the secure perimeter. The designated Release Lobby is where you must wait.
+                                </p>
+                                <p className="text-slate-300 leading-relaxed mb-6">
+                                    Upon posting the bond, the paperwork is transmitted to the Records Division. They must perform a final cross-check with state (FDLE) and federal (NCIC) databases to ensure no out-of-county warrants were issued during the holding period. Only after this rigorous secondary check is the inmate placed in the queue for out-processing, where property is returned and civilian clothes are issued. This bureaucratic latency means that even after the bond is paid, the physical release of the individual can take anywhere from 4 to 12 hours depending on facility lockdown schedules and shift changes.
+                                </p>
+
+                                <div className="bg-slate-900 border border-slate-700 p-8 rounded-2xl mt-12 text-center">
+                                    <h4 className="text-xl font-serif font-bold text-white mb-4">Immediate Intervention is Critical</h4>
+                                    <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
+                                        Every hour spent in the {county.jail.name} is an hour of lost wages, extreme stress, and exposure to the hardened criminal element. Don't navigate the {county.name} justice system blind.
+                                    </p>
+                                    <a href="tel:+13058310358" className="inline-flex items-center justify-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-red-700 transition-all shadow-lg shadow-red-900/20">
+                                        <Phone className="w-5 h-5" />
+                                        Call for Immediate {county.name} Release
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         {/* RIGHT COL: TOOLS (5 Columns) */}

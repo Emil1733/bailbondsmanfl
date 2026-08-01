@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getCounty } from '@/lib/data';
+import { getAllServices } from '@/lib/services';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -67,6 +68,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function CityPage({ params }: Props) {
     const { slug, city: citySlug } = await params;
     const county = await getCounty(slug);
+    const services = await getAllServices();
     const city = county?.cities?.find(c => c.slug === citySlug);
 
     if (!county || !city) {
@@ -176,22 +178,12 @@ export default async function CityPage({ params }: Props) {
                                     Specialized Services in {city.name}
                                 </h2>
                                 <div className="grid sm:grid-cols-2 gap-4 pl-6">
-                                    <Link href={`/services/dui-bail-bonds/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
-                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">DUI Bail Bonds</h3>
-                                        <p className="text-xs text-slate-400 mt-1">Faster release from {city.policeDepartment.name} for DUI charges.</p>
-                                    </Link>
-                                    <Link href={`/services/domestic-violence-bail/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
-                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">Domestic Violence</h3>
-                                        <p className="text-xs text-slate-400 mt-1">Navigating no-contact orders and first appearance hearings.</p>
-                                    </Link>
-                                    <Link href={`/services/traffic-warrant-bail/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
-                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">Traffic Warrants</h3>
-                                        <p className="text-xs text-slate-400 mt-1">Clear bench warrants without extended jail stays.</p>
-                                    </Link>
-                                    <Link href={`/services/nebbia-hold-bail/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
-                                        <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">Nebbia/Bail Source</h3>
-                                        <p className="text-xs text-slate-400 mt-1">Specialized assistance for financial source hearings.</p>
-                                    </Link>
+                                    {services.map((svc) => (
+                                        <Link key={svc.slug} href={`/services/${svc.slug}/${city.slug}`} className="group bg-slate-900 border border-slate-800 p-4 rounded-lg hover:border-yellow-500 transition-all">
+                                            <h3 className="font-bold text-white group-hover:text-yellow-500 transition-colors">{svc.title.replace(' Florida', '')}</h3>
+                                            <p className="text-xs text-slate-400 mt-1">{svc.shortDescription}</p>
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
 

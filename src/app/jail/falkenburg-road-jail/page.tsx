@@ -17,8 +17,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = {
-    title: "Falkenburg Road Jail Bail Bonds Tampa | 24/7 Fast Release",
-    description: "Need immediate bail bonds for Falkenburg Road Jail in Tampa, FL? Speak with a licensed bondsman 24/7. Fast inmate release. 10% rates & online payment plans.",
+    title: "Falkenburg Jail Booking & Inmate Search | Get Them Out Now (Tampa Bail Bonds)",
+    description: "Waiting on Falkenburg Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Tampa bondsmen to check their booking status and start the release process immediately.",
     alternates: {
         canonical: "https://bondflorida.com/jail/falkenburg-road-jail",
     },
