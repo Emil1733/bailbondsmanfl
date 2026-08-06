@@ -222,6 +222,8 @@ export default async function MatrixPage({ params }: Props) {
                                 <ReleaseTimeEstimator />
                             </div>
 
+
+
                             {/* Service Details Box */}
                             <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
                                 <h3 className="font-bold text-white mb-4 flex items-center gap-2">
@@ -265,6 +267,24 @@ export default async function MatrixPage({ params }: Props) {
 
                     </div>
                 </ContentContainer>
+
+                {/* FULL WIDTH: Deep Editorial Content (SEO) */}
+                {service.editorialBody && service.editorialBody.length > 0 && (
+                    <div className="bg-slate-900 border-t border-white/5 py-24 mt-20">
+                        <ContentContainer className="max-w-4xl">
+                            <h2 className="text-3xl font-serif font-bold text-white mb-10 border-l-4 border-yellow-500 pl-6">
+                                Comprehensive Guide to {service.title} in {city.name}
+                            </h2>
+                            <div className="prose prose-invert prose-lg max-w-none text-slate-300">
+                                {service.editorialBody.map((paragraph, idx) => (
+                                    <p key={idx} className="mb-8 leading-relaxed">
+                                        {paragraph.replace(/Florida/g, `${city.name} & ${county.name} County`)}
+                                    </p>
+                                ))}
+                            </div>
+                        </ContentContainer>
+                    </div>
+                )}
             </section>
 
             <MobileFloatingCall />

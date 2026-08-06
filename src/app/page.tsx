@@ -335,56 +335,89 @@ export default function Home() {
         </ContentContainer>
       </section>
 
-      {/* TRENDING SERVICE LOCATIONS SECTION */}
-      <section className="py-24 bg-slate-950 border-b border-white/5">
-        <ContentContainer>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-bold text-white mb-3">Trending Service Locations</h2>
-            <p className="text-slate-400 max-w-xl mx-auto text-sm leading-relaxed">
-              Access emergency bail resources for high-search-volume municipalities in Florida.
+      {/* PRIORITY INTERNAL LINKING (STRIKING DISTANCE SEO SILO) */}
+      <section className="py-24 bg-slate-950 border-b border-white/5 relative overflow-hidden">
+        {/* Subtle background glow to draw attention */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <ContentContainer className="relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif font-bold text-white mb-4">Critical Processing Facilities</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+              Direct access to Florida's highest-volume county jails and specialized legal resources. Track booking status and orchestrate immediate release.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link href="/county/lee/cape-coral" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
-              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
-                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Lee County</span>
-                <span className="text-lg font-bold">Cape Coral</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* TGK - Position 10.8 Target */}
+            <Link href="/jail/tgk-correctional-center" className="group p-8 bg-slate-900/80 backdrop-blur-sm border border-slate-800 hover:border-yellow-500 rounded-xl flex flex-col justify-between transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.1)] hover:-translate-y-1">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-red-500/10 p-2 rounded border border-red-500/20">
+                    <ShieldAlert className="w-5 h-5 text-red-500" />
+                  </div>
+                  <span className="text-xs uppercase font-bold tracking-widest text-slate-500 group-hover:text-yellow-500 transition-colors">Miami-Dade County</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 leading-tight">TGK Booking</h3>
+                <p className="text-sm text-slate-400">Turner Guilford Knight Correctional Center</p>
               </div>
-              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
-                Bail Bonds Cape Coral &rarr;
+              <span className="text-sm font-bold text-yellow-500 flex items-center gap-2 group-hover:gap-3 transition-all">
+                Check Booking Status <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
 
-            <Link href="/county/lee/fort-myers" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
-              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
-                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Lee County (Seat)</span>
-                <span className="text-lg font-bold">Fort Myers</span>
+            {/* Land O Lakes - Position 12.9 Target */}
+            <Link href="/jail/land-o-lakes-detention-center" className="group p-8 bg-slate-900/80 backdrop-blur-sm border border-slate-800 hover:border-yellow-500 rounded-xl flex flex-col justify-between transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.1)] hover:-translate-y-1">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-blue-500/10 p-2 rounded border border-blue-500/20">
+                    <ShieldCheck className="w-5 h-5 text-blue-500" />
+                  </div>
+                  <span className="text-xs uppercase font-bold tracking-widest text-slate-500 group-hover:text-yellow-500 transition-colors">Pasco County</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 leading-tight">Land O' Lakes Jail</h3>
+                <p className="text-sm text-slate-400">Central Pasco Detention Facility</p>
               </div>
-              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
-                Bail Bonds Fort Myers &rarr;
+              <span className="text-sm font-bold text-yellow-500 flex items-center gap-2 group-hover:gap-3 transition-all">
+                View Release Times <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
 
-            <Link href="/county/lee/bonita-springs" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
-              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
-                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Lee County</span>
-                <span className="text-lg font-bold">Bonita Springs</span>
+            {/* Orlando - Position 45.6 Target (Needs massive push) */}
+            <Link href="/county/orange/orlando" className="group p-8 bg-slate-900/80 backdrop-blur-sm border border-slate-800 hover:border-yellow-500 rounded-xl flex flex-col justify-between transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.1)] hover:-translate-y-1">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-yellow-500/10 p-2 rounded border border-yellow-500/20">
+                    <MapPin className="w-5 h-5 text-yellow-500" />
+                  </div>
+                  <span className="text-xs uppercase font-bold tracking-widest text-slate-500 group-hover:text-yellow-500 transition-colors">Orange County</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 leading-tight">Orlando Arrests</h3>
+                <p className="text-sm text-slate-400">Orange County BRC Transfers</p>
               </div>
-              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
-                Bail Bonds Bonita Springs &rarr;
+              <span className="text-sm font-bold text-yellow-500 flex items-center gap-2 group-hover:gap-3 transition-all">
+                Orlando Bail Process <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
 
-            <Link href="/county/indian-river/vero-beach" className="group p-6 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-lg flex flex-col justify-between transition-all">
-              <div className="text-slate-400 group-hover:text-white transition-colors mb-4">
-                <span className="text-xs uppercase font-bold tracking-widest text-yellow-500/70 block mb-1">Indian River</span>
-                <span className="text-lg font-bold">Vero Beach</span>
+            {/* Warrant Search - Position 20.1 Target */}
+            <Link href="/warrant-search" className="group p-8 bg-slate-900/80 backdrop-blur-sm border border-slate-800 hover:border-yellow-500 rounded-xl flex flex-col justify-between transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.1)] hover:-translate-y-1">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-purple-500/10 p-2 rounded border border-purple-500/20">
+                    <FileCheck className="w-5 h-5 text-purple-500" />
+                  </div>
+                  <span className="text-xs uppercase font-bold tracking-widest text-slate-500 group-hover:text-yellow-500 transition-colors">Statewide Resource</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 leading-tight">Warrant Search</h3>
+                <p className="text-sm text-slate-400">Confidential FDLE Background Checks</p>
               </div>
-              <span className="text-xs font-semibold text-slate-500 group-hover:text-yellow-500 flex items-center gap-1.5 transition-all">
-                Bail Bonds Vero Beach &rarr;
+              <span className="text-sm font-bold text-yellow-500 flex items-center gap-2 group-hover:gap-3 transition-all">
+                Check Active Warrants <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
+
           </div>
         </ContentContainer>
       </section>

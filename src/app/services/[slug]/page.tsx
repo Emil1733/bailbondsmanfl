@@ -241,7 +241,7 @@ return (
                             </div>
                         </div>
 
-                        {/* Mini FAQ */}
+                        {/* 6. FAQ Section */}
                         <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                             <h3 className="font-bold text-white mb-6 flex items-center gap-2">
                                 <HelpCircle className="w-5 h-5 text-slate-400" />
@@ -261,6 +261,24 @@ return (
 
                 </div>
             </ContentContainer>
+
+            {/* FULL WIDTH: Deep Editorial Content (SEO) */}
+            {service.editorialBody && service.editorialBody.length > 0 && (
+                <div className="bg-slate-900 border-t border-white/5 py-24 mt-20">
+                    <ContentContainer className="max-w-4xl">
+                        <h2 className="text-3xl font-serif font-bold text-white mb-10 border-l-4 border-yellow-500 pl-6">
+                            Comprehensive Guide to {service.title}
+                        </h2>
+                        <div className="prose prose-invert prose-lg max-w-none text-slate-300">
+                            {service.editorialBody.map((paragraph, idx) => (
+                                <p key={idx} className="mb-8 leading-relaxed">
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
+                    </ContentContainer>
+                </div>
+            )}
         </section>
 
         <MobileFloatingCall />
