@@ -432,9 +432,9 @@ export default function Home() {
                 Select a county to access specific inmate rosters, bond hearing schedules, and facility release procedures.
               </p>
             </div>
-            <button className="text-yellow-500 font-bold hover:text-white transition-colors flex items-center gap-2">
+            <Link href="/locations" className="text-yellow-500 font-bold hover:text-white transition-colors flex items-center gap-2">
               View All Counties <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

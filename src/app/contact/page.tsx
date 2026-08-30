@@ -126,7 +126,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Inquiry Form */}
-            <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl">
+            <div id="inquiry-form" className="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl scroll-mt-24">
               <h3 className="text-2xl font-serif font-bold text-white mb-6 text-center">Inquiry Form</h3>
               <ContactForm />
             </div>

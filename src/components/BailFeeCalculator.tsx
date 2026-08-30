@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { DollarSign, Calculator } from 'lucide-react';
+import { DollarSign } from 'lucide-react';
+import Link from 'next/link';
+import { track } from '@vercel/analytics';
 
 export default function BailFeeCalculator() {
     const [bailAmount, setBailAmount] = useState<string>('');
@@ -43,9 +45,13 @@ export default function BailFeeCalculator() {
                     </div>
                 )}
 
-                <button className="w-full bg-slate-800 text-slate-200 font-bold py-4 hover:bg-yellow-600 hover:text-white transition-all uppercase tracking-widest text-sm border border-slate-700 hover:border-yellow-600">
+                <Link
+                    href="/contact#inquiry-form"
+                    onClick={() => track('get_approved_clicked', { location: 'bail_fee_calculator' })}
+                    className="block w-full text-center bg-slate-800 text-slate-200 font-bold py-4 hover:bg-yellow-600 hover:text-white transition-all uppercase tracking-widest text-sm border border-slate-700 hover:border-yellow-600"
+                >
                     Get Approved
-                </button>
+                </Link>
             </div>
         </div>
     );

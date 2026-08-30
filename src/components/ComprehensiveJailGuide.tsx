@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { ChevronDown, ChevronUp, Scale, BookOpen, AlertCircle, FileText, Info } from 'lucide-react';
 
 export interface GuideSection {
@@ -17,6 +17,7 @@ interface ComprehensiveJailGuideProps {
 
 export default function ComprehensiveJailGuide({ jailName, intro, sections }: ComprehensiveJailGuideProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const guideId = useId();
 
     const getIcon = (iconName: string) => {
         switch (iconName) {
@@ -31,6 +32,9 @@ export default function ComprehensiveJailGuide({ jailName, intro, sections }: Co
     return (
         <div className="mt-12 bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
             <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={guideId}
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center justify-between p-6 bg-slate-800/50 hover:bg-slate-800 transition-colors group text-left"
             >
@@ -47,7 +51,7 @@ export default function ComprehensiveJailGuide({ jailName, intro, sections }: Co
             </button>
 
             {isOpen && (
-                <div className="p-8 prose prose-invert max-w-none text-slate-300">
+                <div id={guideId} className="p-8 prose prose-invert max-w-none text-slate-300">
                     {intro.map((p, idx) => (
                         <p key={idx} className={idx === 0 ? "lead text-lg mb-6" : "mb-6"} dangerouslySetInnerHTML={{ __html: p }}></p>
                     ))}

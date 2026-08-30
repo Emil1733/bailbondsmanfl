@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
 interface FAQItemProps {
@@ -9,10 +9,14 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer }: FAQItemProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const answerId = useId();
 
     return (
         <div className="border-b border-slate-800 last:border-0">
             <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={answerId}
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center justify-between py-6 text-left group"
             >
@@ -21,7 +25,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
             </button>
 
             {isOpen && (
-                <div className="pb-6 text-slate-400 leading-relaxed">
+                <div id={answerId} className="pb-6 text-slate-400 leading-relaxed">
                     {answer}
                 </div>
             )}

@@ -16,7 +16,11 @@ type ContactPayload = {
   consent?: unknown;
   website?: unknown;
   startedAt?: unknown;
+  source?: unknown;
+  context?: unknown;
 };
+
+const ALLOWED_SOURCES = new Set(['bondflorida.com/contact', 'release-time-estimator']);
 
 function cleanText(value: unknown, maxLength: number) {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
@@ -79,7 +83,11 @@ export async function POST(request: NextRequest) {
   const defendantName = cleanText(payload.defendantName, 100);
   const message = cleanText(payload.message, 2000);
   const website = cleanText(payload.website, 200);
+  const requestedSource = cleanText(payload.source, 80);
+  const source = ALLOWED_SOURCES.has(requestedSource) ? requestedSource : 'bondflorida.com/contact';
+  const context = cleanText(payload.context, 500);
   const phoneDigits = phone.replace(/\D/g, '');
+  const isEstimatorLead = source === 'release-time-estimator';
 
   if (website) {
     return NextResponse.json({ message: 'Your request was received.' });
@@ -89,7 +97,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Please review the form and try again.' }, { status: 400 });
   }
 
-  if (name.length < 2 || defendantName.length < 2 || phoneDigits.length < 10 || phoneDigits.length > 15) {
+  if (
+    (!isEstimatorLead && (name.length < 2 || defendantName.length < 2)) ||
+    phoneDigits.length < 10 ||
+    phoneDigits.length > 15
+  ) {
     return NextResponse.json({ message: 'Please provide valid names and a valid phone number.' }, { status: 400 });
   }
 
@@ -122,12 +134,12 @@ export async function POST(request: NextRequest) {
           records: [
             {
               fields: {
-                Name: name,
+                Name: isEstimatorLead ? 'Release Time Estimator Lead' : name,
                 Phone: phone,
-                'Defendant Name': defendantName,
-                Message: message,
+                'Defendant Name': isEstimatorLead ? 'Not provided' : defendantName,
+                Message: isEstimatorLead ? context : message,
                 Consent: true,
-                Source: 'bondflorida.com/contact',
+                Source: source,
                 'Submitted At': new Date().toISOString(),
               },
             },
