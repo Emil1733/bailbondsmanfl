@@ -1,6 +1,7 @@
 import JsonLd from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import { getService, getAllServices } from '@/lib/services';
+import { getAllCities } from '@/lib/data';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
@@ -45,12 +46,14 @@ export async function generateMetadata({ params }: Props) {
 export default async function ServicePage({ params }: Props) {
     const { slug } = await params;
     const service = await getService(slug);
+    const cities = await getAllCities();
 
     if (!service) {
         notFound();
     }
 
     const Icon = service.icon;
+    const citiesByCounty = Map.groupBy(cities, ({ county }) => county.slug);
 
     // JSON-LD Service Schema
     const jsonLd = {
@@ -209,17 +212,22 @@ return (
                                 <MapPin className="w-5 h-5 text-yellow-500" />
                                 Available Service Areas
                             </h3>
-                            <p className="text-xs text-slate-400 mb-4">Select a city for local release times and specific jail information.</p>
-                            <div className="flex flex-wrap gap-2">
-                                {service.slug !== 'immigration-bail-bonds' && (
-                                    <>
-                                        <Link href={`/services/${service.slug}/miami`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Miami</Link>
-                                        <Link href={`/services/${service.slug}/fort-lauderdale`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Fort Lauderdale</Link>
-                                        <Link href={`/services/${service.slug}/orlando`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Orlando</Link>
-                                        <Link href={`/services/${service.slug}/tampa`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Tampa</Link>
-                                        <Link href={`/services/${service.slug}/west-palm-beach`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">West Palm Beach</Link>
-                                    </>
-                                )}
+                            <p className="text-xs text-slate-400 mb-4">Select a county and city for local release times, arresting agencies, and jail information.</p>
+                            <div className="space-y-5">
+                                {[...citiesByCounty.entries()].map(([countySlug, entries]) => (
+                                    <div key={countySlug}>
+                                        <Link href={`/county/${countySlug}`} className="mb-2 block text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-yellow-500">
+                                            {entries[0].county.name}
+                                        </Link>
+                                        <div className="flex flex-wrap gap-2">
+                                            {entries.map(({ city }) => (
+                                                <Link key={city.slug} href={`/services/${service.slug}/${city.slug}`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">
+                                                    {service.title.replace(' Florida', '')} in {city.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 

@@ -9,6 +9,7 @@ import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, MapPin, Clock, Siren, ArrowRight, Phone, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
+import { jailGuideByCounty } from '@/lib/internal-links';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -68,6 +69,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function MatrixPage({ params }: Props) {
     const { slug, city: citySlug } = await params;
     const service = await getService(slug);
+    const services = await getAllServices();
     const cityData = await getCityBySlug(citySlug);
 
     if (!service || !cityData) {
@@ -76,6 +78,7 @@ export default async function MatrixPage({ params }: Props) {
 
     const { city, county } = cityData;
     const Icon = service.icon;
+    const jailGuide = jailGuideByCounty[county.slug];
 
     // JSON-LD Schema
     const jsonLd = {
@@ -238,18 +241,35 @@ export default async function MatrixPage({ params }: Props) {
                             <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
                                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Other Services in {city.name}</h3>
                                 <div className="space-y-3">
-                                    {['dui-bail-bonds', 'domestic-violence-bail', 'traffic-warrant-bail', 'nebbia-hold-bail']
-                                        .filter(s => s !== service.slug)
-                                        .map(s => (
+                                    {services
+                                        .filter((relatedService) => relatedService.slug !== service.slug)
+                                        .map((relatedService) => (
                                             <Link 
-                                                key={s} 
-                                                href={`/services/${s}/${city.slug}`}
+                                                key={relatedService.slug}
+                                                href={`/services/${relatedService.slug}/${city.slug}`}
                                                 className="block text-sm text-slate-400 hover:text-yellow-500 transition-colors"
                                             >
-                                                {s.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} &rarr;
+                                                {relatedService.title.replace(' Florida', '')} in {city.name} &rarr;
                                             </Link>
                                         ))
                                     }
+                                </div>
+                            </div>
+
+                            <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
+                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Local booking resources</h3>
+                                <div className="space-y-3 text-sm">
+                                    <Link href={`/county/${county.slug}/${city.slug}`} className="block text-yellow-500 hover:text-white">
+                                        {city.name} arrest and transfer guide &rarr;
+                                    </Link>
+                                    <Link href={`/county/${county.slug}`} className="block text-yellow-500 hover:text-white">
+                                        {county.name} jail and booking hub &rarr;
+                                    </Link>
+                                    {jailGuide && (
+                                        <Link href={jailGuide} className="block text-yellow-500 hover:text-white">
+                                            {county.jail.name} release guide &rarr;
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>

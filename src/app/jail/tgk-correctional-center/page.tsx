@@ -1,4 +1,5 @@
 import JsonLd from '@/components/JsonLd';
+import JailLocalLinks from '@/components/JailLocalLinks';
 import { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
@@ -346,6 +347,7 @@ export default function TgkCorrectionalCenterPage() {
                 </ContentContainer>
             </section>
 
+            <JailLocalLinks jailSlug="tgk-correctional-center" />
             <MobileFloatingCall />
         </main>
     );

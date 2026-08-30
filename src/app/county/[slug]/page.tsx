@@ -10,6 +10,8 @@ import Schema from '@/components/Schema';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { ExternalLink, Clock, MapPin, Phone, Gavel, FileText, HelpCircle, ArrowRight } from 'lucide-react';
 import { pageMetadata } from '@/lib/seo';
+import { jailGuideByCounty } from '@/lib/internal-links';
+import Link from 'next/link';
 
 // 1. STANDARD SPINE COMPONENT
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -66,6 +68,7 @@ export default async function CountyPage({ params }: Props) {
         ...(county.richContent?.specificFaqs || []),
         ...sgeFaqs
     ];
+    const jailGuide = jailGuideByCounty[county.slug];
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -135,6 +138,29 @@ export default async function CountyPage({ params }: Props) {
                                     </div>
                                 </div>
                             </div>
+
+                            {county.cities && county.cities.length > 0 && (
+                                <div>
+                                    <h2 className="text-3xl font-serif font-bold text-white mb-6 border-l-4 border-yellow-500 pl-6">
+                                        Local booking and release guides
+                                    </h2>
+                                    <p className="pl-6 mb-6 text-slate-400">
+                                        Choose the arresting city for its police holding location, expected transfer route, and locally available bond services.
+                                    </p>
+                                    <div className="grid sm:grid-cols-2 gap-3 pl-6">
+                                        {county.cities.map((city) => (
+                                            <Link key={city.slug} href={`/county/${county.slug}/${city.slug}`} className="rounded-lg border border-slate-800 bg-slate-900 p-4 text-white hover:border-yellow-500 hover:text-yellow-500">
+                                                Bail bonds and booking in {city.name} <ArrowRight className="inline h-4 w-4" />
+                                            </Link>
+                                        ))}
+                                    </div>
+                                    {jailGuide && (
+                                        <Link href={jailGuide} className="mt-5 ml-6 inline-flex items-center gap-2 font-bold text-yellow-500 hover:text-white">
+                                            Read the {county.jail.name} release guide <ArrowRight className="h-4 w-4" />
+                                        </Link>
+                                    )}
+                                </div>
+                            )}
 
                             {/* 2. COURT INFO (If Available) */}
                             {county.richContent?.courtInfo && (
