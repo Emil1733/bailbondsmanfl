@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://bondflorida.com",
     siteName: "Bond Florida",
     images: [
       {

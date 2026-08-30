@@ -22,7 +22,7 @@ export const metadata = {
     canonical: 'https://bondflorida.com',
   },
   openGraph: {
-    url: 'https://bondflorida.com/',
+    url: 'https://bondflorida.com',
     images: [{
       url: 'https://bondflorida.com/og-image.jpg',
       width: 1200,

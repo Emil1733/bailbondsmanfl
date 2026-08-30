@@ -9,49 +9,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const staticRoutes = [
         {
             url: baseUrl,
-            lastModified: new Date(),
             changeFrequency: 'daily' as const,
             priority: 1,
         },
         {
             url: `${baseUrl}/contact`,
-            lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/locations`,
-            lastModified: new Date(),
             changeFrequency: 'daily' as const,
             priority: 1,
         },
         {
             url: `${baseUrl}/resources`,
-            lastModified: new Date(),
             changeFrequency: 'weekly' as const,
             priority: 0.9,
         },
         {
             url: `${baseUrl}/about`,
-            lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/privacy`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly' as const,
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/terms`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly' as const,
-            priority: 0.5,
-        },
-        {
             url: `${baseUrl}/warrant-search`,
-            lastModified: new Date(),
             changeFrequency: 'weekly' as const,
             priority: 0.9,
         },
@@ -61,7 +43,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const services = await getAllServices();
     const serviceRoutes = services.map((service) => ({
         url: `${baseUrl}/services/${service.slug}`,
-        lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.9,
     }));
@@ -69,7 +50,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 3. County Routes
     const countyRoutes = counties.map((county) => ({
         url: `${baseUrl}/county/${county.slug}`,
-        lastModified: new Date(),
         changeFrequency: 'daily' as const,
         priority: 0.9,
     }));
@@ -82,7 +62,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 for (const city of county.cities) {
                     matrixRoutes.push({
                         url: `${baseUrl}/services/${service.slug}/${city.slug}`,
-                        lastModified: new Date(),
                         changeFrequency: 'weekly',
                         priority: 0.8,
                     });
@@ -95,7 +74,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const cityRoutes = counties.flatMap((county) =>
         (county.cities || []).map((city) => ({
             url: `${baseUrl}/county/${county.slug}/${city.slug}`,
-            lastModified: new Date(),
             changeFrequency: 'weekly' as const,
             priority: 0.8,
         }))
@@ -116,7 +94,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'metro-west-detention-center'
     ].map((slug) => ({
         url: `${baseUrl}/jail/${slug}`,
-        lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
     }));
