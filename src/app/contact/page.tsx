@@ -1,6 +1,7 @@
 
 import { Metadata } from 'next';
 import EmergencyHeader from '@/components/EmergencyHeader';
+import ContactForm from '@/components/ContactForm';
 import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -124,33 +125,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: Mock Form */}
+            {/* Right: Inquiry Form */}
             <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl">
               <h3 className="text-2xl font-serif font-bold text-white mb-6 text-center">Inquiry Form</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Your Name</label>
-                  <input type="text" id="name" className="w-full bg-slate-800 border border-slate-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Full Name" />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Phone Number</label>
-                  <input type="tel" id="phone" className="w-full bg-slate-800 border border-slate-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="(000) 000-0000" />
-                </div>
-                <div>
-                  <label htmlFor="inmate" className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Defendant Name</label>
-                  <input type="text" id="inmate" className="w-full bg-slate-800 border border-slate-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Inmate Name" />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Message (Optional)</label>
-                  <textarea id="message" rows={4} className="w-full bg-slate-800 border border-slate-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="How can we help?"></textarea>
-                </div>
-                <button type="button" className="w-full bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-4 rounded-lg transition-colors shadow-lg">
-                  Submit Request
-                </button>
-                <p className="text-[10px] text-slate-500 text-center mt-4 uppercase tracking-tighter">
-                  By clicking submit, you agree to being contacted by a licensed agent 24/7.
-                </p>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </ContactContainer>
