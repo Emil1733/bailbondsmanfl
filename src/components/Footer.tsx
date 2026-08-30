@@ -97,9 +97,9 @@ export default function Footer() {
                 <div className="mb-16 p-6 bg-slate-900/50 border border-slate-800 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
                         <h4 className="text-white font-bold mb-1">Statewide Coverage</h4>
-                        <p className="text-xs text-slate-500 italic">Don't see your city listed above? We serve every municipality in the state of Florida.</p>
+                        <p className="text-xs text-slate-500 italic">Don&apos;t see your city listed above? We serve every municipality in the state of Florida.</p>
                     </div>
-                    <Link href="/locations" className="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded transition-all whitespace-nowrap">
+                    <Link href="/locations" className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold py-3 px-8 rounded transition-all whitespace-nowrap">
                         View All Service Areas &rarr;
                     </Link>
                 </div>

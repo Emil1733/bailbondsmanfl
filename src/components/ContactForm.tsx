@@ -72,6 +72,7 @@ export default function ContactForm() {
           minLength={2}
           maxLength={100}
           autoComplete="name"
+          enterKeyHint="next"
           disabled={isSubmitting}
           className={inputClasses}
           placeholder="Full Name"
@@ -90,6 +91,7 @@ export default function ContactForm() {
           maxLength={30}
           autoComplete="tel"
           inputMode="tel"
+          enterKeyHint="next"
           disabled={isSubmitting}
           className={inputClasses}
           placeholder="(000) 000-0000"
@@ -107,6 +109,8 @@ export default function ContactForm() {
           required
           minLength={2}
           maxLength={100}
+          autoComplete="off"
+          enterKeyHint="next"
           disabled={isSubmitting}
           className={inputClasses}
           placeholder="Defendant's full name"
@@ -122,15 +126,16 @@ export default function ContactForm() {
           name="message"
           rows={4}
           maxLength={2000}
+          enterKeyHint="send"
           disabled={isSubmitting}
           className={inputClasses}
           placeholder="Jail, county, charges, or other details that may help"
         />
       </div>
 
-      <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" inert>
         <label htmlFor="website">Website</label>
-        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+        <input id="website" name="website" type="url" tabIndex={-1} autoComplete="off" />
       </div>
 
       <label className="flex items-start gap-3 text-sm text-slate-400">
@@ -147,7 +152,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-yellow-600 py-4 font-bold text-white shadow-lg transition-colors hover:bg-yellow-500 disabled:cursor-wait disabled:opacity-60"
+        className="w-full rounded-lg bg-yellow-500 py-4 font-bold text-slate-950 shadow-lg transition-colors hover:bg-yellow-400 disabled:cursor-wait disabled:opacity-60"
       >
         {isSubmitting ? 'Sending…' : 'Submit Request'}
       </button>

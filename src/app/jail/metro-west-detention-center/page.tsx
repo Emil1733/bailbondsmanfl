@@ -227,10 +227,10 @@ export default function MetroWestDetentionCenterPage() {
                                 </p>
                                 <div className="grid md:grid-cols-2 gap-6 pt-4">
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
-                                        <h4 className="font-bold text-white mb-2 flex items-center gap-2">
+                                        <h3 className="font-bold text-white mb-2 flex items-center gap-2">
                                             <MapPin className="w-5 h-5 text-yellow-500" />
                                             Physical Location
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">
                                             7000 NW 41st St<br />
                                             Miami, FL 33166<br />
@@ -238,10 +238,10 @@ export default function MetroWestDetentionCenterPage() {
                                         </p>
                                     </div>
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
-                                        <h4 className="font-bold text-white mb-2 flex items-center gap-2">
+                                        <h3 className="font-bold text-white mb-2 flex items-center gap-2">
                                             <ShieldCheck className="w-5 h-5 text-yellow-500" />
                                             Bail Window Hours
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">
                                             Open 24 Hours a Day<br />
                                             7 Days a Week<br />

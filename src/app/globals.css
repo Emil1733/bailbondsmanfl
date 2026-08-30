@@ -4,8 +4,8 @@
   --color-navy-950: #020617;
   --color-navy-900: #0f172a;
   --color-navy-800: #1e293b;
-  --color-urgent-red: #ef4444;
-  --color-urgent-red-dark: #dc2626;
+  --color-urgent-red: #b91c1c;
+  --color-urgent-red-dark: #991b1b;
   --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -43,4 +43,24 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 input[type="checkbox"] {
   accent-color: #eab308;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
+#main-content:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

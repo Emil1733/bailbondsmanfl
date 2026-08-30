@@ -22,11 +22,16 @@ export default function BailFeeCalculator() {
         <div className="w-full">
             <div className="space-y-6">
                 <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Total Bail Amount Set by Court</label>
+                    <label htmlFor="bail-amount" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Total Bail Amount Set by Court</label>
                     <div className="relative">
                         <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
                         <input
+                            id="bail-amount"
                             type="number"
+                            min="0"
+                            step="0.01"
+                            inputMode="decimal"
+                            autoComplete="off"
                             placeholder="e.g. 5000"
                             value={bailAmount}
                             onChange={(e) => calculateFee(e.target.value)}
@@ -48,7 +53,7 @@ export default function BailFeeCalculator() {
                 <Link
                     href="/contact#inquiry-form"
                     onClick={() => track('get_approved_clicked', { location: 'bail_fee_calculator' })}
-                    className="block w-full text-center bg-slate-800 text-slate-200 font-bold py-4 hover:bg-yellow-600 hover:text-white transition-all uppercase tracking-widest text-sm border border-slate-700 hover:border-yellow-600"
+                    className="block w-full text-center bg-slate-800 text-slate-200 font-bold py-4 hover:bg-yellow-500 hover:text-slate-950 transition-all uppercase tracking-widest text-sm border border-slate-700 hover:border-yellow-500"
                 >
                     Get Approved
                 </Link>

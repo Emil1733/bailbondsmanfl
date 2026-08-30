@@ -50,8 +50,7 @@ export default function ComprehensiveJailGuide({ jailName, intro, sections }: Co
                 </div>
             </button>
 
-            {isOpen && (
-                <div id={guideId} className="p-8 prose prose-invert max-w-none text-slate-300">
+            <div id={guideId} hidden={!isOpen} className="p-8 prose prose-invert max-w-none text-slate-300">
                     {intro.map((p, idx) => (
                         <p key={idx} className={idx === 0 ? "lead text-lg mb-6" : "mb-6"} dangerouslySetInnerHTML={{ __html: p }}></p>
                     ))}
@@ -75,8 +74,7 @@ export default function ComprehensiveJailGuide({ jailName, intro, sections }: Co
                     <p className="text-sm text-slate-500 italic text-center">
                         Disclaimer: The information provided in this local facility guide is for educational purposes only and does not constitute legal advice. Facility policies, state statutes, and county court procedures are subject to change. Always consult with a licensed Florida attorney regarding specific criminal charges in this jurisdiction.
                     </p>
-                </div>
-            )}
+            </div>
         </div>
     );
 }

@@ -84,7 +84,7 @@ export default function WarrantSearchPage() {
                                             <span className="text-emerald-500 font-bold">1</span>
                                         </div>
                                         <div>
-                                            <h4 className="text-white font-bold text-lg mb-1">Pre-Approval</h4>
+                                            <h3 className="text-white font-bold text-lg mb-1">Pre-Approval</h3>
                                             <p className="text-slate-400">We secure your bond paperwork and payment <em>before</em> you ever step foot near a police station.</p>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@ export default function WarrantSearchPage() {
                                             <span className="text-emerald-500 font-bold">2</span>
                                         </div>
                                         <div>
-                                            <h4 className="text-white font-bold text-lg mb-1">The Turn-In</h4>
+                                            <h3 className="text-white font-bold text-lg mb-1">The Turn-In</h3>
                                             <p className="text-slate-400">Our licensed bondsman walks with you into the intake facility. We present the bond to the booking officer at the exact same moment you surrender.</p>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@ export default function WarrantSearchPage() {
                                             <span className="text-emerald-500 font-bold">3</span>
                                         </div>
                                         <div>
-                                            <h4 className="text-white font-bold text-lg mb-1">Instant Processing</h4>
+                                            <h3 className="text-white font-bold text-lg mb-1">Instant Processing</h3>
                                             <p className="text-slate-400">Because the bond is already posted, you are simply "processed" (fingerprinted and photographed) and immediately released through the front door. You never enter a holding cell.</p>
                                         </div>
                                     </div>
@@ -114,31 +114,31 @@ export default function WarrantSearchPage() {
                                 <h2 className="text-2xl font-serif font-bold text-white mb-6">Common Types of Florida Warrants</h2>
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div className="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                                        <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                                        <h3 className="text-white font-bold mb-2 flex items-center gap-2">
                                             <Gavel className="w-4 h-4 text-yellow-500" />
                                             Bench Warrants
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">Issued by a judge when you fail to appear (FTA) for a scheduled court date or fail to pay a court-ordered fine. These often have pre-set bond amounts.</p>
                                     </div>
                                     <div className="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                                        <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                                        <h3 className="text-white font-bold mb-2 flex items-center gap-2">
                                             <Search className="w-4 h-4 text-red-500" />
                                             Arrest Warrants
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">Issued when law enforcement establishes probable cause that you committed a crime. Police are actively authorized to take you into custody.</p>
                                     </div>
                                     <div className="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                                        <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                                        <h3 className="text-white font-bold mb-2 flex items-center gap-2">
                                             <ShieldAlert className="w-4 h-4 text-orange-500" />
                                             VOP Warrants
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">Violation of Probation. These are extremely severe and often come with a "No Bond" status attached until you see a judge.</p>
                                     </div>
                                     <div className="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                                        <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                                        <h3 className="text-white font-bold mb-2 flex items-center gap-2">
                                             <MapPin className="w-4 h-4 text-blue-500" />
                                             Out-of-County
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">If you are stopped in Miami for a warrant issued in Broward, you will be held in Miami until Broward transport arrives. A walk-through prevents this nightmare.</p>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@ export default function WarrantSearchPage() {
                             
                             <div className="sticky top-8 space-y-6">
                                 {/* PRIMARY CTA */}
-                                <div className="bg-red-600 p-8 rounded-2xl text-white shadow-2xl relative overflow-hidden">
+                                <div className="bg-red-700 p-8 rounded-2xl text-white shadow-2xl relative overflow-hidden">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-red-500 rounded-full blur-3xl opacity-50 -mr-10 -mt-10"></div>
                                     
                                     <h3 className="text-2xl font-serif font-black mb-4 leading-tight relative z-10">

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Search, Gavel } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 import { ReactNode } from 'react';
 
@@ -39,7 +39,7 @@ export default function Hero({ title, subtitle, inmateSearchUrl }: HeroProps) {
                     </Link>
 
                     <Link
-                        href="tel:305-831-0358"
+                        href="tel:+13058310358"
                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-urgent-red to-red-700 hover:from-red-600 hover:to-red-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-urgent-red/20 transform transition-all hover:scale-[1.02]"
                     >
                         <span className="text-lg">Call Now: (305) 831-0358</span>

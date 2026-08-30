@@ -128,7 +128,7 @@ return (
                         {/* 0. Voice Search Snippet (Speakable) */}
                         {service.speakableSummary && (
                             <div id="voice-summary" className="bg-slate-900 border-l-4 border-yellow-500 p-6 rounded-r-lg">
-                                <h3 className="text-sm font-bold text-yellow-500 uppercase tracking-widest mb-2">Quick Answer</h3>
+                                <h2 className="text-sm font-bold text-yellow-500 uppercase tracking-widest mb-2">Quick Answer</h2>
                                 <p className="text-lg text-white font-medium leading-relaxed">
                                     {service.speakableSummary}
                                 </p>
@@ -213,7 +213,7 @@ return (
                                 Our specialists are standing by to handle {service.title} cases immediately.
                             </p>
                             <a
-                                href="tel:305-831-0358"
+                                href="tel:+13058310358"
                                 className="flex items-center gap-2 bg-urgent-red hover:bg-urgent-red-dark text-white font-bold py-2 px-4 rounded-full transition-all shadow-lg animate-pulse hover:animate-none"
                             >
                                 <Phone className="w-5 h-5 fill-current" />

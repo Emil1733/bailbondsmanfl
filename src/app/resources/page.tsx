@@ -85,10 +85,10 @@ export default function ResourcesPage() {
                         {/* LEFT COLUMN: NAVIGATION HUB */}
                         <div className="lg:col-span-4 sticky top-8 space-y-6">
                             <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
-                                <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center gap-2">
+                                <h2 className="text-xl font-serif font-bold text-white mb-6 flex items-center gap-2">
                                     <BookOpen className="w-5 h-5 text-yellow-500" />
                                     Guide Directory
-                                </h3>
+                                </h2>
                                 <nav className="space-y-4">
                                     <a href="#weekend-release" className="block text-sm text-slate-400 hover:text-yellow-500 transition-colors py-1.5 border-b border-slate-800 flex justify-between items-center group">
                                         <span>1. Weekend Jail Releases</span>
@@ -153,10 +153,10 @@ export default function ResourcesPage() {
                                         </li>
                                     </ul>
                                     <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg my-6">
-                                        <h4 className="font-bold text-white mb-2 flex items-center gap-2">
+                                        <h3 className="font-bold text-white mb-2 flex items-center gap-2">
                                             <AlertTriangle className="w-5 h-5 text-yellow-500" />
                                             The Weekend Release Window
-                                        </h4>
+                                        </h3>
                                         <p className="text-sm text-slate-400">
                                             If a bond is posted on a weekend, expect release processing to take between 4 and 10 hours depending on the jail's capacity. Heavy intake periods (typically Friday and Saturday nights) will delay processing as priority is placed on incoming bookings over outgoing releases.
                                         </p>
@@ -238,10 +238,10 @@ export default function ResourcesPage() {
                                     </p>
                                     <div className="grid md:grid-cols-2 gap-8 my-8">
                                         <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
-                                            <h4 className="font-bold text-white mb-3 text-lg flex items-center gap-2">
+                                            <h3 className="font-bold text-white mb-3 text-lg flex items-center gap-2">
                                                 <FileText className="w-5 h-5 text-yellow-500" />
                                                 Cash Bond (Direct to Jail)
-                                            </h4>
+                                            </h3>
                                             <p className="text-sm text-slate-400 leading-relaxed mb-4">
                                                 You must pay the full $10,000 in cash or cashier's check to the jail clerk.
                                             </p>
@@ -252,10 +252,10 @@ export default function ResourcesPage() {
                                             </ul>
                                         </div>
                                         <div className="bg-slate-900 border border-slate-800 p-6 rounded-lg">
-                                            <h4 className="font-bold text-white mb-3 text-lg flex items-center gap-2">
+                                            <h3 className="font-bold text-white mb-3 text-lg flex items-center gap-2">
                                                 <ShieldCheck className="w-5 h-5 text-emerald-500" />
                                                 Surety Bond (Via Bondsman)
-                                            </h4>
+                                            </h3>
                                             <p className="text-sm text-slate-400 leading-relaxed mb-4">
                                                 You pay a licensed bondsman a regulated 10% premium ($1,000). The bondsman posts the $10,000 guarantee.
                                             </p>

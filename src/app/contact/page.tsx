@@ -52,9 +52,9 @@ export default function ContactPage() {
               <div className="w-14 h-14 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Phone className="w-7 h-7 text-yellow-500" />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">Call 24/7</h3>
+              <h2 className="text-2xl font-serif font-bold text-white mb-2">Call 24/7</h2>
               <p className="text-slate-400 mb-6">Immediate dispatch to any Florida county jail.</p>
-              <a href="tel:305-831-0358" className="text-xl font-bold text-yellow-500 hover:text-white transition-colors">
+              <a href="tel:+13058310358" className="text-xl font-bold text-yellow-500 hover:text-white transition-colors">
                 (305) 831-0358
               </a>
             </div>
@@ -64,7 +64,7 @@ export default function ContactPage() {
               <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Mail className="w-7 h-7 text-blue-500" />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">Email Support</h3>
+              <h2 className="text-2xl font-serif font-bold text-white mb-2">Email Support</h2>
               <p className="text-slate-400 mb-6">For documentation and general inquiries.</p>
               <a href="mailto:help@bondflorida.com" className="text-xl font-bold text-blue-500 hover:text-white transition-colors">
                 help@bondflorida.com
@@ -76,7 +76,7 @@ export default function ContactPage() {
               <div className="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Clock className="w-7 h-7 text-green-500" />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">Always Open</h3>
+              <h2 className="text-2xl font-serif font-bold text-white mb-2">Always Open</h2>
               <p className="text-slate-400 mb-6">We never close. Weekends and holidays included.</p>
               <span className="text-lg font-bold text-green-500 uppercase tracking-widest">
                 Operational 24/7
@@ -98,14 +98,14 @@ export default function ContactPage() {
                   <div className="flex gap-4">
                     <MapPin className="w-6 h-6 text-yellow-500 shrink-0" />
                     <div>
-                      <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-1">Regional HQ</h4>
+                      <h3 className="font-bold text-white uppercase tracking-wider text-xs mb-1">Regional HQ</h3>
                       <p className="text-slate-400">7000 NW 41st Street, Miami, FL 33166</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <ShieldCheck className="w-6 h-6 text-yellow-500 shrink-0" />
                     <div>
-                      <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-1">Licensure</h4>
+                      <h3 className="font-bold text-white uppercase tracking-wider text-xs mb-1">Licensure</h3>
                       <p className="text-slate-400">Florida Dept. of Financial Services • Agency Lic# P123456</p>
                     </div>
                   </div>

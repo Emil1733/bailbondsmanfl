@@ -189,14 +189,14 @@ export default async function MatrixPage({ params }: Props) {
                                 <h3 className="text-2xl font-bold text-white mb-6 font-serif">Release Process for {city.name}</h3>
                                 <div className="space-y-4">
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center shrink-0">1</div>
+                                        <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">1</div>
                                         <div className="bg-slate-900 p-4 rounded border border-slate-800 w-full">
                                             <h4 className="font-bold text-white mb-1">Booking at {city.policeDepartment.name}</h4>
                                             <p className="text-sm text-slate-400">Initial fingerprinting and processing occurs at {city.policeDepartment.address}.</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center shrink-0">2</div>
+                                        <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">2</div>
                                         <div className="bg-slate-900 p-4 rounded border border-slate-800 w-full">
                                             <h4 className="font-bold text-white mb-1">Specific Charge Processing</h4>
                                             <p className="text-sm text-slate-400">
@@ -205,7 +205,7 @@ export default async function MatrixPage({ params }: Props) {
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center shrink-0">3</div>
+                                        <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">3</div>
                                         <div className="bg-slate-900 p-4 rounded border border-slate-800 w-full">
                                             <h4 className="font-bold text-white mb-1">Fast Release from {county.jail.name}</h4>
                                             <p className="text-sm text-slate-400">We post bond immediately at the county hub to ensure release the moment they are eligible.</p>

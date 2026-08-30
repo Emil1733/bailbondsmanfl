@@ -20,7 +20,7 @@ export default function MobileFloatingCall() {
 
             {/* Quick Call Action */}
             <a
-                href="tel:305-831-0358"
+                href="tel:+13058310358"
                 className="flex-1 max-w-[65%] flex items-center justify-center gap-2.5 bg-yellow-500 text-slate-950 font-black py-3.5 px-6 rounded-lg shadow-xl shadow-yellow-500/10 active:scale-95 transition-all text-base border border-yellow-400"
             >
                 <Phone className="w-5 h-5 fill-current shrink-0 animate-bounce" />

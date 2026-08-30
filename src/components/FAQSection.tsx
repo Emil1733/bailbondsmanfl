@@ -24,11 +24,9 @@ function FAQItem({ question, answer }: FAQItemProps) {
                 {isOpen ? <Minus className="w-5 h-5 text-yellow-500 min-w-[20px]" /> : <Plus className="w-5 h-5 text-slate-600 group-hover:text-yellow-500 min-w-[20px]" />}
             </button>
 
-            {isOpen && (
-                <div id={answerId} className="pb-6 text-slate-400 leading-relaxed">
-                    {answer}
-                </div>
-            )}
+            <div id={answerId} hidden={!isOpen} className="pb-6 text-slate-400 leading-relaxed">
+                {answer}
+            </div>
         </div>
     );
 }

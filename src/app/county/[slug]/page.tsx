@@ -136,7 +136,7 @@ export default async function CountyPage({ params }: Props) {
                                                 href={county.jail.inmateSearchUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-2 bg-slate-800 hover:bg-yellow-600 text-white px-6 py-2 rounded-sm transition-all font-bold text-sm"
+                                                className="inline-flex items-center gap-2 bg-slate-800 hover:bg-yellow-500 text-white hover:text-slate-950 px-6 py-2 rounded-sm transition-all font-bold text-sm"
                                             >
                                                 INMATE ROSTER <ExternalLink className="w-4 h-4" />
                                             </a>
@@ -186,21 +186,21 @@ export default async function CountyPage({ params }: Props) {
                                         <div className="relative flex gap-6">
                                             <div className="w-10 h-10 bg-slate-900 border border-slate-700 text-white font-bold flex items-center justify-center shrink-0 z-10">1</div>
                                             <div>
-                                                <h4 className="text-white font-bold mb-2 pt-2">Case Identification</h4>
+                                                <h3 className="text-white font-bold mb-2 pt-2">Case Identification</h3>
                                                 <p className="text-slate-400 leading-relaxed text-sm">{county.richContent.releaseProcess.step1}</p>
                                             </div>
                                         </div>
                                         <div className="relative flex gap-6">
                                             <div className="w-10 h-10 bg-slate-900 border border-slate-700 text-white font-bold flex items-center justify-center shrink-0 z-10">2</div>
                                             <div>
-                                                <h4 className="text-white font-bold mb-2 pt-2">Bond Posting</h4>
+                                                <h3 className="text-white font-bold mb-2 pt-2">Bond Posting</h3>
                                                 <p className="text-slate-400 leading-relaxed text-sm">{county.richContent.releaseProcess.step2}</p>
                                             </div>
                                         </div>
                                         <div className="relative flex gap-6">
-                                            <div className="w-10 h-10 bg-yellow-600 border border-yellow-500 text-white font-bold flex items-center justify-center shrink-0 z-10">3</div>
+                                            <div className="w-10 h-10 bg-yellow-500 border border-yellow-400 text-slate-950 font-bold flex items-center justify-center shrink-0 z-10">3</div>
                                             <div>
-                                                <h4 className="text-white font-bold mb-2 pt-2">Discharge & Pick-up</h4>
+                                                <h3 className="text-white font-bold mb-2 pt-2">Discharge & Pick-up</h3>
                                                 <p className="text-slate-400 leading-relaxed text-sm">{county.richContent.releaseProcess.step3}</p>
                                             </div>
                                         </div>
@@ -277,7 +277,7 @@ export default async function CountyPage({ params }: Props) {
                                     <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
                                         Every hour spent in the {county.jail.name} is an hour of lost wages, extreme stress, and exposure to the hardened criminal element. Don't navigate the {county.name} justice system blind.
                                     </p>
-                                    <a href="tel:+13058310358" className="inline-flex items-center justify-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-red-700 transition-all shadow-lg shadow-red-900/20">
+                                    <a href="tel:+13058310358" className="inline-flex items-center justify-center gap-3 bg-red-700 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-red-800 transition-all shadow-lg shadow-red-900/20">
                                         <Phone className="w-5 h-5" />
                                         Call for Immediate {county.name} Release
                                     </a>

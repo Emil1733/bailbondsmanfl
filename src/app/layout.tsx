@@ -59,7 +59,15 @@ export default function RootLayout({
       <body
         className={`${sans.variable} ${serif.variable} antialiased bg-navy-950 text-slate-50`}
       >
-        {children}
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-white px-4 py-3 font-bold text-slate-950 shadow-xl transition-transform focus:translate-y-0"
+        >
+          Skip to main content
+        </a>
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
         <Footer />
         <Analytics />
       </body>
