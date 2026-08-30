@@ -273,6 +273,36 @@ export default function Home() {
                 ICE Detainer Guidelines <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
+
+            <Link href="/services/24-hour-bail-bonds" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <Clock className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">24-Hour Bail Assistance</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Review the information needed to begin a bail inquiry outside normal business hours and confirm the current booking location.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                Review 24-Hour Assistance <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+
+            <Link href="/services/no-collateral-bail-bonds" className="group bg-slate-950 border border-slate-800 p-8 rounded-xl hover:border-yellow-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                  <FileCheck className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">No-Collateral Bond Information</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Learn how underwriting and co-signer requirements are evaluated and when collateral may still be requested.
+                </p>
+              </div>
+              <span className="text-yellow-500 text-sm font-bold flex items-center gap-2">
+                Review Qualification Factors <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           </div>
         </ContentContainer>
       </section>

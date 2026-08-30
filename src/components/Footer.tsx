@@ -36,6 +36,8 @@ export default function Footer() {
                             <li><Link href="/services/immigration-bail-bonds" className="hover:text-yellow-500 transition-colors">Immigration Bonds</Link></li>
                             <li><Link href="/services/nebbia-hold-bail" className="hover:text-yellow-500 transition-colors">Nebbia Hold / Bail Source</Link></li>
                             <li><Link href="/services/traffic-warrant-bail" className="hover:text-yellow-500 transition-colors">Traffic Warrants</Link></li>
+                            <li><Link href="/services/24-hour-bail-bonds" className="hover:text-yellow-500 transition-colors">24-Hour Bail Bonds</Link></li>
+                            <li><Link href="/services/no-collateral-bail-bonds" className="hover:text-yellow-500 transition-colors">No-Collateral Bonds</Link></li>
                         </ul>
                     </div>
 
