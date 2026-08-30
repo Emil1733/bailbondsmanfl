@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -15,13 +17,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Bail Bonds Vero Beach | 24/7 Emergency Jail Release FL",
     description: "Looking for reliable bail bonds in Vero Beach, FL? Speak with a licensed bondsman 24/7. Get fast release from the Indian River County Jail.",
-    alternates: {
-        canonical: "https://bondflorida.com/county/indian-river/vero-beach",
-    },
-};
+    path: '/county/indian-river/vero-beach',
+});
 
 export default function VeroBeachPage() {
     const county = {
@@ -55,7 +55,7 @@ export default function VeroBeachPage() {
         "@context": "https://schema.org",
         "@type": "BailBondBusiness",
         "name": "Bail Bonds Vero Beach - Bond Florida",
-        "image": "https://bondflorida.com/og-image.jpg",
+        "image": "https://bondflorida.com/og-image.png",
         "description": "24/7 emergency bail bond services in Vero Beach, FL. Fast release from Indian River County Jail and Vero Beach Police Department.",
         "url": "https://bondflorida.com/county/indian-river/vero-beach",
         "telephone": "+1-305-831-0358",
@@ -112,10 +112,7 @@ export default function VeroBeachPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

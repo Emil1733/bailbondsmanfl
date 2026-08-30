@@ -1,17 +1,17 @@
 
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Bond Florida',
-  description: 'Terms of Service for Statewide Bail Bonds Florida.',
+  ...pageMetadata({
+    title: 'Terms of Service | Bond Florida',
+    description: 'Terms of Service for Statewide Bail Bonds Florida.',
+    path: '/terms',
+  }),
   robots: {
     index: false,
     follow: true,
   },
-
-    alternates: {
-        canonical: "https://bondflorida.com/terms",
-    },
 };
 
 export default function TermsPage() {

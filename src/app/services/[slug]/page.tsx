@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import { getService, getAllServices } from '@/lib/services';
 import EmergencyHeader from '@/components/EmergencyHeader';
@@ -5,6 +6,7 @@ import Hero from '@/components/Hero';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, AlertTriangle, ArrowRight, Shield, Phone, HelpCircle, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -32,29 +34,12 @@ export async function generateMetadata({ params }: Props) {
         return { title: 'Service Not Found' };
     }
 
-    return {
+    return pageMetadata({
         title: `${service.title} | 24/7 Florida`,
         description: service.metaDescription,
         keywords: [service.title, 'Florida Bail Bonds', '24/7 Bail Bonds', 'Emergency Release'],
-        alternates: {
-            canonical: `/services/${service.slug}`,
-        },
-        openGraph: {
-            title: service.title,
-            description: service.metaDescription,
-            url: `https://bondflorida.com/services/${service.slug}`,
-            siteName: 'Bond Florida',
-            images: [
-                {
-                    url: 'https://bondflorida.com/og-image.jpg',
-                    width: 1200,
-                    height: 630,
-                    alt: service.title,
-                },
-            ],
-            type: 'website',
-        },
-    };
+        path: `/services/${service.slug}`,
+    });
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -73,7 +58,7 @@ export default async function ServicePage({ params }: Props) {
         "@type": "Service",
         "serviceType": service.title,
         "provider": {
-            "@type": "BailBondBusiness",
+            "@type": "Organization",
             "name": "Bond Florida",
             "url": "https://bondflorida.com"
         },
@@ -105,10 +90,7 @@ export default async function ServicePage({ params }: Props) {
 
 return (
     <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={jsonLd} />
         <EmergencyHeader />
 
         {/* Custom Hero */}

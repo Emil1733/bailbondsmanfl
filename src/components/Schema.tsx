@@ -1,17 +1,19 @@
 import { County } from '@/lib/data';
+import JsonLd from '@/components/JsonLd';
+import { SOCIAL_IMAGE_URL } from '@/lib/seo';
 
 interface SchemaProps {
     county: County;
     faqs?: { question: string; answer: string }[];
 }
 
-export default function Schema({ county, faqs }: SchemaProps) {
+export default function Schema({ county }: SchemaProps) {
     const graph = [
         {
             '@type': 'BailBondBusiness',
             '@id': `https://bondflorida.com/county/${county.slug}#localbusiness`,
             name: `Statewide Bail Bonds - ${county.name}`,
-            image: 'https://bondflorida.com/og-image.jpg',
+            image: SOCIAL_IMAGE_URL,
             telephone: '(305) 831-0358', // Central dispatch
             url: `https://bondflorida.com/county/${county.slug}`,
             address: {
@@ -63,20 +65,7 @@ export default function Schema({ county, faqs }: SchemaProps) {
                     }
                 }
             ]
-        },
-        ...(faqs && faqs.length > 0 ? [
-            {
-                '@type': 'FAQPage',
-                mainEntity: faqs.map((faq) => ({
-                    '@type': 'Question',
-                    name: faq.question,
-                    acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: faq.answer,
-                    },
-                })),
-            }
-        ] : [])
+        }
     ];
 
     const jsonLd = {
@@ -85,9 +74,6 @@ export default function Schema({ county, faqs }: SchemaProps) {
     };
 
     return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={jsonLd} />
     );
 }

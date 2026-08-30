@@ -3,22 +3,13 @@ import { Metadata } from 'next';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import ContactForm from '@/components/ContactForm';
 import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from 'lucide-react';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Contact Florida Bail Bonds | 24/7 Emergency Help',
   description: 'Connect with a licensed Florida bail bondsman immediately. 24/7 emergency phone support for all county jails. Fast release assistance starts here.',
-  alternates: {
-    canonical: 'https://bondflorida.com/contact',
-  },
-  openGraph: {
-    url: 'https://bondflorida.com/contact',
-    images: [{
-      url: 'https://bondflorida.com/og-image.jpg',
-      width: 1200,
-      height: 630,
-    }],
-  },
-};
+  path: '/contact',
+});
 
 const ContactContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
     <div className={`max-w-6xl mx-auto px-6 ${className}`}>

@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -16,13 +18,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Broward Main Jail Booking & Inmate Search | Get Them Out Now (Fort Lauderdale Bail Bonds)",
     description: "Waiting on Broward Main Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Fort Lauderdale bondsmen to check their booking status and start the release process immediately.",
-    alternates: {
-        canonical: "https://bondflorida.com/jail/broward-county-main-jail",
-    },
-};
+    path: '/jail/broward-county-main-jail',
+});
 
 export default function BrowardCountyMainJailPage() {
     const jail = {
@@ -43,7 +43,7 @@ export default function BrowardCountyMainJailPage() {
             {
                 "@type": "BailBondBusiness",
                 "name": "Broward County Main Jail Bail Bonds - Bond Florida",
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": "24/7 emergency bail bond services for Broward County Main Jail in Fort Lauderdale, FL. Immediate release from Fort Lauderdale-Dade custody.",
                 "url": "https://bondflorida.com/jail/broward-county-main-jail",
                 "telephone": "+1-305-831-0358",
@@ -73,35 +73,6 @@ export default function BrowardCountyMainJailPage() {
                     "opens": "00:00",
                     "closes": "23:59"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Where do I post bail for someone at Broward County Main Jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Bail bonds for Broward County Main Jail must be posted at the main booking desk lobby located at 555 SE 1st Ave, Fort Lauderdale, FL 33301. The bail window is open 24/7. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does booking take at the Broward County Main Jail in Fort Lauderdale?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Booking at Broward County Main Jail typically takes 6 to 10 hours depending on booking volume, staffing, and shift change holds. The facility serves as the primary intake and processing hub for all Broward County arrests, which leads to high traffic. We recommend starting the bail bond paperwork immediately so the bond can be posted as soon as the inmate receives their booking number."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a bail bond at Broward County Main Jail online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the Broward booking desk electronically."
-                        }
-                    }
-                ]
             }
         ]
     };
@@ -164,10 +135,7 @@ export default function BrowardCountyMainJailPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

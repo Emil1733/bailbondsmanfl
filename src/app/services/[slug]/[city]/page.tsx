@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import { getService, getAllServices } from '@/lib/services';
 import { getCityBySlug, getAllCities } from '@/lib/data';
@@ -7,6 +8,7 @@ import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, MapPin, Clock, Siren, ArrowRight, Phone, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -55,22 +57,12 @@ export async function generateMetadata({ params }: Props) {
         ? "Bypass the 8-hour hold."
         : "Call our 24/7 agents now.";
 
-    return {
+    return pageMetadata({
         title: `${cleanServiceTitle} ${city.name} | 24/7`,
         description: `Arrested for ${cleanServiceTitle} in ${city.name}? We specialize in fast release from ${city.policeDepartment.name}. ${serviceHook}`,
         keywords: [`${cleanServiceTitle} ${city.name}`, `Bail Bonds ${city.name}`, `${city.name} DUI Bail`, `${city.name} Jail Release`],
-        alternates: {
-            canonical: `https://bondflorida.com/services/${slug}/${citySlug}`,
-        },
-        openGraph: {
-            url: `https://bondflorida.com/services/${slug}/${citySlug}`,
-            images: [{
-                url: 'https://bondflorida.com/og-image.jpg',
-                width: 1200,
-                height: 630,
-            }],
-        },
-    };
+        path: `/services/${slug}/${citySlug}`,
+    });
 }
 
 export default async function MatrixPage({ params }: Props) {
@@ -91,7 +83,7 @@ export default async function MatrixPage({ params }: Props) {
         "@type": "Service",
         "serviceType": service.title,
         "provider": {
-            "@type": "BailBondBusiness",
+            "@type": "Organization",
             "name": "Bond Florida",
             "url": "https://bondflorida.com"
         },
@@ -99,7 +91,7 @@ export default async function MatrixPage({ params }: Props) {
             "@type": "City",
             "name": city.name
         },
-        "description": `Specizalized ${service.title} services for ${city.name}, FL.`,
+        "description": `Specialized ${service.title} services for ${city.name}, FL.`,
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Bail Bond Services",
@@ -117,10 +109,7 @@ export default async function MatrixPage({ params }: Props) {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* Matrix Hero */}

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Analytics } from '@vercel/analytics/next';
+import { SITE_NAME, SITE_URL, SOCIAL_IMAGE_URL } from '@/lib/seo';
 import "./globals.css";
 
 const sans = Inter({
@@ -16,7 +17,7 @@ const serif = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bondflorida.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Florida Bail Bonds - 24/7 Statewide Network | Fast Inmate Release",
     template: "%s | Statewide Bail Bonds FL",
@@ -26,15 +27,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Bond Florida",
+    siteName: SITE_NAME,
     images: [
       {
-        url: "/og-image.png",
+        url: SOCIAL_IMAGE_URL,
         width: 1200,
         height: 630,
         alt: "Bond Florida - Statewide Bail Bonds & Inmate Release",
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [SOCIAL_IMAGE_URL],
   },
   robots: {
     index: true,

@@ -1,17 +1,16 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { ShieldAlert, Search, FileSearch, Lock, CheckCircle2, Siren, Phone, Gavel, MapPin } from 'lucide-react';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Florida Warrant Search & Confidential Checks | Walk-Through Bonds",
     description: "Don't get surprised by a traffic stop. Request a confidential Florida active warrant check from a licensed bondsman. We arrange instant walk-through bonds to keep you out of jail.",
-    alternates: {
-        canonical: "https://bondflorida.com/warrant-search",
-    },
-};
+    path: '/warrant-search',
+});
 
 export default function WarrantSearchPage() {
     return (

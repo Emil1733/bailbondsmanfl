@@ -1,15 +1,14 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import { ShieldCheck, Users, MapPin, Clock, Award, Phone, CheckCircle2, Building2 } from 'lucide-react';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'About Bond Florida | Licensed Bail Bondsmen Serving Florida',
-  description: 'Learn about our licensed bail bond agents, statewide coverage, and commitment to fast, professional release services across all Florida counties.',
-  alternates: {
-    canonical: 'https://bondflorida.com/about',
-  },
-};
+export const metadata: Metadata = pageMetadata({
+    title: 'About Bond Florida | Licensed Bail Bondsmen Serving Florida',
+    description: 'Learn about our licensed bail bond agents, statewide coverage, and commitment to fast, professional release services across all Florida counties.',
+    path: '/about',
+});
 
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
     <div className={`max-w-6xl mx-auto px-6 ${className}`}>

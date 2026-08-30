@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -15,13 +17,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Bail Bonds Bonita Springs FL | 24/7 Emergency Lee County Jail Release",
     description: "Need reliable bail bonds in Bonita Springs, FL? Contact our licensed bondsman 24/7. Fast release from the Lee County Jail Core Facility. 10% Rates & flexible payment plans.",
-    alternates: {
-        canonical: "https://bondflorida.com/county/lee/bonita-springs",
-    },
-};
+    path: '/county/lee/bonita-springs',
+});
 
 export default function BonitaSpringsPage() {
     const county = {
@@ -57,7 +57,7 @@ export default function BonitaSpringsPage() {
             {
                 "@type": "BailBondBusiness",
                 "name": "Bail Bonds Bonita Springs - Bond Florida",
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": "24/7 emergency bail bond services in Bonita Springs, FL. Fast release from Lee County Sheriff District 4 and Lee County Jail Core Facility.",
                 "url": "https://bondflorida.com/county/lee/bonita-springs",
                 "telephone": "+1-305-831-0358",
@@ -87,43 +87,6 @@ export default function BonitaSpringsPage() {
                     "opens": "00:00",
                     "closes": "23:59"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "How do I bail someone out of the Lee County Jail in Bonita Springs?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "To bail someone out of the Lee County Jail Core Facility (located in Fort Myers), you must work with a licensed bondsman. Since Bonita Springs arrests are processed by the Lee County Sheriff District 4 substation on Old 41 Road before being transported north to Fort Myers, we recommend starting the paperwork immediately. You can pay the 10% premium and sign forms online via E-Bonding, and we will post the surety bond directly at the Ortiz Avenue jail desk."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Where is the police station in Bonita Springs?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Bonita Springs is policed by the Lee County Sheriff's Office (LCSO) District 4 substation, located at 27300 Old 41 Rd, Bonita Springs, FL 34135. The phone number is (239) 477-1840. While initial processing occurs here, inmates are quickly transported to the main jail on Ortiz Avenue in Fort Myers."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does transport take from Bonita Springs to the Fort Myers jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The transport from Bonita Springs to the Ortiz Avenue jail in Fort Myers is approximately 25 miles and takes about 30 to 40 minutes via I-75 North. Booking at the main facility takes an additional 3 to 6 hours before they can be released."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a Bonita Springs bail bond online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. Our E-Bonding service allows you to secure a release remotely. You can complete the credit application and pay the 10% premium via card or bank wire from your phone, allowing the release process to start before you even travel to the jail."
-                        }
-                    }
-                ]
             }
         ]
     };
@@ -153,10 +116,7 @@ export default function BonitaSpringsPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

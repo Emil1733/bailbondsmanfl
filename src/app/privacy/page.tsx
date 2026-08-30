@@ -1,17 +1,17 @@
 
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Bond Florida',
-  description: 'Privacy Policy for Statewide Bail Bonds Florida.',
+  ...pageMetadata({
+    title: 'Privacy Policy | Bond Florida',
+    description: 'Privacy Policy for Statewide Bail Bonds Florida.',
+    path: '/privacy',
+  }),
   robots: {
     index: false,
     follow: true,
   },
-
-    alternates: {
-        canonical: "https://bondflorida.com/privacy",
-    },
 };
 
 export default function PrivacyPage() {

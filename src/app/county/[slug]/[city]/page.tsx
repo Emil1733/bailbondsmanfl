@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import { getCounty } from '@/lib/data';
 import { getAllServices } from '@/lib/services';
@@ -8,8 +9,9 @@ import DynamicMap from '@/components/DynamicMap';
 import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import FAQSection from '@/components/FAQSection';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
-import { ExternalLink, Clock, MapPin, Phone, AlertTriangle, ArrowRight, ShieldCheck, Siren, Zap } from 'lucide-react';
+import { Clock, MapPin, Phone, AlertTriangle, ArrowRight, ShieldCheck, Siren, Zap } from 'lucide-react';
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -56,13 +58,11 @@ export async function generateMetadata({ params }: Props) {
         return { title: 'City Not Found' };
     }
 
-    return {
+    return pageMetadata({
         title: `Bail Bonds ${city.name} | ${city.travelTimeToJail} Jail Release`,
         description: `Arrested in ${city.name} by ${city.policeDepartment.name}? Call now to post bond before they are transferred to ${county.jail.name} in ${county.name}. 24/7 Service.`,
-        alternates: {
-            canonical: `https://bondflorida.com/county/${county.slug}/${city.slug}`,
-        },
-    };
+        path: `/county/${county.slug}/${city.slug}`,
+    });
 }
 
 export default async function CityPage({ params }: Props) {
@@ -75,14 +75,13 @@ export default async function CityPage({ params }: Props) {
         notFound();
     }
 
-    const faqs = city.specificFaqs ?? county.richContent?.specificFaqs;
     const jsonLd = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "BailBondBusiness",
                 "name": `Bail Bonds ${city.name} - Bond Florida`,
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": `24/7 Bail Bond services in ${city.name}, FL. Immediate release from ${city.policeDepartment.name} and ${county.jail.name} transfer prevention.`,
                 "url": `https://bondflorida.com/county/${county.slug}/${city.slug}`,
                 "telephone": "+1-305-831-0358",
@@ -109,27 +108,13 @@ export default async function CityPage({ params }: Props) {
                     "https://www.facebook.com/statewidebail",
                     "https://twitter.com/statewidebail"
                 ]
-            },
-            ...(faqs && faqs.length > 0 ? [{
-                "@type": "FAQPage",
-                "mainEntity": faqs.map((faq) => ({
-                    "@type": "Question",
-                    "name": faq.question,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": faq.answer
-                    }
-                }))
-            }] : [])
+            }
         ]
     };
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO: City Specific Alert */}

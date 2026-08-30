@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -16,13 +18,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Falkenburg Jail Booking & Inmate Search | Get Them Out Now (Tampa Bail Bonds)",
     description: "Waiting on Falkenburg Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Tampa bondsmen to check their booking status and start the release process immediately.",
-    alternates: {
-        canonical: "https://bondflorida.com/jail/falkenburg-road-jail",
-    },
-};
+    path: '/jail/falkenburg-road-jail',
+});
 
 export default function FalkenburgRoadJailPage() {
     const jail = {
@@ -43,7 +43,7 @@ export default function FalkenburgRoadJailPage() {
             {
                 "@type": "BailBondBusiness",
                 "name": "Falkenburg Road Jail Bail Bonds - Bond Florida",
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": "24/7 emergency bail bond services for Falkenburg Road Jail in Tampa, FL. Immediate release from HCSO custody.",
                 "url": "https://bondflorida.com/jail/falkenburg-road-jail",
                 "telephone": "+1-305-831-0358",
@@ -73,35 +73,6 @@ export default function FalkenburgRoadJailPage() {
                     "opens": "00:00",
                     "closes": "23:59"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Where do I post bail for someone at Falkenburg Road Jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Bail bonds for Falkenburg Road Jail must be posted at the Hillsborough County Sheriff's Office booking desk, located at the main jail complex at 3621 Old Falkenburg Rd, Tampa, FL 33619. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the difference between Orient Road Jail and Falkenburg Road Jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Orient Road Jail is the primary booking and intake facility for all Hillsborough County arrests. Falkenburg Road Jail is primarily a housing facility where inmates are transferred after booking is completed. While booking occurs at Orient Road, bail bonds can be posted at either facility's HCSO desk to secure release."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a bail bond at Falkenburg Road Jail online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the HCSO booking desk electronically."
-                        }
-                    }
-                ]
             }
         ]
     };
@@ -164,10 +135,7 @@ export default function FalkenburgRoadJailPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -15,13 +17,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Bail Bonds Fort Myers FL | 24/7 Emergency Ortiz Jail Release",
     description: "Looking for reliable bail bonds in Fort Myers, FL? Speak with a licensed bondsman 24/7. Immediate release from the Lee County Jail Core Facility. 10% Rates & online payment plans.",
-    alternates: {
-        canonical: "https://bondflorida.com/county/lee/fort-myers",
-    },
-};
+    path: '/county/lee/fort-myers',
+});
 
 export default function FortMyersPage() {
     const county = {
@@ -57,7 +57,7 @@ export default function FortMyersPage() {
             {
                 "@type": "BailBondBusiness",
                 "name": "Bail Bonds Fort Myers - Bond Florida",
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": "24/7 emergency bail bond services in Fort Myers, FL. Immediate release from Fort Myers Police Department and Lee County Jail Core Facility.",
                 "url": "https://bondflorida.com/county/lee/fort-myers",
                 "telephone": "+1-305-831-0358",
@@ -87,43 +87,6 @@ export default function FortMyersPage() {
                     "opens": "00:00",
                     "closes": "23:59"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "How do I bail someone out of the Lee County Jail in Fort Myers?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "To bail someone out of the Lee County Jail Core Facility on Ortiz Avenue, Fort Myers, you must work with a licensed bondsman. You will need to pay the state-regulated 10% non-refundable premium, provide a valid photo ID, and sign indemnity forms. You can complete all paperwork and payment online via our E-Bonding service, and our bondsman will post the bond directly at the jail desk to secure release."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does booking take at the Ortiz Avenue Jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Booking at the Lee County Jail Core Facility typically takes between 3 and 6 hours depending on jail volume, staffing, and shift change periods. Once booking is complete and the inmate is fully processed, we can immediately file the bond. The release process itself takes another 4 to 8 hours."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Where is the inmate release lobby in Fort Myers?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "All inmate releases in Lee County are processed at the Lee County Jail Core Facility, located at 2501 Ortiz Avenue, Fort Myers, FL 33905. Even if an arrest was made by the Fort Myers Police Department downtown, the inmate will be transported to the Ortiz Avenue facility. Do not go to the downtown Justice Center for release."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a Fort Myers bail bond online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we support remote E-Bonding. You can complete the application, upload your ID, and pay the 10% premium electronically using a credit card, debit card, or bank wire, allowing you to secure release without visiting the jail."
-                        }
-                    }
-                ]
             }
         ]
     };
@@ -153,10 +116,7 @@ export default function FortMyersPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

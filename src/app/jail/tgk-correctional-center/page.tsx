@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -16,13 +18,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "TGK Booking & Inmate Search | Get Them Out Now (Miami Bail Bonds)",
     description: "Waiting on TGK Booking? Don\'t wait for the roster to update. Call our 24/7 Miami bondsmen to check their booking status and start the release process immediately.",
-    alternates: {
-        canonical: "https://bondflorida.com/jail/tgk-correctional-center",
-    },
-};
+    path: '/jail/tgk-correctional-center',
+});
 
 export default function TgkCorrectionalCenterPage() {
     const jail = {
@@ -43,7 +43,7 @@ export default function TgkCorrectionalCenterPage() {
             {
                 "@type": "BailBondBusiness",
                 "name": "TGK Correctional Center Bail Bonds - Bond Florida",
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": "24/7 emergency bail bond services for Turner Guilford Knight (TGK) Correctional Center in Miami, FL. Immediate release from Miami-Dade custody.",
                 "url": "https://bondflorida.com/jail/tgk-correctional-center",
                 "telephone": "+1-305-831-0358",
@@ -73,35 +73,6 @@ export default function TgkCorrectionalCenterPage() {
                     "opens": "00:00",
                     "closes": "23:59"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Where do I post bail for someone at TGK Correctional Center?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Bail bonds for TGK Correctional Center must be posted at the main booking desk lobby located at 7000 NW 41st St, Miami, FL 33166. The bail window is open 24/7. Our licensed bail bondsman can handle the entire process electronically or meet you at the facility, so you do not have to wait in line at the jail cash window."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does booking take at the TGK Correctional Center in Miami?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Booking at Turner Guilford Knight (TGK) Correctional Center typically takes 6 to 12 hours depending on booking volume, staffing, and shift change holds. The facility serves as the primary intake and processing hub for all Miami-Dade County arrests, which leads to high traffic. We recommend starting the bail bond paperwork immediately so the bond can be posted as soon as the inmate receives their booking number."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a bail bond at TGK Correctional Center online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. Our digital E-Bonding service allows you to complete the credit application and pay the 10% premium via credit card, debit card, or wire transfer from your phone. Our bondsman will immediately file the surety bond with the TGK booking desk electronically."
-                        }
-                    }
-                ]
             }
         ]
     };
@@ -164,10 +135,7 @@ export default function TgkCorrectionalCenterPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

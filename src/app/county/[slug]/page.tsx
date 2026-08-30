@@ -9,6 +9,7 @@ import FAQSection from '@/components/FAQSection';
 import Schema from '@/components/Schema';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { ExternalLink, Clock, MapPin, Phone, Gavel, FileText, HelpCircle, ArrowRight } from 'lucide-react';
+import { pageMetadata } from '@/lib/seo';
 
 // 1. STANDARD SPINE COMPONENT
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -38,21 +39,11 @@ export async function generateMetadata({ params }: Props) {
         };
     }
 
-    return {
+    return pageMetadata({
         title: `${county.name} Bail Bonds | 24/7 Fast Release`,
         description: `Fast release from ${county.jail.name}. 24/7 bail bonds in ${county.name}. Licensed agents. Call now for immediate help.`,
-        alternates: {
-            canonical: `https://bondflorida.com/county/${county.slug}`,
-        },
-        openGraph: {
-            url: `https://bondflorida.com/county/${county.slug}`,
-            images: [{
-                url: 'https://bondflorida.com/og-image.jpg',
-                width: 1200,
-                height: 630,
-            }],
-        },
-    };
+        path: `/county/${county.slug}`,
+    });
 }
 
 import { generateCountyFAQs } from '@/lib/seo-helpers';

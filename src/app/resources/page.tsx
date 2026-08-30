@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -12,13 +14,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Florida Bail Resources & Legal Guides | 24/7 Educational Hub",
     description: "Access our comprehensive Florida bail bonds guide. Learn about weekend jail releases, co-signer liabilities, 72-hour holds, cash bonds, and Nebbia requirements.",
-    alternates: {
-        canonical: "https://bondflorida.com/resources",
-    },
-};
+    path: '/resources',
+});
 
 export default function ResourcesPage() {
     const jsonLd = {
@@ -30,45 +30,13 @@ export default function ResourcesPage() {
                 "url": "https://bondflorida.com/resources",
                 "name": "Florida Bail Resources & Legal Guides",
                 "description": "Comprehensive resource directory answering critical questions about Florida jail releases, surety liabilities, and intake schedules."
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Do county jails release inmates on weekends in Florida?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. County jails in Florida operate 24 hours a day, 7 days a week, including weekends and state holidays. If a defendant has a pre-set bond or has gone to a First Appearance hearing (magistrate court) on Saturday or Sunday, a licensed bail bondsman can post the surety bond and secure their release at any hour of the night or weekend."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What are the financial liabilities of co-signing a bail bond?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "As a co-signer (indemnitor), you assume full financial responsibility for the complete amount of the bail bond. If the defendant fails to appear in court, you are responsible for paying the full face value of the bond to the surety agency, plus any recovery fees. If you put up collateral (like real estate or cash), that collateral can be seized and liquidated to satisfy the court's bond forfeiture order."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long can a Florida jail hold you without filing formal charges?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Under Florida Rules of Criminal Procedure 3.133, the state prosecutor generally has 33 days from the date of arrest to file formal charges (an Information or Indictment). If charges are not filed within 33 days, the court must release the defendant on their own recognizance on the 34th day, unless the state shows good cause, which can extend the charging deadline to a maximum of 40 days."
-                        }
-                    }
-                ]
             }
         ]
     };
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

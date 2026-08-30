@@ -1,4 +1,6 @@
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -15,13 +17,11 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
     </div>
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Bail Bonds Cape Coral FL | 24/7 Emergency Jail Release",
     description: "Need bail bonds in Cape Coral, FL? Call our 24/7 licensed bondsman immediately. Fast release from Lee County Jail Core Facility. Low rates & payment plans.",
-    alternates: {
-        canonical: "https://bondflorida.com/county/lee/cape-coral",
-    },
-};
+    path: '/county/lee/cape-coral',
+});
 
 export default function CapeCoralPage() {
     const county = {
@@ -57,7 +57,7 @@ export default function CapeCoralPage() {
             {
                 "@type": "BailBondBusiness",
                 "name": "Bail Bonds Cape Coral - Bond Florida",
-                "image": "https://bondflorida.com/og-image.jpg",
+                "image": "https://bondflorida.com/og-image.png",
                 "description": "24/7 emergency bail bond services in Cape Coral, FL. Immediate release from Cape Coral Police Department and Lee County Jail.",
                 "url": "https://bondflorida.com/county/lee/cape-coral",
                 "telephone": "+1-305-831-0358",
@@ -87,59 +87,6 @@ export default function CapeCoralPage() {
                     "opens": "00:00",
                     "closes": "23:59"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "How do I bail someone out of the Lee County Jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "To bail someone out of the Lee County Jail Core Facility (Ortiz Avenue, Fort Myers), you must work with a licensed bondsman. The co-signer must pay a regulated 10% premium, provide a valid photo ID, and sign the indemnity agreement. The process can be completed entirely online via E-Bonding, and the bondsman will post the bond directly with the Lee County Sheriff's Office to secure release."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does booking take at the Lee County Jail?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Booking at the Lee County Jail Core Facility on Ortiz Avenue typically takes between 3 and 6 hours. During this period, the inmate is fingerprinted, photographed, and run for outstanding warrants. We recommend starting the bail bond paperwork immediately upon arrest so we can post the bond the moment the booking process is finalized."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Where is the release lobby in Lee County?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Inmate releases are processed at the Lee County Jail Core Facility located at 2501 Ortiz Avenue, Fort Myers, FL 33905. The release lobby is situated at the front of the complex with public parking available outside. Our local bail bondsman can coordinate meeting you at this location or handle all paperwork remotely."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the standard bail bond premium in Cape Coral?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The premium is fixed by Florida state law at 10% of the total bail amount for state charges, with a minimum fee of $100 per charge. Federal or immigration bonds have a standard premium of 15%. This fee is non-refundable and represents the bondsman's service fee for guaranteeing the defendant's appearance in court."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How do I secure a walk-through bond for an active warrant?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "A walk-through bond allows you to turn yourself in at the Lee County Jail on an active warrant, get processed, and be released immediately without spending the night in a cell. We prepare the bond paperwork in advance, accompany you to the Ortiz Avenue facility, and post the bond immediately during the intake process."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can I pay for a Cape Coral bail bond online?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. We offer fully digital electronic bonding (E-Bonding). You can complete the credit application, sign the indemnity agreements, and pay the 10% premium via credit card, debit card, or bank wire from your mobile phone, eliminating the need to travel to our office or the jail."
-                        }
-                    }
-                ]
             }
         ]
     };
@@ -169,10 +116,7 @@ export default function CapeCoralPage() {
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <EmergencyHeader />
 
             {/* HERO */}

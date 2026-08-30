@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
@@ -7,6 +8,7 @@ import AuthorityArticle from '@/components/AuthorityArticle';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { counties } from '@/lib/data';
 import { ShieldCheck, Clock, Scale, Phone, FileCheck, LockOpen, MapPin, ArrowRight, Star, Globe, Car, ShieldAlert, Gavel, Zap } from 'lucide-react';
+import { pageMetadata } from '@/lib/seo';
 
 // 1. STANDARD SPINE COMPONENT
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -15,21 +17,10 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
   </div>
 );
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: '24 Hour Florida Bail Bondsman | Statewide Jail Release',
   description: 'Licensed Florida Bail Bondsman serving all 67 counties. Immediate release from Miami-Dade, Broward, Orange, and Hillsborough jails. 10% Rates.',
-  alternates: {
-    canonical: 'https://bondflorida.com',
-  },
-  openGraph: {
-    url: 'https://bondflorida.com',
-    images: [{
-      url: 'https://bondflorida.com/og-image.jpg',
-      width: 1200,
-      height: 630,
-    }],
-  },
-};
+});
 
 export default function Home() {
   const jsonLd = {
@@ -53,62 +44,13 @@ export default function Home() {
             closes: '23:59'
           }
         ]
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://bondflorida.com/#faq',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'How much does bail cost in Florida?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'In Florida, the standard bail bond premium is 10% of the total bail amount for state charges. This rate is regulated by the state.'
-            }
-          },
-          {
-            '@type': 'Question',
-            name: 'Can I do an inmate search online?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Yes. Most Florida counties, including Miami-Dade and Broward, have online inmate search portals. You can access these direct links through our County Directory.'
-            }
-          },
-          {
-            '@type': 'Question',
-            name: 'What is an online bail bond in Florida?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'An online bail bond (or E-Bonding) allows co-signers to complete all applications, indemnity contracts, and premium payments remotely via phone or computer. The bondsman then files the bond electronically with the jail.'
-            }
-          },
-          {
-            '@type': 'Question',
-            name: 'How long does the jail release process take in Florida?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Once the bail bond is posted, release typically takes 2 to 8 hours depending on jail volume and staffing. Booking before release usually takes 3 to 6 hours.'
-            }
-          },
-          {
-            '@type': 'Question',
-            name: 'Can I clear an active arrest warrant without going to jail?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Yes, using a Walk-Through Bond. A bondsman prepares the paperwork in advance, walks you into the booking desk at the county jail, and immediately posts the bond, letting you process and leave without being housed.'
-            }
-          }
-        ]
       }
-    ]
-  };
+        ]
+    };
 
   return (
     <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <EmergencyHeader />
 
       {/* 2. REFACTORED HERO - Authority Style */}
