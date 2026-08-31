@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Metro West Booking & Inmate Search | Get Them Out Now (Miami Bail Bonds)",
-    description: "Waiting on Metro West Booking? Don\'t wait for the roster to update. Call our 24/7 Miami bondsmen to check their booking status and start the release process immediately.",
+    title: "Metro West Detention Center Booking Guide",
+    description: "Find the Metro West Detention Center address, phone number, official Miami-Dade inmate-search resource, booking details, and release information.",
     path: '/jail/metro-west-detention-center',
 });
 

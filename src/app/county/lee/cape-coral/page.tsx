@@ -18,8 +18,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Bail Bonds Cape Coral FL | 24/7 Emergency Jail Release",
-    description: "Need bail bonds in Cape Coral, FL? Call our 24/7 licensed bondsman immediately. Fast release from Lee County Jail Core Facility. Low rates & payment plans.",
+    title: "Cape Coral Bail Bonds & Jail Guide",
+    description: "Find Cape Coral arresting-agency contacts, Lee County Jail Core Facility information, the official inmate-search link, and general bail resources.",
     path: '/county/lee/cape-coral',
 });
 

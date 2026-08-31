@@ -7,8 +7,8 @@ import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { ShieldAlert, Search, FileSearch, Lock, CheckCircle2, Siren, Phone, Gavel, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = pageMetadata({
-    title: "Florida Warrant Search & Confidential Checks | Walk-Through Bonds",
-    description: "Don't get surprised by a traffic stop. Request a confidential Florida active warrant check from a licensed bondsman. We arrange instant walk-through bonds to keep you out of jail.",
+    title: "Florida Warrant Search Resources & Guide",
+    description: "Learn how to check Florida warrant information through official county resources, what the results may mean, and where to seek qualified legal help.",
     path: '/warrant-search',
 });
 

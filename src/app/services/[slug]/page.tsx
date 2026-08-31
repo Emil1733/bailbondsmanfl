@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return pageMetadata({
-        title: `${service.title} | 24/7 Florida`,
+        title: `${service.title} Information Guide`,
         description: service.metaDescription,
         keywords: [service.title, 'Florida Bail Bonds', '24/7 Bail Bonds', 'Emergency Release'],
         path: `/services/${service.slug}`,
@@ -131,7 +131,7 @@ return (
                         <div>
                             <h2 className="text-2xl font-serif font-bold text-white mb-6 flex items-center gap-3">
                                 <Shield className="w-6 h-6 text-yellow-500" />
-                                Why This Requires a Specialist
+                                Key Information to Review
                             </h2>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {service.content.keyPoints.map((point, idx) => (
@@ -172,7 +172,7 @@ return (
                             <div className="bg-red-950/20 border border-red-900/30 p-8 rounded-xl">
                                 <h3 className="text-lg font-bold text-red-400 mb-4 flex items-center gap-2">
                                     <AlertTriangle className="w-5 h-5" />
-                                    Common Charges We Handle
+                                    Related Case Types
                                 </h3>
                                 <div className="flex flex-wrap gap-3">
                                     {service.content.commonCharges.map((charge, idx) => (
@@ -195,7 +195,7 @@ return (
                             <Icon className="w-16 h-16 text-white/90 mx-auto mb-6" />
                             <h3 className="text-2xl font-bold text-white mb-2">Need Help Now?</h3>
                             <p className="text-yellow-100 mb-8 font-medium">
-                                Our specialists are standing by to handle {service.title} cases immediately.
+                                Call to discuss the booking details and available next steps.
                             </p>
                             <a
                                 href="tel:+13058310358"
@@ -210,9 +210,9 @@ return (
                         <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                             <h3 className="font-bold text-white mb-4 flex items-center gap-2">
                                 <MapPin className="w-5 h-5 text-yellow-500" />
-                                Available Service Areas
+                                Related Local Directories
                             </h3>
-                            <p className="text-xs text-slate-400 mb-4">Select a county and city for local release times, arresting agencies, and jail information.</p>
+                            <p className="text-xs text-slate-400 mb-4">Select a county or city for local arresting-agency contacts, jail details, and official inmate-search links.</p>
                             <div className="space-y-5">
                                 {[...citiesByCounty.entries()].map(([countySlug, entries]) => (
                                     <div key={countySlug}>
@@ -222,7 +222,7 @@ return (
                                         <div className="flex flex-wrap gap-2">
                                             {entries.map(({ city }) => (
                                                 <Link key={city.slug} href={`/services/${service.slug}/${city.slug}`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">
-                                                    {service.title.replace(' Florida', '')} in {city.name}
+                                                    {city.name} local guide
                                                 </Link>
                                             ))}
                                         </div>
@@ -257,7 +257,7 @@ return (
                 <div className="bg-slate-900 border-t border-white/5 py-24 mt-20">
                     <ContentContainer className="max-w-4xl">
                         <h2 className="text-3xl font-serif font-bold text-white mb-10 border-l-4 border-yellow-500 pl-6">
-                            Comprehensive Guide to {service.title}
+                            Detailed Information About {service.title}
                         </h2>
                         <div className="prose prose-invert prose-lg max-w-none text-slate-300">
                             {service.editorialBody.map((paragraph, idx) => (

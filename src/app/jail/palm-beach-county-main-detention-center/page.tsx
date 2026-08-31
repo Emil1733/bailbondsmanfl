@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Gun Club Jail Booking & Inmate Search | Get Them Out Now (West Palm Beach Bail Bonds)",
-    description: "Waiting on Gun Club Jail Booking? Don\'t wait for the roster to update. Call our 24/7 West Palm Beach bondsmen to check their booking status and start the release process immediately.",
+    title: "Palm Beach Main Detention Center Guide",
+    description: "Find the Palm Beach Main Detention Center address, phone number, official inmate-search resource, booking details, visitor information, and release guidance.",
     path: '/jail/palm-beach-county-main-detention-center',
 });
 

@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Land O' Lakes Jail Booking & Inmate Search | Get Them Out Now (Pasco County Bail Bonds)",
-    description: "Waiting on Land O' Lakes Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Pasco County bondsmen to check their booking status and start the release process immediately.",
+    title: "Land O' Lakes Detention Center Guide",
+    description: "Find the Land O' Lakes Detention Center address, phone number, official Pasco inmate-search resource, booking details, visitor information, and release guide.",
     path: '/jail/land-o-lakes-detention-center',
 });
 

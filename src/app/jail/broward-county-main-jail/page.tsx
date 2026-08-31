@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Broward Main Jail Booking & Inmate Search | Get Them Out Now (Fort Lauderdale Bail Bonds)",
-    description: "Waiting on Broward Main Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Fort Lauderdale bondsmen to check their booking status and start the release process immediately.",
+    title: "Broward Main Jail Booking & Inmate Guide",
+    description: "Find the Broward Main Jail address, phone number, official Broward inmate-search resource, booking details, visitor information, and release guidance.",
     path: '/jail/broward-county-main-jail',
 });
 

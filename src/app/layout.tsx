@@ -19,10 +19,10 @@ const serif = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Florida Bail Bonds - 24/7 Statewide Network | Fast Inmate Release",
-    template: "%s | Statewide Bail Bonds FL",
+    default: "Florida Bail Bonds & Inmate Search | Bond Florida",
+    template: "%s",
   },
-  description: "Immediate bail assistance for all Florida counties. Search inmate rosters for Miami-Dade, Broward, Palm Beach, and more. Calculate fees and get fast release now.",
+  description: "Find Florida county jail contacts, official inmate-search links, bail information, and local service guides from Bond Florida's statewide directory.",
   keywords: ["Bail Bonds Florida", "Inmate Search FL", "Miami-Dade Jail", "Broward County Bail", "24 Hour Bail Bonds"],
   openGraph: {
     type: "website",

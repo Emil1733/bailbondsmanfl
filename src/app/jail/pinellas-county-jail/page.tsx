@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Pinellas Jail Booking & Inmate Search | Get Them Out Now (Clearwater Bail Bonds)",
-    description: "Waiting on Pinellas Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Clearwater bondsmen to check their booking status and start the release process immediately.",
+    title: "Pinellas County Jail Booking & Inmate Guide",
+    description: "Find the Pinellas County Jail address, phone number, official inmate-search resource, booking details, visitor information, and Clearwater release guidance.",
     path: '/jail/pinellas-county-jail',
 });
 

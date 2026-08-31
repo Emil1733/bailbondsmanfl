@@ -18,8 +18,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Bail Bonds Vero Beach | 24/7 Emergency Jail Release FL",
-    description: "Looking for reliable bail bonds in Vero Beach, FL? Speak with a licensed bondsman 24/7. Get fast release from the Indian River County Jail.",
+    title: "Vero Beach Bail Bonds & Jail Guide",
+    description: "Find Vero Beach arresting-agency contacts, Indian River County Jail information, the official inmate-search link, and general Florida bail resources.",
     path: '/county/indian-river/vero-beach',
 });
 

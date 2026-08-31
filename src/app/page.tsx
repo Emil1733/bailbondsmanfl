@@ -18,8 +18,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata = pageMetadata({
-  title: '24 Hour Florida Bail Bondsman | Statewide Jail Release',
-  description: 'Licensed Florida Bail Bondsman serving all 67 counties. Immediate release from Miami-Dade, Broward, Orange, and Hillsborough jails. 10% Rates.',
+  title: 'Florida Bail Bonds & Inmate Search | Bond Florida',
+  description: 'Find Florida county jail contacts, official inmate-search links, bail information, and local service guides from Bond Florida\'s statewide directory.',
 });
 
 export default function Home() {

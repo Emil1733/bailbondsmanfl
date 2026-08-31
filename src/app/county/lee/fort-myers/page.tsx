@@ -18,8 +18,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Bail Bonds Fort Myers FL | 24/7 Emergency Ortiz Jail Release",
-    description: "Looking for reliable bail bonds in Fort Myers, FL? Speak with a licensed bondsman 24/7. Immediate release from the Lee County Jail Core Facility. 10% Rates & online payment plans.",
+    title: "Fort Myers Bail Bonds & Jail Guide",
+    description: "Find Fort Myers arresting-agency contacts, Lee County Jail Core Facility information, the official inmate-search link, and general bail resources.",
     path: '/county/lee/fort-myers',
 });
 

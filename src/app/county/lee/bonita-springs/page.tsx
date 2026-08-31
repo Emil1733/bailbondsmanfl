@@ -18,8 +18,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Bail Bonds Bonita Springs FL | 24/7 Emergency Lee County Jail Release",
-    description: "Need reliable bail bonds in Bonita Springs, FL? Contact our licensed bondsman 24/7. Fast release from the Lee County Jail Core Facility. 10% Rates & flexible payment plans.",
+    title: "Bonita Springs Bail Bonds & Jail Guide",
+    description: "Find Bonita Springs arresting-agency contacts, Lee County Jail Core Facility information, the official inmate-search link, and general bail resources.",
     path: '/county/lee/bonita-springs',
 });
 

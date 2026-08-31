@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Falkenburg Jail Booking & Inmate Search | Get Them Out Now (Tampa Bail Bonds)",
-    description: "Waiting on Falkenburg Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Tampa bondsmen to check their booking status and start the release process immediately.",
+    title: "Falkenburg Road Jail Booking Guide",
+    description: "Find the Falkenburg Road Jail address, phone number, official Hillsborough inmate-search resource, booking details, visitor information, and release guidance.",
     path: '/jail/falkenburg-road-jail',
 });
 

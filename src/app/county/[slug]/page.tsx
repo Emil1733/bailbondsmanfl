@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return pageMetadata({
-        title: `${county.name} Bail Bonds | 24/7 Fast Release`,
-        description: `Fast release from ${county.jail.name}. 24/7 bail bonds in ${county.name}. Licensed agents. Call now for immediate help.`,
+        title: `${county.name} Bail Bonds & Jail Guide`,
+        description: `Find ${county.jail.name} contacts, the official inmate-search resource, local city guides, and bail information for ${county.name}.`,
         path: `/county/${county.slug}`,
     });
 }

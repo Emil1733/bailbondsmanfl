@@ -23,7 +23,7 @@ export const services: Service[] = [
         slug: 'dui-bail-bonds',
         title: 'DUI Bail Bonds Florida',
         shortDescription: ' arrested for Driving Under the Influence? We specialize in urgent DUI release preventing license suspension delays.',
-        metaDescription: 'DUI Bail Bonds in Florida. 24/7 Fast Release for Driving Under the Influence charges. We handle the paperwork to get them out before the 8-hour hold expires.',
+        metaDescription: 'Learn how Florida DUI booking and bail may work, which information to gather, what can affect release timing, and where to find official county resources.',
         icon: Car,
         heroImage: '/images/dui-hero.jpg',
         content: {
@@ -59,7 +59,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: 'domestic-violence-bail',
         title: 'Domestic Violence Bail Bonds',
             shortDescription: 'Navigating "No Contact" orders and mandatory court appearances. We guide you through the complex DV release process.',
-                metaDescription: 'Domestic Violence Bail Bonds Florida. Specialized support for DV charges, "No Contact" orders, and First Appearance hearings. Confidential and fast.',
+                metaDescription: 'Learn about Florida domestic-violence booking, first appearance, possible release conditions, and the official resources to consult for case-specific guidance.',
                     icon: CloudRain,
                         heroImage: '/images/dv-hero.jpg',
                             content: {
@@ -88,7 +88,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: 'immigration-bail-bonds',
         title: 'Immigration Bail Bonds (Federal)',
             shortDescription: 'Specialized Federal bonds for ICE datainers. We handle nationwide immigration bonds to reunite families.',
-                metaDescription: 'Immigration Bail Bonds Florida. Licensed to post Federal bonds for ICE detainees across Florida. Reunite your family today.',
+                    metaDescription: 'Learn how federal immigration bonds differ from Florida state bail, what information families may need, and where to verify a detainee’s official status.',
                     icon: Globe,
                         heroImage: '/images/immigration-hero.jpg',
                             content: {
@@ -117,7 +117,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: 'traffic-warrant-bail',
         title: 'Traffic & Warrant Amnesty',
             shortDescription: 'Clear active bench warrants for unpaid tickets or missed court dates without going to jail (Walk-Through Bonds).',
-                metaDescription: 'Traffic Ticket Bail Bonds Florida. Clear your bench warrant for suspended license or missed court. "Walk-Through" bond service available.',
+                metaDescription: 'Learn how Florida traffic warrants and failure-to-appear cases may be handled, what to verify first, and where to find official county court information.',
                     icon: AlertTriangle,
                         heroImage: '/images/traffic-hero.jpg',
                             content: {
@@ -145,7 +145,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: 'nebbia-hold-bail',
         title: 'Nebbia Hold (Bail Source)',
             shortDescription: 'Prove legitimacy of funds. We prepare the "Nebbia Proffer" to lift financial holds and secure release.',
-                metaDescription: 'Nebbia Hold Bail Bonds Florida. Specialized assistance for "Bail Source Hearings". We help prove funds are legitimate to lift the hold.',
+                metaDescription: 'Learn what a Florida bail-source or Nebbia hearing may require, which financial records are commonly discussed, and why legal advice may be important.',
                     icon: Scale,
                         heroImage: '/images/nebbia-hero.jpg',
                             content: {
@@ -174,7 +174,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: 'online-bail-bonds',
     title: 'Online Bail Bonds Florida',
     shortDescription: 'Secure release remotely with our 100% digital E-Bonding service without leaving your home.',
-    metaDescription: 'Online Bail Bonds in Florida. 24/7 E-Bonding service. Approve bail and sign paperwork electronically from your mobile phone or computer.',
+    metaDescription: 'Learn what to verify before completing Florida bail paperwork online, how remote document signing may work, and which fees and terms to review carefully.',
     icon: Globe,
     heroImage: '/images/online-hero.jpg',
     content: {
@@ -215,7 +215,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: '24-hour-bail-bonds',
     title: '24 Hour Emergency Bail Bonds Florida',
     shortDescription: 'Arrests happen in the middle of the night. We provide immediate, round-the-clock emergency release services to get them out fast.',
-    metaDescription: '24 Hour Emergency Bail Bonds in Florida. Arrested at 2 AM? We are open and processing bonds right now. Fast, confidential release when you need it most.',
+    metaDescription: 'Use this checklist to gather booking details after a Florida arrest, find official inmate information, and understand factors affecting release timing.',
     icon: Clock,
     heroImage: '/images/24hour-hero.jpg',
     content: {
@@ -249,7 +249,7 @@ speakableSummary: "For a first-time DUI in Florida, the standard bond is typical
     slug: 'no-collateral-bail-bonds',
     title: 'No Collateral Bail Bonds Florida',
     shortDescription: 'Secure a release based on your signature. Most standard bonds qualify for zero property collateral with a steady job.',
-    metaDescription: "No Collateral Bail Bonds in Florida. Signature bonds available with just the 10% premium. Don't put your house up for bail. Call us to qualify now.",
+    metaDescription: "Learn how collateral and underwriting can vary for Florida bail bonds, which obligations a co-signer accepts, and what contract terms to review before signing.",
     icon: CreditCard,
     heroImage: '/images/nocollateral-hero.jpg',
     content: {

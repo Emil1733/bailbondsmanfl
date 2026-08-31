@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Lee County Jail Booking & Inmate Search | Get Them Out Now (Fort Myers Bail Bonds)",
-    description: "Waiting on Lee County Jail Booking? Don\'t wait for the roster to update. Call our 24/7 Fort Myers bondsmen to check their booking status and start the release process immediately.",
+    title: "Lee County Jail Core Facility Guide",
+    description: "Find the Lee County Jail Core Facility address, phone number, official inmate-search resource, booking details, visitor information, and release guidance.",
     path: '/jail/lee-county-core-facility',
 });
 

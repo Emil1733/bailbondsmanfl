@@ -15,8 +15,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Florida Bail Resources & Legal Guides | 24/7 Educational Hub",
-    description: "Access our comprehensive Florida bail bonds guide. Learn about weekend jail releases, co-signer liabilities, 72-hour holds, cash bonds, and Nebbia requirements.",
+    title: "Florida Bail Information & Resource Guides",
+    description: "Read plain-language Florida bail guides covering booking, release, bond types, co-signer responsibilities, court appearances, and official resources.",
     path: '/resources',
 });
 

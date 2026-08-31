@@ -59,8 +59,8 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return pageMetadata({
-        title: `Bail Bonds ${city.name} | ${city.travelTimeToJail} Jail Release`,
-        description: `Arrested in ${city.name} by ${city.policeDepartment.name}? Call now to post bond before they are transferred to ${county.jail.name} in ${county.name}. 24/7 Service.`,
+        title: `${city.name} Florida Bail Bonds & Jail Guide`,
+        description: `Find jail contacts, official inmate-search links, local arresting-agency details, and general Florida bail resources for ${city.name} in ${county.name}.`,
         path: `/county/${county.slug}/${city.slug}`,
     });
 }

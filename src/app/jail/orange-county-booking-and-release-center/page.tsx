@@ -20,8 +20,8 @@ const ContentContainer = ({ children, className = "" }: { children: React.ReactN
 );
 
 export const metadata: Metadata = pageMetadata({
-    title: "Orange County BRC Booking & Inmate Search | Get Them Out Now (Orlando Bail Bonds)",
-    description: "Waiting on Orange County BRC Booking? Don\'t wait for the roster to update. Call our 24/7 Orlando bondsmen to check their booking status and start the release process immediately.",
+    title: "Orange County Booking and Release Guide",
+    description: "Find the Orange County Booking and Release Center address, phone number, official inmate-search resource, booking details, and Orlando release information.",
     path: '/jail/orange-county-booking-and-release-center',
 });
 

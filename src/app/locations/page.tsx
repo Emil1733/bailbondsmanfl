@@ -8,8 +8,8 @@ import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { MapPin, ShieldCheck, Clock, ExternalLink, Siren, Phone, Gavel, FileText } from 'lucide-react';
 
 export const metadata: Metadata = pageMetadata({
-    title: "24 Hour Florida Bail Bondsman Locations | Statewide Directory",
-    description: "Complete directory of bail bond service areas in Florida. We provide 24/7 assistance across all 67 counties, including Miami-Dade, Hillsborough, Orange, and Duval. Find your local jail and arresting agency here.",
+    title: "Florida Bail Bonds & County Jail Directory",
+    description: "Browse Florida county and city guides with jail contact details, official inmate-search resources, local arresting agencies, and general bail information.",
     path: '/locations',
 });
 
