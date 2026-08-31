@@ -4,18 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useEffect } from 'react';
 
-// Fix Leaflet marker icon issue in Next.js
-const icon = L.icon({
-    iconUrl: '/marker-icon.png', // We might need to handle this asset, or just rely on CSS falling back/default
-    shadowUrl: '/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-});
-
-// Since we can't easily rely on default assets in Next.js without copy-pasting, we'll try to use a CDN or just a circle marker for simplicity/robustness in this artifact.
-// Actually, let's use a custom DivIcon or standard if we can.
-// For now, I'll attempt standard but beware of the 404 on marker.png.
-
 interface MapProps {
     lat: number;
     lng: number;
@@ -25,7 +13,10 @@ interface MapProps {
 export default function LeafletMap({ lat, lng, jailName }: MapProps) {
     useEffect(() => {
         // Fix for default markers
-        delete (L.Icon.Default.prototype as any)._getIconUrl;
+        const defaultIconPrototype = L.Icon.Default.prototype as L.Icon.Default & {
+            _getIconUrl?: () => string;
+        };
+        delete defaultIconPrototype._getIconUrl;
         L.Icon.Default.mergeOptions({
             iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
             iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',

@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             Effective date: August 31, 2026
           </p>
           <p>
-            Bond Florida ("we", "us", "our") operates this directory and contact form. This policy explains what the website collects, why it is collected, and the choices available to you.
+            Bond Florida (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) operates this directory and contact form. This policy explains what the website collects, why it is collected, and the choices available to you.
           </p>
           
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Information We Collect</h2>

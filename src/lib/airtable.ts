@@ -1,4 +1,4 @@
-import { counties, County, getCounty as getCountyData, getAllCounties as getAllCountiesData } from './data';
+import { County, getCounty as getCountyData, getAllCounties as getAllCountiesData } from './data';
 
 export type { County };
 
