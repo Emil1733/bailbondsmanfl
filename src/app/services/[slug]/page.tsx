@@ -1,4 +1,3 @@
-import JsonLd from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import { getService, getAllServices } from '@/lib/services';
 import { getAllCities } from '@/lib/data';
@@ -55,52 +54,15 @@ export default async function ServicePage({ params }: Props) {
     const Icon = service.icon;
     const citiesByCounty = Map.groupBy(cities, ({ county }) => county.slug);
 
-    // JSON-LD Service Schema
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": service.title,
-        "provider": {
-            "@type": "Organization",
-            "name": "Bond Florida",
-            "url": "https://bondflorida.com"
-        },
-        "areaServed": {
-            "@type": "State",
-            "name": "Florida"
-        },
-        "description": service.metaDescription,
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Bail Bond Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": service.title
-                    }
-                }
-            ]
-        },
-        ...(service.speakableSummary ? {
-            "speakable": {
-                "@type": "SpeakableSpecification",
-                "cssSelector": ["#voice-summary"]
-            }
-        } : {})
-    };
-
 return (
     <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-        <JsonLd data={jsonLd} />
         <EmergencyHeader />
 
         {/* Custom Hero */}
         <Hero
             title={<span className="font-serif text-white">{service.title}</span>}
             subtitle={service.shortDescription}
-            inmateSearchUrl="/contact" // Redirect to contact or general search
+            inmateSearchUrl={service.sources[0].url}
         />
 
         <section className="py-20 bg-slate-950">
@@ -125,6 +87,16 @@ return (
                             <p className="text-xl leading-relaxed text-slate-300 border-l-4 border-yellow-500 pl-6">
                                 {service.content.intro}
                             </p>
+                        </div>
+
+                        <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
+                            <h2 className="text-lg font-bold text-white">Official sources</h2>
+                            <ul className="mt-4 space-y-3 text-sm">
+                                {service.sources.map((source) => (
+                                    <li key={source.url}><a className="text-yellow-500 underline" href={source.url} rel="noopener noreferrer" target="_blank">{source.label}</a></li>
+                                ))}
+                            </ul>
+                            <p className="mt-4 text-xs leading-relaxed text-slate-500">Reviewed August 31, 2026. Laws, court orders, and agency procedures can change; verify the current rule before acting.</p>
                         </div>
 
                         {/* 2. Key Points Grid */}
@@ -193,7 +165,7 @@ return (
                         <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 p-8 rounded-xl shadow-2xl text-center relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
                             <Icon className="w-16 h-16 text-white/90 mx-auto mb-6" />
-                            <h3 className="text-2xl font-bold text-white mb-2">Need Help Now?</h3>
+                            <h3 className="text-2xl font-bold text-white mb-2">Questions About the Directory?</h3>
                             <p className="text-yellow-100 mb-8 font-medium">
                                 Call to discuss the booking details and available next steps.
                             </p>

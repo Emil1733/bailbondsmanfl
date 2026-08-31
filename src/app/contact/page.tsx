@@ -26,10 +26,10 @@ export default function ContactPage() {
       <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-white/5">
         <ContactContainer className="text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6">
-            Immediate <span className="text-yellow-500">Bail Assistance</span>
+            Contact <span className="text-yellow-500">Bond Florida</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Our agents are standing by 24/7 across Florida. Call now for a free case assessment and instant inmate location.
+            Ask a general question, request contact, or report an outdated facility detail or government link.
           </p>
         </ContactContainer>
       </section>
@@ -43,8 +43,8 @@ export default function ContactPage() {
               <div className="w-14 h-14 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Phone className="w-7 h-7 text-yellow-500" />
               </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">Call 24/7</h2>
-              <p className="text-slate-400 mb-6">Immediate dispatch to any Florida county jail.</p>
+              <h2 className="text-2xl font-serif font-bold text-white mb-2">Phone Contact</h2>
+              <p className="text-slate-400 mb-6">Call with a general directory or service inquiry.</p>
               <a href="tel:+13058310358" className="text-xl font-bold text-yellow-500 hover:text-white transition-colors">
                 (305) 831-0358
               </a>
@@ -67,10 +67,10 @@ export default function ContactPage() {
               <div className="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Clock className="w-7 h-7 text-green-500" />
               </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">Always Open</h2>
-              <p className="text-slate-400 mb-6">We never close. Weekends and holidays included.</p>
+              <h2 className="text-2xl font-serif font-bold text-white mb-2">Online Form</h2>
+              <p className="text-slate-400 mb-6">Submit a request without including sensitive financial information.</p>
               <span className="text-lg font-bold text-green-500 uppercase tracking-widest">
-                Operational 24/7
+                Available online
               </span>
             </div>
           </div>

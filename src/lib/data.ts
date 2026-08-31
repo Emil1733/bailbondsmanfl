@@ -1467,6 +1467,17 @@ export const counties: County[] = [
 
 ];
 
+// Phase 10 safety boundary: legacy editorial fields contained unsourced timing,
+// availability, and provider claims. Public templates consume verified directory
+// facts only; neutral city descriptions remain unique for validation and context.
+for (const county of counties) {
+  delete county.richContent;
+  for (const city of county.cities || []) {
+    city.description = `Directory entry for ${city.name}, ${county.name}, with local agency contact details and the county's official inmate-search resource.`;
+    delete city.specificFaqs;
+  }
+}
+
 export async function getCounty(slug: string): Promise<County | undefined> {
   return counties.find((c) => c.slug === slug);
 }

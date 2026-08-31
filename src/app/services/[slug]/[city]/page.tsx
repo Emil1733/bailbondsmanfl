@@ -3,7 +3,6 @@ import { getService, getAllServices } from '@/lib/services';
 import { getCityBySlug, getAllCities } from '@/lib/data';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
-import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, MapPin, Clock, Siren, ArrowRight, Phone, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
@@ -55,7 +54,7 @@ export async function generateMetadata({ params }: Props) {
     const cleanServiceTitle = service.title.replace(' Florida', '');
 
     const metadata = pageMetadata({
-        title: `${cleanServiceTitle} ${city.name} | 24/7`,
+        title: `${cleanServiceTitle} ${city.name} Local Guide`,
         description: `Local ${cleanServiceTitle} directory for ${city.name}, including the arresting agency, county jail destination, and official inmate-search resource.`,
         keywords: [`${cleanServiceTitle} ${city.name}`, `Bail Bonds ${city.name}`, `${city.name} DUI Bail`, `${city.name} Jail Release`],
         path: `/services/${slug}/${citySlug}`,
@@ -119,9 +118,6 @@ export default async function MatrixPage({ params }: Props) {
                                         This directory combines <strong>{service.title.replace(' Bail Bonds Florida', '')}</strong> information with booking contacts for {city.name}.
                                         Confirm the current custody location through the official county inmate search before traveling to a facility.
                                     </p>
-                                    <p className="text-slate-400 mb-6 italic border-l-2 border-slate-700 pl-4">
-                                        {city.description}
-                                    </p>
                                     <div className="flex items-center gap-4 text-sm font-bold text-slate-400 bg-slate-950/50 p-4 rounded-lg border border-slate-800">
                                         <div className="flex items-center gap-2">
                                             <Siren className="w-4 h-4 text-red-500" />
@@ -149,7 +145,7 @@ export default async function MatrixPage({ params }: Props) {
 
                             {/* 3. Local + Service Process */}
                             <div>
-                                <h3 className="text-2xl font-bold text-white mb-6 font-serif">Release Process for {city.name}</h3>
+                                <h3 className="text-2xl font-bold text-white mb-6 font-serif">Verification steps for {city.name}</h3>
                                 <div className="space-y-4">
                                     <div className="flex gap-4">
                                         <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">1</div>
@@ -180,13 +176,6 @@ export default async function MatrixPage({ params }: Props) {
 
                         {/* RIGHT: Tools */}
                         <div className="lg:col-span-5 space-y-12">
-                            {/* Estimator - Urgent Action */}
-                            <div>
-                                <ReleaseTimeEstimator />
-                            </div>
-
-
-
                             {/* Service Details Box */}
                             <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
                                 <h3 className="font-bold text-white mb-4 flex items-center gap-2">

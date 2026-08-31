@@ -39,6 +39,10 @@ function pageType(path) {
   return 'core';
 }
 
+function minimumWords(type) {
+  return { home: 300, core: 150, county: 100, city: 100, jail: 200, service: 400 }[type] || 150;
+}
+
 const sitemap = await (await fetch(`${baseUrl}/sitemap.xml`)).text();
 const paths = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => new URL(match[1]).pathname);
 const rows = [];
@@ -90,7 +94,8 @@ const byType = Object.fromEntries([...Map.groupBy(rows, (row) => row.type)].map(
   pages: group.length,
   titleViolations: group.filter((row) => row.titleLength < 30 || row.titleLength > 60).length,
   descriptionViolations: group.filter((row) => row.descriptionLength < 120 || row.descriptionLength > 160).length,
-  thinPages: group.filter((row) => row.wordCount < 400).length,
+  minimumWords: minimumWords(type),
+  thinPages: group.filter((row) => row.wordCount < minimumWords(type)).length,
 }]));
 
 console.log(JSON.stringify({
