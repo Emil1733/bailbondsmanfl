@@ -2,6 +2,7 @@ import { writeFile } from 'node:fs/promises';
 
 const baseUrl = process.env.SITE_URL || 'http://127.0.0.1:3109';
 const outputPath = process.env.OUTPUT_PATH || 'changelog/phase8-programmatic-inventory.csv';
+const concurrency = Math.max(1, Number(process.env.AUDIT_CONCURRENCY) || 12);
 
 function decodeEntities(text) {
   return text
@@ -60,7 +61,7 @@ const urls = [...paths].map((path) => new URL(path, baseUrl));
 
 const pages = [];
 let cursor = 0;
-await Promise.all(Array.from({ length: 12 }, async () => {
+await Promise.all(Array.from({ length: concurrency }, async () => {
   while (cursor < urls.length) {
     const url = urls[cursor++];
     const response = await fetch(`${baseUrl}${url.pathname}`);

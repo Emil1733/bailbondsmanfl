@@ -29,6 +29,9 @@ if (!nextConfig.includes('Strict-Transport-Security')) failures.push('HSTS is mi
 if (!contactRoute.includes('checkBotId()') || !clientInstrumentation.includes("path: '/api/contact'")) {
   failures.push('BotID is not configured on both sides of the contact request.');
 }
+if (!contactRoute.includes('export function GET()') || !contactRoute.includes("service: 'contact'")) {
+  failures.push('The non-writing contact health endpoint is missing.');
+}
 if (!privacyPolicy.includes('within 90 days') || !privacyPolicy.includes('Airtable') || !privacyPolicy.includes('Vercel')) {
   failures.push('Privacy policy is missing the defined retention period or subprocessors.');
 }

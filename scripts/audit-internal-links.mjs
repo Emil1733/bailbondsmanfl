@@ -3,6 +3,7 @@ import { writeFile } from 'node:fs/promises';
 const baseUrl = process.env.SITE_URL || 'http://127.0.0.1:3108';
 const outputPath = process.env.OUTPUT_PATH || 'changelog/phase7-url-inventory.csv';
 const canonicalOrigin = 'https://bondflorida.com';
+const concurrency = Math.max(1, Number(process.env.AUDIT_CONCURRENCY) || 12);
 
 function normalizePath(href, sourceUrl) {
   try {
@@ -48,7 +49,7 @@ for (const path of paths) {
 
 const pages = new Map();
 let cursor = 0;
-const workers = Array.from({ length: 12 }, async () => {
+const workers = Array.from({ length: concurrency }, async () => {
   while (cursor < paths.length) {
     const path = paths[cursor++];
     const { response, html } = await fetchText(path);

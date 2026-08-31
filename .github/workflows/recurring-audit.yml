@@ -1,0 +1,61 @@
+name: Recurring production audit
+
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: recurring-production-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev
+
+      - name: Run conservative remote crawl
+        run: npm run audit:remote
+
+      - name: Archive audit evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: production-audit-${{ github.run_id }}
+          path: monitoring-output/
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Open or update audit issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create automated-monitoring --color B60205 --description "Automated production monitoring failure" --force
+          issue_number=$(gh issue list --label automated-monitoring --state open --json number --jq '.[0].number')
+          message="The recurring production audit failed at $(date -u +'%Y-%m-%dT%H:%M:%SZ'). Review: $RUN_URL"
+          if [ -n "$issue_number" ]; then
+            gh issue comment "$issue_number" --body "$message"
+          else
+            gh issue create --title "Production monitoring failure" --label automated-monitoring --body "$message"
+          fi

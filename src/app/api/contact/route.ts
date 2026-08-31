@@ -23,6 +23,20 @@ type ContactPayload = {
 
 const ALLOWED_SOURCES = new Set(['bondflorida.com/contact', 'release-time-estimator']);
 
+export function GET() {
+  const isConfigured = Boolean(
+    process.env.AIRTABLE_ACCESS_TOKEN && process.env.AIRTABLE_BASE_ID && process.env.AIRTABLE_TABLE_ID,
+  );
+
+  return NextResponse.json(
+    { status: isConfigured ? 'ok' : 'degraded', service: 'contact' },
+    {
+      status: isConfigured ? 200 : 503,
+      headers: { 'Cache-Control': 'no-store' },
+    },
+  );
+}
+
 function cleanText(value: unknown, maxLength: number) {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
 }
