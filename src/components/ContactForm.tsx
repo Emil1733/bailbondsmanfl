@@ -125,11 +125,11 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          maxLength={2000}
+          maxLength={500}
           enterKeyHint="send"
           disabled={isSubmitting}
           className={inputClasses}
-          placeholder="Jail, county, charges, or other details that may help"
+          placeholder="County, facility, or directory question"
         />
       </div>
 
@@ -166,7 +166,7 @@ export default function ContactForm() {
       </div>
 
       <p className="text-center text-[10px] uppercase tracking-tighter text-slate-500">
-        Do not include Social Security numbers, payment-card details, or other sensitive financial information.
+        Do not include charges, case narratives, Social Security numbers, identification images, payment details, medical information, or confidential communications.
       </p>
     </form>
   );

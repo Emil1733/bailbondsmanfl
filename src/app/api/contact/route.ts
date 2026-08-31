@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { checkBotId } from 'botid/server';
 
 export const runtime = 'nodejs';
 
@@ -58,6 +59,24 @@ function isRateLimited(ip: string) {
 }
 
 export async function POST(request: NextRequest) {
+  if (process.env.VERCEL) {
+    try {
+      const botCheck = await checkBotId();
+      if (botCheck.isBot) {
+        return NextResponse.json(
+          { message: 'Automated requests are not accepted. Please call (305) 831-0358 if you need help.' },
+          { status: 403, headers: { 'Cache-Control': 'no-store' } },
+        );
+      }
+    } catch {
+      console.error('Contact bot verification could not be completed.');
+      return NextResponse.json(
+        { message: 'Online requests are temporarily unavailable. Please call (305) 831-0358.' },
+        { status: 503, headers: { 'Cache-Control': 'no-store' } },
+      );
+    }
+  }
+
   const contentLength = Number(request.headers.get('content-length') || 0);
   if (contentLength > MAX_REQUEST_BYTES) {
     return NextResponse.json({ message: 'The request is too large.' }, { status: 413 });
@@ -81,7 +100,7 @@ export async function POST(request: NextRequest) {
   const name = cleanText(payload.name, 100);
   const phone = cleanText(payload.phone, 30);
   const defendantName = cleanText(payload.defendantName, 100);
-  const message = cleanText(payload.message, 2000);
+  const message = cleanText(payload.message, 500);
   const website = cleanText(payload.website, 200);
   const requestedSource = cleanText(payload.source, 80);
   const source = ALLOWED_SOURCES.has(requestedSource) ? requestedSource : 'bondflorida.com/contact';
