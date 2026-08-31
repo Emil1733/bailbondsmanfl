@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Search, Gavel } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 import { ReactNode } from 'react';
 
@@ -19,10 +19,10 @@ export default function Hero({ title, subtitle, inmateSearchUrl }: HeroProps) {
                 <div className="mb-12">
                     <span className="block text-yellow-500 font-bold tracking-widest text-sm uppercase mb-4">{subtitle || "Bail Bonds & Inmate Search"}</span>
                     <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-                        {title || <span>Fastest Way to <span className="text-slate-400 italic">Get Out</span></span>}
+                        {title || <span>Florida Jail and <span className="text-slate-400 italic">Bail Information</span></span>}
                     </h1>
                     <p className="max-w-2xl mx-auto text-slate-400 text-xl leading-relaxed">
-                        Statewide coverage. 24/7 Service. Immediate Release Processing.
+                        Verify custody and time-sensitive details through the responsible court or detention agency.
                     </p>
                 </div>
 
@@ -39,10 +39,10 @@ export default function Hero({ title, subtitle, inmateSearchUrl }: HeroProps) {
                     </Link>
 
                     <Link
-                        href="tel:305-831-0358"
+                        href="tel:+13058310358"
                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-urgent-red to-red-700 hover:from-red-600 hover:to-red-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-urgent-red/20 transform transition-all hover:scale-[1.02]"
                     >
-                        <span className="text-lg">Call Now: (305) 831-0358</span>
+                        <span className="text-lg">Contact: (305) 831-0358</span>
                     </Link>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
 
 interface BreadcrumbItem {
     label: string;
@@ -12,29 +13,25 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
     // Generate BreadcrumbList Schema
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": items.map((item, index) => ({
-            "@type": "ListItem",
-            "position": index + 2, // Position 1 is implicit Home
-            "name": item.label,
-            "item": `https://bondflorida.com${item.href}`
-        }))
-    };
-
-    // Prepend Home to display items
     const displayItems = [
         { label: 'Home', href: '/' },
         ...items
     ];
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": displayItems.map((item, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": item.label,
+            "item": `https://bondflorida.com${item.href}`
+        }))
+    };
+
     return (
         <nav aria-label="Breadcrumb" className="mb-6">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
             <ol className="flex items-center space-x-2 text-sm text-slate-500">
                 {displayItems.map((item, index) => {
                     const isLast = index === displayItems.length - 1;

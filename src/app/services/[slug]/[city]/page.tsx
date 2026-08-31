@@ -3,10 +3,12 @@ import { getService, getAllServices } from '@/lib/services';
 import { getCityBySlug, getAllCities } from '@/lib/data';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
-import ReleaseTimeEstimator from '@/components/ReleaseTimeEstimator';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, MapPin, Clock, Siren, ArrowRight, Phone, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/seo';
+import { jailGuideByCounty } from '@/lib/internal-links';
+import { PROGRAMMATIC_INDEXING_ENABLED, validateProgrammaticInputs } from '@/lib/programmatic-seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -22,6 +24,7 @@ type Props = {
 export async function generateStaticParams() {
     const services = await getAllServices();
     const citiesInfo = await getAllCities();
+    validateProgrammaticInputs(services, citiesInfo);
 
     // Create the Matrix: All Services x All Cities
     const params = [];
@@ -50,25 +53,19 @@ export async function generateMetadata({ params }: Props) {
     // Clean "Florida" from the service title for the geo-page (e.g. "DUI Bail Bonds Florida" -> "DUI Bail Bonds")
     const cleanServiceTitle = service.title.replace(' Florida', '');
 
-    // Customize the hook based on service type (DUI has 8-hour hold, others do not)
-    const serviceHook = slug === 'dui-bail-bonds' 
-        ? "Bypass the 8-hour hold."
-        : "Call our 24/7 agents now.";
+    const metadata = pageMetadata({
+        title: `${cleanServiceTitle} ${city.name} Local Guide`,
+        description: `Local ${cleanServiceTitle} directory for ${city.name}, including the arresting agency, county jail destination, and official inmate-search resource.`,
+        keywords: [`${cleanServiceTitle} ${city.name}`, `Bail Bonds ${city.name}`, `${city.name} DUI Bail`, `${city.name} Jail Release`],
+        path: `/services/${slug}/${citySlug}`,
+    });
 
     return {
-        title: `${cleanServiceTitle} ${city.name} | 24/7`,
-        description: `Arrested for ${cleanServiceTitle} in ${city.name}? We specialize in fast release from ${city.policeDepartment.name}. ${serviceHook}`,
-        keywords: [`${cleanServiceTitle} ${city.name}`, `Bail Bonds ${city.name}`, `${city.name} DUI Bail`, `${city.name} Jail Release`],
-        alternates: {
-            canonical: `https://bondflorida.com/services/${slug}/${citySlug}`,
-        },
-        openGraph: {
-            url: `https://bondflorida.com/services/${slug}/${citySlug}`,
-            images: [{
-                url: 'https://bondflorida.com/og-image.jpg',
-                width: 1200,
-                height: 630,
-            }],
+        ...metadata,
+        robots: {
+            index: PROGRAMMATIC_INDEXING_ENABLED,
+            follow: true,
+            googleBot: { index: PROGRAMMATIC_INDEXING_ENABLED, follow: true },
         },
     };
 }
@@ -76,6 +73,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function MatrixPage({ params }: Props) {
     const { slug, city: citySlug } = await params;
     const service = await getService(slug);
+    const services = await getAllServices();
     const cityData = await getCityBySlug(citySlug);
 
     if (!service || !cityData) {
@@ -84,43 +82,10 @@ export default async function MatrixPage({ params }: Props) {
 
     const { city, county } = cityData;
     const Icon = service.icon;
-
-    // JSON-LD Schema
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": service.title,
-        "provider": {
-            "@type": "BailBondBusiness",
-            "name": "Bond Florida",
-            "url": "https://bondflorida.com"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": city.name
-        },
-        "description": `Specizalized ${service.title} services for ${city.name}, FL.`,
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Bail Bond Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": `${service.title} in ${city.name}`
-                    }
-                }
-            ]
-        }
-    };
+    const jailGuide = jailGuideByCounty[county.slug];
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
             <EmergencyHeader />
 
             {/* Matrix Hero */}
@@ -130,7 +95,7 @@ export default async function MatrixPage({ params }: Props) {
                         {service.title.replace(' Florida', '')} in <span className="text-yellow-500">{city.name}</span>
                     </span>
                 }
-                subtitle={`Licensed Specialist for ${city.policeDepartment.name} Cases`}
+                subtitle={`Local booking contacts for ${city.policeDepartment.name} and ${county.jail.name}`}
                 inmateSearchUrl={county.jail.inmateSearchUrl}
             />
 
@@ -150,11 +115,8 @@ export default async function MatrixPage({ params }: Props) {
                                         Arrested in {city.name}?
                                     </h2>
                                     <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                                        If you or a loved one is facing <strong>{service.title.replace(' Bail Bonds Florida', '')}</strong> charges in {city.name}, time is critical.
-                                        Arrests by the <strong>{city.policeDepartment.name}</strong> are processed locally before transport to <strong>{county.jail.name}</strong>.
-                                    </p>
-                                    <p className="text-slate-400 mb-6 italic border-l-2 border-slate-700 pl-4">
-                                        {city.description}
+                                        This directory combines <strong>{service.title.replace(' Bail Bonds Florida', '')}</strong> information with booking contacts for {city.name}.
+                                        Confirm the current custody location through the official county inmate search before traveling to a facility.
                                     </p>
                                     <div className="flex items-center gap-4 text-sm font-bold text-slate-400 bg-slate-950/50 p-4 rounded-lg border border-slate-800">
                                         <div className="flex items-center gap-2">
@@ -170,45 +132,42 @@ export default async function MatrixPage({ params }: Props) {
                                 </div>
                             </div>
 
-                            {/* 2. Service Specifics */}
+                            {/* 2. Service overview */}
                             <div className="prose prose-lg prose-invert max-w-none">
-                                <h3 className="text-white font-serif">Why {service.title} is Different</h3>
-                                <p>{service.content.intro}</p>
-
-                                <ul>
-                                    {service.content.keyPoints.map((point, idx) => (
-                                        <li key={idx} className="text-slate-300">
-                                            <strong className="text-yellow-500">{point}</strong>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h3 className="text-white font-serif">Review the statewide service information</h3>
+                                <p>
+                                    Bond requirements depend on the charge, court order, and current booking status. Review the main service guide before relying on a local combination page.
+                                </p>
+                                <Link href={`/services/${service.slug}`} className="font-bold text-yellow-500 hover:text-white">
+                                    Read the complete {service.title} guide &rarr;
+                                </Link>
                             </div>
 
                             {/* 3. Local + Service Process */}
                             <div>
-                                <h3 className="text-2xl font-bold text-white mb-6 font-serif">Release Process for {city.name}</h3>
+                                <h3 className="text-2xl font-bold text-white mb-6 font-serif">Verification steps for {city.name}</h3>
                                 <div className="space-y-4">
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center shrink-0">1</div>
+                                        <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">1</div>
                                         <div className="bg-slate-900 p-4 rounded border border-slate-800 w-full">
-                                            <h4 className="font-bold text-white mb-1">Booking at {city.policeDepartment.name}</h4>
-                                            <p className="text-sm text-slate-400">Initial fingerprinting and processing occurs at {city.policeDepartment.address}.</p>
+                                            <h4 className="font-bold text-white mb-1">Confirm the booking location</h4>
+                                            <p className="text-sm text-slate-400">Contact {city.policeDepartment.name} at {city.policeDepartment.phone}, or check the official county inmate roster.</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center shrink-0">2</div>
+                                        <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">2</div>
                                         <div className="bg-slate-900 p-4 rounded border border-slate-800 w-full">
-                                            <h4 className="font-bold text-white mb-1">Specific Charge Processing</h4>
+                                            <h4 className="font-bold text-white mb-1">Review service requirements</h4>
                                             <p className="text-sm text-slate-400">
-                                                For {service.title.replace(' Bail Bonds Florida', '')}, specific holds (like the DUI 8-hour rule or DV no-contact) must be satisfied before bond is set.
+                                                Eligibility and release conditions vary by the charge and court order. Confirm the case details before completing paperwork or payment.
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center shrink-0">3</div>
+                                        <div className="w-8 h-8 rounded-full bg-yellow-500 text-slate-950 font-bold flex items-center justify-center shrink-0">3</div>
                                         <div className="bg-slate-900 p-4 rounded border border-slate-800 w-full">
-                                            <h4 className="font-bold text-white mb-1">Fast Release from {county.jail.name}</h4>
-                                            <p className="text-sm text-slate-400">We post bond immediately at the county hub to ensure release the moment they are eligible.</p>
+                                            <h4 className="font-bold text-white mb-1">County booking destination</h4>
+                                            <p className="text-sm text-slate-400">The county directory identifies {county.jail.name} as the primary jail resource for this service area. Verify custody before arrival.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -217,27 +176,13 @@ export default async function MatrixPage({ params }: Props) {
 
                         {/* RIGHT: Tools */}
                         <div className="lg:col-span-5 space-y-12">
-                            {/* Estimator - Urgent Action */}
-                            <div>
-                                <ReleaseTimeEstimator />
-                            </div>
-
-
-
                             {/* Service Details Box */}
                             <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
                                 <h3 className="font-bold text-white mb-4 flex items-center gap-2">
                                     <Icon className="w-5 h-5 text-yellow-500" />
                                     About {service.title.replace(' Florida', '')}
                                 </h3>
-                                <div className="space-y-4 text-sm text-slate-400">
-                                    {service.content.faq.slice(0, 2).map((item, idx) => (
-                                        <div key={idx}>
-                                            <p className="font-bold text-slate-300 mb-1">{item.question}</p>
-                                            <p>{item.answer}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                                <p className="text-sm text-slate-400">Use the statewide guide for service-specific requirements, limitations, and questions.</p>
                                 <div className="mt-6 pt-6 border-t border-slate-800">
                                     <Link href={`/services/${service.slug}`} className="text-yellow-500 font-bold text-sm hover:text-white flex items-center gap-2">
                                         View Full Rules <ArrowRight className="w-4 h-4" />
@@ -249,18 +194,35 @@ export default async function MatrixPage({ params }: Props) {
                             <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
                                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Other Services in {city.name}</h3>
                                 <div className="space-y-3">
-                                    {['dui-bail-bonds', 'domestic-violence-bail', 'traffic-warrant-bail', 'nebbia-hold-bail']
-                                        .filter(s => s !== service.slug)
-                                        .map(s => (
+                                    {services
+                                        .filter((relatedService) => relatedService.slug !== service.slug)
+                                        .map((relatedService) => (
                                             <Link 
-                                                key={s} 
-                                                href={`/services/${s}/${city.slug}`}
+                                                key={relatedService.slug}
+                                                href={`/services/${relatedService.slug}/${city.slug}`}
                                                 className="block text-sm text-slate-400 hover:text-yellow-500 transition-colors"
                                             >
-                                                {s.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} &rarr;
+                                                {relatedService.title.replace(' Florida', '')} in {city.name} &rarr;
                                             </Link>
                                         ))
                                     }
+                                </div>
+                            </div>
+
+                            <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
+                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Local booking resources</h3>
+                                <div className="space-y-3 text-sm">
+                                    <Link href={`/county/${county.slug}/${city.slug}`} className="block text-yellow-500 hover:text-white">
+                                        {city.name} arrest and transfer guide &rarr;
+                                    </Link>
+                                    <Link href={`/county/${county.slug}`} className="block text-yellow-500 hover:text-white">
+                                        {county.name} jail and booking hub &rarr;
+                                    </Link>
+                                    {jailGuide && (
+                                        <Link href={jailGuide} className="block text-yellow-500 hover:text-white">
+                                            {county.jail.name} release guide &rarr;
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -268,23 +230,6 @@ export default async function MatrixPage({ params }: Props) {
                     </div>
                 </ContentContainer>
 
-                {/* FULL WIDTH: Deep Editorial Content (SEO) */}
-                {service.editorialBody && service.editorialBody.length > 0 && (
-                    <div className="bg-slate-900 border-t border-white/5 py-24 mt-20">
-                        <ContentContainer className="max-w-4xl">
-                            <h2 className="text-3xl font-serif font-bold text-white mb-10 border-l-4 border-yellow-500 pl-6">
-                                Comprehensive Guide to {service.title} in {city.name}
-                            </h2>
-                            <div className="prose prose-invert prose-lg max-w-none text-slate-300">
-                                {service.editorialBody.map((paragraph, idx) => (
-                                    <p key={idx} className="mb-8 leading-relaxed">
-                                        {paragraph.replace(/Florida/g, `${city.name} & ${county.name} County`)}
-                                    </p>
-                                ))}
-                            </div>
-                        </ContentContainer>
-                    </div>
-                )}
             </section>
 
             <MobileFloatingCall />

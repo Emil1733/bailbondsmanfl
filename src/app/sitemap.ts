@@ -54,23 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.9,
     }));
 
-    // 4. Matrix Routes (Service x City) - The programmatic SEO layer
-    const matrixRoutes: MetadataRoute.Sitemap = [];
-    for (const service of services) {
-        for (const county of counties) {
-            if (county.cities) {
-                for (const city of county.cities) {
-                    matrixRoutes.push({
-                        url: `${baseUrl}/services/${service.slug}/${city.slug}`,
-                        changeFrequency: 'weekly',
-                        priority: 0.8,
-                    });
-                }
-            }
-        }
-    }
-
-    // 5. City Routes (The Anti-Doorway Pages)
+    // 4. City routes with standalone local information.
     const cityRoutes = counties.flatMap((county) =>
         (county.cities || []).map((city) => ({
             url: `${baseUrl}/county/${county.slug}/${city.slug}`,
@@ -79,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }))
     );
 
-    // 6. Jail Landmark Routes
+    // 5. Jail landmark routes.
     const jailRoutes = [
         'orient-road-jail',
         'falkenburg-road-jail',
@@ -98,5 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
-    return [...staticRoutes, ...serviceRoutes, ...matrixRoutes, ...countyRoutes, ...cityRoutes, ...jailRoutes];
+    // Service/city combinations remain available to users but are intentionally
+    // excluded until each one passes the standalone-value and sourcing gate.
+    return [...staticRoutes, ...serviceRoutes, ...countyRoutes, ...cityRoutes, ...jailRoutes];
 }

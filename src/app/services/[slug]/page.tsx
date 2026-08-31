@@ -1,10 +1,12 @@
 import { notFound } from 'next/navigation';
 import { getService, getAllServices } from '@/lib/services';
+import { getAllCities } from '@/lib/data';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, AlertTriangle, ArrowRight, Shield, Phone, HelpCircle, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -32,90 +34,35 @@ export async function generateMetadata({ params }: Props) {
         return { title: 'Service Not Found' };
     }
 
-    return {
-        title: `${service.title} | 24/7 Florida`,
+    return pageMetadata({
+        title: `${service.title} Information Guide`,
         description: service.metaDescription,
         keywords: [service.title, 'Florida Bail Bonds', '24/7 Bail Bonds', 'Emergency Release'],
-        alternates: {
-            canonical: `/services/${service.slug}`,
-        },
-        openGraph: {
-            title: service.title,
-            description: service.metaDescription,
-            url: `https://bondflorida.com/services/${service.slug}`,
-            siteName: 'Bond Florida',
-            images: [
-                {
-                    url: 'https://bondflorida.com/og-image.jpg',
-                    width: 1200,
-                    height: 630,
-                    alt: service.title,
-                },
-            ],
-            type: 'website',
-        },
-    };
+        path: `/services/${service.slug}`,
+    });
 }
 
 export default async function ServicePage({ params }: Props) {
     const { slug } = await params;
     const service = await getService(slug);
+    const cities = await getAllCities();
 
     if (!service) {
         notFound();
     }
 
     const Icon = service.icon;
-
-    // JSON-LD Service Schema
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": service.title,
-        "provider": {
-            "@type": "BailBondBusiness",
-            "name": "Bond Florida",
-            "url": "https://bondflorida.com"
-        },
-        "areaServed": {
-            "@type": "State",
-            "name": "Florida"
-        },
-        "description": service.metaDescription,
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Bail Bond Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": service.title
-                    }
-                }
-            ]
-        },
-        ...(service.speakableSummary ? {
-            "speakable": {
-                "@type": "SpeakableSpecification",
-                "cssSelector": ["#voice-summary"]
-            }
-        } : {})
-    };
+    const citiesByCounty = Map.groupBy(cities, ({ county }) => county.slug);
 
 return (
     <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         <EmergencyHeader />
 
         {/* Custom Hero */}
         <Hero
             title={<span className="font-serif text-white">{service.title}</span>}
             subtitle={service.shortDescription}
-            inmateSearchUrl="/contact" // Redirect to contact or general search
+            inmateSearchUrl={service.sources[0].url}
         />
 
         <section className="py-20 bg-slate-950">
@@ -128,7 +75,7 @@ return (
                         {/* 0. Voice Search Snippet (Speakable) */}
                         {service.speakableSummary && (
                             <div id="voice-summary" className="bg-slate-900 border-l-4 border-yellow-500 p-6 rounded-r-lg">
-                                <h3 className="text-sm font-bold text-yellow-500 uppercase tracking-widest mb-2">Quick Answer</h3>
+                                <h2 className="text-sm font-bold text-yellow-500 uppercase tracking-widest mb-2">Quick Answer</h2>
                                 <p className="text-lg text-white font-medium leading-relaxed">
                                     {service.speakableSummary}
                                 </p>
@@ -142,11 +89,21 @@ return (
                             </p>
                         </div>
 
+                        <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
+                            <h2 className="text-lg font-bold text-white">Official sources</h2>
+                            <ul className="mt-4 space-y-3 text-sm">
+                                {service.sources.map((source) => (
+                                    <li key={source.url}><a className="text-yellow-500 underline" href={source.url} rel="noopener noreferrer" target="_blank">{source.label}</a></li>
+                                ))}
+                            </ul>
+                            <p className="mt-4 text-xs leading-relaxed text-slate-500">Reviewed August 31, 2026. Laws, court orders, and agency procedures can change; verify the current rule before acting.</p>
+                        </div>
+
                         {/* 2. Key Points Grid */}
                         <div>
                             <h2 className="text-2xl font-serif font-bold text-white mb-6 flex items-center gap-3">
                                 <Shield className="w-6 h-6 text-yellow-500" />
-                                Why This Requires a Specialist
+                                Key Information to Review
                             </h2>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {service.content.keyPoints.map((point, idx) => (
@@ -187,7 +144,7 @@ return (
                             <div className="bg-red-950/20 border border-red-900/30 p-8 rounded-xl">
                                 <h3 className="text-lg font-bold text-red-400 mb-4 flex items-center gap-2">
                                     <AlertTriangle className="w-5 h-5" />
-                                    Common Charges We Handle
+                                    Related Case Types
                                 </h3>
                                 <div className="flex flex-wrap gap-3">
                                     {service.content.commonCharges.map((charge, idx) => (
@@ -208,12 +165,12 @@ return (
                         <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 p-8 rounded-xl shadow-2xl text-center relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
                             <Icon className="w-16 h-16 text-white/90 mx-auto mb-6" />
-                            <h3 className="text-2xl font-bold text-white mb-2">Need Help Now?</h3>
+                            <h3 className="text-2xl font-bold text-white mb-2">Questions About the Directory?</h3>
                             <p className="text-yellow-100 mb-8 font-medium">
-                                Our specialists are standing by to handle {service.title} cases immediately.
+                                Call to discuss the booking details and available next steps.
                             </p>
                             <a
-                                href="tel:305-831-0358"
+                                href="tel:+13058310358"
                                 className="flex items-center gap-2 bg-urgent-red hover:bg-urgent-red-dark text-white font-bold py-2 px-4 rounded-full transition-all shadow-lg animate-pulse hover:animate-none"
                             >
                                 <Phone className="w-5 h-5 fill-current" />
@@ -225,19 +182,24 @@ return (
                         <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                             <h3 className="font-bold text-white mb-4 flex items-center gap-2">
                                 <MapPin className="w-5 h-5 text-yellow-500" />
-                                Available Service Areas
+                                Related Local Directories
                             </h3>
-                            <p className="text-xs text-slate-400 mb-4">Select a city for local release times and specific jail information.</p>
-                            <div className="flex flex-wrap gap-2">
-                                {service.slug !== 'immigration-bail-bonds' && (
-                                    <>
-                                        <Link href={`/services/${service.slug}/miami`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Miami</Link>
-                                        <Link href={`/services/${service.slug}/fort-lauderdale`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Fort Lauderdale</Link>
-                                        <Link href={`/services/${service.slug}/orlando`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Orlando</Link>
-                                        <Link href={`/services/${service.slug}/tampa`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">Tampa</Link>
-                                        <Link href={`/services/${service.slug}/west-palm-beach`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">West Palm Beach</Link>
-                                    </>
-                                )}
+                            <p className="text-xs text-slate-400 mb-4">Select a county or city for local arresting-agency contacts, jail details, and official inmate-search links.</p>
+                            <div className="space-y-5">
+                                {[...citiesByCounty.entries()].map(([countySlug, entries]) => (
+                                    <div key={countySlug}>
+                                        <Link href={`/county/${countySlug}`} className="mb-2 block text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-yellow-500">
+                                            {entries[0].county.name}
+                                        </Link>
+                                        <div className="flex flex-wrap gap-2">
+                                            {entries.map(({ city }) => (
+                                                <Link key={city.slug} href={`/services/${service.slug}/${city.slug}`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">
+                                                    {city.name} local guide
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
@@ -267,7 +229,7 @@ return (
                 <div className="bg-slate-900 border-t border-white/5 py-24 mt-20">
                     <ContentContainer className="max-w-4xl">
                         <h2 className="text-3xl font-serif font-bold text-white mb-10 border-l-4 border-yellow-500 pl-6">
-                            Comprehensive Guide to {service.title}
+                            Detailed Information About {service.title}
                         </h2>
                         <div className="prose prose-invert prose-lg max-w-none text-slate-300">
                             {service.editorialBody.map((paragraph, idx) => (

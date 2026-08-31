@@ -1,291 +1,192 @@
-import { Shield, CloudRain, Globe, Scale, AlertTriangle, Car, Clock, CreditCard } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { AlertTriangle, Car, Clock, CreditCard, Globe, Scale, Shield, Wifi } from 'lucide-react';
 
 export interface Service {
-    slug: string;
-    title: string;
-    shortDescription: string;
-    metaDescription: string;
-    icon: any; // Lucide icon component
-    heroImage: string; // Placeholder for now
-    content: {
-        intro: string;
-        keyPoints: string[];
-        processSteps: { title: string; desc: string }[];
-        commonCharges: string[];
-        faq: { question: string; answer: string }[];
-    };
-    editorialBody?: string[]; // Deep SEO content (paragraphs)
-    speakableSummary?: string; // Voice Search Snippet (2-3 sentences)
+  slug: string;
+  title: string;
+  shortDescription: string;
+  metaDescription: string;
+  icon: LucideIcon;
+  heroImage: string;
+  sources: { label: string; url: string }[];
+  content: {
+    intro: string;
+    keyPoints: string[];
+    processSteps: { title: string; desc: string }[];
+    commonCharges: string[];
+    faq: { question: string; answer: string }[];
+  };
+  editorialBody?: string[];
+  speakableSummary?: string;
 }
+
+const floridaBailSource = {
+  label: 'Florida DFS bail bonds overview',
+  url: 'https://www.myfloridacfo.com/division/consumers/understanding-insurance/bail-bonds-overview',
+};
 
 export const services: Service[] = [
-    {
-        slug: 'dui-bail-bonds',
-        title: 'DUI Bail Bonds Florida',
-        shortDescription: ' arrested for Driving Under the Influence? We specialize in urgent DUI release preventing license suspension delays.',
-        metaDescription: 'DUI Bail Bonds in Florida. 24/7 Fast Release for Driving Under the Influence charges. We handle the paperwork to get them out before the 8-hour hold expires.',
-        icon: Car,
-        heroImage: '/images/dui-hero.jpg',
-        content: {
-            intro: "Driving Under the Influence (DUI) is one of the most common arrest charges in Florida, but it comes with strict release conditions. Unlike standard arrests, DUI defendants are often subject to a mandatory 8-hour hold to ensure sobriety. Our job is to have the bond paperwork posted *exactly* when that clock runs out, so they don't spend a minute longer in jail than necessary.",
-            keyPoints: [
-                "Mandatory 8-Hour Hold Monitoring",
-                "Assistance with Vehicle Impound Release",
-                "Discrete & Confidential Service",
-                "Payment Plans for High Bond Amounts"
-            ],
-            processSteps: [
-                { title: "The 8-Hour Clock", desc: "Florida law mandates a hold until BAC drops < 0.05 or 8 hours pass. We use this time to sign paperwork." },
-                { title: "Bond Posting", desc: "We post the bond immediately so it is pre-processed by the time the hold expires." },
-                { title: "Discharge", desc: "The defendant is released. We provide a ride home if needed, as their license may be seized." }
-            ],
-            commonCharges: ["DUI First Offense", "DUI with Property Damage", "Felony DUI (3rd within 10 years)", "BUI (Boating Under Influence)"],
-            faq: [
-        { question: "Can I bail someone out immediately after a DUI arrest?", answer: "You can sign the paperwork immediately, but the jail cannot physically release them until the mandatory 8-hour sobriety hold is complete (or their BAC is 0.00)." },
-        { question: "How much is bail for a first DUI?", answer: "In Florida, standard bonds for a first-time misdemeanor DUI range from $500 to $1,000. Our fee is 10% ($50 to $100)." },
-        { question: "What happens to their driver's license?", answer: "The license is often seized upon arrest. Their DUI citation serves as a temporary driving permit for 10 days. We can refer you to traffic attorneys to fight the suspension." }
-    ]
-        },
-        editorialBody: [
-            "Driving Under the Influence (DUI) is one of the most aggressively prosecuted crimes in Florida. Law enforcement agencies conduct frequent sobriety checkpoints, and the moment a driver fails a field sobriety test or registers a Blood Alcohol Content (BAC) over the legal limit of 0.08%, they are placed in handcuffs and transported to the local county jail. The immediate aftermath of a DUI arrest is chaotic, disorienting, and legally precarious. This is where our specialized DUI bail bond services become critical. We step in immediately to stabilize the situation, protect the defendant's rights, and orchestrate their release the second the law allows.",
-            "One of the unique legal mechanisms surrounding a DUI arrest in Florida is the mandatory sobriety hold. Under Florida Statute § 316.193(9), a person arrested for DUI cannot be released from custody until one of three conditions is met: their blood alcohol level drops below 0.05%, eight hours have elapsed from the time of the arrest, or they are deemed completely sober and no longer a threat to themselves or the public. This 8-hour hold is strictly enforced across all 67 counties. While it is incredibly frustrating for family members waiting outside the jail, it is an immovable legal barrier.",
-            "However, this 8-hour window is exactly when our bondsmen go to work. We do not wait for the clock to run out to begin the bail process. The moment you call us, we locate the defendant in the county roster, determine their assigned bond amount, and begin processing the surety paperwork. We handle all indemnity signatures, process the 10% premium payment securely, and file the bond directly with the booking desk while the defendant is still serving their hold. By front-loading this administrative work, we guarantee that the second the 8-hour timer expires, the jail has the release orders in hand. There are no secondary delays; they walk out the door immediately.",
-            "The financial aspect of a DUI bond in Florida is heavily standardized. For a first-time misdemeanor DUI with no property damage or bodily injury, standard bonds typically range from $500 to $1,000. If the arrest involves an aggravated DUI (such as a BAC over 0.15% or having a minor in the vehicle), or if there was property damage, the bond can escalate quickly to $2,500 or more. Regardless of the total, Florida law mandates that bail bond premiums are strictly capped at 10% (or a $100 minimum). This means that a $1,000 bond requires exactly $100 to secure release. There are no hidden fees, and we offer flexible payment plans for higher felony bonds.",
-            "Beyond the immediate release from jail, a DUI arrest triggers a simultaneous administrative battle regarding the defendant's driving privileges. In Florida, if you blow over the legal limit or refuse a breathalyzer, your physical driver's license is seized by the arresting officer. Your DUI citation acts as a temporary 10-day driving permit. During this tiny 10-day window, you must request a Formal Review Hearing with the DHSMV to challenge the suspension, otherwise, a hard suspension takes effect automatically. We understand this ticking clock. That is why our priority is hyper-fast release—every hour spent lingering in jail is an hour lost preparing a legal defense to save their license."
-        ],
-speakableSummary: "For a first-time DUI in Florida, the standard bond is typically between $500 and $1,000. However, the defendant must complete a mandatory 8-hour sobriety hold before they can be physically released."
-    },
-{
-    slug: 'domestic-violence-bail',
-        title: 'Domestic Violence Bail Bonds',
-            shortDescription: 'Navigating "No Contact" orders and mandatory court appearances. We guide you through the complex DV release process.',
-                metaDescription: 'Domestic Violence Bail Bonds Florida. Specialized support for DV charges, "No Contact" orders, and First Appearance hearings. Confidential and fast.',
-                    icon: CloudRain,
-                        heroImage: '/images/dv-hero.jpg',
-                            content: {
-        intro: "Domestic Violence arrests in Florida trigger a unique set of legal protocols. Most importantly, the defendant cannot be bonded out immediately—they must face a judge at 'First Appearance' (usually within 24 hours) to have 'No Contact' orders issued. We prepare everything beforehand so release happens immediately after the judge bangs the gavel.",
-            keyPoints: [
-                "Mandatory First Appearance Court",
-                "Explanation of 'No Contact' Orders",
-                "Assistance with Temporary Housing Locations",
-                "Fastest Post-Court Release"
-            ],
-                processSteps: [
-                    { title: "No Immediate Bond", desc: "By law, DV arrests have 'No Bond' until a judge reviews the case." },
-                    { title: "First Appearance", desc: "The judge sets the bond amount and issues a 'Stay Away' order protecting the victim." },
-                    { title: "Immediate Posting", desc: "We are present at the courthouse/jail to post the bond the second the amount is set." }
-                ],
-                    commonCharges: ["Domestic Battery", "Aggravated Battery", "Stalking / Cyberstalking", "Violation of Restraining Order"],
-        faq: [
-            { question: "Why is there no bond amount yet?", answer: "Domestic violence charges require a 'First Appearance' hearing. The bond is set by a judge, not a schedule, to ensure victim safety." },
-            { question: "What does a 'No Contact' order mean?", answer: "It is strict. The defendant cannot return home, call, text, or email the victim. We explain these rules clearly to prevent re-arrest." },
-            { question: "Can I bail out my spouse if I am the victim?", answer: "Yes. You have the right to post bond for them. However, the 'No Contact' order will likely still apply until modified by a judge." }
-        ]
-    },
-    speakableSummary: "Domestic violence charges in Florida require a mandatory 'First Appearance' hearing before a judge, meaning bond cannot be posted immediately. The judge will set the amount and issue a 'No Contact' order to protect the victim."
-},
-{
-    slug: 'immigration-bail-bonds',
-        title: 'Immigration Bail Bonds (Federal)',
-            shortDescription: 'Specialized Federal bonds for ICE datainers. We handle nationwide immigration bonds to reunite families.',
-                metaDescription: 'Immigration Bail Bonds Florida. Licensed to post Federal bonds for ICE detainees across Florida. Reunite your family today.',
-                    icon: Globe,
-                        heroImage: '/images/immigration-hero.jpg',
-                            content: {
-        intro: "Immigration bonds are distinct from state bonds. If your loved one is held by ICE (Immigration and Customs Enforcement) or has an immigration detainer, you need a bondsman licensed for Federal transactions. We specialize in navigating the complex DHS/ICE protocols to reunite families pending their hearing.",
-            keyPoints: [
-                "Federal License (Different from State)",
-                "Nationwide Posting Utility",
-                "Bilingual Staff (Se Habla Español)",
-                "Collateral Management"
-            ],
-                processSteps: [
-                    { title: "A-Number Lookup", desc: "We locate the detainee using their Alien Registration Number (A-Number)." },
-                    { title: "Bond Verification", desc: "We verify the bond amount set by the Immigration Judge or ICE officer." },
-                    { title: "Federal Posting", desc: "We post the Delivery Bond directly with the DHS field office." }
-                ],
-                    commonCharges: ["ICE Detainer", "Visa Overstay", "Illegal Entry", "Removal Proceedings"],
-                        faq: [
-                            { question: "What is an Immigration Delivery Bond?", answer: "It guarantees that the alien will appear for all immigration court hearings. If they appear, the collateral is returned at the end of the case." },
-                            { question: "How much do immigration bonds cost?", answer: "They are higher than state bonds, often starting at $1,500 and going up to $10,000+. The premium structure is different (15% is standard for Federal)." },
-                            { question: "Do you need collateral?", answer: "Yes. Due to the high flight risk and federal nature, immigration bonds almost always require full collateral (real estate or cash) to secure the bond." }
-                        ]
-    },
-    speakableSummary: "Immigration bond amounts are set by an Immigration Judge or ICE and typically start at $1,500, but can exceed $10,000. Unlike state bonds, these often require full collateral to guarantee the detainee appears for federal hearings."
-},
-{
-    slug: 'traffic-warrant-bail',
-        title: 'Traffic & Warrant Amnesty',
-            shortDescription: 'Clear active bench warrants for unpaid tickets or missed court dates without going to jail (Walk-Through Bonds).',
-                metaDescription: 'Traffic Ticket Bail Bonds Florida. Clear your bench warrant for suspended license or missed court. "Walk-Through" bond service available.',
-                    icon: AlertTriangle,
-                        heroImage: '/images/traffic-hero.jpg',
-                            content: {
-        intro: "Driving with a suspended license or missing a court date usually results in a 'Bench Warrant'. This means you can be arrested during any routine traffic stop. We offer a 'Walk-Through' bond service where we prepare the paperwork, go with you to the station, and clear the warrant in minutes—often without you ever being put in a cell.",
-            keyPoints: [
-                "Walk-Through Bond Service",
-                "Clear Warrants Fast",
-                "Avoid Embarrassing Arrests",
-                "Driver's License Reinstatement Help"
-            ],
-                processSteps: [
-                    { title: "Warrant Check", desc: "We confirm the active warrant and the bond amount." },
-                    { title: "Pre-Sign", desc: "We finish all paperwork in our office." },
-                    { title: "Walk-Through", desc: "We escort you to the booking desk, process the bond, and you leave immediately." }
-                ],
-                    commonCharges: ["Failure to Appear (FTA)", "Driving While License Suspended (DWLS)", "Reckless Driving", "Unpaid Traffic Citations"],
-                        faq: [
-                            { question: "Do I have to go to jail to clear a warrant?", answer: "Technically yes, you must be 'booked', but with our Walk-Through service, it is a rapid administrative process. You are fingerprinting and released immediately." },
-                            { question: "How do I know if I have a warrant?", answer: "Call us. We can check the statewide database safely and confidentially." }
-                        ]
-    },
-    speakableSummary: "Most traffic warrants can be cleared with a 'Walk-Through' bond, allowing you to process the paperwork and resolve the warrant without ever being placed in a jail cell. This administrative process typically takes less than an hour."
-},
-{
-    slug: 'nebbia-hold-bail',
-        title: 'Nebbia Hold (Bail Source)',
-            shortDescription: 'Prove legitimacy of funds. We prepare the "Nebbia Proffer" to lift financial holds and secure release.',
-                metaDescription: 'Nebbia Hold Bail Bonds Florida. Specialized assistance for "Bail Source Hearings". We help prove funds are legitimate to lift the hold.',
-                    icon: Scale,
-                        heroImage: '/images/nebbia-hero.jpg',
-                            content: {
-        intro: "A 'Nebbia Hold' (or Bail Source Hearing) is applied when the court suspects bail money may come from illegal activities (e.g., drug trafficking or fraud). The defendant cannot be released—even if bond is posted—until the source of the premiums and collateral is proven to be legitimate. We specialize in preparing the 'Nebbia Proffer' packet to satisfy the state attorney and lift the hold fast.",
-            keyPoints: [
-                "Financial Source Verification",
-                "Nebbia Proffer Preparation",
-                "Coordination with Defense Attorney",
-                "Rapid Hearing Scheduling"
-            ],
-                processSteps: [
-                    { title: "Document Collection", desc: "We gather bank statements, pay stubs, and tax returns to prove the funds are clean." },
-                    { title: "The Proffer", desc: "We compile the 'Nebbia Proffer' packet and submit it to the prosecutor for review." },
-                    { title: "Lifting the Hold", desc: "Once the prosecutor stipulates (agrees) to the source, the judge signs the order lifting the hold." }
-                ],
-                    commonCharges: ["Drug Trafficking", "Money Laundering", "Racketeering (RICO)", "Grand Theft / Fraud"],
-                        faq: [
-                            { question: "What is a Nebbia Hold?", answer: "It is a condition added to the bond requiring proof that the money used to pay for bail was not obtained illegally. You cannot bond out until this is cleared." },
-                            { question: "What documents do I need?", answer: "Typically: 3 months of bank statements, recent pay stubs, tax returns, or affidavits from co-signers proving income." },
-                            { question: "How long does it take to lift?", answer: "If we prepare a strong proffer immediately, we can often get the prosecutor to agree (stipulate) within 24-48 hours, avoiding a long wait for a court hearing." }
-                        ]
-    },
-    speakableSummary: "A Nebbia Hold is a court requirement to prove that bail funds come from legitimate sources before a defendant can be released. We prepare a financial proffer packet to satisfy the prosecutor and lift this hold quickly."
-},
-{
-    slug: 'online-bail-bonds',
-    title: 'Online Bail Bonds Florida',
-    shortDescription: 'Secure release remotely with our 100% digital E-Bonding service without leaving your home.',
-    metaDescription: 'Online Bail Bonds in Florida. 24/7 E-Bonding service. Approve bail and sign paperwork electronically from your mobile phone or computer.',
-    icon: Globe,
-    heroImage: '/images/online-hero.jpg',
+  {
+    slug: 'dui-bail-bonds', title: 'DUI Bail Bonds Florida', icon: Car, heroImage: '/images/dui-hero.jpg',
+    shortDescription: 'A source-based overview of Florida DUI custody rules and the details families should verify.',
+    metaDescription: 'Learn how Florida DUI custody and bail may work, what information to gather, which release conditions apply, and where to verify official requirements.',
+    sources: [{ label: 'Florida Statutes § 316.193', url: 'https://www.leg.state.fl.us/Statutes/Index.cfm?App_mode=Display_Statute&URL=0300-0399/0316/Sections/0316.193.html' }, floridaBailSource],
     content: {
-        intro: "Our E-Bonding technology allows co-signers and indemnitors to complete the entire bail bond process remotely. Whether you are at home, at work, or even in another U.S. state, you can secure the release of a loved one detained in any Florida facility using your smartphone or desktop computer. No office visits or trips to the jail release lobby are required.",
-        keyPoints: [
-            "100% Digital Document Signing (Docusign Secured)",
-            "Instant Credit Card, Debit Card, & Wire Transfers",
-            "Real-Time E-Filing Directly with Jail Intake Desks",
-            "Available for All Florida Jails & Municipal Holding Facilities"
-        ],
-        processSteps: [
-            { title: "1. Verify Inmate Status", desc: "Call us with the inmate's details. We pull the jail record, confirm the charge, and establish the exact preset bail bond premium." },
-            { title: "2. Sign & Pay Online", desc: "We send the credit application and indemnity agreement directly to your email or smartphone. Pay the 10% premium via credit card or bank wire." },
-            { title: "3. Immediate E-Filing", desc: "Our local agent submits the signed surety bond electronically to the jail. The release desk begins the discharge process immediately." }
-        ],
-        commonCharges: [
-            "Remote Co-Signer Applications",
-            "Out-of-State Indemnity Agreements",
-            "Emergency Late-Night E-Bonds",
-            "Federal & State Remote Surety Bonds"
-        ],
-        faq: [
-            { question: "Can I bail someone out of jail in Florida if I live in another state?", answer: "Yes, absolutely. Our secure E-Bonding system is designed exactly for this. We can process co-signers from any U.S. state, sign all agreements electronically, and submit the bond to any Florida county jail." },
-            { question: "Can I use a credit card for an online bond?", answer: "Absolutely. We accept all major credit cards, debit cards, and some digital wallets via our secure e-bonding portal." },
-            { question: "How secure is the E-Bonding process?", answer: "We use bank-level 256-bit encryption for all document transactions. Your personal identification details and financial documents are processed securely and confidentially in compliance with Florida state laws." }
-        ]
+      intro: 'Florida Statutes § 316.193(9) restricts release after a DUI arrest until at least one of three statutory conditions is satisfied. The statute does not promise release at a particular time; booking, other holds, court requirements, and facility processing can add time.',
+      keyPoints: ['Verify custody through the county', 'Confirm every listed charge', 'Ask whether another hold applies', 'Use the statute and agency as primary sources'],
+      processSteps: [
+        { title: 'Locate the record', desc: 'Use the county’s official inmate-search resource and confirm the person’s identifying details.' },
+        { title: 'Read the custody status', desc: 'Check the listed charges, bond status, court information, and any hold shown by the agency.' },
+        { title: 'Confirm directly', desc: 'Call the detention facility or court for time-sensitive information; do not rely on an estimated release time.' },
+      ],
+      commonCharges: ['Driving under the influence', 'DUI with property damage', 'DUI with injury', 'Related traffic charges'],
+      faq: [
+        { question: 'Does Florida always impose an eight-hour DUI hold?', answer: 'Section 316.193(9) lists three alternative conditions. Release may occur when any applicable statutory condition is met, but other legal or administrative holds may still apply.' },
+        { question: 'Can anyone guarantee the release time?', answer: 'No. The detention agency and court control custody and release processing.' },
+      ],
     },
-    editorialBody: [
-        "In the modern era of the legal system, securing a loved one's release from jail should not require you to physically drive to a dingy bail bonds office at 3:00 AM, carrying stacks of cash. Florida's implementation of Electronic Bail Bonds (E-Bonding) has completely revolutionized the industry, allowing friends and family to orchestrate a defendant's release from anywhere in the world using just a smartphone or computer. Our agency is fully integrated with this statewide E-Bonding infrastructure, providing a frictionless, 100% remote bail process.",
-        "The online bail bond process is remarkably straightforward and designed for maximum speed. When you contact our 24/7 dispatch, we first locate the defendant in the county holding facility and verify their bond amount and charges. Once confirmed, we generate a secure, encrypted link and send it directly to your phone via SMS or email. This link grants you access to our digital portal where you can review the bail conditions, digitally sign the required indemnity agreements using your phone's touch screen, and upload a photo of your valid ID.",
-        "Once the electronic paperwork is signed, the system prompts you to submit the state-mandated 10% bail premium. Our payment gateway is highly secure, accepting all major credit cards, debit cards, and digital payment methods. The entire process—from the initial phone call to the final digital signature—can be completed in under 15 minutes while you sit in the comfort of your living room. You never have to step foot in a jail lobby or a bondsman's office.",
-        "The speed of E-Bonding is its greatest advantage. As soon as you hit 'submit' on our portal, the digital surety bond is instantly transmitted to the county jail's records department. In massive facilities like Miami-Dade's TGK or Broward's Main Jail, this electronic filing bypasses the physical line of bondsmen waiting at the window. The jail receives the release order directly into their system, triggering the discharge process immediately. This shaves critical hours off the total time your loved one spends behind bars.",
-        "Online bail bonds are particularly crucial for out-of-state family members. Florida is a massive tourist destination, and out-of-state arrests are incredibly common. Whether you live in New York, California, or another country entirely, our digital infrastructure allows you to act as the indemnitor and post bail for a family member arrested on vacation in Florida. We handle the jurisdictional complexities, ensure the local county jail receives the electronic clearance, and arrange for the defendant to be released safely, all while keeping you updated via text notifications every step of the way."
-    ],
-    speakableSummary: "Our online bail bond system enables you to complete the entire bonding process from any location using a computer or mobile phone. We handle all paperwork and payments digitally, allowing us to post the surety bond to the jail immediately without requiring you to leave your home."
-},
-{
-    slug: '24-hour-bail-bonds',
-    title: '24 Hour Emergency Bail Bonds Florida',
-    shortDescription: 'Arrests happen in the middle of the night. We provide immediate, round-the-clock emergency release services to get them out fast.',
-    metaDescription: '24 Hour Emergency Bail Bonds in Florida. Arrested at 2 AM? We are open and processing bonds right now. Fast, confidential release when you need it most.',
-    icon: Clock,
-    heroImage: '/images/24hour-hero.jpg',
+  },
+  {
+    slug: 'domestic-violence-bail', title: 'Domestic Violence Bail Florida', icon: Shield, heroImage: '/images/domestic-hero.jpg',
+    shortDescription: 'Florida first-appearance and bail information for domestic-violence arrests, with official sources.',
+    metaDescription: 'Review Florida domestic-violence first-appearance and bail requirements, possible release conditions, safety considerations, and official legal sources.',
+    sources: [{ label: 'Florida Statutes § 741.2901', url: 'https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0741/Sections/0741.2901.html' }, floridaBailSource],
     content: {
-        intro: "The justice system doesn't sleep, and neither do we. Whether a loved one is arrested at 2:00 AM on a Saturday night or during a major holiday, every minute they spend in a Florida county jail exposes them to unnecessary danger and stress. Our 24-hour emergency response team is strategically positioned near major booking facilities to post bonds the exact second the intake process clears.",
-        keyPoints: [
-            "Always Open: 24/7/365 Operations",
-            "Immediate Dispatch to County Jails",
-            "Overnight Remote E-Bonding Available",
-            "Rapid First Appearance Coordination"
-        ],
-        processSteps: [
-            { title: "Immediate Case Pull", desc: "You call us at any hour. We instantly pull the live jail roster to locate your loved one." },
-            { title: "Pre-Booking Preparation", desc: "While they are being fingerprinted, we prepare the bond paperwork so there is zero delay." },
-            { title: "Midnight Posting", desc: "Our agents physically walk the bond to the 24-hour release window at the jail to secure release." }
-        ],
-        commonCharges: [
-            "Late Night DUI / BUI Arrests",
-            "Weekend Disorderly Conduct",
-            "Holiday Domestic Disturbances",
-            "Midnight Traffic Warrants"
-        ],
-        faq: [
-            { question: "Is it more expensive to bond someone out at night?", answer: "No. By Florida law, the premium is strictly capped at 10%. We never charge 'after-hours' fees or emergency surcharges." },
-            { question: "Can the jail release people in the middle of the night?", answer: "Yes. Most major county jails in Florida operate release lobbies 24 hours a day. If we post the bond at 3 AM, they will be released before sunrise." },
-            { question: "What if I can't drive to your office right now?", answer: "We offer 100% remote E-Bonding. You can sign the emergency paperwork from your phone in your pajamas." }
-        ]
+      intro: 'Florida Statutes § 741.2901 states that a person arrested for an act of domestic violence is held until brought before the court for admittance to bail. The court considers safety and may impose case-specific conditions. Only the court can determine those conditions.',
+      keyPoints: ['First appearance is required', 'The court evaluates safety', 'Conditions vary by case', 'Legal advice should come from a lawyer'],
+      processSteps: [
+        { title: 'Verify the booking', desc: 'Use the official county record to confirm charges, custody location, and court information.' },
+        { title: 'Wait for the court record', desc: 'Do not assume a preset amount or condition before the first appearance is completed.' },
+        { title: 'Read every condition', desc: 'The defendant should obtain legal advice and follow all court-ordered contact and location restrictions.' },
+      ],
+      commonCharges: ['Domestic battery allegations', 'Violation of an injunction', 'Stalking allegations', 'Related misdemeanor or felony charges'],
+      faq: [
+        { question: 'Can bond be posted before first appearance?', answer: 'Section 741.2901 states that the defendant is held until brought before the court for admittance to bail.' },
+        { question: 'Does this page provide advice about a no-contact order?', answer: 'No. Court orders are case-specific; a qualified attorney should explain the order.' },
+      ],
     },
-    speakableSummary: "Our 24-hour emergency bail bond service ensures immediate response to late-night or holiday arrests. We operate around the clock to post bonds the exact moment the jail finishes processing, with no hidden after-hours fees."
-},
-{
-    slug: 'no-collateral-bail-bonds',
-    title: 'No Collateral Bail Bonds Florida',
-    shortDescription: 'Secure a release based on your signature. Most standard bonds qualify for zero property collateral with a steady job.',
-    metaDescription: "No Collateral Bail Bonds in Florida. Signature bonds available with just the 10% premium. Don't put your house up for bail. Call us to qualify now.",
-    icon: CreditCard,
-    heroImage: '/images/nocollateral-hero.jpg',
+  },
+  {
+    slug: 'immigration-bail-bonds', title: 'Immigration Bond Information', icon: Globe, heroImage: '/images/immigration-hero.jpg',
+    shortDescription: 'Federal immigration custody and bond resources for families seeking reliable official information.',
+    metaDescription: 'Learn how federal immigration custody and delivery bonds differ from Florida state bail, what information to gather, and which official ICE resources to use.',
+    sources: [{ label: 'ICE Online Detainee Locator', url: 'https://locator.ice.gov/odls/#/search' }, { label: 'ICE bonds information', url: 'https://www.ice.gov/detain/detention-management/bonds' }],
     content: {
-        intro: "A common misconception is that you must sign over the deed to your house or put up a car title to bail someone out of jail. For the vast majority of standard arrests in Florida, this is entirely false. We specialize in 'Signature Bonds'—meaning we secure the release without requiring physical property as collateral. As long as you have steady employment and residency, your signature is enough.",
-        keyPoints: [
-            "Zero Property Collateral Required",
-            "Signature-Based Indemnity",
-            "Flexible Financing on the 10% Premium",
-            "Fast Approval Over the Phone"
-        ],
-        processSteps: [
-            { title: "Risk Assessment", desc: "We evaluate the charge, bond amount, and the defendant's ties to the local Florida community." },
-            { title: "Indemnitor Approval", desc: "We qualify the co-signer based on employment history, not physical assets like houses or cars." },
-            { title: "Signature Release", desc: "You pay the standard 10% premium, sign the promissory agreement, and we post the bond." }
-        ],
-        commonCharges: [
-            "Standard Misdemeanors",
-            "First-Time Offenses",
-            "Traffic & DUI Violations",
-            "Low-Level Non-Violent Felonies"
-        ],
-        faq: [
-            { question: "What exactly does 'No Collateral' mean?", answer: "It means you do not have to put up property, jewelry, or cash equal to the full bond amount. You only pay the non-refundable 10% premium, and sign a contract guaranteeing the defendant will go to court." },
-            { question: "When IS collateral actually required?", answer: "Property collateral is typically only required for very high bond amounts (e.g., $50,000+), severe federal charges, immigration bonds, or defendants with a massive flight risk." },
-            { question: "Do I need a perfect credit score to qualify?", answer: "No. We look at stability—how long you've lived in Florida and how long you've held your current job—not just a FICO score." }
-        ]
+      intro: 'Immigration custody is federal and is separate from Florida county-jail bail. Eligibility, bond amount, payment, release, and hearing obligations depend on the federal record. Use ICE resources and consult a qualified immigration attorney for case-specific advice.',
+      keyPoints: ['Use the ICE locator', 'Gather the A-number', 'Confirm eligibility with ICE or counsel', 'Do not treat state-bail rules as federal rules'],
+      processSteps: [
+        { title: 'Locate the detainee', desc: 'Use the official ICE locator with the person’s A-number or biographical information.' },
+        { title: 'Confirm the federal record', desc: 'Ask ICE or qualified counsel whether a bond has been set and what conditions apply.' },
+        { title: 'Use official payment instructions', desc: 'Follow current ICE instructions and keep all receipts and case documents.' },
+      ],
+      commonCharges: ['ICE detention', 'Removal proceedings', 'Immigration court matters', 'Federal delivery bonds'],
+      faq: [
+        { question: 'Is an immigration bond a Florida state bond?', answer: 'No. Immigration detention and delivery bonds are federal matters.' },
+        { question: 'Can this directory determine eligibility?', answer: 'No. Confirm eligibility with ICE and qualified immigration counsel.' },
+      ],
     },
-    speakableSummary: "Most standard bail bonds in Florida do not require property collateral. By utilizing a signature bond, a qualified co-signer with steady employment can secure a release by simply paying the 10% premium without risking their home or vehicles."
-}
+  },
+  {
+    slug: 'traffic-warrant-bail', title: 'Traffic and Warrant Information', icon: AlertTriangle, heroImage: '/images/traffic-hero.jpg',
+    shortDescription: 'Official warrant-search resources and cautions for Florida traffic and failure-to-appear matters.',
+    metaDescription: 'Learn how to search Florida wanted-person information, why results require agency verification, and where to obtain case-specific warrant guidance.',
+    sources: [{ label: 'FDLE Wanted Persons Search', url: 'https://pas.fdle.state.fl.us/pas/restricted/PAS/person/WantedPersons.jsf' }],
+    content: {
+      intro: 'The FDLE public system displays warrant information reported by agencies, but FDLE warns that it may not be current, active, or complete and is not confirmation that a warrant is active. Verify results with the reporting agency or court.',
+      keyPoints: ['Search the FDLE public system', 'Do not act on a result alone', 'Verify with the reporting agency', 'Seek legal advice before surrender decisions'],
+      processSteps: [
+        { title: 'Search carefully', desc: 'Use accurate identifying information and review the reporting agency shown in the result.' },
+        { title: 'Verify the result', desc: 'Contact the reporting agency or responsible court using independently verified contact information.' },
+        { title: 'Get legal guidance', desc: 'A lawyer can explain jurisdiction, court procedure, and the safest lawful next step.' },
+      ],
+      commonCharges: ['Failure to appear', 'Traffic-related warrants', 'Suspended-license cases', 'Court compliance matters'],
+      faq: [
+        { question: 'Is an FDLE search definitive?', answer: 'No. FDLE says its public information should not be used as confirmation that a warrant is active.' },
+        { question: 'Can a website promise a no-custody resolution?', answer: 'No. Procedure and custody decisions depend on the court and agency.' },
+      ],
+    },
+  },
+  {
+    slug: 'nebbia-hold-bail', title: 'Nebbia Hold and Bail Source', icon: Scale, heroImage: '/images/nebbia-hero.jpg',
+    shortDescription: 'A general explanation of Florida bail-source review, documentation, and official consumer guidance.',
+    metaDescription: 'Learn what a Florida bail-source or Nebbia review may require, why financial documentation matters, and where to read official consumer guidance.',
+    sources: [floridaBailSource],
+    content: {
+      intro: 'Florida DFS describes a Nebbia hold as a requirement for the defendant and co-signers to disclose the source of bail premium and collateral before release. The proof and court procedure are case-specific and may require legal advice.',
+      keyPoints: ['Source of funds must be legitimate', 'Documentation is case-specific', 'The court controls the decision', 'A lawyer can advise on the proffer'],
+      processSteps: [
+        { title: 'Identify the hold', desc: 'Confirm the court record and do not assume that posting money alone will authorize release.' },
+        { title: 'Ask what is required', desc: 'Counsel can identify the records and explanations requested in the specific case.' },
+        { title: 'Await the court decision', desc: 'No provider can guarantee when or whether the court will lift the hold.' },
+      ],
+      commonCharges: ['Cases involving a source-of-funds review', 'Financial-crime allegations', 'Drug-trafficking allegations', 'Court-ordered bail conditions'],
+      faq: [
+        { question: 'Is there one standard document list?', answer: 'No. Requirements depend on the court and facts; obtain case-specific legal advice.' },
+        { question: 'Can the hold be cleared on a promised schedule?', answer: 'No. The court and parties control the review and timing.' },
+      ],
+    },
+  },
+  {
+    slug: 'online-bail-bonds', title: 'Online Bail Bond Safety', icon: Wifi, heroImage: '/images/online-hero.jpg',
+    shortDescription: 'Consumer checks for remote paperwork, identity requests, payments, receipts, and provider verification.',
+    metaDescription: 'Review consumer-safety checks for online bail paperwork, provider licensing, payment requests, receipts, collateral terms, and official custody verification.',
+    sources: [floridaBailSource, { label: 'Florida license search', url: 'https://licenseesearch.fldfs.com/' }],
+    content: {
+      intro: 'Remote paperwork may be offered by a provider, but availability and filing methods vary. Before sharing identification or money, independently verify custody, verify the individual agent’s Florida license, read the contract, and obtain required receipts.',
+      keyPoints: ['Verify the agent’s license', 'Verify custody independently', 'Read every contract term', 'Keep receipts and copies'],
+      processSteps: [
+        { title: 'Verify identities', desc: 'Confirm the arrest through the county and the agent through Florida’s official license search.' },
+        { title: 'Review the agreement', desc: 'Understand premium, collateral, payment fees, indemnitor obligations, and refund terms.' },
+        { title: 'Protect sensitive data', desc: 'Use only the verified provider’s documented process and retain copies of everything submitted.' },
+      ],
+      commonCharges: ['Remote document signing', 'Identity verification', 'Premium receipts', 'Collateral agreements'],
+      faq: [
+        { question: 'Is every Florida jail connected to one e-bonding system?', answer: 'Do not assume so. Ask the responsible facility and verified provider which filing methods are accepted.' },
+        { question: 'What should I keep?', answer: 'Keep the contract, premium and collateral receipts, payment confirmation, and provider license information.' },
+      ],
+    },
+  },
+  {
+    slug: '24-hour-bail-bonds', title: 'After-Hours Bail Information', icon: Clock, heroImage: '/images/24hour-hero.jpg',
+    shortDescription: 'A checklist for verifying an after-hours Florida arrest without relying on release promises.',
+    metaDescription: 'Use an after-hours Florida arrest checklist to verify custody, locate official information, avoid payment scams, and understand factors affecting release.',
+    sources: [floridaBailSource],
+    content: {
+      intro: 'Official inmate-search and information services vary by county. After-hours availability by a private provider does not mean the court or facility can complete every step at that time, and it does not guarantee release before a particular hour.',
+      keyPoints: ['Verify custody first', 'Use official phone numbers', 'Avoid urgent payment pressure', 'Expect timing to vary'],
+      processSteps: [
+        { title: 'Confirm the facility', desc: 'Use the county’s official roster or corrections contact rather than a number supplied by an unsolicited caller.' },
+        { title: 'Confirm the record', desc: 'Check charges, bond status, court requirements, and holds.' },
+        { title: 'Review any agreement', desc: 'Verify the agent and understand fees, collateral, and obligations before paying or signing.' },
+      ],
+      commonCharges: ['Night or weekend bookings', 'Court-set bond', 'Administrative holds', 'Multiple-charge records'],
+      faq: [
+        { question: 'Does a 24-hour phone line mean 24-hour release?', answer: 'No. Courts and detention facilities control processing and release.' },
+        { question: 'What is the safest first step?', answer: 'Verify the arrest and custody status through the official county source.' },
+      ],
+    },
+  },
+  {
+    slug: 'no-collateral-bail-bonds', title: 'Bail Bond Collateral Guide', icon: CreditCard, heroImage: '/images/nocollateral-hero.jpg',
+    shortDescription: 'Official consumer information about collateral, premiums, receipts, and indemnitor obligations.',
+    metaDescription: 'Learn how Florida bail-bond collateral and underwriting may vary, which receipts are required, and what contract obligations to review before signing.',
+    sources: [floridaBailSource],
+    content: {
+      intro: 'Collateral is not automatically waived. Whether collateral is requested depends on lawful underwriting and the facts of the bond. Florida DFS explains restrictions, receipts, return of collateral, premiums, and consumer responsibilities.',
+      keyPoints: ['Collateral varies by case', 'Obtain a collateral receipt', 'Read indemnitor obligations', 'Verify the agent’s license'],
+      processSteps: [
+        { title: 'Ask for written terms', desc: 'Review the premium, collateral, payment fees, obligations, and refund provisions before signing.' },
+        { title: 'Document any collateral', desc: 'Obtain the required detailed receipt and keep copies of ownership and payment records.' },
+        { title: 'Track discharge and return', desc: 'Keep case and bond records so you can follow up when the surety’s liability ends.' },
+      ],
+      commonCharges: ['Collateral agreements', 'Indemnitor contracts', 'Premium payments', 'Bond discharge records'],
+      faq: [
+        { question: 'Does every bond qualify for no collateral?', answer: 'No. Collateral requirements depend on underwriting and the specific bond.' },
+        { question: 'Where can I read the official consumer guidance?', answer: 'Use the Florida Department of Financial Services bail bonds overview linked on this page.' },
+      ],
+    },
+  },
 ];
 
-// Helper Functions
-export async function getService(slug: string): Promise<Service | undefined> {
-    return services.find((s) => s.slug === slug);
-}
-
-export async function getAllServices(): Promise<Service[]> {
-    return services;
-}
+export async function getService(slug: string) { return services.find((service) => service.slug === slug); }
+export async function getAllServices() { return services; }

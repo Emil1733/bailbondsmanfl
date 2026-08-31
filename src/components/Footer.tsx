@@ -16,12 +16,12 @@ export default function Footer() {
 
                     {/* Brand Column */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-serif font-bold text-white">Statewide Bail Bonds</h3>
+                        <h3 className="text-xl font-serif font-bold text-white">Bond Florida</h3>
                         <p className="leading-relaxed">
-                            Professional, licensed bail bond agents serving all 67 counties in Florida. We specialize in fast release from county detention centers.
+                            A Florida directory of county jail contacts, official inmate-search links, local guides, and general bail information.
                         </p>
                         <p className="text-xs text-slate-600">
-                            Lic# P123456 • 24/7 Availability
+                            Information is general and is not legal advice.
                         </p>
                     </div>
 
@@ -36,6 +36,8 @@ export default function Footer() {
                             <li><Link href="/services/immigration-bail-bonds" className="hover:text-yellow-500 transition-colors">Immigration Bonds</Link></li>
                             <li><Link href="/services/nebbia-hold-bail" className="hover:text-yellow-500 transition-colors">Nebbia Hold / Bail Source</Link></li>
                             <li><Link href="/services/traffic-warrant-bail" className="hover:text-yellow-500 transition-colors">Traffic Warrants</Link></li>
+                            <li><Link href="/services/24-hour-bail-bonds" className="hover:text-yellow-500 transition-colors">24-Hour Bail Bonds</Link></li>
+                            <li><Link href="/services/no-collateral-bail-bonds" className="hover:text-yellow-500 transition-colors">No-Collateral Bonds</Link></li>
                         </ul>
                     </div>
 
@@ -85,6 +87,8 @@ export default function Footer() {
                             <li><Link href="/jail/orange-county-booking-and-release-center" className="hover:text-yellow-500 transition-colors">Orange County BRC</Link></li>
                             <li><Link href="/jail/pinellas-county-jail" className="hover:text-yellow-500 transition-colors">Pinellas County Jail</Link></li>
                             <li><Link href="/jail/falkenburg-road-jail" className="hover:text-yellow-500 transition-colors">Falkenburg Road Jail</Link></li>
+                            <li><Link href="/jail/orient-road-jail" className="hover:text-yellow-500 transition-colors">Orient Road Jail</Link></li>
+                            <li><Link href="/jail/land-o-lakes-detention-center" className="hover:text-yellow-500 transition-colors">Land O&apos; Lakes Detention</Link></li>
                             <li><Link href="/jail/palm-beach-county-main-detention-center" className="hover:text-yellow-500 transition-colors">Palm Beach Detention</Link></li>
                             <li><Link href="/jail/duval-county-pre-trial-detention-facility" className="hover:text-yellow-500 transition-colors">Duval Pre-Trial Facility</Link></li>
                             <li><Link href="/jail/lee-county-core-facility" className="hover:text-yellow-500 transition-colors">Lee County Core</Link></li>
@@ -96,17 +100,25 @@ export default function Footer() {
                 {/* Master Directory Link (Crawl Shortcut) */}
                 <div className="mb-16 p-6 bg-slate-900/50 border border-slate-800 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
-                        <h4 className="text-white font-bold mb-1">Statewide Coverage</h4>
-                        <p className="text-xs text-slate-500 italic">Don't see your city listed above? We serve every municipality in the state of Florida.</p>
+                        <h4 className="text-white font-bold mb-1">Florida Directory</h4>
+                        <p className="text-xs text-slate-500 italic">Browse the county and city guides currently included in the Bond Florida directory.</p>
                     </div>
-                    <Link href="/locations" className="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded transition-all whitespace-nowrap">
+                    <Link href="/locations" className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold py-3 px-8 rounded transition-all whitespace-nowrap">
                         View All Service Areas &rarr;
                     </Link>
                 </div>
 
+                <div className="mb-8 rounded-lg border border-slate-800 bg-slate-900/40 p-6 text-xs leading-relaxed">
+                    <p className="font-bold text-slate-200">Reviewed by the Bond Florida editorial team. Updated August 31, 2026.</p>
+                    <p className="mt-2">
+                        Official sources: <a className="underline hover:text-white" href="https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&StatuteYear=2025&Title=-%3E2025-%3EChapter+903&URL=0900-0999%2F0903%2F0903ContentsIndex.html" rel="noopener noreferrer" target="_blank">Florida Statutes, Chapter 903 (Bail)</a>{' '}and <a className="underline hover:text-white" href="https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&StatuteYear=2025&Title=-%3E2025-%3EChapter+648&URL=0600-0699%2F0648%2F0648ContentsIndex.html" rel="noopener noreferrer" target="_blank">Chapter 648 (Bail Bond Agents)</a>. County pages also link to their official local inmate-search resource.
+                    </p>
+                    <p className="mt-2">To report a correction, email <a className="underline hover:text-white" href="mailto:tevatrosyan13.17@gmail.com">tevatrosyan13.17@gmail.com</a>.</p>
+                </div>
+
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p>&copy; {currentYear} Statewide Bail Bonds Florida. All Rights Reserved.</p>
+                    <p>&copy; {currentYear} Bond Florida. All Rights Reserved.</p>
                     <div className="flex gap-8">
                         <Link href="/warrant-search" className="hover:text-red-400 text-red-500 font-bold transition-colors">Warrant Search</Link>
                         <Link href="/about" className="hover:text-white transition-colors">About Us</Link>

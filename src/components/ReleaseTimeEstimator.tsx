@@ -102,7 +102,7 @@ export default function ReleaseTimeEstimator() {
                 </fieldset>
                 <div>
                     <label htmlFor="booking-time" className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">2. Booking Time</label>
-                    <input id="booking-time" type="time" value={bookingTime} onChange={(event) => { setBookingTime(event.target.value); calculate(event.target.value, isWeekend); }} className="w-full bg-navy-950 border border-slate-700 rounded-lg py-4 px-4 text-white text-xl font-mono focus:outline-none focus:border-yellow-500 [color-scheme:dark]" />
+                    <input id="booking-time" type="time" autoComplete="off" value={bookingTime} onChange={(event) => { setBookingTime(event.target.value); calculate(event.target.value, isWeekend); }} className="w-full bg-navy-950 border border-slate-700 rounded-lg py-4 px-4 text-white text-xl font-mono focus:outline-none focus:border-yellow-500 [color-scheme:dark]" />
                     <p className="text-xs text-slate-500 mt-2 text-center">Estimate only; actual timing depends on booking, court, and facility processing.</p>
                 </div>
 
@@ -120,8 +120,8 @@ export default function ReleaseTimeEstimator() {
                     </div> : <form onSubmit={handleUnlock} className="border-t border-white/10 pt-4 space-y-3">
                         <div className="flex items-center gap-2"><Lock className="w-4 h-4 text-urgent-red" /><span className="text-sm font-semibold text-white">Unlock Facility Pickup Guide</span></div>
                         <label htmlFor="estimator-phone" className="sr-only">Phone number</label>
-                        <input id="estimator-phone" type="tel" autoComplete="tel" required placeholder="Phone number" value={phone} onChange={(event) => setPhone(event.target.value)} className="w-full bg-navy-950 border border-slate-700 rounded-lg px-3 py-3 text-sm text-white focus:outline-none focus:border-urgent-red" />
-                        <div className="hidden" aria-hidden="true"><label htmlFor="estimator-website">Website</label><input id="estimator-website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></div>
+                        <input id="estimator-phone" type="tel" autoComplete="tel" inputMode="tel" enterKeyHint="done" required placeholder="Phone number" value={phone} onChange={(event) => setPhone(event.target.value)} className="w-full bg-navy-950 border border-slate-700 rounded-lg px-3 py-3 text-sm text-white focus:outline-none focus:border-urgent-red" />
+                        <div className="hidden" inert><label htmlFor="estimator-website">Website</label><input id="estimator-website" type="url" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></div>
                         <label className="flex items-start gap-2 text-xs text-slate-300"><input type="checkbox" required checked={consent} onChange={(event) => setConsent(event.target.checked)} className="mt-0.5" /><span>I agree that a Bond Florida agent may contact me about this request by phone or text.</span></label>
                         <button type="submit" disabled={status === 'submitting'} className="w-full bg-urgent-red hover:bg-urgent-red-dark disabled:opacity-60 text-white text-sm font-bold px-4 py-3 rounded-lg">{status === 'submitting' ? 'Unlocking…' : 'Unlock Guide'}</button>
                         {status === 'error' && <p className="text-sm text-red-300" role="alert">{errorMessage} <a href={PHONE_HREF} className="font-bold underline">Call {PHONE_NUMBER}</a>.</p>}
