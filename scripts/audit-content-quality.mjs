@@ -2,6 +2,7 @@ import { writeFile } from 'node:fs/promises';
 
 const baseUrl = process.env.SITE_URL || 'http://127.0.0.1:3111';
 const outputPath = process.env.OUTPUT_PATH || 'changelog/phase9-metadata-inventory.csv';
+const concurrency = Math.max(1, Number(process.env.AUDIT_CONCURRENCY) || 12);
 
 function decode(text = '') {
   return text
@@ -48,7 +49,7 @@ const paths = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => new URL
 const rows = [];
 let cursor = 0;
 
-await Promise.all(Array.from({ length: 12 }, async () => {
+await Promise.all(Array.from({ length: concurrency }, async () => {
   while (cursor < paths.length) {
     const path = paths[cursor++];
     const response = await fetch(`${baseUrl}${path}`);

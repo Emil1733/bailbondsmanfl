@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 import EmergencyHeader from '@/components/EmergencyHeader';
-import { ShieldCheck, Users, MapPin, Clock, Award, Phone, CheckCircle2, Building2 } from 'lucide-react';
+import { ShieldCheck, MapPin, Clock, Award, Phone, CheckCircle2, Building2 } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = pageMetadata({

@@ -4,7 +4,7 @@ import { getCityBySlug, getAllCities } from '@/lib/data';
 import EmergencyHeader from '@/components/EmergencyHeader';
 import Hero from '@/components/Hero';
 import MobileFloatingCall from '@/components/MobileFloatingCall';
-import { CheckCircle2, MapPin, Clock, Siren, ArrowRight, Phone, ShieldCheck } from 'lucide-react';
+import { MapPin, Siren, ArrowRight, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
 import { jailGuideByCounty } from '@/lib/internal-links';

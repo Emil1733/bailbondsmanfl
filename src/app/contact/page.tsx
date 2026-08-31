@@ -97,7 +97,7 @@ export default function ContactPage() {
               <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-6">
                 <h3 className="mb-4 text-lg font-bold text-white">Protect sensitive information</h3>
                 <p className="mb-4 text-slate-400">
-                  Use the form only for an initial inquiry. Do not enter Social Security numbers, payment-card or bank details, passwords, medical records, government identification images, or confidential attorney communications.
+                  Use the form only for an initial inquiry. Do not enter charges or case narratives, Social Security numbers, payment-card or bank details, passwords, medical records, immigration identifiers, government identification images, or confidential attorney communications.
                 </p>
                 <p className="text-slate-400">
                   Verify booking information through the county&apos;s official inmate-search page. Release eligibility and timing are controlled by the court and detention facility, so no website or service provider can guarantee a particular outcome.

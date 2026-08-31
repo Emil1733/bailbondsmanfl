@@ -24,13 +24,13 @@ export default function PrivacyPage() {
             Effective date: August 31, 2026
           </p>
           <p>
-            Bond Florida ("we", "us", "our") operates this directory and contact form. This policy explains what the website collects, why it is collected, and the choices available to you.
+            Bond Florida (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) operates this directory and contact form. This policy explains what the website collects, why it is collected, and the choices available to you.
           </p>
           
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Information We Collect</h2>
           <p>
             We collect information you provide directly to us, such as when you call our agents or submit a contact form. This may include:
-            your name, phone number, the defendant&apos;s name, and any case details you choose to include. The form also records the submission time and source page. Basic server logs may contain an IP address, browser information, and request timestamps for security and troubleshooting.
+            your name, phone number, the defendant&apos;s name, and a short optional directory question. The form also records the submission time and source page. Basic server and bot-protection logs may contain an IP address, browser information, request timestamps, and automated-abuse signals for security and troubleshooting.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. Use of Information</h2>
@@ -46,17 +46,17 @@ export default function PrivacyPage() {
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. Data Security</h2>
           <p>
-            Contact-form records are transmitted to Airtable for storage and follow-up. Internet transmission and cloud storage cannot be guaranteed to be completely secure, so do not submit Social Security numbers, payment-card details, medical records, account passwords, or other sensitive financial information through this form.
+            Contact-form records are transmitted to Airtable for storage and follow-up. Internet transmission and cloud storage cannot be guaranteed to be completely secure, so do not submit charges or case narratives, Social Security numbers, identification images, immigration identifiers, payment-card or bank details, medical records, account passwords, or confidential attorney communications through this form.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">4. Sharing and Service Providers</h2>
           <p>
-            We do not sell contact-form information. Information may be processed by hosting, security, and form-storage providers that support this website, including Vercel and Airtable. We may also disclose information when required by law or when reasonably necessary to protect the website and its users.
+            We do not sell contact-form information. Vercel processes hosting, delivery, server logs, analytics, and automated-abuse signals. Airtable stores the contact record used for follow-up. Only the site owner and people specifically authorized to respond to inquiries should have access to those records. We may also disclose information when required by law or when reasonably necessary to protect the website and its users.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">5. Retention and Your Choices</h2>
           <p>
-            We retain inquiry records only as long as reasonably needed for follow-up, recordkeeping, security, and applicable legal obligations. To ask what contact information we hold, request a correction, or request deletion where permitted, email <a className="text-yellow-500 underline" href="mailto:tevatrosyan13.17@gmail.com">tevatrosyan13.17@gmail.com</a>. We may need to verify the request before acting on it.
+            Contact-form records should be reviewed and deleted from Airtable within 90 days of submission unless they are still needed to respond to the inquiry, resolve a dispute, prevent abuse, or meet a legal obligation. Access should be removed promptly when an authorized responder no longer needs it. To ask what contact information we hold, request a correction, or request deletion where permitted, email <a className="text-yellow-500 underline" href="mailto:tevatrosyan13.17@gmail.com">tevatrosyan13.17@gmail.com</a>. We may need to verify the request before acting on it and will respond within 30 days.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">6. External Links and Policy Changes</h2>

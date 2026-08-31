@@ -6,11 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "audit:security": "node scripts/audit-security.mjs",
+    "audit:claims": "node scripts/audit-high-risk-claims.mjs",
+    "audit:crawl": "node scripts/run-crawl-audits.mjs",
+    "audit:remote": "node scripts/run-remote-audits.mjs",
+    "smoke:production": "node scripts/smoke-production.mjs",
+    "check": "npm run lint && npm run typecheck && npm run audit:security && npm run build && npm run audit:crawl"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",
     "@vercel/analytics": "^2.0.1",
+    "botid": "^1.5.11",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.562.0",
     "next": "16.3.3",
