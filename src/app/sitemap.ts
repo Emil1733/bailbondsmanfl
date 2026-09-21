@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { counties } from '@/lib/data';
 import { getAllServices } from '@/lib/services';
+import { approvedServiceCityPages } from '@/lib/service-city-seo';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://bondflorida.com';
@@ -82,7 +83,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
+    const approvedServiceCityRoutes = approvedServiceCityPages.map(({ serviceSlug, citySlug }) => ({
+        url: `${baseUrl}/services/${serviceSlug}/${citySlug}`,
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+    }));
+
     // Service/city combinations remain available to users but are intentionally
     // excluded until each one passes the standalone-value and sourcing gate.
-    return [...staticRoutes, ...serviceRoutes, ...countyRoutes, ...cityRoutes, ...jailRoutes];
+    return [...staticRoutes, ...serviceRoutes, ...countyRoutes, ...cityRoutes, ...jailRoutes, ...approvedServiceCityRoutes];
 }

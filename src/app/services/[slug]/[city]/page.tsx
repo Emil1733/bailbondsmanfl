@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
 import { jailGuideByCounty } from '@/lib/internal-links';
 import { PROGRAMMATIC_INDEXING_ENABLED, validateProgrammaticInputs } from '@/lib/programmatic-seo';
+import { getApprovedServiceCityPage } from '@/lib/service-city-seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -49,6 +50,8 @@ export async function generateMetadata({ params }: Props) {
     }
 
     const { city } = cityData;
+    const approvedPage = getApprovedServiceCityPage(slug, citySlug);
+    const shouldIndex = PROGRAMMATIC_INDEXING_ENABLED || Boolean(approvedPage);
 
     // Clean "Florida" from the service title for the geo-page (e.g. "DUI Bail Bonds Florida" -> "DUI Bail Bonds")
     const cleanServiceTitle = service.title.replace(' Florida', '');
@@ -63,9 +66,9 @@ export async function generateMetadata({ params }: Props) {
     return {
         ...metadata,
         robots: {
-            index: PROGRAMMATIC_INDEXING_ENABLED,
+            index: shouldIndex,
             follow: true,
-            googleBot: { index: PROGRAMMATIC_INDEXING_ENABLED, follow: true },
+            googleBot: { index: shouldIndex, follow: true },
         },
     };
 }
@@ -83,6 +86,7 @@ export default async function MatrixPage({ params }: Props) {
     const { city, county } = cityData;
     const Icon = service.icon;
     const jailGuide = jailGuideByCounty[county.slug];
+    const approvedPage = getApprovedServiceCityPage(slug, citySlug);
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -142,6 +146,18 @@ export default async function MatrixPage({ params }: Props) {
                                     Read the complete {service.title} guide &rarr;
                                 </Link>
                             </div>
+
+                            {approvedPage && (
+                                <article className="rounded-xl border border-slate-800 bg-slate-900/50 p-8">
+                                    <h2 className="text-2xl font-serif font-bold text-white">{approvedPage.heading}</h2>
+                                    <div className="mt-5 space-y-4 leading-relaxed text-slate-300">
+                                        {approvedPage.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                                    </div>
+                                    <p className="mt-5 text-sm leading-relaxed text-slate-500">
+                                        Court and facility procedures can change. Confirm time-sensitive details through the official resources linked on this page.
+                                    </p>
+                                </article>
+                            )}
 
                             {/* 3. Local + Service Process */}
                             <div>
