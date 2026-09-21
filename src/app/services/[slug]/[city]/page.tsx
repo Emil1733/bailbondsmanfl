@@ -156,6 +156,14 @@ export default async function MatrixPage({ params }: Props) {
                                     <p className="mt-5 text-sm leading-relaxed text-slate-500">
                                         Court and facility procedures can change. Confirm time-sensitive details through the official resources linked on this page.
                                     </p>
+                                    <div className="mt-7 border-t border-slate-800 pt-6">
+                                        <h3 className="font-bold text-white">Official sources and verification</h3>
+                                        <ul className="mt-3 space-y-2 text-sm">
+                                            <li><a className="text-yellow-500 underline" href={county.jail.inmateSearchUrl} rel="noopener noreferrer" target="_blank">{county.name} official inmate-search resource</a></li>
+                                            {service.sources.map((source) => <li key={source.url}><a className="text-yellow-500 underline" href={source.url} rel="noopener noreferrer" target="_blank">{source.label}</a></li>)}
+                                        </ul>
+                                        <p className="mt-4 text-xs text-slate-500">Reviewed September 21, 2026. Recheck live agency and court records before acting.</p>
+                                    </div>
                                 </article>
                             )}
 
