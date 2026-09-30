@@ -14,7 +14,7 @@ const newCountiesData = `
       address: '860 Camp Rd, Cocoa, FL 32927',
       phone: '(321) 690-1500',
       visitingHours: 'Video Visitation Only',
-      inmateSearchUrl: 'https://www.brevardsheriff.com/home/commands-services/jail-complex/',
+      inmateSearchUrl: 'https://www.brevardsheriff.com/bookings/',
     },
     geo: {
       lat: 28.3842,
@@ -176,7 +176,7 @@ const newCountiesData = `
       address: '76212 Nicholas Cutinha Rd, Yulee, FL 32097',
       phone: '(904) 225-5211',
       visitingHours: 'Video Visitation',
-      inmateSearchUrl: 'https://www.nassauso.com/jail-and-detention-center/',
+      inmateSearchUrl: 'https://nassauso.com/corrections/',
     },
     geo: {
       lat: 30.6318,

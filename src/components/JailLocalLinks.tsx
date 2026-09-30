@@ -17,7 +17,7 @@ export default function JailLocalLinks({ jailSlug }: { jailSlug: string }) {
         </p>
         <div className="flex flex-wrap gap-4 text-sm font-bold">
           <Link href={`/county/${locality.countySlug}/${locality.citySlug}`} className="text-yellow-500 hover:text-white">
-            {locality.cityName} arrest and transfer details <ArrowRight className="ml-1 inline h-4 w-4" />
+            {jailSlug === 'palm-beach-county-main-detention-center' ? 'West Palm Beach bail bonds and jail information' : `${locality.cityName} arrest and transfer details`} <ArrowRight className="ml-1 inline h-4 w-4" />
           </Link>
           <Link href={`/county/${locality.countySlug}`} className="text-yellow-500 hover:text-white">
             County jail and booking hub <ArrowRight className="ml-1 inline h-4 w-4" />

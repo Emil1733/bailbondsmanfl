@@ -237,7 +237,7 @@ export default async function MatrixPage({ params }: Props) {
                                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Local booking resources</h3>
                                 <div className="space-y-3 text-sm">
                                     <Link href={`/county/${county.slug}/${city.slug}`} className="block text-yellow-500 hover:text-white">
-                                        {city.name} arrest and transfer guide &rarr;
+                                        {city.slug === 'west-palm-beach' ? 'West Palm Beach bail bonds and jail guide' : `${city.name} arrest and transfer guide`} &rarr;
                                     </Link>
                                     <Link href={`/county/${county.slug}`} className="block text-yellow-500 hover:text-white">
                                         {county.name} jail and booking hub &rarr;

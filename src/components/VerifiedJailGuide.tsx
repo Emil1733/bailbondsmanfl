@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { ExternalLink, FileSearch, MapPin, Phone, ShieldAlert } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import EmergencyHeader from '@/components/EmergencyHeader';
@@ -16,7 +17,13 @@ export type VerifiedJail = {
   jailSlug: string;
 };
 
-export default function VerifiedJailGuide({ jail }: { jail: VerifiedJail }) {
+type VerifiedJailGuideProps = {
+  jail: VerifiedJail;
+  additionalContent?: ReactNode;
+  reviewedDate?: string;
+};
+
+export default function VerifiedJailGuide({ jail, additionalContent, reviewedDate = 'August 31, 2026' }: VerifiedJailGuideProps) {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200">
       <EmergencyHeader />
@@ -65,6 +72,8 @@ export default function VerifiedJailGuide({ jail }: { jail: VerifiedJail }) {
               </div>
             </div>
 
+            {additionalContent}
+
             <div>
               <h2 className="text-2xl font-serif font-bold text-white">Information to gather</h2>
               <ul className="mt-5 grid gap-3 text-slate-400 sm:grid-cols-2">
@@ -83,7 +92,7 @@ export default function VerifiedJailGuide({ jail }: { jail: VerifiedJail }) {
             </div>
 
             <p className="text-sm leading-relaxed text-slate-500">
-              Facility details were reviewed against the linked government source on August 31, 2026. If the agency has changed a phone number, address, or lookup page, <Link className="text-yellow-500 underline" href="/contact">report a correction</Link> with the official replacement link.
+              Facility details were reviewed against the linked government source on {reviewedDate}. If the agency has changed a phone number, address, or lookup page, <Link className="text-yellow-500 underline" href="/contact">report a correction</Link> with the official replacement link.
             </p>
           </div>
 

@@ -59,7 +59,7 @@ export const counties: County[] = [
     jail: {
       name: 'Turner Guilford Knight (TGK) Center',
       address: '7000 NW 41st Street, Miami, FL 33166',
-      phone: '(786) 263-5600',
+      phone: '(786) 263-5341',
       visitingHours: 'Daily 9:00 AM - 9:00 PM (Video Only)',
       inmateSearchUrl: 'https://www.miamidade.gov/Apps/mdcr/InmateSearch/#/',
     },
@@ -177,7 +177,7 @@ export const counties: County[] = [
       address: '555 SE 1st Avenue, Fort Lauderdale, FL 33301',
       phone: '(954) 831-5900',
       visitingHours: 'Daily 7:45 AM - 9:45 PM',
-      inmateSearchUrl: 'https://www.broward.org/arrestsearch',
+      inmateSearchUrl: 'https://apps.sheriff.org/arrestsearch?d=y',
     },
     geo: {
       lat: 26.1162,
@@ -291,9 +291,9 @@ export const counties: County[] = [
     jail: {
       name: 'Main Detention Center',
       address: '3228 Gun Club Road, West Palm Beach, FL 33406',
-      phone: '(561) 688-4400',
+      phone: '(561) 688-4401',
       visitingHours: 'Daily 9:00 AM - 10:30 PM',
-      inmateSearchUrl: 'https://www.pbso.org/arrestss/',
+      inmateSearchUrl: 'https://www3.pbso.org/blotter/index.cfm',
     },
     geo: {
       lat: 26.6850,
@@ -1000,7 +1000,7 @@ export const counties: County[] = [
       address: '20101 Central Blvd, Land O\' Lakes, FL 34637',
       phone: '(813) 996-6982',
       visitingHours: 'Daily 8:30 AM - 10:30 PM (Video)',
-      inmateSearchUrl: 'https://www.pascosheriff.com',
+      inmateSearchUrl: 'https://jailinfo.pascocorrections.net/jmc/',
     },
     geo: {
       lat: 28.1917,
@@ -1171,7 +1171,7 @@ export const counties: County[] = [
       address: '700 NW 30th Ave, Ocala, FL 34475',
       phone: '(352) 351-8077',
       visitingHours: 'Video Visitation Only',
-      inmateSearchUrl: 'https://www.marionso.com/jail-inmates',
+      inmateSearchUrl: 'https://www.marionso.com/inmate-search',
     },
     geo: {
       lat: 29.2081,
@@ -1257,7 +1257,7 @@ export const counties: County[] = [
       address: '860 Camp Rd, Cocoa, FL 32927',
       phone: '(321) 690-1500',
       visitingHours: 'Video Visitation Only',
-      inmateSearchUrl: 'https://www.brevardsheriff.com/home/commands-services/jail-complex/',
+      inmateSearchUrl: 'https://www.brevardsheriff.com/bookings/',
     },
     geo: {
       lat: 28.3842,
@@ -1419,7 +1419,7 @@ export const counties: County[] = [
       address: '76212 Nicholas Cutinha Rd, Yulee, FL 32097',
       phone: '(904) 225-5211',
       visitingHours: 'Video Visitation',
-      inmateSearchUrl: 'https://www.nassauso.com/jail-and-detention-center/',
+      inmateSearchUrl: 'https://nassauso.com/corrections/',
     },
     geo: {
       lat: 30.6318,

@@ -55,8 +55,8 @@ export default async function CountyPage({ params }: Props) {
           </div>
           <aside className="rounded-xl border border-slate-800 bg-slate-900/50 p-7">
             <h2 className="text-xl font-bold text-white">Selected city guides</h2>
-            <ul className="mt-5 space-y-3">{county.cities?.map((city) => <li key={city.slug}><Link className="text-yellow-500 underline" href={`/county/${county.slug}/${city.slug}`}>{city.name}</Link></li>)}</ul>
-            {jailGuides.length > 0 && <><h2 className="mt-8 border-t border-slate-800 pt-7 text-xl font-bold text-white">Verified facility guides</h2><ul className="mt-5 space-y-3">{jailGuides.map(([jailSlug]) => <li key={jailSlug}><Link className="text-yellow-500 underline" href={`/jail/${jailSlug}`}>{jailSlug.split('-').map((word) => word[0].toUpperCase() + word.slice(1)).join(' ')}</Link></li>)}</ul></>}
+            <ul className="mt-5 space-y-3">{county.cities?.map((city) => <li key={city.slug}><Link className="text-yellow-500 underline" href={`/county/${county.slug}/${city.slug}`}>{county.slug === 'palm-beach' && city.slug === 'west-palm-beach' ? 'West Palm Beach bail bonds and jail information' : city.name}</Link></li>)}</ul>
+            {jailGuides.length > 0 && <><h2 className="mt-8 border-t border-slate-800 pt-7 text-xl font-bold text-white">Verified facility guides</h2><ul className="mt-5 space-y-3">{jailGuides.map(([jailSlug]) => <li key={jailSlug}><Link className="text-yellow-500 underline" href={`/jail/${jailSlug}`}>{jailSlug === 'tgk-correctional-center' ? 'TGK inmate search and release information' : jailSlug === 'broward-county-main-jail' ? 'Broward Main Jail address, phone and inmate search' : jailSlug === 'land-o-lakes-detention-center' ? 'Land O\' Lakes jail inmate search, phone and address' : jailSlug.split('-').map((word) => word[0].toUpperCase() + word.slice(1)).join(' ')}</Link></li>)}</ul></>}
           </aside>
         </div>
       </section>
