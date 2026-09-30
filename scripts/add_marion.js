@@ -14,7 +14,7 @@ const marionData = `
       address: '700 NW 30th Ave, Ocala, FL 34475',
       phone: '(352) 351-8077',
       visitingHours: 'Video Visitation Only',
-      inmateSearchUrl: 'https://www.marionso.com/jail-inmates',
+      inmateSearchUrl: 'https://www.marionso.com/inmate-search',
     },
     geo: {
       lat: 29.2081,

@@ -99,6 +99,27 @@ return (
                             <p className="mt-4 text-xs leading-relaxed text-slate-500">Reviewed August 31, 2026. Laws, court orders, and agency procedures can change; verify the current rule before acting.</p>
                         </div>
 
+                        {service.slug === 'online-bail-bonds' && (
+                            <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
+                                <h2 className="text-lg font-bold text-white">County custody verification</h2>
+                                <p className="mt-3 leading-relaxed text-slate-400">Before starting online paperwork, confirm the person&apos;s current custody location and displayed bond information through the responsible county&apos;s official system.</p>
+                                <div className="mt-4 flex flex-col gap-3">
+                                    <Link className="font-bold text-yellow-500 underline" href="/jail/tgk-correctional-center">Check Miami-Dade custody and bond information</Link>
+                                    <Link className="font-bold text-yellow-500 underline" href="/jail/broward-county-main-jail">Check Broward Main Jail address, phone and custody information</Link>
+                                    <Link className="font-bold text-yellow-500 underline" href="/jail/land-o-lakes-detention-center">Check Pasco County custody at the Land O&apos; Lakes jail</Link>
+                                    <Link className="font-bold text-yellow-500 underline" href="/county/palm-beach/west-palm-beach">Review West Palm Beach bail bonds and jail information</Link>
+                                </div>
+                            </div>
+                        )}
+
+                        {service.slug === 'dui-bail-bonds' && (
+                            <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
+                                <h2 className="text-lg font-bold text-white">West Palm Beach DUI custody information</h2>
+                                <p className="mt-3 leading-relaxed text-slate-400">For an arrest in West Palm Beach, verify the current Palm Beach County custody record, listed charges, bond status, and any holds before relying on a release estimate.</p>
+                                <Link className="mt-4 inline-block font-bold text-yellow-500 underline" href="/county/palm-beach/west-palm-beach">Review West Palm Beach bail bonds and jail information</Link>
+                            </div>
+                        )}
+
                         {/* 2. Key Points Grid */}
                         <div>
                             <h2 className="text-2xl font-serif font-bold text-white mb-6 flex items-center gap-3">
