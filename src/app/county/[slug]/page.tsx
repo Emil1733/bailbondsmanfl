@@ -6,6 +6,7 @@ import EmergencyHeader from '@/components/EmergencyHeader';
 import { getAllCounties, getCounty } from '@/lib/data';
 import { pageMetadata } from '@/lib/seo';
 import { jailLocalityBySlug } from '@/lib/internal-links';
+import { approvedServiceCityPages } from '@/lib/service-city-seo';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -24,6 +25,8 @@ export default async function CountyPage({ params }: Props) {
   const county = await getCounty((await params).slug);
   if (!county) notFound();
   const jailGuides = Object.entries(jailLocalityBySlug).filter(([, locality]) => locality.countySlug === county.slug);
+  const countyCitySlugs = new Set(county.cities?.map((city) => city.slug));
+  const reviewedServiceGuides = approvedServiceCityPages.filter((page) => countyCitySlugs.has(page.citySlug));
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200">
       <EmergencyHeader />
@@ -52,6 +55,7 @@ export default async function CountyPage({ params }: Props) {
               <p className="mt-4 leading-relaxed text-slate-400">Roster entries, addresses, phone numbers, visitation policies, and court schedules can change. Confirm time-sensitive details with the responsible government agency. Verify any private agent through Florida&apos;s official license search and read all premium, collateral, and indemnitor terms before signing.</p>
               <div className="mt-5 flex flex-wrap gap-5 text-sm"><a className="text-yellow-500 underline" href="https://licenseesearch.fldfs.com/" target="_blank" rel="noopener noreferrer">Florida license search</a><a className="text-yellow-500 underline" href="https://www.myfloridacfo.com/division/consumers/understanding-insurance/bail-bonds-overview" target="_blank" rel="noopener noreferrer">Florida DFS consumer guide</a></div>
             </div>
+            {reviewedServiceGuides.length > 0 && <section className="rounded-xl border border-slate-800 bg-slate-900/50 p-8" aria-labelledby="reviewed-county-service-guides"><h2 id="reviewed-county-service-guides" className="text-2xl font-serif font-bold text-white">Reviewed local service guides</h2><p className="mt-4 leading-relaxed text-slate-400">These city-and-service guides include unique local context and links to the official county custody resource.</p><ul className="mt-5 space-y-3">{reviewedServiceGuides.map((page) => <li key={`${page.serviceSlug}-${page.citySlug}`}><Link className="font-bold text-yellow-500 underline" href={`/services/${page.serviceSlug}/${page.citySlug}`}>{page.heading}</Link></li>)}</ul></section>}
           </div>
           <aside className="rounded-xl border border-slate-800 bg-slate-900/50 p-7">
             <h2 className="text-xl font-bold text-white">Selected city guides</h2>

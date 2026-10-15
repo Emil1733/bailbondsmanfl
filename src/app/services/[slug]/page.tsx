@@ -7,6 +7,7 @@ import MobileFloatingCall from '@/components/MobileFloatingCall';
 import { CheckCircle2, AlertTriangle, ArrowRight, Shield, Phone, HelpCircle, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
+import { approvedServiceCityPages } from '@/lib/service-city-seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -53,6 +54,7 @@ export default async function ServicePage({ params }: Props) {
 
     const Icon = service.icon;
     const citiesByCounty = Map.groupBy(cities, ({ county }) => county.slug);
+    const reviewedLocalGuides = approvedServiceCityPages.filter((page) => page.serviceSlug === service.slug);
 
 return (
     <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -98,6 +100,20 @@ return (
                             </ul>
                             <p className="mt-4 text-xs leading-relaxed text-slate-500">Reviewed August 31, 2026. Laws, court orders, and agency procedures can change; verify the current rule before acting.</p>
                         </div>
+
+                        {reviewedLocalGuides.length > 0 && (
+                            <section className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-6" aria-labelledby="reviewed-local-guides">
+                                <h2 id="reviewed-local-guides" className="text-lg font-bold text-white">Reviewed local guides</h2>
+                                <p className="mt-3 leading-relaxed text-slate-400">These local pages have passed the site&apos;s standalone content and source review. Use them for city-specific booking contacts and official county records.</p>
+                                <ul className="mt-5 space-y-3">
+                                    {reviewedLocalGuides.map((page) => (
+                                        <li key={page.citySlug}>
+                                            <Link className="font-bold text-yellow-500 underline" href={`/services/${page.serviceSlug}/${page.citySlug}`}>{page.heading}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        )}
 
                         {service.slug === 'online-bail-bonds' && (
                             <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
