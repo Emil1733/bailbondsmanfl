@@ -19,6 +19,8 @@ type ContactPayload = {
   startedAt?: unknown;
   source?: unknown;
   context?: unknown;
+  landingPage?: unknown;
+  originatingPage?: unknown;
 };
 
 const ALLOWED_SOURCES = new Set(['bondflorida.com/contact', 'release-time-estimator']);
@@ -39,6 +41,13 @@ export function GET() {
 
 function cleanText(value: unknown, maxLength: number) {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
+}
+
+function cleanSitePath(value: unknown) {
+  const path = cleanText(value, 180);
+  if (!path.startsWith('/') || path.startsWith('//')) return '';
+  if (path.includes('?') || path.includes('#')) return '';
+  return /^\/[A-Za-z0-9/_-]*$/.test(path) ? path : '';
 }
 
 function getClientIp(request: NextRequest) {
@@ -119,6 +128,8 @@ export async function POST(request: NextRequest) {
   const requestedSource = cleanText(payload.source, 80);
   const source = ALLOWED_SOURCES.has(requestedSource) ? requestedSource : 'bondflorida.com/contact';
   const context = cleanText(payload.context, 500);
+  const landingPage = cleanSitePath(payload.landingPage) || '/';
+  const originatingPage = cleanSitePath(payload.originatingPage) || landingPage;
   const phoneDigits = phone.replace(/\D/g, '');
   const isEstimatorLead = source === 'release-time-estimator';
 
@@ -173,6 +184,8 @@ export async function POST(request: NextRequest) {
                 Message: isEstimatorLead ? context : message,
                 Consent: true,
                 Source: source,
+                'Landing Page': landingPage,
+                'Originating Page': originatingPage,
                 'Submitted At': new Date().toISOString(),
               },
             },

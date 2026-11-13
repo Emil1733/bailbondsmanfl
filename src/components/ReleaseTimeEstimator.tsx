@@ -4,6 +4,7 @@ import { FormEvent, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { track } from '@vercel/analytics';
 import { CheckCircle, Clock, Lock, Phone, ShieldCheck } from 'lucide-react';
+import { readLeadAttribution } from '@/lib/attribution';
 
 const PHONE_NUMBER = '(305) 831-0358';
 const PHONE_HREF = 'tel:+13058310358';
@@ -70,18 +71,25 @@ export default function ReleaseTimeEstimator() {
         event.preventDefault();
         setStatus('submitting');
         setErrorMessage('');
+        const attribution = readLeadAttribution(pathname);
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     phone, consent, website, startedAt, source: 'release-time-estimator',
+                    ...attribution,
                     context: `Page: ${pathname}; Facility: ${facilityName}; Day: ${isWeekend ? 'weekend' : 'weekday'}; Booking time: ${bookingTime}; Estimate: ${isFastTrack ? 'same-day possible' : 'delay likely'}`,
                 }),
             });
             const result = (await response.json()) as { message?: string };
             if (!response.ok) throw new Error(result.message || 'Unable to unlock the guide.');
             setStatus('success');
-            track('release_guide_unlocked', { page: pathname, facility: facilityName });
+            track('release_guide_unlocked', {
+                page: pathname,
+                facility: facilityName,
+                landingPage: attribution.landingPage,
+                originatingPage: attribution.originatingPage,
+            });
         } catch (error) {
             setStatus('error');
             setErrorMessage(error instanceof Error ? error.message : 'Unable to unlock the guide.');

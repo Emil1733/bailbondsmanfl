@@ -6,8 +6,8 @@ import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from 'lucide-r
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Contact the Bond Florida Support Team',
-  description: 'Contact Bond Florida about directory corrections, general questions, or bail-service inquiries. Phone and online form options are available around the clock.',
+  title: 'Request Bail Assistance | Bond Florida',
+  description: 'Contact Bond Florida to request help with a Florida bail question, find the correct jail resource, or report outdated directory information.',
   path: '/contact',
 });
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
             Contact <span className="text-yellow-500">Bond Florida</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Ask a general question, request contact, or report an outdated facility detail or government link.
+            Request help with a bail question, find the correct jail resource, or report an outdated facility detail.
           </p>
         </ContactContainer>
       </section>
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 <Phone className="w-7 h-7 text-yellow-500" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">Phone Contact</h2>
-              <p className="text-slate-400 mb-6">Call with a general directory or service inquiry.</p>
+              <p className="text-slate-400 mb-6">Call to discuss the situation and the information you have available.</p>
               <a href="tel:+13058310358" className="text-xl font-bold text-yellow-500 hover:text-white transition-colors">
                 (305) 831-0358
               </a>

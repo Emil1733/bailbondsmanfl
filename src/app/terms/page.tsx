@@ -21,12 +21,12 @@ export default function TermsPage() {
         <h1 className="text-4xl font-serif font-bold text-white mb-8">Terms of Service</h1>
         <div className="prose prose-invert max-w-none space-y-6">
           <p>
-            Effective date: August 31, 2026. By using Bond Florida, you agree to these terms. If you do not agree, do not use the website or submit its contact form.
+            Effective date: November 12, 2026. By using Bond Florida, you agree to these terms. If you do not agree, do not use the website or submit its contact form.
           </p>
           
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Directory and Contact Requests</h2>
           <p>
-            The website provides a directory of county jail contacts, links to official inmate-search resources, and general educational information. Submitting a form does not create an attorney-client relationship, guarantee that a person is eligible for release, guarantee a response time, or guarantee any outcome. Any service, fee, collateral, or payment arrangement must be stated in a separate written agreement with the responsible provider.
+            The website provides county jail contacts, links to official inmate-search resources, general educational information, and a way to request assistance. When appropriate, Bond Florida may arrange for the request to be answered by a professional who serves the relevant area. Submitting a form does not create an attorney-client relationship, guarantee that a person is eligible for release, guarantee a response time, or guarantee any outcome. Any service, fee, collateral, or payment arrangement must be stated in a separate written agreement with the responsible provider.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. No Legal Advice or Release Guarantee</h2>

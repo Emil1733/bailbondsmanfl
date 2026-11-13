@@ -156,7 +156,7 @@ const newCountiesData = `
       releaseProcess: {
         step1: 'Booked at the Columbia County Detention Facility on Quinten St.',
         step2: 'First appearance at the courthouse in downtown Lake City.',
-        step3: 'Immediate release processing upon posting of the surety bond.'
+        step3: 'Facility release processing begins after the surety bond is accepted, subject to holds and facility procedures.'
       },
       specificFaqs: [
         {
@@ -174,9 +174,9 @@ const newCountiesData = `
     jail: {
       name: 'Nassau County Jail and Detention Center',
       address: '76212 Nicholas Cutinha Rd, Yulee, FL 32097',
-      phone: '(904) 225-5211',
+      phone: '(904) 548-4002',
       visitingHours: 'Video Visitation',
-      inmateSearchUrl: 'https://nassauso.com/corrections/',
+      inmateSearchUrl: 'https://dssinmate.nassauso.com/NewWorld.InmateInquiry/nassau?InCustody=True',
     },
     geo: {
       lat: 30.6318,
@@ -189,9 +189,9 @@ const newCountiesData = `
         policeDepartment: {
           name: 'Nassau County Sheriff (Yulee District)',
           address: '77151 Citizens Cir, Yulee, FL 32097',
-          phone: '(904) 225-5174'
+          phone: '(904) 225-0331'
         },
-        travelTimeToJail: '5-10 minutes',
+        travelTimeToJail: 'Varies by arrest location, booking status, traffic, and agency procedure',
         description: 'Yulee is the central geographic hub of Nassau County and the home of the county jail complex. Transport times from a Yulee arrest to the jail are extremely short.',
         specificFaqs: [
           {

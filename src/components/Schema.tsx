@@ -1,6 +1,5 @@
 import { County } from '@/lib/data';
 import JsonLd from '@/components/JsonLd';
-import { SOCIAL_IMAGE_URL } from '@/lib/seo';
 
 interface SchemaProps {
     county: County;
@@ -10,61 +9,38 @@ interface SchemaProps {
 export default function Schema({ county }: SchemaProps) {
     const graph = [
         {
-            '@type': 'BailBondBusiness',
-            '@id': `https://bondflorida.com/county/${county.slug}#localbusiness`,
-            name: `Statewide Bail Bonds - ${county.name}`,
-            image: SOCIAL_IMAGE_URL,
-            telephone: '(305) 831-0358', // Central dispatch
+            '@type': 'WebPage',
+            '@id': `https://bondflorida.com/county/${county.slug}#webpage`,
+            name: `${county.name} Jail and Bail Information`,
             url: `https://bondflorida.com/county/${county.slug}`,
-            address: {
-                '@type': 'PostalAddress',
-                addressLocality: county.name,
-                addressRegion: 'FL',
-                addressCountry: 'US',
+            isPartOf: {
+                '@type': 'WebSite',
+                '@id': 'https://bondflorida.com/#website',
+                name: 'Bond Florida',
+                url: 'https://bondflorida.com',
             },
-            geo: {
-                '@type': 'GeoCoordinates',
-                latitude: county.geo.lat,
-                longitude: county.geo.lng,
+            about: {
+                '@type': 'AdministrativeArea',
+                name: `${county.name}, Florida`,
             },
-            priceRange: '$$',
-            openingHoursSpecification: [
-                {
-                    '@type': 'OpeningHoursSpecification',
-                    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                    opens: '00:00',
-                    closes: '23:59',
+            publisher: {
+                '@type': 'Organization',
+                '@id': 'https://bondflorida.com/#organization',
+                name: 'Bond Florida',
+                url: 'https://bondflorida.com',
+                telephone: '+13058310358',
+            },
+            mainEntity: {
+                '@type': 'DetentionCenter',
+                name: county.jail.name,
+                address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: county.jail.address,
+                    addressRegion: 'FL',
+                    addressCountry: 'US'
                 },
-            ],
-            areaServed: [
-                {
-                    '@type': 'AdministrativeArea',
-                    name: `${county.name}, FL`
-                },
-                ...(county.cities || []).map(city => ({
-                    '@type': 'City',
-                    name: `${city.name}, FL`
-                }))
-            ],
-            knowsAbout: [
-                {
-                    '@type': 'DetentionCenter',
-                    name: county.jail.name,
-                    address: {
-                        '@type': 'PostalAddress',
-                        streetAddress: county.jail.address,
-                        addressLocality: county.jail.address.split(',')[1]?.trim() || county.name,
-                        addressRegion: 'FL',
-                        addressCountry: 'US'
-                    },
-                    telephone: county.jail.phone,
-                    geo: {
-                        '@type': 'GeoCoordinates',
-                        latitude: county.geo.lat,
-                        longitude: county.geo.lng
-                    }
-                }
-            ]
+                telephone: county.jail.phone,
+            }
         }
     ];
 

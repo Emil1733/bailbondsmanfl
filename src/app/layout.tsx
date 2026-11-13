@@ -4,6 +4,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Analytics } from '@vercel/analytics/next';
 import { SITE_NAME, SITE_URL, SOCIAL_IMAGE_URL } from '@/lib/seo';
+import AttributionTracker from '@/components/AttributionTracker';
 import "./globals.css";
 
 const sans = Inter({
@@ -74,6 +75,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <AttributionTracker />
         <Analytics />
       </body>
     </html>

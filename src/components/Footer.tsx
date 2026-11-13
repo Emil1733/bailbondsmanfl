@@ -118,8 +118,8 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p>&copy; {currentYear} Bond Florida. All Rights Reserved.</p>
-                    <div className="flex gap-8">
+                    <p className="text-center md:text-left">&copy; {currentYear} Bond Florida. All Rights Reserved.</p>
+                    <div className="flex max-w-full flex-wrap justify-center gap-x-6 gap-y-3 md:justify-end md:gap-x-8">
                         <Link href="/warrant-search" className="hover:text-red-400 text-red-500 font-bold transition-colors">Warrant Search</Link>
                         <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
                         <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
