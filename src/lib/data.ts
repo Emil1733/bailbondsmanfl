@@ -385,10 +385,10 @@ export const counties: County[] = [
     population: 1629652,
     jail: {
       name: 'Orient Road Jail',
-      address: '1201 Orient Road, Tampa, FL 33619',
+      address: '1201 N. Orient Road, Tampa, FL 33619',
       phone: '(813) 247-8300',
       visitingHours: 'Daily 11:00 AM - 9:00 PM',
-      inmateSearchUrl: 'https://www.teamhcso.com',
+      inmateSearchUrl: 'https://webapps.hcso.tampa.fl.us/ArrestInquiry',
     },
     geo: {
       lat: 27.9734,
@@ -403,16 +403,16 @@ export const counties: County[] = [
           address: '411 N Franklin St, Tampa, FL 33602',
           phone: '(813) 276-3200'
         },
-        travelTimeToJail: '15-20 minutes',
-        description: 'The major urban center of the Gulf Coast. TPD processes arrests at the District Offices before transport to Orient Road Jail.',
+        travelTimeToJail: 'Varies by arrest location and processing',
+        description: 'Tampa Police and other agencies make arrests in the area. Confirm the arresting agency, current custody record, and assigned facility before making arrangements.',
         specificFaqs: [
           {
             question: 'My family member was arrested in Ybor City — who is the arresting agency?',
-            answer: 'Ybor City is inside Tampa city limits and is policed by TPD. It is one of the highest-volume arrest areas in the city on weekends. TPD processes at the district office before the short transport east to Orient Road Jail on the Crosstown.'
+            answer: 'Tampa Police generally handles incidents within Tampa city limits, but jurisdiction and assisting agencies can vary. Confirm the arresting agency and live HCSO custody record instead of estimating transport or booking time.'
           },
           {
             question: 'Is there a holding cell at the Tampa airport (TPA)?',
-            answer: 'Arrests at TPA are handled by Hillsborough County Sheriff, not City of Tampa. Inmates are transported directly to Orient Road Jail. If an arrest involved TSA or a federal charge, the process is different — call us immediately to clarify before posting bond.'
+            answer: 'Airport incidents may involve local, county, or federal authorities. Confirm the responsible agency and whether the person appears in HCSO custody before discussing a state bail bond.'
           }
         ]
       },
@@ -463,17 +463,17 @@ export const counties: County[] = [
       courtInfo: {
         name: 'George E. Edgecomb Courthouse',
         address: '800 E Twiggs St, Tampa, FL 33602',
-        bondHearingTimes: ['Daily: 9:00 AM (PP Court - Preliminary Presentation)', 'Weekends/Holidays: 9:00 AM']
+        bondHearingTimes: ['Confirm the current hearing schedule through the Clerk of Court or HOVER']
       },
       releaseProcess: {
         step1: 'All booking occurs at Orient Road Jail (ORJ), regardless of arrest location.',
-        step2: 'PP Court (First Appearance) is held via video link within 24 hours.',
-        step3: 'Release takes place at Orient Road Jail. Release time is typically 4-8 hours after bond posting.'
+        step2: 'Court review, bond eligibility, and release conditions depend on the official case record.',
+        step3: 'HCSO controls facility assignment and release processing; confirm current pickup instructions directly.'
       },
       specificFaqs: [
         {
           question: 'What is the cost of a bail bond in Tampa?',
-          answer: 'The premium is fixed at 10% of the bond amount ($500 for a $5,000 bond). For larger bonds, we can often arrange flexible payment plans with a down payment.'
+          answer: 'Costs and obligations depend on the bond and written agreement. Verify the agent’s Florida license and review the premium, collateral, payment, and indemnitor terms before signing.'
         },
         {
           question: 'What is "PP Court"?',
@@ -481,19 +481,19 @@ export const counties: County[] = [
         },
         {
           question: 'Are inmates released from Falkenburg Road Jail?',
-          answer: 'No. While inmates are housed at Falkenburg (FRJ), Orient Road Jail (ORJ) is the central booking and release facility. You must pick them up at ORJ (1201 Orient Road).'
+          answer: 'Do not assume the release location from the original booking facility. Confirm the assigned facility and current pickup instructions directly with HCSO before traveling.'
         },
         {
           question: 'How long does release take at Orient Road Jail?',
-          answer: 'Hillsborough County processing times average 6-10 hours after the bond is posted. We recommend waiting by the phone rather than at the jail, as we will call you the minute they are cleared.'
+          answer: 'HCSO controls release processing. Timing varies with booking, court conditions, holds, staffing, and other case-specific factors, so a private service cannot guarantee a release time.'
         },
         {
           question: 'What is the difference between Orient Road Jail and Falkenburg Road Jail?',
-          answer: 'Orient Road Jail (ORJ) is the central booking and release facility. Falkenburg Road Jail (FRJ) is a separate housing facility for sentenced inmates and some pre-trial detainees. All releases happen at ORJ, even if the inmate is housed at FRJ.'
+          answer: 'HCSO identifies Orient Road as the primary receiving facility and Falkenburg Road as a separate detention facility. Use the live arrest record and confirm release instructions with HCSO because facility assignments can change.'
         },
         {
           question: 'Can I get a payment plan for a large bond in Tampa?',
-          answer: 'Yes. For bonds over $10,000, we offer flexible payment plans with as little as 10-20% down. We work with families to create affordable monthly payment schedules that fit your budget.'
+          answer: 'Payment arrangements, collateral, and indemnitor obligations vary by licensed provider and bond. Request all terms in writing and do not rely on an advertised down payment alone.'
         }
       ]
     },
@@ -505,7 +505,7 @@ export const counties: County[] = [
     population: 1598408,
     jail: {
       name: 'Orange County Booking and Release Center (BRC)',
-      address: '3723 Vision Boulevard, Orlando, FL 32802',
+      address: '3855 S. John Young Parkway, Orlando, FL 32839',
       phone: '(407) 836-3400',
       visitingHours: 'Daily 8:00 AM - 10:00 PM',
       inmateSearchUrl: 'https://netapps.ocfl.net/BestJail/',
@@ -521,18 +521,18 @@ export const counties: County[] = [
         policeDepartment: {
           name: 'Orlando Police Department',
           address: '1250 W South St, Orlando, FL 32805',
-          phone: '(407) 246-2414'
+          phone: '(321) 235-5300'
         },
-        travelTimeToJail: '10-20 minutes',
-        description: 'The tourism capital. OPD processes arrests at their HQ or District Stations before transport to the BRC on John Young Pkwy.',
+        travelTimeToJail: 'Varies by arrest location and processing',
+        description: 'Orlando Police and other agencies make arrests in the area. Confirm the arresting agency and current custody record before relying on a facility location.',
         specificFaqs: [
           {
             question: 'My family was arrested near the theme parks (Disney/Universal) — is that still Orlando?',
-            answer: 'The Disney property is unincorporated Orange County, so the OCSO (Sheriff) handles those arrests, not OPD. Universal is inside Orlando city limits and is OPD jurisdiction. Either way, all arrestees are booked at the BRC on Vision Blvd.'
+            answer: 'Arresting-agency jurisdiction varies across the Orlando tourism area. Confirm the agency and search Orange County Corrections records rather than assuming an arrest was made by Orlando Police.'
           },
           {
             question: 'Does the International Drive (I-Drive) area have high arrest rates?',
-            answer: 'Yes. I-Drive is one of the highest-volume tourist and nightlife arrest zones in Orlando. OPD runs targeted DUI patrols on I-Drive on weekend nights. The short distance to the BRC means booking can begin within 30 minutes of arrest.'
+            answer: 'Enforcement activity and jurisdiction can vary along International Drive. Use the official inmate search to confirm custody, charges, and booking information; no private service can predict booking or release timing.'
           }
         ]
       },
@@ -544,16 +544,16 @@ export const counties: County[] = [
           address: '500 N Virginia Ave, Winter Park, FL 32789',
           phone: '(407) 644-1313'
         },
-        travelTimeToJail: '25-35 minutes',
-        description: 'An affluent community north of Orlando. WPPD processes arrests locally before the transport down I-4 to the County BRC.',
+        travelTimeToJail: 'Varies by traffic and processing',
+        description: 'Winter Park Police serves the city. Confirm current custody, booking details, and bond entries through the official Orange County inmate search.',
         specificFaqs: [
           {
-            question: 'Does Park Ave (Winter Park) have elevated enforcement?',
-            answer: 'Yes. The Park Ave corridor is policed by WPPD with a strong focus on DUI and public intoxication. The transport to the Vision Blvd BRC takes 25-35 minutes down I-4 South. Post bond quickly to avoid the overnight hold.'
+            question: 'Where can I check a Winter Park arrest?',
+            answer: 'Use the official Orange County Corrections inmate search. Match the correct person and verify current custody, booking information, charges, bond entries, and any holds before requesting assistance.'
           },
           {
             question: 'Is Winter Park the same as Maitland and Casselberry for bail bonds?',
-            answer: 'No. Maitland and Casselberry have their own city police departments and municipal court jurisdictions. Winter Park PD only covers the City of Winter Park. However, all three transport to the same Orange County BRC.'
+            answer: 'They are separate municipalities with different police jurisdictions. Confirm the arresting agency and current custody through the official record rather than assuming the same process or location applies.'
           }
         ]
       },
@@ -565,12 +565,12 @@ export const counties: County[] = [
           address: '112 E 6th St, Apopka, FL 32703',
           phone: '(407) 703-1700'
         },
-        travelTimeToJail: '30-40 minutes',
+        travelTimeToJail: 'Varies by traffic and processing',
         description: 'A major city in northwest Orange County. Arrests here involve a significant transport time down US-441 to the county booking center.',
         specificFaqs: [
           {
             question: 'Why does Apopka show such a long transport time to the jail?',
-            answer: 'Apopka sits in the far northwest corner of Orange County. The only route to the BRC on Vision Blvd runs south on US-441 through Orlando traffic — a 30-40 minute drive. Posting bond early gives the system time to start the release before the inmate even completes booking.'
+            answer: 'Travel and processing times vary. Confirm the current custody record and bond status before making arrangements; a bond cannot be completed before the responsible agencies make the person eligible.'
           },
           {
             question: 'Is Apopka a city police or county sheriff arrest?',
@@ -583,33 +583,33 @@ export const counties: County[] = [
       courtInfo: {
         name: 'Orange County Courthouse',
         address: '425 N Orange Ave, Orlando, FL 32801',
-        bondHearingTimes: ['Daily: 8:30 AM (Initial Appearance Court)', 'Weekends/Holidays: 8:30 AM']
+        bondHearingTimes: ['Confirm the current hearing schedule with the court or Clerk of Courts']
       },
       releaseProcess: {
         step1: 'All arrestees are processed at the BRC on John Young Parkway.',
-        step2: 'Initial Appearance (Bond Hearing) occurs daily at the BRC courtroom or via video.',
-        step3: 'Release occurs at the BRC Release Lobby (rear of building). Expect 6-10 hours.'
+        step2: 'Court review, bond eligibility, and release conditions depend on the case and official record.',
+        step3: 'Orange County Corrections controls release processing and does not guarantee a completion time.'
       },
       specificFaqs: [
         {
-          question: 'Is the jail on 33rd Street or Vision Blvd?',
-          answer: 'The current Operating Facility is at 3723 Vision Blvd, Orlando, FL 32802. Many people mistakenly go to the old "33rd Street" location which is now just administrative offices. Go to Vision Blvd for all bookings and releases.'
+          question: 'Where is the Orange County Booking and Release Center?',
+          answer: 'Orange County lists the Booking and Release Center at 3855 S. John Young Parkway, Orlando, FL 32839. The Corrections administration address at 3723 Vision Boulevard is a separate location.'
         },
         {
           question: 'Where is the release lobby located?',
-          answer: 'The Release Lobby is in the "Booking & Release Center" (BRC) at 3723 Vision Blvd. There is a public parking lot directly in front of the BRC entrance. Do not go to the 33rd Street complex.'
+          answer: 'Confirm current release and pickup instructions directly with Orange County Corrections at (407) 836-3400 before traveling.'
         },
         {
           question: 'Can I watch First Appearance Court online?',
-          answer: 'Online streaming is intermittent. The most reliable way to watch "Initial Appearance" is to go to the BRC Public Lobby at Vision Blvd, where they have public viewing screens for the sessions (usually 9AM and 1PM).'
+          answer: 'Hearing access and schedules can change. Check the Orange County court or Clerk of Courts sources for current, case-specific information.'
         },
         {
           question: 'How much does a bail bond cost in Orlando?',
-          answer: 'The premium is 10% of the bond amount by Florida law. We are located just minutes from the Vision Blvd facility to speed up the release process.'
+          answer: 'Costs and obligations depend on the bond and written agreement. Verify the agent’s Florida license and review the premium, collateral, payment, and indemnitor terms before signing.'
         },
         {
           question: 'How long does the release process take at the BRC?',
-          answer: 'The Orange County BRC is efficient but busy. Release typically takes 6-8 hours after we post the bond. We monitor the shift changes to give you the most accurate pickup time.'
+          answer: 'Orange County Corrections controls release processing. Timing varies with booking, court conditions, holds, staffing, and other case-specific factors, so a private service cannot guarantee a release time.'
         }
       ]
     },
@@ -697,7 +697,7 @@ export const counties: County[] = [
       address: '14400 49th Street North, Clearwater, FL 33762',
       phone: '(727) 464-6415',
       visitingHours: 'Daily 9:40 AM - 9:00 PM',
-      inmateSearchUrl: 'https://www.pcsoweb.com/whos-in-jail',
+      inmateSearchUrl: 'https://whosinjail.pinellassheriff.gov/',
     },
     geo: {
       lat: 27.9100,
@@ -712,16 +712,16 @@ export const counties: County[] = [
           address: '1301 1st Ave N, St. Petersburg, FL 33705',
           phone: '(727) 893-7780'
         },
-        travelTimeToJail: '20-25 minutes',
-        description: 'The largest city in Pinellas. SPPD processes arrests at their downtown HQ before the transport north to the County Jail on 49th Street.',
+        travelTimeToJail: 'Varies by origin, traffic, and agency procedure',
+        description: 'St. Petersburg Police is a local arresting agency. Use the official Pinellas County inmate search to confirm current custody, booking details, and bond entries.',
         specificFaqs: [
           {
-            question: 'Does the Grand Central / Downtown St. Pete nightlife area see frequent arrests?',
-            answer: 'Yes. The Central Ave and Beach Drive entertainment corridor is one of the highest-enforcement nightlife zones in the Tampa Bay area. SPPD runs DUI enforcement on these corridors heavily. Transport north on I-275 to the 49th Street jail complex takes 20-25 minutes.'
+            question: 'Where can I check a St. Petersburg arrest?',
+            answer: 'Start with the official Pinellas County Sheriff\'s Office Who\'s in Jail search. Match the person carefully and verify current custody, charges, bond entries, and any holds before requesting assistance.'
           },
           {
             question: 'Is St. Petersburg policed by the city or the Pinellas Sheriff?',
-            answer: 'Inside St. Petersburg city limits, it is SPPD. The Sheriff (PCSO) handles unincorporated areas and smaller municipalities. Either way, all arrests go to the Pinellas County Jail complex at 14400 49th St N in Clearwater.'
+            answer: 'St. Petersburg Police serves the city, while PCSO serves other jurisdictions and operates the county jail. Agency jurisdiction can depend on where an incident occurs. Confirm the arresting agency and current custody through the official record.'
           }
         ]
       },
@@ -733,16 +733,16 @@ export const counties: County[] = [
           address: '645 Pierce St, Clearwater, FL 33756',
           phone: '(727) 562-4242'
         },
-        travelTimeToJail: '10-15 minutes',
-        description: 'The county seat. Clearwater PD is located just minutes from the Main Jail complex, resulting in rapid booking times.',
+        travelTimeToJail: 'Varies by arrest location, traffic, and agency procedure',
+        description: 'Clearwater Police is a local arresting agency, while PCSO operates the county jail and publishes current custody and bond information. Confirm the official record before traveling or requesting assistance.',
         specificFaqs: [
           {
-            question: 'How close is the Clearwater Police Department to the jail?',
-            answer: 'Clearwater PD headquarters at 645 Pierce St is about 5 miles from the jail complex at 14400 49th St N. This is the shortest city-to-jail distance in Pinellas County — booking can begin within 20 minutes of arrest. Speed matters here.'
+            question: 'Does the distance from Clearwater Police predict booking time?',
+            answer: 'No. Transport, intake, identity checks, medical screening, court review, holds, and jail workload can all affect timing. Use the official PCSO arrest inquiry to confirm booking instead of estimating from distance.'
           },
           {
             question: 'Is Clearwater Beach the same police jurisdiction as mainland Clearwater?',
-            answer: 'Yes. Clearwater Beach is on a barrier island but is part of the City of Clearwater and policed by CPD. Arrests on the beach are transported back across Memorial Causeway to mainland Clearwater, then north to the jail on US-19.'
+            answer: 'Clearwater Beach is within the City of Clearwater, but the responsible agency can depend on the incident and location. Confirm the arresting agency and current custody record rather than assuming a transport route.'
           }
         ]
       }
@@ -751,37 +751,37 @@ export const counties: County[] = [
       courtInfo: {
         name: 'Pinellas County Justice Center (CJC)',
         address: '14250 49th St N, Clearwater, FL 33762',
-        bondHearingTimes: ['Daily: 8:30 AM (Advisory Court)', 'Weekends/Holidays: 8:30 AM']
+        bondHearingTimes: ['Verify the current hearing schedule and case status with the court.']
       },
       releaseProcess: {
-        step1: 'All booking occurs at the 49th Street complex in Clearwater.',
-        step2: 'Advisory Court (Bond Hearing) is held in the Justice Center on the same campus.',
-        step3: 'Release process is streamlined but expect 6-10 hours due to volume.'
+        step1: 'Confirm current custody and booking details through the official PCSO inmate search.',
+        step2: 'Verify every charge, bond entry, hold, and court condition before relying on release eligibility.',
+        step3: 'PCSO controls intake and release processing; completion time varies and cannot be promised.'
       },
       specificFaqs: [
         {
           question: 'Where is the Video Visitation Center?',
-          answer: 'Pinellas County has a dedicated Video Visitation Center at 14500 49th Street North (separate from the main jail). You must register and schedule 24 hours in advance.'
+          answer: 'Use the current PCSO visitation instructions to confirm the location, registration rules, scheduling requirements, and availability before traveling.'
         },
         {
           question: 'Can I pay a cash bond at the jail?',
-          answer: 'Yes, the Bond Desk is located in the Booking Lobby at 14400 49th St N. They accept cash, cashier\'s checks, and major credit cards.'
+          answer: 'Payment methods, locations, and acceptance rules can change. Confirm current cash-bond instructions directly with PCSO before traveling or sending payment.'
         },
         {
           question: 'What is Advisory Court?',
-          answer: 'Advisory Court is the daily bond hearing held at the Justice Center (CJC) on the same complex. If you bond out before Advisory Court, you don\'t need to attend this specific hearing.'
+          answer: 'Advisory Court is associated with initial court review. Whether a person must appear, and how that affects bond eligibility, depends on the case. Verify the current status with the court or a qualified attorney.'
         },
         {
           question: 'How fast is release in Pinellas County?',
-          answer: 'The Pinellas County Sheriff\'s Office is relatively efficient. Releases typically occur 4-8 hours after we turn in the bond paperwork at the 49th Street complex.'
+          answer: 'There is no reliable universal release time. Booking, court review, holds, paperwork, and jail workload can all affect processing. Only the jail controls final release.'
         },
         {
           question: 'Do you cover St. Petersburg and Clearwater arrests?',
-          answer: 'Absolutely. We handle arrests from all Pinellas County municipalities including St. Petersburg, Clearwater, Largo, Pinellas Park, and Tarpon Springs. All arrestees are booked at the same 49th Street facility in Clearwater.'
+          answer: 'Bond Florida provides directory and request-assistance resources for Pinellas County. Confirm current custody and the responsible agency before relying on any location or process information.'
         },
         {
           question: 'What is the bail bond premium in Pinellas County?',
-          answer: 'The state-mandated premium is 10% of the total bond amount. For example, a $2,500 bond requires a $250 premium. We accept all major credit cards and offer payment plans for qualified clients.'
+          answer: 'The amount and terms depend on the bond and lawful written agreement. Ask a licensed agent to explain the premium, collateral, payment, and indemnitor obligations before signing.'
         }
       ]
     }
@@ -791,11 +791,11 @@ export const counties: County[] = [
     name: 'Lee County',
     population: 860959,
     jail: {
-      name: 'Lee County Jail (Core Facility)',
+      name: 'Lee County Core / CPU Facility',
       address: '2501 Ortiz Avenue, Fort Myers, FL 33905',
-      phone: '(239) 477-1705',
+      phone: '(239) 477-1500',
       visitingHours: 'Video Visitation Daily',
-      inmateSearchUrl: 'https://www.sheriffleefl.org',
+      inmateSearchUrl: 'https://www.sheriffleefl.org/arrest-search/',
     },
     geo: {
       lat: 26.6500,
@@ -810,16 +810,16 @@ export const counties: County[] = [
           address: '2210 Widman Way, Fort Myers, FL 33901',
           phone: '(239) 321-7700'
         },
-        travelTimeToJail: '10-15 minutes',
-        description: 'The county seat of Lee County. FMPD processes arrests at their Widman Way headquarters. The Lee County Jail Core Facility on Ortiz Avenue is a short drive east, making for faster booking than many other counties.',
+        travelTimeToJail: 'Varies by arrest location and processing',
+        description: 'Fort Myers Police and other agencies make arrests in the area. Confirm the arresting agency, current custody record, and assigned Lee County facility before making arrangements.',
         specificFaqs: [
           {
             question: 'Is the Lee County Jail downtown Fort Myers?',
-            answer: 'No. Despite the "Fort Myers" address, the Core Facility is at 2501 Ortiz Avenue — roughly 15 minutes east of downtown. The downtown Lee County Justice Center at 1700 Monroe St handles courtroom hearings, not bookings. Do not go downtown for release.'
+            answer: 'Lee County lists a Core / CPU facility at 2501 Ortiz Avenue and a separate Lee County Jail at 2115 Dr. Martin Luther King Jr. Boulevard downtown. Check the current arrest record and confirm instructions before traveling.'
           },
           {
             question: 'Does FMPD arrest for things that happened on Fort Myers Beach?',
-            answer: 'No. Fort Myers Beach is a separate municipality on Estero Island, policed by the Lee County Sheriff (not FMPD). FMPD only covers the mainland City of Fort Myers. Both transport to the same Lee County Core Facility on Ortiz Ave.'
+            answer: 'Law-enforcement jurisdiction varies across the Fort Myers area. Confirm the arresting agency and assigned facility in the official Lee County record rather than assuming the arrest was handled by Fort Myers Police.'
           }
         ]
       },
@@ -831,16 +831,16 @@ export const counties: County[] = [
           address: '1100 Cultural Park Blvd, Cape Coral, FL 33990',
           phone: '(239) 574-3223'
         },
-        travelTimeToJail: '25-35 minutes',
-        description: 'The largest city in Lee County by land area, separated from Fort Myers by the Caloosahatchee River. Arrests made by CCPD require crossing the Cape Coral Bridge before the drive east on Colonial Blvd to the Ortiz Ave jail.',
+        travelTimeToJail: 'Varies by arrest location, traffic, and agency procedure',
+        description: 'Cape Coral Police handles city law-enforcement matters, while the Lee County Sheriff operates the county jail system. Use the official LCSO arrest search to confirm custody, assigned facility, charges, and bond entries.',
         specificFaqs: [
           {
-            question: 'Why does Cape Coral take longer to transport to jail than Fort Myers?',
-            answer: 'Cape Coral sits on the north bank of the Caloosahatchee River. Every transport van must cross either the Cape Coral Bridge (Cape Coral Pkwy) or Midpoint Bridge (Veterans Pkwy) before continuing east to the Core Facility on Ortiz Ave — adding 15-20 minutes to every run.'
+            question: 'Where do people arrested in Cape Coral go?',
+            answer: 'LCSO identifies the downtown Fort Myers jail as Lee County\'s central intake and booking facility and separately operates the Core / CPU site on Ortiz Avenue. Confirm the currently assigned facility in the official arrest record before traveling.'
           },
           {
-            question: 'Does the Pine Island Road / Chiquita corridor have heavy enforcement?',
-            answer: 'Yes. CCPD runs frequent DUI enforcement on Cape Coral Pkwy and Del Prado Blvd. The city has the highest DUI arrest rate per capita in Lee County. A DUI arrest here triggers a mandatory 8-hour hold before bond is even eligible.'
+            question: 'How long does a Cape Coral booking or release take?',
+            answer: 'Transport, booking, court review, holds, paperwork, and facility workload can affect timing. LCSO controls processing and final release, so a private service cannot promise a completion time.'
           }
         ]
       },
@@ -848,20 +848,20 @@ export const counties: County[] = [
         name: 'Bonita Springs',
         slug: 'bonita-springs',
         policeDepartment: {
-          name: 'Lee County Sheriff - District 4 (Bonita Springs)',
-          address: '27300 Old 41 Rd, Bonita Springs, FL 34135',
+          name: 'Lee County Sheriff - 4th Precinct (Bonita Springs)',
+          address: '8350 Hospital Drive, Suite 114, Bonita Springs, FL 34135',
           phone: '(239) 477-1840'
         },
-        travelTimeToJail: '30-40 minutes',
-        description: 'Located at the southern boundary of Lee County. Arrests by LCSO District 4 are processed locally at the Old 41 Road station before being transported 25 miles north to the Ortiz Avenue Jail in Fort Myers.',
+        travelTimeToJail: 'Varies by arrest location, traffic, and agency procedure',
+        description: 'LCSO serves Bonita Springs through its 4th Precinct. Use the official arrest search to confirm custody, booking details, assigned facility, charges, and bond entries.',
         specificFaqs: [
           {
             question: 'Where do arrests in Bonita Springs go?',
-            answer: 'All arrests in Bonita Springs are processed at the Lee County Jail Core Facility (Ortiz Avenue, Fort Myers). The LCSO District 4 substation processes them locally before transport.'
+            answer: 'LCSO identifies the downtown jail as Lee County\'s central intake and booking facility and separately operates the Core / CPU site on Ortiz Avenue. Confirm the assigned facility in the current arrest record before traveling.'
           },
           {
-            question: 'How long is the transport from Bonita Springs to Fort Myers?',
-            answer: 'The travel time from Bonita Springs to the Ortiz Avenue jail is about 30-40 minutes via I-75 North. We recommend starting the bail process immediately so the bond can be posted before the transport arrives.'
+            question: 'How long does booking or release take after a Bonita Springs arrest?',
+            answer: 'Transport, booking, court review, holds, paperwork, and facility workload can all affect timing. LCSO controls processing and final release, so a private service cannot promise a completion time.'
           }
         ]
       }
@@ -870,29 +870,29 @@ export const counties: County[] = [
       courtInfo: {
         name: 'Lee County Justice Center',
         address: '1700 Monroe St, Fort Myers, FL 33901',
-        bondHearingTimes: ['Daily: 9:00 AM (First Appearance Court)', 'Weekends/Holidays: 9:00 AM']
+        bondHearingTimes: ['Confirm the current hearing schedule through the Lee County Clerk']
       },
       releaseProcess: {
         step1: 'Intake occurs at the Core Facility on Ortiz Ave.',
-        step2: 'First Appearance Court is generally held via video link from the jail.',
-        step3: 'Release takes place at the Core Facility. Expect 4-8 hours after posting bond.'
+        step2: 'Court review, bond eligibility, and release conditions depend on the official case record.',
+        step3: 'LCSO controls facility assignment and release processing; confirm current pickup instructions directly.'
       },
       specificFaqs: [
         {
           question: 'Is the jail downtown Fort Myers?',
-          answer: 'No. The main "Core Facility" is located at 2501 Ortiz Avenue, which is about 15 minutes east of the downtown Justice Center. Do not go downtown for inmate release.'
+          answer: 'Lee County operates the Core / CPU facility at 2501 Ortiz Avenue and a separate downtown jail at 2115 Dr. Martin Luther King Jr. Boulevard. Verify the assigned facility and release instructions before traveling.'
         },
         {
           question: 'How do I visit an inmate in Lee County?',
-          answer: 'Visitation is now primarily video-only. You can use the kiosks in the Video Visitation building at the Ortiz site for free, or pay to visit remotely via the GTL/ViaPath app.'
+          answer: 'LCSO publishes current visitation eligibility, scheduling, and location requirements. Review the official visiting-inmates page before traveling because procedures can change.'
         },
         {
           question: 'What is the bail bond premium in Lee County?',
-          answer: 'We charge the state-mandated 10% premium. We are local to Fort Myers and can meet you at the jail or handle everything electronically.'
+          answer: 'Costs and obligations depend on the bond and written agreement. Verify the agent’s Florida license and review the premium, collateral, payment, and indemnitor terms before signing.'
         },
         {
           question: 'How long until they are released from Core Facility?',
-          answer: 'Once the bond is posted, Lee County Sheriff\'s Office typically processes the release in 4-8 hours. We will notify you when the discharge process begins.'
+          answer: 'LCSO controls release processing. Timing varies with booking, court conditions, holds, staffing, and other case-specific factors, so a private service cannot guarantee a release time.'
         }
       ]
     }
@@ -1055,14 +1055,18 @@ export const counties: County[] = [
         policeDepartment: {
           name: 'Dade City Police Department',
           address: '38030 Meridian Ave, Dade City, FL 33525',
-          phone: '(352) 521-1490'
+          phone: '(352) 521-1495'
         },
-        travelTimeToJail: '30-40 minutes',
-        description: 'The county seat in East Pasco. Dade City Police Department transports arrestees south to the Land O\' Lakes Detention Center.',
+        travelTimeToJail: 'Varies by arrest location, booking status, traffic, and agency procedure',
+        description: 'Dade City has a municipal police department and the East Pasco courthouse, while Pasco County operates its detention facility in Land O\' Lakes. Use the official custody search to confirm current booking and bond information.',
         specificFaqs: [
           {
             question: 'If court is in Dade City, why is the jail in Land O\' Lakes?',
-            answer: 'Pasco County operates a consolidated detention center in Land O\' Lakes. Even when an arrest and later court proceedings take place in Dade City, the inmate is housed at the central detention facility.'
+            answer: 'The Robert D. Sumner Judicial Center in Dade City is a courthouse, not a detention facility. Pasco County operates the detention facility in Land O\' Lakes. Confirm court and custody information separately through the official sources.'
+          },
+          {
+            question: 'How long does a Dade City booking or release take?',
+            answer: 'Transport, booking, court review, holds, paperwork, and facility workload can affect timing. Pasco Corrections controls processing and final release, so a private service cannot promise a completion time.'
           }
         ]
       }
@@ -1186,16 +1190,20 @@ export const counties: County[] = [
           address: '402 S Pine Ave, Ocala, FL 34471',
           phone: '(352) 369-7000'
         },
-        travelTimeToJail: '10-15 minutes',
-        description: 'The county seat and primary urban center of Marion County. OPD arrests are transported directly to the Marion County Jail on NW 30th Ave.',
+        travelTimeToJail: 'Varies by arrest location, booking status, traffic, and agency procedure',
+        description: 'Ocala Police handles city law-enforcement matters, while the Marion County Sheriff operates the county jail. Use the official inmate search to confirm current custody, booking details, charges, and bond entries.',
         specificFaqs: [
           {
             question: 'Is the Ocala Police Department holding facility the same as the jail?',
-            answer: 'No. OPD handles initial processing at their Pine Ave headquarters, but all arrestees are quickly transferred to the Marion County Jail (run by the Sheriff) on NW 30th Ave for official booking and bond setting.'
+            answer: 'No. The Ocala Police Department is a city law-enforcement office, while the Marion County Sheriff operates the county jail. MCSO states that its booking unit receives people from Ocala Police and other Marion County agencies.'
           },
           {
             question: 'Are arrests from the Ocala National Forest handled by OPD?',
-            answer: 'No. The forest falls under the jurisdiction of the Marion County Sheriff\'s Office (MCSO) or the Florida Fish and Wildlife Conservation Commission (FWC). Regardless of the arresting agency, all go to the Marion County Jail.'
+            answer: 'Agency jurisdiction depends on the location and circumstances. Confirm the arresting agency and current custody through the official Marion County inmate record instead of assuming Ocala Police handled the arrest.'
+          },
+          {
+            question: 'How long does an Ocala booking or release take?',
+            answer: 'MCSO says booking and identification must be completed before a bond can be posted and that release can take several hours after the bond is received. Additional holds, court action, and workload can affect timing.'
           }
         ]
       },
@@ -1399,7 +1407,7 @@ export const counties: County[] = [
       releaseProcess: {
         step1: 'Booked at the Columbia County Detention Facility on Quinten St.',
         step2: 'First appearance at the courthouse in downtown Lake City.',
-        step3: 'Immediate release processing upon posting of the surety bond.'
+        step3: 'Facility release processing begins after the surety bond is accepted, subject to holds and facility procedures.'
       },
       specificFaqs: [
         {
@@ -1417,9 +1425,9 @@ export const counties: County[] = [
     jail: {
       name: 'Nassau County Jail and Detention Center',
       address: '76212 Nicholas Cutinha Rd, Yulee, FL 32097',
-      phone: '(904) 225-5211',
+      phone: '(904) 548-4002',
       visitingHours: 'Video Visitation',
-      inmateSearchUrl: 'https://nassauso.com/corrections/',
+      inmateSearchUrl: 'https://dssinmate.nassauso.com/NewWorld.InmateInquiry/nassau?InCustody=True',
     },
     geo: {
       lat: 30.6318,
@@ -1432,14 +1440,18 @@ export const counties: County[] = [
         policeDepartment: {
           name: 'Nassau County Sheriff (Yulee District)',
           address: '77151 Citizens Cir, Yulee, FL 32097',
-          phone: '(904) 225-5174'
+          phone: '(904) 225-0331'
         },
-        travelTimeToJail: '5-10 minutes',
-        description: 'Yulee is the central geographic hub of Nassau County and the home of the county jail complex. Transport times from a Yulee arrest to the jail are extremely short.',
+        travelTimeToJail: 'Varies by arrest location, booking status, traffic, and agency procedure',
+        description: 'The Nassau County Sheriff\'s Office, Jail and Detention Center, and Robert M. Foster Justice Center are separate facilities in Yulee. Use the official in-custody search to verify current booking and bond information.',
         specificFaqs: [
           {
             question: 'Are Amelia Island / Fernandina Beach arrests taken to Yulee?',
-            answer: 'Yes. Fernandina Beach has its own police department, but the only jail in Nassau County is the Detention Center located in Yulee.'
+            answer: 'NCSO states that people arrested in Nassau County are brought to the Nassau County Jail for processing. Confirm current custody through the official search because a released person will not remain in the in-custody results.'
+          },
+          {
+            question: 'How long does booking or release take at the Yulee jail?',
+            answer: 'NCSO says intake processing and identification clearance must be completed before release or visitation is considered, and release times vary. A private service cannot promise a completion time.'
           }
         ]
       }

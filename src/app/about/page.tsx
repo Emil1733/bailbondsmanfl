@@ -5,8 +5,8 @@ import { ShieldCheck, MapPin, Clock, Award, Phone, CheckCircle2, Building2 } fro
 import Link from 'next/link';
 
 export const metadata: Metadata = pageMetadata({
-    title: 'About the Bond Florida Directory',
-    description: 'Learn how Bond Florida organizes county jail contacts, official inmate-search links, local guides, and general bail information for Florida visitors.',
+    title: 'About Bond Florida | Our Mission',
+    description: 'Learn how Bond Florida helps families find official jail information, understand common next steps, and request contact when they need bail assistance.',
     path: '/about',
 });
 
@@ -25,10 +25,10 @@ export default function AboutPage() {
       <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-white/5">
         <ContentContainer className="text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6">
-            About the <span className="text-yellow-500">Bond Florida</span> Directory
+            About <span className="text-yellow-500">Bond Florida</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            A plain-language directory of Florida jail contacts, official inmate-search links, local agency details, and general information about booking and bail.
+            Clear Florida jail information, practical next steps, and a simple way to request help when a family needs bail assistance.
           </p>
         </ContentContainer>
       </section>
@@ -39,8 +39,33 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-serif font-bold text-white mb-6">Our Mission</h2>
             <p className="text-lg text-slate-300 leading-relaxed">
-              Our goal is to make public jail and inmate-search resources easier to find during a stressful situation. We organize local information, link visitors to the responsible government agency, identify when a detail needs direct verification, and correct outdated directory entries when they are reported.
+              Our goal is to make a stressful situation easier to navigate. We organize official jail resources, explain common booking and bail steps in plain language, and help visitors request contact from a professional who may be able to assist with their situation.
             </p>
+          </div>
+        </ContentContainer>
+      </section>
+
+      <section className="py-20 bg-slate-950 border-b border-white/5">
+        <ContentContainer>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-serif font-bold text-white mb-10 text-center">How Bond Florida Helps</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-900 p-7">
+                <p className="mb-3 text-sm font-bold uppercase tracking-widest text-yellow-500">Step 1</p>
+                <h3 className="mb-3 text-xl font-bold text-white">Verify the record</h3>
+                <p className="leading-relaxed text-slate-400">Use the linked official county resource to confirm custody, the facility, charges, and displayed bond information.</p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900 p-7">
+                <p className="mb-3 text-sm font-bold uppercase tracking-widest text-yellow-500">Step 2</p>
+                <h3 className="mb-3 text-xl font-bold text-white">Understand the next step</h3>
+                <p className="leading-relaxed text-slate-400">Review the local guide and gather the booking details a professional will usually need before discussing available options.</p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900 p-7">
+                <p className="mb-3 text-sm font-bold uppercase tracking-widest text-yellow-500">Step 3</p>
+                <h3 className="mb-3 text-xl font-bold text-white">Request assistance</h3>
+                <p className="leading-relaxed text-slate-400">Call or submit a request. Bond Florida or a professional able to help with the request may respond by phone or text.</p>
+              </div>
+            </div>
           </div>
         </ContentContainer>
       </section>
@@ -212,7 +237,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-serif font-bold text-white mb-6">Need Help Finding the Right Resource?</h2>
             <p className="text-lg text-slate-400 mb-8">
-              Contact Bond Florida with a general inquiry, or send us a correction when a county contact or external government link has changed.
+              Ask a question, request assistance, or send us a correction when a county contact or government link has changed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

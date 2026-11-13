@@ -44,9 +44,9 @@ const pascoData = `
         policeDepartment: {
           name: 'Dade City Police Department',
           address: '38030 Meridian Ave, Dade City, FL 33525',
-          phone: '(352) 521-1490'
+          phone: '(352) 521-1495'
         },
-        travelTimeToJail: '30-40 minutes',
+        travelTimeToJail: 'Varies by arrest location, booking status, traffic, and agency procedure',
         description: 'The county seat located in East Pasco. DCPD transports arrestees south to Land O\\' Lakes.',
         specificFaqs: [
           {

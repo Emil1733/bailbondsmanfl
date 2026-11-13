@@ -22,8 +22,8 @@ export default function JailLocalLinks({ jailSlug }: { jailSlug: string }) {
           <Link href={`/county/${locality.countySlug}`} className="text-yellow-500 hover:text-white">
             County jail and booking hub <ArrowRight className="ml-1 inline h-4 w-4" />
           </Link>
-          <Link href={`/services/online-bail-bonds/${locality.citySlug}`} className="text-yellow-500 hover:text-white">
-            Online bail bonds in {locality.cityName} <ArrowRight className="ml-1 inline h-4 w-4" />
+          <Link href="/services/online-bail-bonds" className="text-yellow-500 hover:text-white">
+            Online bail bond safety guide <ArrowRight className="ml-1 inline h-4 w-4" />
           </Link>
         </div>
       </div>

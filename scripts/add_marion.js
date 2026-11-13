@@ -29,12 +29,12 @@ const marionData = `
           address: '402 S Pine Ave, Ocala, FL 34471',
           phone: '(352) 369-7000'
         },
-        travelTimeToJail: '10-15 minutes',
+        travelTimeToJail: 'Varies by arrest location, booking status, traffic, and agency procedure',
         description: 'The county seat and primary urban center of Marion County. OPD arrests are transported directly to the Marion County Jail on NW 30th Ave.',
         specificFaqs: [
           {
             question: 'Is the Ocala Police Department holding facility the same as the jail?',
-            answer: 'No. OPD handles initial processing at their Pine Ave headquarters, but all arrestees are quickly transferred to the Marion County Jail (run by the Sheriff) on NW 30th Ave for official booking and bond setting.'
+            answer: 'No. The Ocala Police Department is a city law-enforcement office, while the Marion County Sheriff operates the county jail. Confirm current custody and booking information through the official MCSO inmate search.'
           },
           {
             question: 'Are arrests from the Ocala National Forest handled by OPD?',

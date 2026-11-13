@@ -1,6 +1,9 @@
 'use client';
 
 import { FormEvent, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { track } from '@vercel/analytics';
+import { readLeadAttribution } from '@/lib/attribution';
 
 type SubmissionState =
   | { status: 'idle'; message: '' }
@@ -12,6 +15,7 @@ const inputClasses =
   'w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white transition-colors placeholder:text-slate-500 focus:border-yellow-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
 
 export default function ContactForm() {
+  const pathname = usePathname();
   const formRef = useRef<HTMLFormElement>(null);
   const [startedAt, setStartedAt] = useState(() => Date.now());
   const [submission, setSubmission] = useState<SubmissionState>({ status: 'idle', message: '' });
@@ -22,6 +26,7 @@ export default function ContactForm() {
     setSubmission({ status: 'submitting', message: 'Sending your request…' });
 
     const form = new FormData(event.currentTarget);
+    const attribution = readLeadAttribution(pathname);
     const payload = {
       name: String(form.get('name') ?? ''),
       phone: String(form.get('phone') ?? ''),
@@ -30,6 +35,7 @@ export default function ContactForm() {
       consent: form.get('consent') === 'on',
       website: String(form.get('website') ?? ''),
       startedAt,
+      ...attribution,
     };
 
     try {
@@ -48,7 +54,12 @@ export default function ContactForm() {
       setStartedAt(Date.now());
       setSubmission({
         status: 'success',
-        message: result.message || 'Your request was received. An agent will contact you shortly.',
+        message: result.message || 'Your request was received. A professional who can help with your request may contact you shortly.',
+      });
+      track('lead_submitted', {
+        source: 'contact-form',
+        landingPage: attribution.landingPage,
+        originatingPage: attribution.originatingPage,
       });
     } catch (error) {
       setSubmission({
@@ -146,7 +157,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="mt-1 h-4 w-4 shrink-0 accent-yellow-500"
         />
-        <span>I agree that a Bond Florida agent may contact me about this request by phone or text.</span>
+        <span>I agree that Bond Florida or a professional able to help with my request may contact me by phone or text.</span>
       </label>
 
       <button

@@ -21,7 +21,7 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-serif font-bold text-white mb-8">Privacy Policy</h1>
         <div className="prose prose-invert max-w-none space-y-6">
           <p>
-            Effective date: August 31, 2026
+            Effective date: November 13, 2026
           </p>
           <p>
             Bond Florida (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) operates this directory and contact form. This policy explains what the website collects, why it is collected, and the choices available to you.
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Information We Collect</h2>
           <p>
             We collect information you provide directly to us, such as when you call our agents or submit a contact form. This may include:
-            your name, phone number, the defendant&apos;s name, and a short optional directory question. The form also records the submission time and source page. Basic server and bot-protection logs may contain an IP address, browser information, request timestamps, and automated-abuse signals for security and troubleshooting.
+            your name, phone number, the defendant&apos;s name, and a short optional directory question. The form also records the submission time, form type, first same-site pathname in the browser session, and the last same-site pathname before the contact form. Query strings and external referrers are not stored with the lead. Basic server and bot-protection logs may contain an IP address, browser information, request timestamps, and automated-abuse signals for security and troubleshooting.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. Use of Information</h2>
@@ -39,9 +39,11 @@ export default function PrivacyPage() {
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>Respond to the inquiry and provide the requested contact.</li>
+            <li>Connect the inquiry with a professional who may be able to assist in the relevant area.</li>
             <li>Locate the relevant county or facility information.</li>
             <li>Prevent spam, abuse, and repeated automated submissions.</li>
             <li>Correct directory information and troubleshoot the website.</li>
+            <li>Measure which site sections generate contact requests and primary-phone clicks without including submitted names, phone numbers, or case details in analytics events.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. Data Security</h2>
@@ -51,7 +53,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">4. Sharing and Service Providers</h2>
           <p>
-            We do not sell contact-form information. Vercel processes hosting, delivery, server logs, analytics, and automated-abuse signals. Airtable stores the contact record used for follow-up. Only the site owner and people specifically authorized to respond to inquiries should have access to those records. We may also disclose information when required by law or when reasonably necessary to protect the website and its users.
+            We do not sell contact-form information to unrelated marketers. Vercel processes hosting, delivery, server logs, analytics, and automated-abuse signals. Airtable stores the contact record used for follow-up. Information submitted with a request may be shared with a professional who may be able to assist in the relevant area. The site owner, authorized responders, and that professional may use the information only to respond to the request, provide the requested contact, maintain records required for the response, or protect against misuse. We may also disclose information when required by law or when reasonably necessary to protect the website and its users.
           </p>
 
           <h2 className="text-2xl font-bold text-white mt-8 mb-4">5. Retention and Your Choices</h2>

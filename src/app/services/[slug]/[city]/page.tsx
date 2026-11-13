@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
 import { jailGuideByCounty } from '@/lib/internal-links';
 import { PROGRAMMATIC_INDEXING_ENABLED, validateProgrammaticInputs } from '@/lib/programmatic-seo';
-import { getApprovedServiceCityPage } from '@/lib/service-city-seo';
+import { approvedServiceCityPages, getApprovedServiceCityPage } from '@/lib/service-city-seo';
 
 // Content Container
 const ContentContainer = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -76,7 +76,6 @@ export async function generateMetadata({ params }: Props) {
 export default async function MatrixPage({ params }: Props) {
     const { slug, city: citySlug } = await params;
     const service = await getService(slug);
-    const services = await getAllServices();
     const cityData = await getCityBySlug(citySlug);
 
     if (!service || !cityData) {
@@ -87,6 +86,9 @@ export default async function MatrixPage({ params }: Props) {
     const Icon = service.icon;
     const jailGuide = jailGuideByCounty[county.slug];
     const approvedPage = getApprovedServiceCityPage(slug, citySlug);
+    const relatedReviewedGuides = approvedServiceCityPages.filter(
+        (page) => page.citySlug === city.slug && page.serviceSlug !== service.slug,
+    );
 
     return (
         <main className="min-h-screen bg-slate-950 flex flex-col font-sans text-slate-200">
@@ -214,24 +216,22 @@ export default async function MatrixPage({ params }: Props) {
                                 </div>
                             </div>
 
-                            {/* Other Services in this City (Horizontal Matrix Linking) */}
-                            <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
-                                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Other Services in {city.name}</h3>
-                                <div className="space-y-3">
-                                    {services
-                                        .filter((relatedService) => relatedService.slug !== service.slug)
-                                        .map((relatedService) => (
-                                            <Link 
-                                                key={relatedService.slug}
-                                                href={`/services/${relatedService.slug}/${city.slug}`}
+                            {relatedReviewedGuides.length > 0 && (
+                                <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
+                                    <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Reviewed Guides for {city.name}</h3>
+                                    <div className="space-y-3">
+                                        {relatedReviewedGuides.map((guide) => (
+                                            <Link
+                                                key={`${guide.serviceSlug}-${guide.citySlug}`}
+                                                href={`/services/${guide.serviceSlug}/${guide.citySlug}`}
                                                 className="block text-sm text-slate-400 hover:text-yellow-500 transition-colors"
                                             >
-                                                {relatedService.title.replace(' Florida', '')} in {city.name} &rarr;
+                                                {guide.heading} &rarr;
                                             </Link>
-                                        ))
-                                    }
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
                             <div className="bg-slate-900/30 border border-slate-800/50 p-6 rounded-xl">
                                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Local booking resources</h3>

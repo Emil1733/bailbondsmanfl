@@ -230,8 +230,8 @@ return (
                                         </Link>
                                         <div className="flex flex-wrap gap-2">
                                             {entries.map(({ city }) => (
-                                                <Link key={city.slug} href={`/services/${service.slug}/${city.slug}`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">
-                                                    {city.name} local guide
+                                                <Link key={city.slug} href={`/county/${countySlug}/${city.slug}`} className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-sm transition-colors border border-slate-700">
+                                                    {city.name} arrest and jail guide
                                                 </Link>
                                             ))}
                                         </div>

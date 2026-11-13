@@ -1,5 +1,15 @@
 const https = require('https');
 
+const login = process.env.DATAFORSEO_LOGIN;
+const password = process.env.DATAFORSEO_PASSWORD;
+
+if (!login || !password) {
+    console.error('Missing DATAFORSEO_LOGIN or DATAFORSEO_PASSWORD environment variable.');
+    process.exit(1);
+}
+
+const authorization = Buffer.from(`${login}:${password}`).toString('base64');
+
 const postData = JSON.stringify([
     {
         "keywords": [
@@ -22,7 +32,7 @@ const options = {
     path: '/v3/dataforseo_labs/google/keyword_ideas/live',
     method: 'POST',
     headers: {
-        'Authorization': 'Basic dGV2YXRyb3N5YW4xMy4xN0BnbWFpbC5jb206ZGE4ODAwYzE1MzU5M2Q5Zg==',
+        'Authorization': `Basic ${authorization}`,
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(postData)
     }

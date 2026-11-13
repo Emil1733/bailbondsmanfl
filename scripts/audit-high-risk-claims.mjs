@@ -22,10 +22,15 @@ function textFromHtml(html) {
 
 function removeExplicitDisclaimers(text) {
   return text
-    .replace(/\b(?:does not|do not|cannot|can['’]t|never)\s+(?:control\s+or\s+)?(?:guarantee|promise)\b.{0,45}\brelease\b/gi, ' ')
+    .replace(/\b(?:does not|do not|cannot|can['’]t|never)\s+(?:control\s+or\s+)?(?:guarantee|promise)\b.{0,80}\brelease\b/gi, ' ')
+    .replace(/\b(?:a\s+)?private\s+(?:service|provider)\s+cannot\s+(?:guarantee|promise)\b.{0,80}\brelease\b/gi, ' ')
+    .replace(/\brelease\b.{0,80}\b(?:cannot|can['’]t)\s+be\s+(?:guaranteed|promised)\b/gi, ' ')
+    .replace(/\bdoes\s+not\s+(?:necessarily\s+)?mean\s+immediate\s+release\b/gi, ' ')
     .replace(/\bdoes not\s+(?:guarantee|promise)\s+the\s+release\b/gi, ' ')
     .replace(/\bcan\s+(?:anyone|a\s+website|this\s+directory)\b.{0,45}\b(?:guarantee|promise)\b.{0,35}\brelease\b/gi, ' ')
     .replace(/\brelease\s+(?:timing\s+)?(?:var(?:y|ies)\s+and\s+)?cannot be (?:promised|guaranteed)\b/gi, ' ')
+    .replace(/\b(?:cannot|can['’]t)\s+(?:guarantee|promise)\s+when\b.{0,80}\brelease\b/gi, ' ')
+    .replace(/\brelease\b.{0,80}\b(?:cannot|can['’]t)\s+(?:guarantee|promise)\s+when\b/gi, ' ')
     .replace(/\bno\s+release\s+(?:guarantees|promises)\b/gi, ' ')
     .replace(/\brelease\s+(?:guarantees|promises)\b/gi, ' ');
 }
